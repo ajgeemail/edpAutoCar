@@ -1,7 +1,7 @@
 # git_edpAutoCar
 Uni project for autonomous obstacle avoiding RC car.
 
-**START INSTRUCTIONS:**
+## START INSTRUCTIONS:
 1. Copy clone URL
 2. Navigate in explorer to chosen destination folder
 3. Right click and open Git Bash
@@ -19,11 +19,9 @@ Uni project for autonomous obstacle avoiding RC car.
 
 10. git pull *(PULLS ALL CHANGES DOWN FROM GITHUB TO LOCAL DIRECTORY)*
 
-**WORKFLOW INSTRUCTIONS**
-
+## WORKFLOW INSTRUCTIONS
 1. Before starting work run git pull to get everyone's updated work
 2. If conflict occurs, go into conflict file, resolve conflict by updating code to contain correct changes and commit/push again.
 
-**NOTES**
-
+## NOTES
 (i) If accidentally typed commit without message and entered the commit screen, press **esc** > type **:wq**
