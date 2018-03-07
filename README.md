@@ -21,7 +21,9 @@ Uni project for autonomous obstacle avoiding RC car.
 
 ## WORKFLOW INSTRUCTIONS
 1. Before starting work run git pull to get everyone's updated work
-2. If conflict occurs, go into conflict file, resolve conflict by updating code to contain correct changes and commit/push again.
+2. If conflict occurs, go into conflict file, resolve conflict by updating code to contain correct changes and commit/push again
+3. Commit and push everything to *GITHUB* regularly to ensure good history tracking
+4. git pull regularly to get other user's changes
 
 ## NOTES
 (i) If accidentally typed commit without message and entered the commit screen, press **esc** > type **:wq**
