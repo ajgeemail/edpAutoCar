@@ -1,6 +1,11 @@
 # git_edpAutoCar
 Uni project for autonomous obstacle avoiding RC car.
 
+## GIT:
+Download and install git as per tutorial:
+https://www.youtube.com/watch?v=albr1o7Z1nw
+Use git bash instead of unix like in this tutorial if you want to follow below exactly. I used it so not exactly sure what changes when you use unix.
+
 ## START INSTRUCTIONS:
 1. Copy clone URL
 2. Navigate in explorer to chosen destination folder
