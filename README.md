@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=albr1o7Z1nw - use git bash instead of unix like 
 2. Create GITHUB account.
 
 ## START INSTRUCTIONS:
-1. From the top right of this github page, copy clone URL
+1. From the top right of this github page, copy clone URL (from green clone or download button)
 2. Navigate in explorer to chosen destination folder
 3. Right click and open Git Bash
 4. git clone *PASTE COPIED URL HERE*
