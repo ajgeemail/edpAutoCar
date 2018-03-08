@@ -2,13 +2,13 @@
 Uni project for autonomous obstacle avoiding RC car.
 
 ## GETTING GIT AND GITHUB:
-Download and install git as per tutorial:
+1. Download and install git as per tutorial:
 https://www.youtube.com/watch?v=albr1o7Z1nw - use git bash instead of unix like in this tutorial if you want to follow below exactly. I used it so not exactly sure what changes when you use unix.
 
-Create GITHUB account.
+2. Create GITHUB account.
 
 ## START INSTRUCTIONS:
-1. Copy clone URL
+1. From the top right of this github page, copy clone URL
 2. Navigate in explorer to chosen destination folder
 3. Right click and open Git Bash
 4. git clone *PASTE COPIED URL HERE*
