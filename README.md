@@ -1,8 +1,8 @@
 # git_edpAutoCar
 Uni project for autonomous obstacle avoiding RC car. Ideally all the code for the project exists on here, and will be updated whenever changes are made to any of the files. 
 
-Commit work:
-- each time a change has been made and it's in a working condition (so you can revert to this working condition if it breaks after other changes) 
+Commit and push:
+- each time a change has been made to your code and it's in a working condition (so you can revert to this working condition if it breaks after other changes) 
 - and at the end of each session (so it's the most up to date copy on here).
 
 ## GETTING GIT AND GITHUB:
