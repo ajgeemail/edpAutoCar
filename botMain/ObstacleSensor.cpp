@@ -49,12 +49,22 @@ void ObstacleSensor::detectObstacles(uint8_t iterations)
     }
     else 
     {
+        // Currently yaw defined as angle bot's front is facing, relative to y direction of grid
+        float yaw = 0*(PI/180);    // ***** Change to yaw = getYaw() from pozyx *****
         // Calculate the x and y components of measured distance based on angle of sensor
-        float xComp = distance_*sin(directionAngle_);
-        float yComp = distance_*cos(directionAngle_);
+        float xDistComp = distance_*sin(directionAngle_ + yaw);
+        float yDistComp = distance_*cos(directionAngle_ + yaw);
+
+        // Calculate offset vector from pozyx
+        float offsetDist = sqrt(offsetX_*offsetX_ + offsetY_*offsetY_);
+        float offsetAngle = atan2(offsetX_, offsetY_);
+
+        // Calculate x and y offset components including yaw changes
+        float xOffsetComp = offsetDist*sin(offsetAngle + yaw);
+        float yOffsetComp = offsetDist*cos(offsetAngle + yaw);
 
         // Calculate x and y components of distance from pozyx sensor
-        objXDist_ = xComp + offsetX_;
-        objYDist_ = yComp + offsetY_;
+        objXDist_ = xDistComp + xOffsetComp;
+        objYDist_ = yDistComp + yOffsetComp;
     }
 }

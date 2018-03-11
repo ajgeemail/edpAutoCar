@@ -1,15 +1,19 @@
+// Main .ino file for arduino (for now, someone else may have a better one)
+
 #include "ObstacleSensor.h"
 
 // Direction variables in radians
 #define LEFT 270*(PI/180)
 #define FORWARD 0*(PI/180)
 #define RIGHT 90*(PI/180)
-#define FOR_DIAG_RIGHT 45*(PI/180)
-#define FOR_DIAG_LEFT 315*(PI/180)
 #define BACKWARD 180*(PI/180)
+#define DIAG_FOR_RIGHT 45*(PI/180)
+#define DIAG_FOR_LEFT 315*(PI/180)
+#define DIAG_BACK_LEFT 225*(PI/180)
+#define DIAG_BACK_RIGHT 135*(PI/180)
 
 // Number of iterations in calculating average distance
-#define iterations 5
+#define iterations 10
 
 // Setup Sensor 1 variables
 const uint8_t frontTriggerPin = 5;
@@ -33,7 +37,7 @@ float leftMeasuredDistance;
 
 // Setup Sensor 3 variables
 const uint8_t rightTriggerPin = 13;
-const uint8_t rightEchoPin = leftTriggerPin;
+const uint8_t rightEchoPin = rightTriggerPin;
 const float rightXOffset = 5; // cm
 const float rightYOffset = 2; // cm
 const float rightDirectionAngle = RIGHT;
@@ -72,7 +76,7 @@ void loop() {
 
     // Print in Serial monitor for testing
     printDistance("Front: ", frontMeasuredDistance, frontDistanceX, frontDistanceY);
-    printDistance("Left: ", leftMeasuredDistance, leftDistanceX, leftDistanceY);
+    printDistance("Left:  ", leftMeasuredDistance, leftDistanceX, leftDistanceY);
     printDistance("Right: ", rightMeasuredDistance, rightDistanceX, rightDistanceY);
 }
 
@@ -98,7 +102,7 @@ void printDistance(String sensorName, float measuredDist, float xDist, float yDi
         Serial.print("Y Distance: ");
         Serial.print(yDist);
         Serial.println(" cm ");
-        delay(500);
+        //delay(500);
     }
 }
 

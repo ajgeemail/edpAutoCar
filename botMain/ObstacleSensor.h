@@ -1,6 +1,16 @@
 #ifndef OBSTACLESENSOR_H
 #define OBSTACLESENSOR_H
 
+// ObstacleSensor object contains all angles and distances/locations of a particular sensor
+// allowing for distance calculations from the pozyx locator to be conducted.
+// INPUTS: 
+// Still require pozyx yaw angle (interface between sensor and pozyx)
+// Still require humidity and temperature details from DHT-22 for improved accuracy
+//
+// OUTPUTS TO:
+// Outputs location of obstacle relative to grid references (interface with nav and GUI)
+
+
 #include "NewPing.h"
 class ObstacleSensor
 {
@@ -41,7 +51,10 @@ class ObstacleSensor
         // Calculates the speed of sound based on humidity and temperature found by DHT22 sensor
         static void calculateSoundCm();
 
-        // Returns distance to obstacle found by this sensor averaged iterations times
+        // Calculates x and y components to obstacle found by this sensor averaged iterations times
+        // by taking into account the yaw of the vehicle, the offset of the sensor relative to the
+        // pozyx tag, the angle of the sensor relative to the vehicle and the distance the sensor
+        // calculates relative to itself.
         void detectObstacles(uint8_t iterations);
 };
 
