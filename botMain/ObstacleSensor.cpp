@@ -2,11 +2,12 @@
 
 //#include "DHT.h"
 
-ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float relativeX, float relativeY, float relativeDir) :
+ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float directionAngle) :
     triggerPin_(triggerPin),
     echoPin_(echoPin),
-    relativeX_(relativeX),
-    relativeDir_(relativeDir),
+    offsetX_(offsetX),
+    offsetY_(offsetY),
+    directionAngle_(directionAngle),
     sonar_(triggerPin_, echoPin_, maxDistance_)
 {
 
@@ -33,20 +34,27 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float relati
     */
 }
 
-float ObstacleSensor::detectObstacles(uint8_t iterations)
+void ObstacleSensor::detectObstacles(uint8_t iterations)
 {
     // Measure duration    
     duration_ = sonar_.ping_median(iterations);
 
     // Calculate distance
     distance_ = (duration_ / 2) * soundcm_;
- 
+
+    // Distance valid check
     if (distance_ >= 400 || distance_ <= 2) 
     {
         return 1023.0f;
     }
     else 
     {
-        return distance_;
+        // Calculate the x and y components of measured distance based on angle of sensor
+        float xComp = distance_*sin(directionAngle_);
+        float yComp = distance_*cos(directionAngle_);
+
+        // Calculate x and y components of distance from pozyx sensor
+        objXDist_ = xComp + offsetX_;
+        objYDist_ = yComp + offsetY_;
     }
 }
