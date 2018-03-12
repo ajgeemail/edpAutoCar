@@ -1,6 +1,8 @@
 #include "ObstacleSensor.h"
 
-//#include "DHT.h"
+#include "DHT.h"
+
+float ObstacleSensor::soundcm_ = 0.0343f;
 
 ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float directionAngle) :
     triggerPin_(triggerPin),
@@ -13,9 +15,8 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
 
 }
 
-/* static */ void ObstacleSensor::calculateSoundCm()
+/* static */ void ObstacleSensor::calculateSoundCm(uint8_t dhtPin)
 {
-    /*
     // Initialise DHT
     DHT dht(dhtPin, DHT22);
     dht.begin();
@@ -23,15 +24,23 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     // Delay to allow DHT22 time to stabilise
     delay(1000);
 
-    hum_ = dht.readHumidity();  // Get Humidity value
-    temp_ = dht.readTemperature();  // Get Temperature value
+    float hum = dht.readHumidity();      // Get Humidity value
+    float temp = dht.readTemperature();  // Get Temperature value
 
     // Calculate the Speed of Sound in m/s
-    soundsp_ = 331.4 + (0.606 * temp_) + (0.0124 * hum_);
+    float soundsp = 331.4f + (0.606f * temp) + (0.0124f * hum);
 
     // Convert to cm/ms from m/s
-    soundcm_ = soundsp_ / 10000;
-    */
+    ObstacleSensor::soundcm_ = soundsp / 10000.0f;
+
+    // Prints the speed of sound calculations
+    Serial.println("***** SOUND CALCULATIONS *****");
+    Serial.print("Temperature: ");
+    Serial.print(temp);
+    Serial.print(" Humidity: ");
+    Serial.print(hum);
+    Serial.print("Speed of sound (cm/ms): ");
+    Serial.println(soundcm_, 6);
 }
 
 void ObstacleSensor::detectObstacles(uint8_t iterations)
@@ -45,7 +54,9 @@ void ObstacleSensor::detectObstacles(uint8_t iterations)
     // Distance valid check
     if (distance_ >= 400 || distance_ <= 2) 
     {
-        return 1023.0f;
+        objXDist_ = 1023.0f;
+        objYDist_ = 1023.0f;
+        distance_ = 1023.0f;
     }
     else 
     {
@@ -66,5 +77,30 @@ void ObstacleSensor::detectObstacles(uint8_t iterations)
         // Calculate x and y components of distance from pozyx sensor
         objXDist_ = xDistComp + xOffsetComp;
         objYDist_ = yDistComp + yOffsetComp;
+    }
+}
+
+void ObstacleSensor::printDistance(String sensorName)
+{
+    Serial.print(sensorName);
+    
+    if (this->distance_ == 1023.0f)
+    {
+        Serial.println("Distance out of range");
+    }
+    else 
+    {
+        Serial.print("Total Distance: ");
+        Serial.print(this->distance_);
+        Serial.print(" cm\t");
+        
+        Serial.print("X Distance: ");
+        Serial.print(this->objXDist_);
+        Serial.print(" cm\t");
+
+        Serial.print("Y Distance: ");
+        Serial.print(this->objYDist_);
+        Serial.println(" cm ");
+        //delay(500);
     }
 }

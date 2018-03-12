@@ -1,4 +1,12 @@
-// Main .ino file for arduino (for now, someone else may have a better one)
+// ****************************************************************************************************************** //
+// ***** botMain.ino - Main .ino file for arduino (for now, someone else may have a better one)                 ***** //
+// ***** INSTRUCTIONS:                                                                                          ***** //
+// ***** 1. Ensure all libraries are installed by navigating Sketch > Include Library > Manage Libraries        ***** //
+// *****    and searching for the following libraries:  (i)     DHT                                             ***** //
+// *****                                                (ii)    Adafuit Unified Sensor Library                  ***** //
+// *****                                                (iii)   Adafruit AM2315                                 ***** //
+// ***** 2. 
+// ****************************************************************************************************************** //
 
 #include "ObstacleSensor.h"
 
@@ -45,6 +53,9 @@ float rightDistanceX;
 float rightDistanceY;
 float rightMeasuredDistance;
 
+// DHT22 Sensor variables
+const uint8_t dhtPin = 7;
+
 // Create sensor objects with relevant info
 ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontDirectionAngle);
 ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftDirectionAngle);
@@ -53,6 +64,7 @@ ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOf
 void setup() {
     // put your setup code here, to run once:
     Serial.begin(9600);
+    ObstacleSensor::calculateSoundCm(dhtPin);
 }
 
 void loop() {
@@ -74,36 +86,9 @@ void loop() {
     rightDistanceY = rightSensor.objYDist_;
     rightMeasuredDistance = rightSensor.distance_;
 
-    // Print in Serial monitor for testing
-    printDistance("Front: ", frontMeasuredDistance, frontDistanceX, frontDistanceY);
-    printDistance("Left:  ", leftMeasuredDistance, leftDistanceX, leftDistanceY);
-    printDistance("Right: ", rightMeasuredDistance, rightDistanceX, rightDistanceY);
-}
-
-// Prints distances of each sensor's data
-void printDistance(String sensorName, float measuredDist, float xDist, float yDist)
-{
-    Serial.print(sensorName);
-    
-    if (measuredDist == 1023.0f)
-    {
-        Serial.println("Distance out of range");
-    }
-    else 
-    {
-        Serial.print("Total Distance: ");
-        Serial.print(measuredDist);
-        Serial.print(" cm\t");
-        
-        Serial.print("X Distance: ");
-        Serial.print(xDist);
-        Serial.print(" cm\t");
-
-        Serial.print("Y Distance: ");
-        Serial.print(yDist);
-        Serial.println(" cm ");
-        //delay(500);
-    }
+    frontSensor.printDistance("Front: ");
+    leftSensor.printDistance("Left:  ");
+    rightSensor.printDistance("Right: ");
 }
 
 

@@ -17,12 +17,8 @@ class ObstacleSensor
     private :
         // Pin definitions
         uint8_t triggerPin_, echoPin_;
-        uint8_t dhtPin = 7;
         
-        static float hum_;                      // Stores humidity value in percent
-        static float temp_;                     // Stores temperature value in Celcius
-        static float soundsp_;                  // Stores calculated speed of sound in M/S
-        const float soundcm_ = 0.0343;          // Stores calculated speed of sound in cm/ms
+        static float soundcm_;          // Stores calculated speed of sound in cm/ms
         const unsigned int maxDistance_ = 400;  // Maximum distance of 400cm
         
         unsigned long duration_;                // Stores First HC-SR04 pulse duration value
@@ -48,14 +44,18 @@ class ObstacleSensor
         // Constructor reads in pin details as well as relative to car location and direction details
         ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float relativeX, float relativeY, float relativeDir);
 
-        // Calculates the speed of sound based on humidity and temperature found by DHT22 sensor
-        static void calculateSoundCm();
+        // Calculates the speed of sound based on humidity and temperature found by DHT22 sensor with paramater dhtPin
+        // which is the arduino pin assigned to be the data input of the dht
+        static void calculateSoundCm(uint8_t dhtPin);
 
         // Calculates x and y components to obstacle found by this sensor averaged iterations times
         // by taking into account the yaw of the vehicle, the offset of the sensor relative to the
         // pozyx tag, the angle of the sensor relative to the vehicle and the distance the sensor
         // calculates relative to itself.
         void detectObstacles(uint8_t iterations);
+
+        // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
+        void printDistance(String sensorName);
 };
 
 #endif
