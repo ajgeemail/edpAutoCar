@@ -39,7 +39,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.print(temp);
     Serial.print(" Humidity: ");
     Serial.print(hum);
-    Serial.print("Speed of sound (cm/ms): ");
+    Serial.print(" Speed of sound (cm/ms): ");
     Serial.println(soundcm_, 6);
 }
 

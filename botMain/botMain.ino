@@ -3,7 +3,7 @@
 // ***** INSTRUCTIONS:                                                                                          ***** //
 // ***** 1. Ensure all libraries are installed by navigating Sketch > Include Library > Manage Libraries        ***** //
 // *****    and searching for the following libraries:  (i)     DHT                                             ***** //
-// *****                                                (ii)    Adafuit Unified Sensor Library                  ***** //
+// *****                                                (ii)    Adafuit Unified Sensor                          ***** //
 // *****                                                (iii)   Adafruit AM2315                                 ***** //
 // ***** 2. 
 // ****************************************************************************************************************** //
