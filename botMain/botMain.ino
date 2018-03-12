@@ -24,7 +24,7 @@
 #define iterations 10
 
 // Setup Sensor 1 variables
-const uint8_t frontTriggerPin = 5;
+const uint8_t frontTriggerPin = 4;
 const uint8_t frontEchoPin = frontTriggerPin;
 const float frontXOffset = 0; // cm
 const float frontYOffset = 10; // cm
@@ -34,7 +34,7 @@ float frontDistanceY;
 float frontMeasuredDistance;
 
 // Setup Sensor 2 variables
-const uint8_t leftTriggerPin = 10;
+const uint8_t leftTriggerPin = 2;
 const uint8_t leftEchoPin = leftTriggerPin;
 const float leftXOffset = -5; // cm
 const float leftYOffset = 2; // cm
@@ -44,7 +44,7 @@ float leftDistanceY;
 float leftMeasuredDistance;
 
 // Setup Sensor 3 variables
-const uint8_t rightTriggerPin = 13;
+const uint8_t rightTriggerPin = 6;
 const uint8_t rightEchoPin = rightTriggerPin;
 const float rightXOffset = 5; // cm
 const float rightYOffset = 2; // cm
@@ -54,41 +54,81 @@ float rightDistanceY;
 float rightMeasuredDistance;
 
 // DHT22 Sensor variables
-const uint8_t dhtPin = 7;
+const uint8_t dhtPin = 8;
 
 // Create sensor objects with relevant info
 ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontDirectionAngle);
 ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftDirectionAngle);
 ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightDirectionAngle);
 
-void setup() {
-    // put your setup code here, to run once:
+void setup() 
+{
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
 }
 
-void loop() {
+void loop() 
+{
+    detectAllSensors();
+}
+
+// Completes measurements from all sensors *** IN THE FUTURE MIGHT WRITE FUNCTIONS TO USE DIFFERENT COMBINATIONS OF THE SENSORS AS NEEDED ***
+void detectAllSensors()
+{
+    bool frontComplete = false;
+    bool leftComplete = false;
+    bool rightComplete = false;
+    
     // Sensor 1 data
-    frontSensor.detectObstacles(iterations);
+    frontComplete = frontSensor.detectObstacles(iterations);
     frontDistanceX = frontSensor.objXDist_;
     frontDistanceY = frontSensor.objYDist_;
     frontMeasuredDistance = frontSensor.distance_;
 
-    // Sensor 2 data
-    leftSensor.detectObstacles(iterations);
-    leftDistanceX = leftSensor.objXDist_;
-    leftDistanceY = leftSensor.objYDist_;
-    leftMeasuredDistance = leftSensor.distance_;
+    // Wait for sensor 1 to finish to begin sensor 2 measurements
+    if (frontComplete == true)
+    {
+        // Sensor 2 data
+        leftComplete = leftSensor.detectObstacles(iterations);
+        leftDistanceX = leftSensor.objXDist_;
+        leftDistanceY = leftSensor.objYDist_;
+        leftMeasuredDistance = leftSensor.distance_;
 
-    // Sensor 3 data
-    rightSensor.detectObstacles(iterations);
-    rightDistanceX = rightSensor.objXDist_;
-    rightDistanceY = rightSensor.objYDist_;
-    rightMeasuredDistance = rightSensor.distance_;
+        // Wait for sensor 2 to finish to begin sensor 3 measurements
+        if (leftComplete == true)
+        {
+            // Sensor 3 data
+            rightComplete = rightSensor.detectObstacles(iterations);
+            rightDistanceX = rightSensor.objXDist_;
+            rightDistanceY = rightSensor.objYDist_;
+            rightMeasuredDistance = rightSensor.distance_;
+        }
+    }
 
     frontSensor.printDistance("Front: ");
     leftSensor.printDistance("Left:  ");
     rightSensor.printDistance("Right: ");
+}
+
+// Detects with only left sensor
+void detectLeftSensor()
+{
+    leftSensor.detectObstacles(iterations);
+    leftSensor.printDistance("Left:  ");
+}
+
+// Detects with only right sensor
+void detectRightSensor()
+{
+    rightSensor.detectObstacles(iterations);
+    rightSensor.printDistance("Right: ");
+}
+
+// Detects with only front sensor
+void detectFrontSensor()
+{
+    frontSensor.detectObstacles(iterations);
+    frontSensor.printDistance("Right: ");
 }
 
 

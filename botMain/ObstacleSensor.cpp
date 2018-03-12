@@ -43,7 +43,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.println(soundcm_, 6);
 }
 
-void ObstacleSensor::detectObstacles(uint8_t iterations)
+bool ObstacleSensor::detectObstacles(uint8_t iterations)
 {
     // Measure duration    
     duration_ = sonar_.ping_median(iterations);
@@ -78,6 +78,7 @@ void ObstacleSensor::detectObstacles(uint8_t iterations)
         objXDist_ = xDistComp + xOffsetComp;
         objYDist_ = yDistComp + yOffsetComp;
     }
+    return true;
 }
 
 void ObstacleSensor::printDistance(String sensorName)
@@ -101,6 +102,5 @@ void ObstacleSensor::printDistance(String sensorName)
         Serial.print("Y Distance: ");
         Serial.print(this->objYDist_);
         Serial.println(" cm ");
-        //delay(500);
     }
 }
