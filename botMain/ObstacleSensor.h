@@ -52,7 +52,7 @@ class ObstacleSensor
         // by taking into account the yaw of the vehicle, the offset of the sensor relative to the
         // pozyx tag, the angle of the sensor relative to the vehicle and the distance the sensor
         // calculates relative to itself.
-        bool detectObstacles(uint8_t iterations);
+        uint8_t detectObstacles(uint8_t iterations);
 
         // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
         void printDistance(String sensorName);

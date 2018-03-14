@@ -9,6 +9,7 @@
 // ****************************************************************************************************************** //
 
 #include "ObstacleSensor.h"
+#include "StackList.h"
 
 // Direction variables in radians
 #define LEFT 270*(PI/180)
@@ -61,6 +62,9 @@ ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOf
 ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftDirectionAngle);
 ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightDirectionAngle);
 
+StackList<float> xObstacleList;
+StackList<float> yObstacleList;
+
 void setup() 
 {
     Serial.begin(9600);
@@ -75,30 +79,30 @@ void loop()
 // Completes measurements from all sensors *** IN THE FUTURE MIGHT WRITE FUNCTIONS TO USE DIFFERENT COMBINATIONS OF THE SENSORS AS NEEDED ***
 void detectAllSensors()
 {
-    bool frontComplete = false;
-    bool leftComplete = false;
-    bool rightComplete = false;
+    uint8_t frontMeasured = 0;
+    uint8_t leftMeasured = 0;
+    uint8_t rightMeasured = 0;    
     
     // Sensor 1 data
-    frontComplete = frontSensor.detectObstacles(iterations);
+    frontMeasured = frontSensor.detectObstacles(iterations);
     frontDistanceX = frontSensor.objXDist_;
     frontDistanceY = frontSensor.objYDist_;
     frontMeasuredDistance = frontSensor.distance_;
 
     // Wait for sensor 1 to finish to begin sensor 2 measurements
-    if (frontComplete == true)
+    if (frontMeasured == 1 || frontMeasured == 0)
     {
         // Sensor 2 data
-        leftComplete = leftSensor.detectObstacles(iterations);
+        leftMeasured = leftSensor.detectObstacles(iterations);
         leftDistanceX = leftSensor.objXDist_;
         leftDistanceY = leftSensor.objYDist_;
         leftMeasuredDistance = leftSensor.distance_;
 
         // Wait for sensor 2 to finish to begin sensor 3 measurements
-        if (leftComplete == true)
+        if (leftMeasured == 1 || leftMeasured == 0)
         {
             // Sensor 3 data
-            rightComplete = rightSensor.detectObstacles(iterations);
+            rightMeasured = rightSensor.detectObstacles(iterations);
             rightDistanceX = rightSensor.objXDist_;
             rightDistanceY = rightSensor.objYDist_;
             rightMeasuredDistance = rightSensor.distance_;
@@ -111,24 +115,27 @@ void detectAllSensors()
 }
 
 // Detects with only left sensor
-void detectLeftSensor()
+uint8_t detectLeftSensor()
 {
-    leftSensor.detectObstacles(iterations);
+    uint8_t measured = leftSensor.detectObstacles(iterations);
     leftSensor.printDistance("Left:  ");
+    return measured;
 }
 
 // Detects with only right sensor
-void detectRightSensor()
+uint8_t detectRightSensor()
 {
-    rightSensor.detectObstacles(iterations);
+    uint8_t measured = rightSensor.detectObstacles(iterations);
     rightSensor.printDistance("Right: ");
+    return measured;
 }
 
 // Detects with only front sensor
-void detectFrontSensor()
+uint8_t detectFrontSensor()
 {
-    frontSensor.detectObstacles(iterations);
+    uint8_t measured = frontSensor.detectObstacles(iterations);
     frontSensor.printDistance("Right: ");
+    return measured;
 }
 
 

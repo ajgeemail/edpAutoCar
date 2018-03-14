@@ -43,7 +43,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.println(soundcm_, 6);
 }
 
-bool ObstacleSensor::detectObstacles(uint8_t iterations)
+uint8_t ObstacleSensor::detectObstacles(uint8_t iterations)
 {
     // Measure duration    
     duration_ = sonar_.ping_median(iterations);
@@ -57,6 +57,7 @@ bool ObstacleSensor::detectObstacles(uint8_t iterations)
         objXDist_ = 1023.0f;
         objYDist_ = 1023.0f;
         distance_ = 1023.0f;
+        return 0;
     }
     else 
     {
@@ -77,8 +78,8 @@ bool ObstacleSensor::detectObstacles(uint8_t iterations)
         // Calculate x and y components of distance from pozyx sensor
         objXDist_ = xDistComp + xOffsetComp;
         objYDist_ = yDistComp + yOffsetComp;
+        return 1;
     }
-    return true;
 }
 
 void ObstacleSensor::printDistance(String sensorName)
