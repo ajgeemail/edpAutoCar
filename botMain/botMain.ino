@@ -22,7 +22,7 @@
 #define DIAG_BACK_RIGHT 135*(PI/180)
 
 // Number of iterations in calculating average distance
-#define iterations 10
+#define iterations 5
 
 // Setup Sensor 1 variables
 const uint8_t frontTriggerPin = 4;
