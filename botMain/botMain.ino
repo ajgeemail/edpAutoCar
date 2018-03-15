@@ -25,7 +25,7 @@
 #define iterations 5
 
 // Setup Sensor 1 variables
-const uint8_t frontTriggerPin = 4;
+const uint8_t frontTriggerPin = 17;
 const uint8_t frontEchoPin = frontTriggerPin;
 const float frontXOffset = 0; // cm
 const float frontYOffset = 10; // cm
@@ -35,7 +35,7 @@ float frontDistanceY;
 float frontMeasuredDistance;
 
 // Setup Sensor 2 variables
-const uint8_t leftTriggerPin = 2;
+const uint8_t leftTriggerPin = 15;
 const uint8_t leftEchoPin = leftTriggerPin;
 const float leftXOffset = -5; // cm
 const float leftYOffset = 2; // cm
@@ -45,7 +45,7 @@ float leftDistanceY;
 float leftMeasuredDistance;
 
 // Setup Sensor 3 variables
-const uint8_t rightTriggerPin = 6;
+const uint8_t rightTriggerPin = 19;
 const uint8_t rightEchoPin = rightTriggerPin;
 const float rightXOffset = 5; // cm
 const float rightYOffset = 2; // cm
@@ -55,7 +55,7 @@ float rightDistanceY;
 float rightMeasuredDistance;
 
 // DHT22 Sensor variables
-const uint8_t dhtPin = 8;
+const uint8_t dhtPin = 14;
 
 // Create sensor objects with relevant info
 ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontDirectionAngle);
@@ -73,7 +73,8 @@ void setup()
 
 void loop() 
 {
-    detectAllSensors();
+    //detectAllSensors();
+    detectFrontSensor();
 }
 
 // Completes measurements from all sensors *** IN THE FUTURE MIGHT WRITE FUNCTIONS TO USE DIFFERENT COMBINATIONS OF THE SENSORS AS NEEDED ***
