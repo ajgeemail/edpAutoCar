@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=albr1o7Z1nw - I use git bash instead of unix lik
 
 ## START INSTRUCTIONS:
 1. To get repository from here to your PC - copy clone URL (from green clone or download button) from the top right of this github page
-2. Navigate in your windows explorer to your chosen destination folder (where you want the repository to be)
+2. Navigate in your windows explorer to your chosen destination folder (where you want the repository to be) - mine is in my EDP subject folder.
 3. Right click in window and open Git Bash
 4. enter "git clone *PASTE COPIED URL HERE*" - this will clone the github repository to your directory
 
