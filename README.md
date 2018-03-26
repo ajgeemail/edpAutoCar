@@ -16,6 +16,8 @@ https://www.youtube.com/watch?v=albr1o7Z1nw - I use git bash instead of unix lik
 2. Navigate in your windows explorer to your chosen destination folder (where you want the repository to be) - mine is in my EDP subject folder.
 3. Right click in window and open Git Bash
 4. enter "git clone *PASTE COPIED URL HERE*" - this will clone the github repository to your directory
+5. Send me your github username so I can send you an invite on github.
+6. Once invite received accept it and you should be good to now push and pull as needed.
 
 **AFTER CHANGES MADE READY TO BE UPLOADED FROM PC TO GITHUB (i.e. YOU'VE PUT YOUR CODE IN THE FOLDER OR UPDATED THE CODE YOU ALREADY PUT THERE**
 
