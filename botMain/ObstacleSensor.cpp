@@ -3,13 +3,16 @@
 #include "DHT.h"
 
 float ObstacleSensor::soundcm_ = 0.0343f;
+float ObstacleSensor::yaw_;
+float ObstacleSensor::xPos_;
+float ObstacleSensor::yPos_;
 
-ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float directionAngle) :
+ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle) :
     triggerPin_(triggerPin),
     echoPin_(echoPin),
     offsetX_(offsetX),
     offsetY_(offsetY),
-    directionAngle_(directionAngle),
+    sensorAngle_(sensorAngle),
     sonar_(triggerPin_, echoPin_, maxDistance_)
 {
 
@@ -57,27 +60,35 @@ uint8_t ObstacleSensor::detectObstacles(uint8_t iterations)
         objXDist_ = 1023.0f;
         objYDist_ = 1023.0f;
         distance_ = 1023.0f;
+        objX_ = 1023.0f;
+        objY_ = 1023.0f;
         return 0;
     }
     else 
     {
         // Currently yaw defined as angle bot's front is facing, relative to y direction of grid
-        float yaw = 0*(PI/180);    // ***** Change to yaw = getYaw() from pozyx *****
         // Calculate the x and y components of measured distance based on angle of sensor
-        float xDistComp = distance_*sin(directionAngle_ + yaw);
-        float yDistComp = distance_*cos(directionAngle_ + yaw);
+        float xDistComp = distance_*sin(sensorAngle_ + yaw_);
+        float yDistComp = distance_*cos(sensorAngle_ + yaw_);
+
+        unitVect_[0] = xDistComp/distance_;
+        unitVect_[1] = yDistComp/distance_;
 
         // Calculate offset vector from pozyx
         float offsetDist = sqrt(offsetX_*offsetX_ + offsetY_*offsetY_);
         float offsetAngle = atan2(offsetX_, offsetY_);
 
         // Calculate x and y offset components including yaw changes
-        float xOffsetComp = offsetDist*sin(offsetAngle + yaw);
-        float yOffsetComp = offsetDist*cos(offsetAngle + yaw);
+        float xOffsetComp = offsetDist*sin(offsetAngle + yaw_);
+        float yOffsetComp = offsetDist*cos(offsetAngle + yaw_);
 
         // Calculate x and y components of distance from pozyx sensor
         objXDist_ = xDistComp + xOffsetComp;
         objYDist_ = yDistComp + yOffsetComp;
+
+        // Calculates x and y coordinates by summing distance from pozyx with pozyx coordinates
+        objX_ = objXDist_ + xPos_;
+        objY_ = objYDist_ + yPos_;
         return 1;
     }
 }
