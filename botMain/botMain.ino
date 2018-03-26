@@ -11,7 +11,13 @@
 #include "ObstacleSensor.h"
 #include "StackList.h"
 
-// Direction variables in radians
+// **************** AVS SYSTEM WIDE VARIABLES ******************
+float avsHeading_ = 0*(PI/180);  // This will need to be updated with pozyx data
+float avsX_ = 0;        // This will need to be updated with pozyx data
+float avsY_ = 0;        // This will need to be updated with pozyx data
+
+// **************** ODS SPECIFIC VARIABLES *********************
+// Direction variables in radians (relative to AVS heading)
 #define LEFT 270*(PI/180)
 #define FORWARD 0*(PI/180)
 #define RIGHT 90*(PI/180)
@@ -29,7 +35,7 @@ const uint8_t frontTriggerPin = 17;
 const uint8_t frontEchoPin = frontTriggerPin;
 const float frontXOffset = 0; // cm
 const float frontYOffset = 10; // cm
-const float frontDirectionAngle = FORWARD;
+const float frontsensorAngle = FORWARD;
 float frontDistanceX;
 float frontDistanceY;
 float frontMeasuredDistance;
@@ -39,7 +45,7 @@ const uint8_t leftTriggerPin = 15;
 const uint8_t leftEchoPin = leftTriggerPin;
 const float leftXOffset = -5; // cm
 const float leftYOffset = 2; // cm
-const float leftDirectionAngle = LEFT;
+const float leftsensorAngle = LEFT;
 float leftDistanceX;
 float leftDistanceY;
 float leftMeasuredDistance;
@@ -49,7 +55,7 @@ const uint8_t rightTriggerPin = 19;
 const uint8_t rightEchoPin = rightTriggerPin;
 const float rightXOffset = 5; // cm
 const float rightYOffset = 2; // cm
-const float rightDirectionAngle = RIGHT;
+const float rightsensorAngle = RIGHT;
 float rightDistanceX;
 float rightDistanceY;
 float rightMeasuredDistance;
@@ -58,21 +64,21 @@ float rightMeasuredDistance;
 const uint8_t dhtPin = 14;
 
 // Create sensor objects with relevant info
-ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontDirectionAngle);
-ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftDirectionAngle);
-ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightDirectionAngle);
-
-StackList<float> xObstacleList;
-StackList<float> yObstacleList;
+ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontsensorAngle);
+ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftsensorAngle);
+ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
+// *********************** END ODS SPECIFIC VARIABLES **************************************************
 
 void setup() 
 {
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
+    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
 }
 
 void loop() 
 {
+    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
     detectAllSensors();
     //detectFrontSensor();
 }
@@ -90,6 +96,27 @@ void detectAllSensors()
     frontDistanceY = frontSensor.objYDist_;
     frontMeasuredDistance = frontSensor.distance_;
 
+    // Allocate obstacle location
+    if (frontMeasured == 1)
+    {
+        Serial.print("Front: [x, y] = [");
+        Serial.print(frontSensor.objX_);
+        Serial.print(", ");
+        Serial.print(frontSensor.objY_);
+        Serial.println("]");
+
+        int8_t frontObstacleX = (frontSensor.objX_ + 17*frontSensor.unitVect_[0])/50;
+        int8_t frontObstacleY = (frontSensor.objY_ + 17*frontSensor.unitVect_[1])/50;
+
+        Serial.print("FrontGrid: [x, y] = [");
+        Serial.print(frontObstacleX);
+        Serial.print(", ");
+        Serial.print(frontObstacleY);
+        Serial.println("]");
+
+        //Brady.addObstacle(frontObstacleX, frontObstacleY);
+    }
+
     // Wait for sensor 1 to finish to begin sensor 2 measurements
     if (frontMeasured == 1 || frontMeasured == 0)
     {
@@ -99,6 +126,28 @@ void detectAllSensors()
         leftDistanceY = leftSensor.objYDist_;
         leftMeasuredDistance = leftSensor.distance_;
 
+        // Allocate obstacle location
+        if (leftMeasured == 1)
+        {
+            
+            Serial.print("Left: [x, y] = [");
+            Serial.print(leftSensor.objX_);
+            Serial.print(", ");
+            Serial.print(leftSensor.objY_);
+            Serial.println("]");
+
+            int8_t leftObstacleX = (leftSensor.objX_ + 17*leftSensor.unitVect_[0])/50;
+            int8_t leftObstacleY = (leftSensor.objY_ + 17*leftSensor.unitVect_[1])/50;
+
+            Serial.print("LeftGrid: [x, y] = [");
+            Serial.print(leftObstacleX);
+            Serial.print(", ");
+            Serial.print(leftObstacleY);
+            Serial.println("]");
+
+            //Brady.addObstacle(leftObstacleX, leftObstacleY);
+        }
+
         // Wait for sensor 2 to finish to begin sensor 3 measurements
         if (leftMeasured == 1 || leftMeasured == 0)
         {
@@ -107,12 +156,34 @@ void detectAllSensors()
             rightDistanceX = rightSensor.objXDist_;
             rightDistanceY = rightSensor.objYDist_;
             rightMeasuredDistance = rightSensor.distance_;
+
+            // Allocate obstacle location
+            if (rightMeasured == 1)
+            {
+                
+                Serial.print("Right: [x, y] = [");
+                Serial.print(rightSensor.objX_);
+                Serial.print(", ");
+                Serial.print(rightSensor.objY_);
+                Serial.println("]");
+
+                int8_t rightObstacleX = (rightSensor.objX_ + 17*rightSensor.unitVect_[0])/50;
+                int8_t rightObstacleY = (rightSensor.objY_ + 17*rightSensor.unitVect_[1])/50;
+
+                Serial.print("RightGrid: [x, y] = [");
+                Serial.print(rightObstacleX);
+                Serial.print(", ");
+                Serial.print(rightObstacleY);
+                Serial.println("]");
+
+                //Brady.addObstacle(rightObstacleX, rightObstacleY);
+            }
         }
     }
 
-    frontSensor.printDistance("Front: ");
-    leftSensor.printDistance("Left:  ");
-    rightSensor.printDistance("Right: ");
+    //frontSensor.printDistance("Front: ");
+    //leftSensor.printDistance("Left:  ");
+    //rightSensor.printDistance("Right: ");
 }
 
 // Detects with only left sensor

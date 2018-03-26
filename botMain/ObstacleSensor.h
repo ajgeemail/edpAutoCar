@@ -23,16 +23,30 @@ class ObstacleSensor
         
         unsigned long duration_;                // Stores First HC-SR04 pulse duration value
         float objGridRef_[2];                   // objGridRef_[0] = x coordinate, objGridRef_[1] = y coordinate
+
+        // AVS pozyx data
+        static float yaw_;
+        static float xPos_;
+        static float yPos_;
     
     public :
         // Locations and directions on vehicle relative to Posyx sensor or center or some other reference
-        float offsetX_, offsetY_, directionAngle_;
+        float offsetX_, offsetY_, sensorAngle_;
+
+        // Angle of sensor relative to the grid (i.e. sensorAngle_ + yaw_)
+        float sensorGridAngle_;
+
+        // Unit vector of vector from sensor to detected obstacle (i.e xComp + yComp)
+        int8_t unitVect_[2];
 
         // Distance from sensor to object detected
         float distance_;
 
         // Distances from pozyx to object detected
         float objXDist_, objYDist_;
+
+        // Coordinates of object detected
+        float objX_, objY_;
 
         // NewPing object causes HC-SR04 sensor pulses and enable
         NewPing sonar_;
@@ -42,7 +56,7 @@ class ObstacleSensor
         ObstacleSensor();
 
         // Constructor reads in pin details as well as relative to car location and direction details
-        ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float relativeX, float relativeY, float relativeDir);
+        ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle);
 
         // Calculates the speed of sound based on humidity and temperature found by DHT22 sensor with paramater dhtPin
         // which is the arduino pin assigned to be the data input of the dht
@@ -56,6 +70,18 @@ class ObstacleSensor
 
         // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
         void printDistance(String sensorName);
+
+        // Updates all sensor data
+        static void updateOdsData(float x, float y, float heading)
+        {
+            xPos_ = x;
+            yPos_ = y;
+            yaw_ = heading;
+        }
+
+        
+
+        
 };
 
 #endif
