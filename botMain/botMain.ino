@@ -73,8 +73,8 @@ void setup()
 
 void loop() 
 {
-    //detectAllSensors();
-    detectFrontSensor();
+    detectAllSensors();
+    //detectFrontSensor();
 }
 
 // Completes measurements from all sensors *** IN THE FUTURE MIGHT WRITE FUNCTIONS TO USE DIFFERENT COMBINATIONS OF THE SENSORS AS NEEDED ***
@@ -135,7 +135,7 @@ uint8_t detectRightSensor()
 uint8_t detectFrontSensor()
 {
     uint8_t measured = frontSensor.detectObstacles(iterations);
-    frontSensor.printDistance("Right: ");
+    frontSensor.printDistance("Front: ");
     return measured;
 }
 
