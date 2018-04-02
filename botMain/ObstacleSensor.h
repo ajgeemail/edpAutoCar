@@ -5,10 +5,11 @@
 // allowing for distance calculations from the pozyx locator to be conducted.
 // INPUTS: 
 // Still require pozyx yaw angle (interface between sensor and pozyx)
-// Still require humidity and temperature details from DHT-22 for improved accuracy
+// Humidity and temperature details from DHT-22 for improved accuracy
+// Interfaces with HC-SR04 sensors via NewPing class
 //
 // OUTPUTS TO:
-// Outputs location of obstacle relative to grid references (interface with nav and GUI)
+// Objects used by ObstacleDetection class to output grid references to nav.
 
 
 #include "NewPing.h"
@@ -65,8 +66,8 @@ class ObstacleSensor
         // Calculates x and y components to obstacle found by this sensor averaged iterations times
         // by taking into account the yaw of the vehicle, the offset of the sensor relative to the
         // pozyx tag, the angle of the sensor relative to the vehicle and the distance the sensor
-        // calculates relative to itself.
-        uint8_t detectObstacles(uint8_t iterations);
+        // calculates relative to itself. Returns 0 if no obstacle detected, 1 if obstacle detected
+        uint8_t activateSensor(uint8_t iterations);
 
         // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
         void printDistance(String sensorName);

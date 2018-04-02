@@ -46,7 +46,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.println(soundcm_, 6);
 }
 
-uint8_t ObstacleSensor::detectObstacles(uint8_t iterations)
+uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
 {
     // Measure duration    
     duration_ = sonar_.ping_median(iterations);
