@@ -28,8 +28,15 @@ class ObstacleDetection
         uint8_t detectFrontSensor();
         
     public: 
+        // Default constructor
         ObstacleDetection();
+
+        // Constructor which takes in three ObstacleSensor object pointers
         ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr);
+
+        // Standard detection function which activates all sensors and converts any
+        // obstacles to grid references. Will be in loop function so constantly 
+        // firing.
         void detectAllSensors();
         
 };

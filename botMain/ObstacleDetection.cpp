@@ -34,97 +34,53 @@ void ObstacleDetection::detectAllSensors()
     float rightMeasuredDistance;
     */
     
-    // Sensor 1 data
+    // Update Sensor 1 data
     frontMeasured = frontSensorPtr_->activateSensor(iterations);
     //frontDistanceX = frontSensorPtr_->objXDist_;
     //frontDistanceY = frontSensorPtr_->objYDist_;
     //frontMeasuredDistance = frontSensorPtr_->distance_;
 
-    // Allocate obstacle location
+    // Output obstacle grid reference
     if (frontMeasured == 1)
     {
-        Serial.print("Front: [x, y] = [");
-        Serial.print(frontSensorPtr_->objX_);
-        Serial.print(", ");
-        Serial.print(frontSensorPtr_->objY_);
-        Serial.println("]");
-
-        int8_t frontObstacleX = (frontSensorPtr_->objX_ + 17*frontSensorPtr_->unitVect_[0])/50;
-        int8_t frontObstacleY = (frontSensorPtr_->objY_ + 17*frontSensorPtr_->unitVect_[1])/50;
-
-        Serial.print("FrontGrid: [x, y] = [");
-        Serial.print(frontObstacleX);
-        Serial.print(", ");
-        Serial.print(frontObstacleY);
-        Serial.println("]");
-
-        //Brady.addObstacle(frontObstacleX, frontObstacleY);
+        frontSensorPtr_->printDistance("Front");        
+        //Brady.addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
     }
 
     // Wait for sensor 1 to finish to begin sensor 2 measurements
     if (frontMeasured == 1 || frontMeasured == 0)
     {
-        // Sensor 2 data
+        // Update Sensor 2 data
         leftMeasured = leftSensorPtr_->activateSensor(iterations);
         //leftDistanceX = leftSensorPtr_->objXDist_;
         //leftDistanceY = leftSensorPtr_->objYDist_;
         //leftMeasuredDistance = leftSensorPtr_->distance_;
-
-        // Allocate obstacle location
+        
+        // Output obstacle grid reference
         if (leftMeasured == 1)
         {
-            
-            Serial.print("Left: [x, y] = [");
-            Serial.print(leftSensorPtr_->objX_);
-            Serial.print(", ");
-            Serial.print(leftSensorPtr_->objY_);
-            Serial.println("]");
-
-            int8_t leftObstacleX = (leftSensorPtr_->objX_ + 17*leftSensorPtr_->unitVect_[0])/50;
-            int8_t leftObstacleY = (leftSensorPtr_->objY_ + 17*leftSensorPtr_->unitVect_[1])/50;
-
-            Serial.print("LeftGrid: [x, y] = [");
-            Serial.print(leftObstacleX);
-            Serial.print(", ");
-            Serial.print(leftObstacleY);
-            Serial.println("]");
-
-            //Brady.addObstacle(leftObstacleX, leftObstacleY);
+            leftSensorPtr_->printDistance("Left");
+            //Brady.addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
         }
-
+        
         // Wait for sensor 2 to finish to begin sensor 3 measurements
         if (leftMeasured == 1 || leftMeasured == 0)
         {
-            // Sensor 3 data
+            // Update Sensor 3 data
             rightMeasured = rightSensorPtr_->activateSensor(iterations);
             //rightDistanceX = rightSensorPtr_->objXDist_;
             //rightDistanceY = rightSensorPtr_->objYDist_;
             //rightMeasuredDistance = rightSensorPtr_->distance_;
-
-            // Allocate obstacle location
+            
+            // Output obstacle grid reference
             if (rightMeasured == 1)
             {
-                
-                Serial.print("Right: [x, y] = [");
-                Serial.print(rightSensorPtr_->objX_);
-                Serial.print(", ");
-                Serial.print(rightSensorPtr_->objY_);
-                Serial.println("]");
-
-                int8_t rightObstacleX = (rightSensorPtr_->objX_ + 17*rightSensorPtr_->unitVect_[0])/50;
-                int8_t rightObstacleY = (rightSensorPtr_->objY_ + 17*rightSensorPtr_->unitVect_[1])/50;
-
-                Serial.print("RightGrid: [x, y] = [");
-                Serial.print(rightObstacleX);
-                Serial.print(", ");
-                Serial.print(rightObstacleY);
-                Serial.println("]");
-
-                //Brady.addObstacle(rightObstacleX, rightObstacleY);
+                rightSensorPtr_->printDistance("Right");
+                //Brady.addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);
             }
         }
     }
-
+    
     //*frontSensorPtr_->printDistance("Front: ");
     //*leftSensorPtr_->printDistance("Left:  ");
     //*rightSensorPtr_->printDistance("Right: ");

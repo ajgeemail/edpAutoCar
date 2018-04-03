@@ -49,6 +49,12 @@ class ObstacleSensor
         // Coordinates of object detected
         float objX_, objY_;
 
+        // Converted object grid reference from coordinates above
+        int8_t gridX_, gridY_;
+
+        // Bias for grid reference conversion
+        static int8_t bias_;
+
         // NewPing object causes HC-SR04 sensor pulses and enable
         NewPing sonar_;
     
@@ -60,7 +66,9 @@ class ObstacleSensor
         ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle);
 
         // Calculates the speed of sound based on humidity and temperature found by DHT22 sensor with paramater dhtPin
-        // which is the arduino pin assigned to be the data input of the dht
+        // which is the arduino pin assigned to be the data input of the dht. Will be used in setup function so 
+        // only accessed once at the start. This could be changed if conditions are expected to vary throughout
+        // use time.
         static void calculateSoundCm(uint8_t dhtPin);
 
         // Calculates x and y components to obstacle found by this sensor averaged iterations times
@@ -72,7 +80,7 @@ class ObstacleSensor
         // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
         void printDistance(String sensorName);
 
-        // Updates all sensor data
+        // Updates all sensor data. Will be in loop function so constnatly firing
         static void updateOdsData(float x, float y, float heading)
         {
             xPos_ = x;

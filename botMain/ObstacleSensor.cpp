@@ -2,10 +2,15 @@
 
 #include "DHT.h"
 
-float ObstacleSensor::soundcm_ = 0.0343f;
-float ObstacleSensor::yaw_;
-float ObstacleSensor::xPos_;
-float ObstacleSensor::yPos_;
+/*static */ float ObstacleSensor::soundcm_ = 0.0343f;
+/*static */ float ObstacleSensor::yaw_;
+/*static */ float ObstacleSensor::xPos_;
+/*static */ float ObstacleSensor::yPos_;
+
+// Max error + bias must be less than 35cm to remain in correct grid reference 
+// since this is the size of the obstacle. Hence error of 16cm and projection
+// bias of 17cm remains under this value.
+/*static */ int8_t ObstacleSensor::bias_ = 17;
 
 ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle) :
     triggerPin_(triggerPin),
@@ -89,6 +94,11 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
         // Calculates x and y coordinates by summing distance from pozyx with pozyx coordinates
         objX_ = objXDist_ + xPos_;
         objY_ = objYDist_ + yPos_;
+
+        // Convert x and y obstacle coordinate to grid reference
+        gridX_ = (objX_ + bias_*unitVect_[0])/50;
+        gridY_ = (objY_ + bias_*unitVect_[1])/50;
+        
         return 1;
     }
 }
@@ -96,6 +106,7 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
 void ObstacleSensor::printDistance(String sensorName)
 {
     Serial.print(sensorName);
+    Serial.print(": ");
     
     if (this->distance_ == 1023.0f)
     {
@@ -103,16 +114,28 @@ void ObstacleSensor::printDistance(String sensorName)
     }
     else 
     {
-        Serial.print("Total Distance: ");
+        Serial.print("Distance: ");
         Serial.print(this->distance_);
         Serial.print(" cm\t");
         
-        Serial.print("X Distance: ");
+        Serial.print("X Dist: ");
         Serial.print(this->objXDist_);
         Serial.print(" cm\t");
 
-        Serial.print("Y Distance: ");
+        Serial.print("Y Dist: ");
         Serial.print(this->objYDist_);
-        Serial.println(" cm ");
+        Serial.print(" cm\t ");
+
+        Serial.print("Coord [x, y] = [");
+        Serial.print(this->objX_);
+        Serial.print(", ");
+        Serial.print(this->objY_);
+        Serial.print("]\t");
+               
+        Serial.print("Grid: [x, y] = [");
+        Serial.print(this->gridX_);
+        Serial.print(", ");
+        Serial.print(this->gridY_);
+        Serial.println("]");
     }
 }

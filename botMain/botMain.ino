@@ -11,13 +11,13 @@
 #include "ObstacleSensor.h"
 #include "ObstacleDetection.h"
 
-// **************** AVS SYSTEM WIDE VARIABLES ******************
+// **************** AVS SYSTEM WIDE VARIABLES *******************************************************
 float avsHeading_ = 0*(PI/180);  // This will need to be updated with pozyx data
 float avsX_ = 0;        // This will need to be updated with pozyx data
 float avsY_ = 0;        // This will need to be updated with pozyx data
-// **************** END AVS SYSTEM WIDE VARIABLES **************
+// **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
-// **************** ODS SPECIFIC VARIABLES *********************
+// **************** ODS SPECIFIC VARIABLES **********************************************************
 // Direction variables in radians (relative to AVS heading)
 #define LEFT 270*(PI/180)
 #define FORWARD 0*(PI/180)
