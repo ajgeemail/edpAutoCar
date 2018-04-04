@@ -20,14 +20,10 @@ class ObstacleDetection
         ObstacleSensor *frontSensorPtr_;
         ObstacleSensor *leftSensorPtr_;
         ObstacleSensor *rightSensorPtr_;
-        static const uint8_t iterations = 5;
-        
-    private: 
-        // Functions for individual sensor activations
-        uint8_t detectLeftSensor();
-        uint8_t detectRightSensor();
-        uint8_t detectFrontSensor();
-        
+
+        // Number of iterations in calculating average distance
+        static const uint8_t iterations;
+
     public: 
         // Default constructor
         ObstacleDetection();
@@ -39,6 +35,12 @@ class ObstacleDetection
         // obstacles to grid references. Will be in loop function so constantly 
         // firing.
         void detectAllSensors();
+        
+    private: 
+        // Functions for individual sensor activations
+        uint8_t detectLeftSensor();
+        uint8_t detectRightSensor();
+        uint8_t detectFrontSensor();
         
 };
 
