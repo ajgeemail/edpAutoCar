@@ -21,8 +21,12 @@ class ObstacleDetection
         ObstacleSensor *frontSensorPtr_;
         ObstacleSensor *leftSensorPtr_;
         ObstacleSensor *rightSensorPtr_;
+
+        // Pointer to the navigation system object
         Navigator *navPtr_;
-        static const uint8_t iterations = 5;
+
+        // Number of times the sensors are activated to average distance of detection
+        static const uint8_t iterations;
         
     private: 
         // Functions for individual sensor activations
@@ -41,6 +45,9 @@ class ObstacleDetection
         // obstacles to grid references. Will be in loop function so constantly 
         // firing.
         void detectAllSensors();
+
+        // Filled with dummy obstacles to be outputted to navigation system for testing of OD-NM interface
+        void odsToNavTestObstacles();
         
 };
 

@@ -18,8 +18,10 @@ class ObstacleSensor
     private :
         // Pin definitions
         uint8_t triggerPin_, echoPin_;
+
+        // Stores calculated speed of sound in cm/ms
+        static float soundcm_;
         
-        static float soundcm_;          // Stores calculated speed of sound in cm/ms
         const unsigned int maxDistance_ = 400;  // Maximum distance of 400cm
         
         unsigned long duration_;                // Stores First HC-SR04 pulse duration value
@@ -46,10 +48,10 @@ class ObstacleSensor
         // Distances from pozyx to object detected
         float objXDist_, objYDist_;
 
-        // Coordinates of object detected
+        // Grid coordinates at location object detected
         float objX_, objY_;
 
-        // Converted object grid reference from coordinates above
+        // Grid reference of obstacle detected converted from coordinates above
         int8_t gridX_, gridY_;
 
         // Bias for grid reference conversion
@@ -79,6 +81,9 @@ class ObstacleSensor
 
         // Prints on serial monitor the detected sensor distance, and converted x and y components relative to pozyx system
         void printDistance(String sensorName);
+
+        // Prints speed of sound details
+        static void printSound(float temp, float hum);
 
         // Updates all sensor data. Will be in loop function so constnatly firing
         static void updateOdsData(float x, float y, float heading)

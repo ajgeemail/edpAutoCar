@@ -1,4 +1,10 @@
-#include "navigator.h"
+#include "Navigator.h"
+
+// Default constructor
+Navigator::Navigator()
+{
+    
+}
 
 void Navigator::createMap(uint8_t height, uint8_t length)
 {

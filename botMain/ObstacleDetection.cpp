@@ -1,7 +1,7 @@
 #include "ObstacleDetection.h"
 
 // Number of iterations in calculating average distance
-/* static */ const uint8_t iterations = 5;
+/* static */ const uint8_t ObstacleDetection::iterations = 5;
 
 ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr) :
     frontSensorPtr_(frontSensorPtr),
@@ -117,4 +117,16 @@ uint8_t ObstacleDetection::detectFrontSensor()
     return measured;
 }
 
+void ObstacleDetection::odsToNavTestObstacles()
+{
+    navPtr_->addObstacle(0,0);
+    navPtr_->addObstacle(0,10);
+    navPtr_->addObstacle(10,10);
+    navPtr_->addObstacle(10,0);
+    navPtr_->addObstacle(5,3);
+    navPtr_->addObstacle(8,8);
+    navPtr_->addObstacle(3,7);
+    navPtr_->addObstacle(1,6);
+    navPtr_->addObstacle(9,2);
+}
 

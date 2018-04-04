@@ -41,6 +41,12 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     // Convert to cm/ms from m/s
     ObstacleSensor::soundcm_ = soundsp / 10000.0f;
 
+    // Print speed of sound details
+    printSound(temp, hum);
+}
+
+/* static */ void ObstacleSensor::printSound(float temp, float hum)
+{
     // Prints the speed of sound calculations
     Serial.println("***** SOUND CALCULATIONS *****");
     Serial.print("Temperature: ");
@@ -48,7 +54,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.print(" Humidity: ");
     Serial.print(hum);
     Serial.print(" Speed of sound (cm/ms): ");
-    Serial.println(soundcm_, 6);
+    Serial.println(ObstacleSensor::soundcm_, 6);
 }
 
 uint8_t ObstacleSensor::activateSensor(uint8_t iterations)

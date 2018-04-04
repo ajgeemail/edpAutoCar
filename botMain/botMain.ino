@@ -18,7 +18,8 @@ float avsY_ = 0;        // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
 // *********************** NM SPECIFIC VARIABLES *******************************************************
-Navigator nav;
+// Navigation and Maxing System object
+Navigator nav;  
 
 // *********************** END NM SPECIFIC VARIABLES ***************************************************
 
@@ -74,12 +75,15 @@ void setup()
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
+
+    // Adds a number of dummy obstacle locations for OD-NM interface testing purposes
+    ods.odsToNavTestObstacles();
 }
 
 void loop() 
 {
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
-    ods.detectAllSensors(&nav);
+    ods.detectAllSensors();
 }
 
 
