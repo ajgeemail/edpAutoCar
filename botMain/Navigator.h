@@ -1,8 +1,7 @@
 #ifndef NAVIGATOR_H
 #define NAVIGATOR_H
 
-#include <WProgram.h>
-#include <stdint.h>
+#include <Arduino.h>
 
 class Navigator
 {
