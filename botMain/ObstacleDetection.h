@@ -20,6 +20,7 @@ class ObstacleDetection
         ObstacleSensor *frontSensorPtr_;
         ObstacleSensor *leftSensorPtr_;
         ObstacleSensor *rightSensorPtr_;
+        static const uint8_t iterations = 5;
         
     private: 
         // Functions for individual sensor activations

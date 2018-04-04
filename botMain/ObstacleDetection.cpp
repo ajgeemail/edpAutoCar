@@ -1,7 +1,7 @@
 #include "ObstacleDetection.h"
 
 // Number of iterations in calculating average distance
-uint8_t iterations = 5;
+/* static */ const uint8_t iterations = 5;
 
 ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr) :
     frontSensorPtr_(frontSensorPtr),
