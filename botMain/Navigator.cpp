@@ -1,6 +1,6 @@
 #include "navigator.h"
 
-void createMap(uint8_t height, uint8_t length)
+void Navigator::createMap(uint8_t height, uint8_t length)
 {
 	// the additional two units to each dimensions is to create an obstacle boundary 
 	// wall around the grid
@@ -28,19 +28,19 @@ void createMap(uint8_t height, uint8_t length)
 	delete [] map;
 }
 
-void addObstacle(uint8_t xPos, uint8_t yPos)
+void Navigator::addObstacle(uint8_t xPos, uint8_t yPos)
 {
 	uint8_t yPosArr = convertToArray(yPos); 
 	map[yPosArr][xPos][ELEMENT_VALUE] = 127;
 }
 
-uint8_t convertToArray(uint8_t coord)
+uint8_t Navigator::convertToArray(uint8_t coord)
 {
 	coord = height + 1 - coord;
 	return coord;
 }
 
-void testMap()
+void Navigator::testMap()
 {
 	using namespace std;
 	cout << "===================================\nTESTING - createMap:" << endl;
@@ -52,7 +52,7 @@ void testMap()
 	cout << "===================================" << endl;
 }
 
-void printMap()
+void Navigator::printMap()
 {
 	cout << "X-COORDINATES:" << endl;
 	for(int i = 0; i < HEIGHT; i++)
@@ -85,7 +85,7 @@ void printMap()
 	}   
 }
 
-void testObstacleData()
+void Navigator::testObstacleData()
      {
         addObstacle(3, 3);
         addObstacle(3, 4);

@@ -12,6 +12,7 @@
 
 #include "ObstacleSensor.h"
 #include <stdint.h>
+#include "Navigator.h"
 
 class ObstacleDetection
 {
@@ -20,6 +21,7 @@ class ObstacleDetection
         ObstacleSensor *frontSensorPtr_;
         ObstacleSensor *leftSensorPtr_;
         ObstacleSensor *rightSensorPtr_;
+        Navigator *navPtr_;
         static const uint8_t iterations = 5;
         
     private: 
@@ -33,7 +35,7 @@ class ObstacleDetection
         ObstacleDetection();
 
         // Constructor which takes in three ObstacleSensor object pointers
-        ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr);
+        ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr);
 
         // Standard detection function which activates all sensors and converts any
         // obstacles to grid references. Will be in loop function so constantly 

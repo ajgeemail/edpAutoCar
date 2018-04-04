@@ -3,10 +3,11 @@
 // Number of iterations in calculating average distance
 /* static */ const uint8_t iterations = 5;
 
-ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr) :
+ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr) :
     frontSensorPtr_(frontSensorPtr),
     leftSensorPtr_(leftSensorPtr),
-    rightSensorPtr_(rightSensorPtr)
+    rightSensorPtr_(rightSensorPtr),
+    navPtr_(navPtr)
 {
     
 }
@@ -44,7 +45,9 @@ void ObstacleDetection::detectAllSensors()
     if (frontMeasured == 1)
     {
         frontSensorPtr_->printDistance("Front");        
-        //Brady.addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
+
+        // Output obstacle grid location to navigator object (points to nav in botMain)
+        navPtr_->addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
     }
 
     // Wait for sensor 1 to finish to begin sensor 2 measurements
@@ -60,7 +63,9 @@ void ObstacleDetection::detectAllSensors()
         if (leftMeasured == 1)
         {
             leftSensorPtr_->printDistance("Left");
-            //Brady.addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
+
+            // Output obstacle grid location to navigator object (points to nav in botMain)
+            navPtr_->addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
         }
         
         // Wait for sensor 2 to finish to begin sensor 3 measurements
@@ -76,7 +81,9 @@ void ObstacleDetection::detectAllSensors()
             if (rightMeasured == 1)
             {
                 rightSensorPtr_->printDistance("Right");
-                //Brady.addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);
+
+                // Output obstacle grid location to navigator object (points to nav in botMain)
+                navPtr_->addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);
             }
         }
     }

@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-class navigator
+class Navigator
 {
     private:
     int8_t map[][][] ;
@@ -49,7 +49,7 @@ class navigator
 
     public:
     // Default constructor
-    navigator();
+    Navigator();
 
     /**
      * Adds an obstacle to the map 
@@ -59,6 +59,6 @@ class navigator
      */
     void addObstacle(uint8_t xPos, uint8_t yPos);
     
-}
+};
 
 #endif

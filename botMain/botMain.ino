@@ -17,6 +17,11 @@ float avsX_ = 0;        // This will need to be updated with pozyx data
 float avsY_ = 0;        // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
+// *********************** NM SPECIFIC VARIABLES *******************************************************
+Navigator nav;
+
+// *********************** END NM SPECIFIC VARIABLES ***************************************************
+
 // **************** ODS SPECIFIC VARIABLES **********************************************************
 // Direction variables in radians (relative to AVS heading)
 #define LEFT 270*(PI/180)
@@ -57,8 +62,12 @@ const uint8_t dhtPin = 14;
 ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontsensorAngle);
 ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftsensorAngle);
 ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
-ObstacleDetection ods(&frontSensor, &leftSensor, &rightSensor);
+
+// Obstacle detection system object
+ObstacleDetection ods(&frontSensor, &leftSensor, &rightSensor, &nav);
 // *********************** END ODS SPECIFIC VARIABLES **************************************************
+
+
 
 void setup() 
 {
@@ -70,7 +79,7 @@ void setup()
 void loop() 
 {
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
-    ods.detectAllSensors();
+    ods.detectAllSensors(&nav);
 }
 
 
