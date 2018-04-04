@@ -1,3 +1,4 @@
+
 #include "Navigator.h"
 
 // Default constructor
@@ -32,12 +33,6 @@ void Navigator::createMap(uint8_t height, uint8_t length)
 	}
 	
 	delete [] map;
-}
-
-void Navigator::addObstacle(uint8_t xPos, uint8_t yPos)
-{
-	uint8_t yPosArr = convertToArray(yPos); 
-	map[yPosArr][xPos][ELEMENT_VALUE] = 127;
 }
 
 uint8_t Navigator::convertToArray(uint8_t coord)
@@ -113,3 +108,17 @@ void Navigator::testObstacleData()
         addObstacle(6, 10);
         addObstacle(7, 10);
     }
+
+void Navigator::addObstacle(uint8_t xPos, uint8_t yPos)
+{
+    //uint8_t yPosArr = convertToArray(yPos); 
+    //map[yPosArr][xPos][ELEMENT_VALUE] = 127;
+
+
+        Serial.print("Obstacle added [x][y] = [");
+        Serial.print(xPos);
+        Serial.print("][");
+        Serial.print(yPos);
+        Serial.println("]");
+
+}

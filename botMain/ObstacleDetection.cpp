@@ -44,7 +44,7 @@ void ObstacleDetection::detectAllSensors()
     // Output obstacle grid reference
     if (frontMeasured == 1)
     {
-        frontSensorPtr_->printDistance("Front");        
+        //frontSensorPtr_->printDistance("Front");        
 
         // Output obstacle grid location to navigator object (points to nav in botMain)
         navPtr_->addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
@@ -62,7 +62,7 @@ void ObstacleDetection::detectAllSensors()
         // Output obstacle grid reference
         if (leftMeasured == 1)
         {
-            leftSensorPtr_->printDistance("Left");
+            //leftSensorPtr_->printDistance("Left");
 
             // Output obstacle grid location to navigator object (points to nav in botMain)
             navPtr_->addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
@@ -80,7 +80,7 @@ void ObstacleDetection::detectAllSensors()
             // Output obstacle grid reference
             if (rightMeasured == 1)
             {
-                rightSensorPtr_->printDistance("Right");
+                //rightSensorPtr_->printDistance("Right");
 
                 // Output obstacle grid location to navigator object (points to nav in botMain)
                 navPtr_->addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);
@@ -128,5 +128,6 @@ void ObstacleDetection::odsToNavTestObstacles()
     navPtr_->addObstacle(3,7);
     navPtr_->addObstacle(1,6);
     navPtr_->addObstacle(9,2);
+    Serial.println("Test uploaded");
 }
 

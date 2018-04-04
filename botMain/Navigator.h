@@ -1,6 +1,7 @@
 #ifndef NAVIGATOR_H
 #define NAVIGATOR_H
 
+#include <WProgram.h>
 #include <stdint.h>
 
 class Navigator
