@@ -6,13 +6,13 @@
 class Navigator
 {
     private:
-        const uint8_t ELEMENT_XPOS = 0;                         // grid square's cartesian x-coord
-        const uint8_t ELEMENT_YPOS = 1;                         // grid square's cartesian y-coord
-        const uint8_t ELEMENT_VALUE = 2;                        // grid square's weighting value
-        const uint8_t HEIGHT = 10;                              // Number of grid references high
-        const uint8_t LENGTH = 10;                              // Number of grid references long
-        const uint8_t DATA = 3;
-        uint8_t grid_[HEIGHT][LENGTH][DATA];
+        const int ELEMENT_XPOS = 0;                        // Grid square's cartesian x-coord
+        const int ELEMENT_YPOS = 1;                        // Grid square's cartesian y-coord
+        const int ELEMENT_VALUE = 2;                       // Grid square's weighting value
+        const int HEIGHT = 10;                             // Number of grid references high
+        const int WIDTH = 10;                              // Number of grid references long
+        const int DATA = 3;
+        uint8_t *gridPtr_;
 
     private: 
         /**
@@ -22,8 +22,8 @@ class Navigator
          * @param  height  Height of the grid to be traversed
          * @param  length  Length of the grid to be traversed
          */
-        void createMap(uint8_t height, uint8_t length);
-    
+        void createMap();
+        
         /**
          * Converts y grid coordinate to y array coordinate
          * 

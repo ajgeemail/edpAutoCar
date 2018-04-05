@@ -52,7 +52,7 @@ class ObstacleSensor
         float objX_, objY_;
 
         // Grid reference of obstacle detected converted from coordinates above
-        int8_t gridX_, gridY_;
+        int gridX_, gridY_;
 
         // Bias for grid reference conversion
         static int8_t bias_;
