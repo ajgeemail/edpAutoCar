@@ -23,9 +23,9 @@ const uint8_t HEIGHT = 10;
 const uint8_t WIDTH = 10;
 const uint8_t DATA = 3;
 
-uint8_t grid[HEIGHT][WIDTH][DATA];
+int grid[HEIGHT][WIDTH][DATA];
 
-Navigator nav(&grid);
+Navigator nav(grid);
 
 // *********************** END NM SPECIFIC VARIABLES ***************************************************
 

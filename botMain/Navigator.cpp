@@ -1,5 +1,4 @@
 #include "Navigator.h"
-using namespace Navigator;
 
 // Default constructor
 Navigator::Navigator()
@@ -7,7 +6,7 @@ Navigator::Navigator()
     
 }
 
-Navigator::Navigator(uint8_t *gridPtr) :
+Navigator::Navigator(int (&gridPtr[HEIGHT][WIDTH][DATA])) :
 gridPtr_(gridPtr)
 {
     createMap();
@@ -20,8 +19,8 @@ void Navigator::createMap()
   	for(int i = 0; i < WIDTH + 2; i++)
   	{
     		for(int j = 0; j < HEIGHT + 2; j++)
-    		{
-      			*gridPtr_[i][j][ELEMENT_XPOS] = j;                     	 
+    		{   
+      			gridPtr_[i][j][ELEMENT_XPOS] = j;                     	 
       			*gridPtr_[i][j][ELEMENT_YPOS] = HEIGHT - i + 1;   	     // converts array coord to cartesian y-coord
       			*gridPtr_[i][j][ELEMENT_VALUE] = 0;                      // 0 is the value for unassigned value
     		}
