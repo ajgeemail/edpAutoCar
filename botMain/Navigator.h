@@ -6,12 +6,13 @@
 class Navigator
 {
     private:
-        int8_t map[][][] ;
         const uint8_t ELEMENT_XPOS = 0;                         // grid square's cartesian x-coord
         const uint8_t ELEMENT_YPOS = 1;                         // grid square's cartesian y-coord
         const uint8_t ELEMENT_VALUE = 2;                        // grid square's weighting value
         const uint8_t HEIGHT = 10;                              // Number of grid references high
         const uint8_t LENGTH = 10;                              // Number of grid references long
+        const uint8_t DATA = 3;
+        uint8_t grid_[HEIGHT][LENGTH][DATA];
 
     private: 
         /**
@@ -51,6 +52,9 @@ class Navigator
     public:
         // Default constructor
         Navigator();
+
+        // Constructor takes in empty grid map and prefills it
+        Navigator(uint8_t *gridPtr);
     
         /**
          * Adds an obstacle to the map 

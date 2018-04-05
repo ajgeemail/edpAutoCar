@@ -7,29 +7,34 @@ Navigator::Navigator()
     
 }
 
-void Navigator::createMap(uint8_t height, uint8_t length)
+Navigator::Navigator(uint8_t *gridPtr) :
+gridPtr_(gridPtr)
+{
+    createMap();
+}
+
+void Navigator::createMap()
 {
 	// the additional two units to each dimensions is to create an obstacle boundary 
 	// wall around the grid
-	map = new int[height + 2][length + 2][3];
 	
 	for(int i = 0; i < length + 2; i++)
 	{
 		for(int j = 0; j < height + 2; j++)
 		{
-			map[i][j][ELEMENT_XPOS] = j;                     	 
-			map[i][j][ELEMENT_YPOS] = height - i + 1;   	     // converts array coord to cartesian y-coord
-			map[i][j][ELEMENT_VALUE] = -1;                    	 // -1 is the value for unassigned value
+			*gridPtr_[i][j][ELEMENT_XPOS] = j;                     	 
+			*gridPtr_[i][j][ELEMENT_YPOS] = height - i + 1;   	     // converts array coord to cartesian y-coord
+			*gridPtr_[i][j][ELEMENT_VALUE] = -1;                    	 // -1 is the value for unassigned value
 		}
 	}
 	
 	// assigns wall elements with obstacle priority values
 	for(int i = 0; i < length + 2; i++)
 	{
-		map[0][i][ELEMENT_VALUE] = 127;						  	// 127 is the value for an obstacle
-		map[i][0][ELEMENT_VALUE] = 127;
-		map[height + 1][i][ELEMENT_VALUE] = 127;
-		map[i][length + 1][ELEMENT_VALUE] = 127;
+		*gridPtr_[0][i][ELEMENT_VALUE] = 127;						  	// 127 is the value for an obstacle
+		*gridPtr_[i][0][ELEMENT_VALUE] = 127;
+		*gridPtr_[height + 1][i][ELEMENT_VALUE] = 127;
+		*gridPtr_[i][length + 1][ELEMENT_VALUE] = 127;
 	}
 	
 	delete [] map;

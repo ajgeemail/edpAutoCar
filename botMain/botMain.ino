@@ -19,7 +19,12 @@ float avsY_ = 0;        // This will need to be updated with pozyx data
 
 // *********************** NM SPECIFIC VARIABLES *******************************************************
 // Navigation and Maxing System object
-Navigator nav;  
+const uint8_t HEIGHT = 10;
+const uint8_t WIDTH = 10;
+const uint8_t DATA = 3;
+
+uint8_t grid[HEIGHT][WIDTH][DATA];
+Navigator nav(&grid);  
 
 // *********************** END NM SPECIFIC VARIABLES ***************************************************
 
