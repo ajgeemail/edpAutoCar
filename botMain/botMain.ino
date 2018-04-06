@@ -10,22 +10,18 @@
 
 #include "ObstacleSensor.h"
 #include "ObstacleDetection.h"
+#include "common.h"
 
 // **************** AVS SYSTEM WIDE VARIABLES *******************************************************
 float avsHeading_ = 0*(PI/180);  // This will need to be updated with pozyx data
-float avsX_ = 0;        // This will need to be updated with pozyx data
-float avsY_ = 0;        // This will need to be updated with pozyx data
+float avsX_ = 0;                // This will need to be updated with pozyx data
+float avsY_ = 0;                // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
 // *********************** NM SPECIFIC VARIABLES *******************************************************
 // Navigation and Maxing System object
-const uint8_t HEIGHT = 10;
-const uint8_t WIDTH = 10;
-const uint8_t DATA = 3;
 
-int grid[HEIGHT][WIDTH][DATA];
-
-Navigator nav(grid);
+Navigator nav;
 
 // *********************** END NM SPECIFIC VARIABLES ***************************************************
 
@@ -81,15 +77,25 @@ void setup()
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
-
+    nav.testMap();
+    
     // Adds a number of dummy obstacle locations for OD-NM interface testing purposes
     ods.odsToNavTestObstacles();
+    nav.printMap();
 }
 
 void loop() 
 {
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
     ods.detectAllSensors();
+    testBlueToothGrid();
+}
+
+// fake function - to be deleted - just there to see if nav.grid_ array can be accessed from here
+void testBlueToothGrid()
+{
+    //test basic access
+    int test = nav.grid_[0][0][0];
 }
 
 

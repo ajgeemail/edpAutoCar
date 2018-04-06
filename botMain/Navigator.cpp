@@ -3,12 +3,6 @@
 // Default constructor
 Navigator::Navigator()
 {
-    
-}
-
-Navigator::Navigator(int (&gridPtr[HEIGHT][WIDTH][DATA])) :
-gridPtr_(gridPtr)
-{
     createMap();
 }
 
@@ -20,26 +14,26 @@ void Navigator::createMap()
   	{
     		for(int j = 0; j < HEIGHT + 2; j++)
     		{   
-      			gridPtr_[i][j][ELEMENT_XPOS] = j;                     	 
-      			*gridPtr_[i][j][ELEMENT_YPOS] = HEIGHT - i + 1;   	     // converts array coord to cartesian y-coord
-      			*gridPtr_[i][j][ELEMENT_VALUE] = 0;                      // 0 is the value for unassigned value
+      			grid_[i][j][ELEMENT_XPOS] = j;                     	 
+      			grid_[i][j][ELEMENT_YPOS] = HEIGHT - i + 1;   	     // converts array coord to cartesian y-coord
+      			grid_[i][j][ELEMENT_VALUE] = 0;                      // 0 is the value for unassigned value
     		}
   	}
   	
   	// assigns wall elements with obstacle priority values
   	for(int i = 0; i < WIDTH + 2; i++)
   	{
-    		*gridPtr_[0][i][ELEMENT_VALUE] = 255;						  	      // 255 is the value for an obstacle
-    		*gridPtr_[i][0][ELEMENT_VALUE] = 255;
-    		*gridPtr_[HEIGHT + 1][i][ELEMENT_VALUE] = 255;
-    		*gridPtr_[i][WIDTH + 1][ELEMENT_VALUE] = 255;
+    		grid_[0][i][ELEMENT_VALUE] = 255;						  	      // 255 is the value for an obstacle
+    		grid_[i][0][ELEMENT_VALUE] = 255;
+    		grid_[HEIGHT + 1][i][ELEMENT_VALUE] = 255;
+    		grid_[i][WIDTH + 1][ELEMENT_VALUE] = 255;
   	}
 }
 
 int Navigator::convertToArray(int coordinate)
 {
   	coordinate = HEIGHT + 1 - coordinate;
-  	return coord;
+  	return coordinate;
 }
 
 void Navigator::testMap()
@@ -48,7 +42,7 @@ void Navigator::testMap()
   	Serial.println("===================================\nTESTING - createMap():");
   	createMap();
   	printMap();
-  	Serial.println("\nTESTING - create*gridPtr_:");
+  	Serial.println("\nTESTING - creategrid_:");
   	testObstacleData();
   	printMap();
   	Serial.println("===================================");
@@ -61,7 +55,7 @@ void Navigator::printMap()
   	{
     		for(int j = 0; j < WIDTH; j++)
     		{
-    			Serial.print(*gridPtr_[i][j][ELEMENT_XPOS]);
+    			Serial.print(grid_[i][j][ELEMENT_XPOS]);
     			Serial.print("\t");
     		}
     		Serial.println();
@@ -72,7 +66,7 @@ void Navigator::printMap()
   	{
     		for(int j = 0; j < WIDTH; j++)
     		{
-    			Serial.print(*gridPtr_[i][j][ELEMENT_YPOS])
+    			Serial.print(grid_[i][j][ELEMENT_YPOS]);
     			Serial.print("\t");
     		}
     		Serial.println();
@@ -83,7 +77,7 @@ void Navigator::printMap()
   	{
     		for(int j = 0; j < WIDTH; j++)
     		{
-    			Serial.print(*gridPtr_[i][j][ELEMENT_VALUE]);
+    			Serial.print(grid_[i][j][ELEMENT_VALUE]);
     			Serial.print("\t");
     		}
     		Serial.println();
@@ -116,7 +110,7 @@ void Navigator::testObstacleData()
 void Navigator::addObstacle(int xPos, int yPos)
 {
     int yPosArr = convertToArray(yPos); 
-    *gridPtr_[yPosArr][xPos][ELEMENT_VALUE] = 255;
+    grid_[yPosArr][xPos][ELEMENT_VALUE] = 255;
 
     Serial.print("Obstacle added [x][y] = [");
     Serial.print(xPos);
