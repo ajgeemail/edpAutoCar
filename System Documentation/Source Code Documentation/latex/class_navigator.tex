@@ -1,0 +1,123 @@
+\hypertarget{class_navigator}{}\section{Navigator Class Reference}
+\label{class_navigator}\index{Navigator@{Navigator}}
+
+
+{\ttfamily \#include $<$Navigator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_navigator_a59230ab4698882f754d5ce275a1a4030}{Navigator}} ()
+\item 
+void \mbox{\hyperlink{class_navigator_af5a35f0ae71309c1b276257709b24390}{add\+Obstacle}} (int x\+Pos, int y\+Pos)
+\item 
+void \mbox{\hyperlink{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}{test\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}{print\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}{test\+Obstacle\+Data}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_navigator_ad295138915accad1b15031a977f59b3e}{grid\+\_\+}} \mbox{[}\mbox{\hyperlink{_navigator_8h_af728b7647e0b8c49832983a31f9a2e9b}{H\+E\+I\+G\+HT}}+2\mbox{]}\mbox{[}\mbox{\hyperlink{_navigator_8h_a9649ab8139c4c2ea5c93625b30d92a05}{W\+I\+D\+TH}}+2\mbox{]}\mbox{[}\mbox{\hyperlink{_navigator_8h_ace45c8c944a852d4990f5f8f87b2335e}{D\+A\+TA}}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}{create\+Map}} ()
+\item 
+int \mbox{\hyperlink{class_navigator_a7a745d33cfa5cdfc551c87f3f23dc28e}{convert\+To\+Array}} (int coord)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_navigator_a59230ab4698882f754d5ce275a1a4030}\label{class_navigator_a59230ab4698882f754d5ce275a1a4030}} 
+\index{Navigator@{Navigator}!Navigator@{Navigator}}
+\index{Navigator@{Navigator}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{Navigator()}{Navigator()}}
+{\footnotesize\ttfamily Navigator\+::\+Navigator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_navigator_af5a35f0ae71309c1b276257709b24390}\label{class_navigator_af5a35f0ae71309c1b276257709b24390}} 
+\index{Navigator@{Navigator}!add\+Obstacle@{add\+Obstacle}}
+\index{add\+Obstacle@{add\+Obstacle}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{add\+Obstacle()}{addObstacle()}}
+{\footnotesize\ttfamily void Navigator\+::add\+Obstacle (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos }\end{DoxyParamCaption})}
+
+Adds an obstacle to the map
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & Cartesian x-\/coordinate of the obstacle grid square \\
+\hline
+{\em y\+Pos} & Cartesian y-\/coordinate of the obstacle grid square \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a7a745d33cfa5cdfc551c87f3f23dc28e}\label{class_navigator_a7a745d33cfa5cdfc551c87f3f23dc28e}} 
+\index{Navigator@{Navigator}!convert\+To\+Array@{convert\+To\+Array}}
+\index{convert\+To\+Array@{convert\+To\+Array}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{convert\+To\+Array()}{convertToArray()}}
+{\footnotesize\ttfamily int Navigator\+::convert\+To\+Array (\begin{DoxyParamCaption}\item[{int}]{coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Converts y grid coordinate to y array coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Grid coordinate ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}\label{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}} 
+\index{Navigator@{Navigator}!create\+Map@{create\+Map}}
+\index{create\+Map@{create\+Map}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{create\+Map()}{createMap()}}
+{\footnotesize\ttfamily void Navigator\+::create\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Creates a map that with a given length, height and a boundary wall of obstacles assigning an initial weighting of -\/1
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & Height of the grid to be traversed \\
+\hline
+{\em length} & Length of the grid to be traversed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}\label{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}} 
+\index{Navigator@{Navigator}!print\+Map@{print\+Map}}
+\index{print\+Map@{print\+Map}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{print\+Map()}{printMap()}}
+{\footnotesize\ttfamily void Navigator\+::print\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints the grid with the associated priority value for each grid square \mbox{\Hypertarget{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}\label{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}} 
+\index{Navigator@{Navigator}!test\+Map@{test\+Map}}
+\index{test\+Map@{test\+Map}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{test\+Map()}{testMap()}}
+{\footnotesize\ttfamily void Navigator\+::test\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tests the \mbox{\hyperlink{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}{create\+Map()}} function with a length of 10 and height of 10. Tests the prioritise\+Map() function with a target location at 9, 9 \mbox{\Hypertarget{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}\label{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}} 
+\index{Navigator@{Navigator}!test\+Obstacle\+Data@{test\+Obstacle\+Data}}
+\index{test\+Obstacle\+Data@{test\+Obstacle\+Data}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{test\+Obstacle\+Data()}{testObstacleData()}}
+{\footnotesize\ttfamily void Navigator\+::test\+Obstacle\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Adds obstacles from hardcoded obstacle position data 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_navigator_ad295138915accad1b15031a977f59b3e}\label{class_navigator_ad295138915accad1b15031a977f59b3e}} 
+\index{Navigator@{Navigator}!grid\+\_\+@{grid\+\_\+}}
+\index{grid\+\_\+@{grid\+\_\+}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{grid\+\_\+}{grid\_}}
+{\footnotesize\ttfamily int Navigator\+::grid\+\_\+\mbox{[}\mbox{\hyperlink{_navigator_8h_af728b7647e0b8c49832983a31f9a2e9b}{H\+E\+I\+G\+HT}}+2\mbox{]}\mbox{[}\mbox{\hyperlink{_navigator_8h_a9649ab8139c4c2ea5c93625b30d92a05}{W\+I\+D\+TH}}+2\mbox{]}\mbox{[}\mbox{\hyperlink{_navigator_8h_ace45c8c944a852d4990f5f8f87b2335e}{D\+A\+TA}}\mbox{]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_navigator_8h}{Navigator.\+h}}\item 
+D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_navigator_8cpp}{Navigator.\+cpp}}\end{DoxyCompactItemize}

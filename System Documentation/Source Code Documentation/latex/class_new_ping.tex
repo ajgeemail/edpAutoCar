@@ -1,0 +1,247 @@
+\hypertarget{class_new_ping}{}\section{New\+Ping Class Reference}
+\label{class_new_ping}\index{New\+Ping@{New\+Ping}}
+
+
+{\ttfamily \#include $<$New\+Ping.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_new_ping_ad517c7800c66b0a9f3c175d881776aff}{New\+Ping}} (uint8\+\_\+t trigger\+\_\+pin, uint8\+\_\+t echo\+\_\+pin, unsigned int max\+\_\+cm\+\_\+distance=\mbox{\hyperlink{_new_ping_8h_a066008eaba26c8638c448b56bc6e1ea4}{M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+I\+S\+T\+A\+N\+CE}})
+\item 
+unsigned int \mbox{\hyperlink{class_new_ping_ad674a1301a81b5bb18bde45854a716c3}{ping}} (unsigned int max\+\_\+cm\+\_\+distance=0)
+\item 
+unsigned long \mbox{\hyperlink{class_new_ping_ac160903f4a9aebe5967204d444acd525}{ping\+\_\+cm}} (unsigned int max\+\_\+cm\+\_\+distance=0)
+\item 
+unsigned long \mbox{\hyperlink{class_new_ping_a5ef06daa20cd318bc049b2d7b5fd4c80}{ping\+\_\+in}} (unsigned int max\+\_\+cm\+\_\+distance=0)
+\item 
+unsigned long \mbox{\hyperlink{class_new_ping_afd21db530da5856049d7f9684b448935}{ping\+\_\+median}} (uint8\+\_\+t it=5, unsigned int max\+\_\+cm\+\_\+distance=0)
+\item 
+void \mbox{\hyperlink{class_new_ping_a5b80f92a7885f82640a0b096c2d3c85e}{ping\+\_\+timer}} (void($\ast$user\+Func)(void), unsigned int max\+\_\+cm\+\_\+distance=0)
+\item 
+boolean \mbox{\hyperlink{class_new_ping_a225128afccd4bb37f137669bb1064cbd}{check\+\_\+timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_new_ping_a48beafc2846a2e5b069c25572f4ba360}{convert\+\_\+cm}} (unsigned int echo\+Time)
+\item 
+static unsigned int \mbox{\hyperlink{class_new_ping_ab6a1cb162229f34d1cb89b4827f26077}{convert\+\_\+in}} (unsigned int echo\+Time)
+\item 
+static void \mbox{\hyperlink{class_new_ping_a14c3a18861179c75dc04a819728d8140}{timer\+\_\+us}} (unsigned int frequency, void($\ast$user\+Func)(void))
+\item 
+static void \mbox{\hyperlink{class_new_ping_a2552285b019633be9069d030d5417e73}{timer\+\_\+ms}} (unsigned long frequency, void($\ast$user\+Func)(void))
+\item 
+static void \mbox{\hyperlink{class_new_ping_a58e3e7f80918b56235b5c783d2ecea50}{timer\+\_\+stop}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{class_new_ping_a5d78ebdbffa4f42124ff7e06860503e6}{ping\+\_\+result}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{class_new_ping_a60172cfe9c5e9f035424da1883868b01}{ping\+\_\+trigger}} ()
+\item 
+void \mbox{\hyperlink{class_new_ping_a97700af99b7a34b067431d0607c4740e}{set\+\_\+max\+\_\+distance}} (unsigned int max\+\_\+cm\+\_\+distance)
+\item 
+boolean \mbox{\hyperlink{class_new_ping_a15a189b65c8de58e4513e942e0cc30d6}{ping\+\_\+trigger\+\_\+timer}} (unsigned int trigger\+\_\+delay)
+\item 
+boolean \mbox{\hyperlink{class_new_ping_a00188135a88d3eb4da3a8c9e3d95becd}{ping\+\_\+wait\+\_\+timer}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_new_ping_a8cfefcf91475e546f3c12efb9a90d1ca}{timer\+\_\+setup}} ()
+\item 
+static void \mbox{\hyperlink{class_new_ping_a28f65f8a4496bbb91048d8714dfac86e}{timer\+\_\+ms\+\_\+cntdwn}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_new_ping_abf178ee257a94b6e446d7cc065c0dd7a}{\+\_\+trigger\+Bit}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_new_ping_a0d36ad3bdb5cdc14fba6fee0d99286b9}{\+\_\+echo\+Bit}}
+\item 
+volatile uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_new_ping_af0092b725d895673fb3d4c01e89992ed}{\+\_\+trigger\+Output}}
+\item 
+volatile uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_new_ping_a3cc016f4cbeec318ed9198037b4035c5}{\+\_\+echo\+Input}}
+\item 
+volatile uint8\+\_\+t $\ast$ \mbox{\hyperlink{class_new_ping_adad3a763d59af120949a74e60a4ef9a5}{\+\_\+trigger\+Mode}}
+\item 
+unsigned int \mbox{\hyperlink{class_new_ping_aff39ea978a9a7ad4612c661e84ce216f}{\+\_\+max\+Echo\+Time}}
+\item 
+unsigned long \mbox{\hyperlink{class_new_ping_a54d56a64eeb78d180cc509cefcd87b0e}{\+\_\+max\+\_\+time}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_new_ping_ad517c7800c66b0a9f3c175d881776aff}\label{class_new_ping_ad517c7800c66b0a9f3c175d881776aff}} 
+\index{New\+Ping@{New\+Ping}!New\+Ping@{New\+Ping}}
+\index{New\+Ping@{New\+Ping}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{New\+Ping()}{NewPing()}}
+{\footnotesize\ttfamily New\+Ping\+::\+New\+Ping (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{trigger\+\_\+pin,  }\item[{uint8\+\_\+t}]{echo\+\_\+pin,  }\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily \mbox{\hyperlink{_new_ping_8h_a066008eaba26c8638c448b56bc6e1ea4}{M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+I\+S\+T\+A\+N\+CE}}} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_new_ping_a225128afccd4bb37f137669bb1064cbd}\label{class_new_ping_a225128afccd4bb37f137669bb1064cbd}} 
+\index{New\+Ping@{New\+Ping}!check\+\_\+timer@{check\+\_\+timer}}
+\index{check\+\_\+timer@{check\+\_\+timer}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{check\+\_\+timer()}{check\_timer()}}
+{\footnotesize\ttfamily boolean New\+Ping\+::check\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_a48beafc2846a2e5b069c25572f4ba360}\label{class_new_ping_a48beafc2846a2e5b069c25572f4ba360}} 
+\index{New\+Ping@{New\+Ping}!convert\+\_\+cm@{convert\+\_\+cm}}
+\index{convert\+\_\+cm@{convert\+\_\+cm}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{convert\+\_\+cm()}{convert\_cm()}}
+{\footnotesize\ttfamily unsigned int New\+Ping\+::convert\+\_\+cm (\begin{DoxyParamCaption}\item[{unsigned int}]{echo\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_new_ping_ab6a1cb162229f34d1cb89b4827f26077}\label{class_new_ping_ab6a1cb162229f34d1cb89b4827f26077}} 
+\index{New\+Ping@{New\+Ping}!convert\+\_\+in@{convert\+\_\+in}}
+\index{convert\+\_\+in@{convert\+\_\+in}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{convert\+\_\+in()}{convert\_in()}}
+{\footnotesize\ttfamily unsigned int New\+Ping\+::convert\+\_\+in (\begin{DoxyParamCaption}\item[{unsigned int}]{echo\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_new_ping_ad674a1301a81b5bb18bde45854a716c3}\label{class_new_ping_ad674a1301a81b5bb18bde45854a716c3}} 
+\index{New\+Ping@{New\+Ping}!ping@{ping}}
+\index{ping@{ping}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping()}{ping()}}
+{\footnotesize\ttfamily unsigned int New\+Ping\+::ping (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_ac160903f4a9aebe5967204d444acd525}\label{class_new_ping_ac160903f4a9aebe5967204d444acd525}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+cm@{ping\+\_\+cm}}
+\index{ping\+\_\+cm@{ping\+\_\+cm}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+cm()}{ping\_cm()}}
+{\footnotesize\ttfamily unsigned long New\+Ping\+::ping\+\_\+cm (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_a5ef06daa20cd318bc049b2d7b5fd4c80}\label{class_new_ping_a5ef06daa20cd318bc049b2d7b5fd4c80}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+in@{ping\+\_\+in}}
+\index{ping\+\_\+in@{ping\+\_\+in}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+in()}{ping\_in()}}
+{\footnotesize\ttfamily unsigned long New\+Ping\+::ping\+\_\+in (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_afd21db530da5856049d7f9684b448935}\label{class_new_ping_afd21db530da5856049d7f9684b448935}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+median@{ping\+\_\+median}}
+\index{ping\+\_\+median@{ping\+\_\+median}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+median()}{ping\_median()}}
+{\footnotesize\ttfamily unsigned long New\+Ping\+::ping\+\_\+median (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{it = {\ttfamily 5},  }\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_a5b80f92a7885f82640a0b096c2d3c85e}\label{class_new_ping_a5b80f92a7885f82640a0b096c2d3c85e}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+timer@{ping\+\_\+timer}}
+\index{ping\+\_\+timer@{ping\+\_\+timer}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+timer()}{ping\_timer()}}
+{\footnotesize\ttfamily void New\+Ping\+::ping\+\_\+timer (\begin{DoxyParamCaption}\item[{void($\ast$)(void)}]{user\+Func,  }\item[{unsigned int}]{max\+\_\+cm\+\_\+distance = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_new_ping_a60172cfe9c5e9f035424da1883868b01}\label{class_new_ping_a60172cfe9c5e9f035424da1883868b01}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+trigger@{ping\+\_\+trigger}}
+\index{ping\+\_\+trigger@{ping\+\_\+trigger}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+trigger()}{ping\_trigger()}}
+{\footnotesize\ttfamily boolean New\+Ping\+::ping\+\_\+trigger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a15a189b65c8de58e4513e942e0cc30d6}\label{class_new_ping_a15a189b65c8de58e4513e942e0cc30d6}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+trigger\+\_\+timer@{ping\+\_\+trigger\+\_\+timer}}
+\index{ping\+\_\+trigger\+\_\+timer@{ping\+\_\+trigger\+\_\+timer}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+trigger\+\_\+timer()}{ping\_trigger\_timer()}}
+{\footnotesize\ttfamily boolean New\+Ping\+::ping\+\_\+trigger\+\_\+timer (\begin{DoxyParamCaption}\item[{unsigned int}]{trigger\+\_\+delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a00188135a88d3eb4da3a8c9e3d95becd}\label{class_new_ping_a00188135a88d3eb4da3a8c9e3d95becd}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+wait\+\_\+timer@{ping\+\_\+wait\+\_\+timer}}
+\index{ping\+\_\+wait\+\_\+timer@{ping\+\_\+wait\+\_\+timer}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+wait\+\_\+timer()}{ping\_wait\_timer()}}
+{\footnotesize\ttfamily boolean New\+Ping\+::ping\+\_\+wait\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a97700af99b7a34b067431d0607c4740e}\label{class_new_ping_a97700af99b7a34b067431d0607c4740e}} 
+\index{New\+Ping@{New\+Ping}!set\+\_\+max\+\_\+distance@{set\+\_\+max\+\_\+distance}}
+\index{set\+\_\+max\+\_\+distance@{set\+\_\+max\+\_\+distance}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{set\+\_\+max\+\_\+distance()}{set\_max\_distance()}}
+{\footnotesize\ttfamily void New\+Ping\+::set\+\_\+max\+\_\+distance (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+\_\+cm\+\_\+distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a2552285b019633be9069d030d5417e73}\label{class_new_ping_a2552285b019633be9069d030d5417e73}} 
+\index{New\+Ping@{New\+Ping}!timer\+\_\+ms@{timer\+\_\+ms}}
+\index{timer\+\_\+ms@{timer\+\_\+ms}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{timer\+\_\+ms()}{timer\_ms()}}
+{\footnotesize\ttfamily void New\+Ping\+::timer\+\_\+ms (\begin{DoxyParamCaption}\item[{unsigned long}]{frequency,  }\item[{void($\ast$)(void)}]{user\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_new_ping_a28f65f8a4496bbb91048d8714dfac86e}\label{class_new_ping_a28f65f8a4496bbb91048d8714dfac86e}} 
+\index{New\+Ping@{New\+Ping}!timer\+\_\+ms\+\_\+cntdwn@{timer\+\_\+ms\+\_\+cntdwn}}
+\index{timer\+\_\+ms\+\_\+cntdwn@{timer\+\_\+ms\+\_\+cntdwn}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{timer\+\_\+ms\+\_\+cntdwn()}{timer\_ms\_cntdwn()}}
+{\footnotesize\ttfamily void New\+Ping\+::timer\+\_\+ms\+\_\+cntdwn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a8cfefcf91475e546f3c12efb9a90d1ca}\label{class_new_ping_a8cfefcf91475e546f3c12efb9a90d1ca}} 
+\index{New\+Ping@{New\+Ping}!timer\+\_\+setup@{timer\+\_\+setup}}
+\index{timer\+\_\+setup@{timer\+\_\+setup}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{timer\+\_\+setup()}{timer\_setup()}}
+{\footnotesize\ttfamily void New\+Ping\+::timer\+\_\+setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a58e3e7f80918b56235b5c783d2ecea50}\label{class_new_ping_a58e3e7f80918b56235b5c783d2ecea50}} 
+\index{New\+Ping@{New\+Ping}!timer\+\_\+stop@{timer\+\_\+stop}}
+\index{timer\+\_\+stop@{timer\+\_\+stop}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{timer\+\_\+stop()}{timer\_stop()}}
+{\footnotesize\ttfamily void New\+Ping\+::timer\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_new_ping_a14c3a18861179c75dc04a819728d8140}\label{class_new_ping_a14c3a18861179c75dc04a819728d8140}} 
+\index{New\+Ping@{New\+Ping}!timer\+\_\+us@{timer\+\_\+us}}
+\index{timer\+\_\+us@{timer\+\_\+us}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{timer\+\_\+us()}{timer\_us()}}
+{\footnotesize\ttfamily void New\+Ping\+::timer\+\_\+us (\begin{DoxyParamCaption}\item[{unsigned int}]{frequency,  }\item[{void($\ast$)(void)}]{user\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_new_ping_a0d36ad3bdb5cdc14fba6fee0d99286b9}\label{class_new_ping_a0d36ad3bdb5cdc14fba6fee0d99286b9}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+echo\+Bit@{\+\_\+echo\+Bit}}
+\index{\+\_\+echo\+Bit@{\+\_\+echo\+Bit}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+echo\+Bit}{\_echoBit}}
+{\footnotesize\ttfamily uint8\+\_\+t New\+Ping\+::\+\_\+echo\+Bit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a3cc016f4cbeec318ed9198037b4035c5}\label{class_new_ping_a3cc016f4cbeec318ed9198037b4035c5}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+echo\+Input@{\+\_\+echo\+Input}}
+\index{\+\_\+echo\+Input@{\+\_\+echo\+Input}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+echo\+Input}{\_echoInput}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t$\ast$ New\+Ping\+::\+\_\+echo\+Input\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a54d56a64eeb78d180cc509cefcd87b0e}\label{class_new_ping_a54d56a64eeb78d180cc509cefcd87b0e}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+max\+\_\+time@{\+\_\+max\+\_\+time}}
+\index{\+\_\+max\+\_\+time@{\+\_\+max\+\_\+time}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+max\+\_\+time}{\_max\_time}}
+{\footnotesize\ttfamily unsigned long New\+Ping\+::\+\_\+max\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_aff39ea978a9a7ad4612c661e84ce216f}\label{class_new_ping_aff39ea978a9a7ad4612c661e84ce216f}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+max\+Echo\+Time@{\+\_\+max\+Echo\+Time}}
+\index{\+\_\+max\+Echo\+Time@{\+\_\+max\+Echo\+Time}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+max\+Echo\+Time}{\_maxEchoTime}}
+{\footnotesize\ttfamily unsigned int New\+Ping\+::\+\_\+max\+Echo\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_abf178ee257a94b6e446d7cc065c0dd7a}\label{class_new_ping_abf178ee257a94b6e446d7cc065c0dd7a}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+trigger\+Bit@{\+\_\+trigger\+Bit}}
+\index{\+\_\+trigger\+Bit@{\+\_\+trigger\+Bit}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+trigger\+Bit}{\_triggerBit}}
+{\footnotesize\ttfamily uint8\+\_\+t New\+Ping\+::\+\_\+trigger\+Bit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_adad3a763d59af120949a74e60a4ef9a5}\label{class_new_ping_adad3a763d59af120949a74e60a4ef9a5}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+trigger\+Mode@{\+\_\+trigger\+Mode}}
+\index{\+\_\+trigger\+Mode@{\+\_\+trigger\+Mode}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+trigger\+Mode}{\_triggerMode}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t$\ast$ New\+Ping\+::\+\_\+trigger\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_af0092b725d895673fb3d4c01e89992ed}\label{class_new_ping_af0092b725d895673fb3d4c01e89992ed}} 
+\index{New\+Ping@{New\+Ping}!\+\_\+trigger\+Output@{\+\_\+trigger\+Output}}
+\index{\+\_\+trigger\+Output@{\+\_\+trigger\+Output}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{\+\_\+trigger\+Output}{\_triggerOutput}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t$\ast$ New\+Ping\+::\+\_\+trigger\+Output\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_new_ping_a5d78ebdbffa4f42124ff7e06860503e6}\label{class_new_ping_a5d78ebdbffa4f42124ff7e06860503e6}} 
+\index{New\+Ping@{New\+Ping}!ping\+\_\+result@{ping\+\_\+result}}
+\index{ping\+\_\+result@{ping\+\_\+result}!New\+Ping@{New\+Ping}}
+\subsubsection{\texorpdfstring{ping\+\_\+result}{ping\_result}}
+{\footnotesize\ttfamily unsigned long New\+Ping\+::ping\+\_\+result}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_new_ping_8h}{New\+Ping.\+h}}\item 
+D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_new_ping_8cpp}{New\+Ping.\+cpp}}\end{DoxyCompactItemize}

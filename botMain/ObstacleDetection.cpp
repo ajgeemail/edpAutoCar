@@ -18,28 +18,9 @@ void ObstacleDetection::detectAllSensors()
     uint8_t frontMeasured = 0;
     uint8_t leftMeasured = 0;
     uint8_t rightMeasured = 0;
-
-    // Currently front, left and right DistanceX, Y and MeasuredDistance unused but they
-    // are filled with the relative distance to obstacle from pozyx. Could be used later
-    /*
-    float frontDistanceX;
-    float frontDistanceY;
-    float frontMeasuredDistance;
-
-    float leftDistanceX;
-    float leftDistanceY;
-    float leftMeasuredDistance;
-
-    float rightDistanceX;
-    float rightDistanceY;
-    float rightMeasuredDistance;
-    */
     
     // Update Sensor 1 data
     frontMeasured = frontSensorPtr_->activateSensor(iterations);
-    //frontDistanceX = frontSensorPtr_->objXDist_;
-    //frontDistanceY = frontSensorPtr_->objYDist_;
-    //frontMeasuredDistance = frontSensorPtr_->distance_;
 
     // Output obstacle grid reference
     if (frontMeasured == 1)
@@ -48,7 +29,12 @@ void ObstacleDetection::detectAllSensors()
         
         // Output obstacle grid location to navigator object (points to nav in botMain)
         if(frontSensorPtr_->gridX_ > 0 && frontSensorPtr_->gridX_ < WIDTH + 2 && frontSensorPtr_->gridY_ > 0 && frontSensorPtr_->gridY_ < HEIGHT + 2)
+        {
             navPtr_->addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
+        }
+        else
+        {
+        }
     }
     else
     {
@@ -58,11 +44,9 @@ void ObstacleDetection::detectAllSensors()
     if (frontMeasured == 1 || frontMeasured == 0)
     {
         //frontSensorPtr_->printDistance("Front"); 
+        
         // Update Sensor 2 data
         leftMeasured = leftSensorPtr_->activateSensor(iterations);
-        //leftDistanceX = leftSensorPtr_->objXDist_;
-        //leftDistanceY = leftSensorPtr_->objYDist_;
-        //leftMeasuredDistance = leftSensorPtr_->distance_;
         
         // Output obstacle grid reference
         if (leftMeasured == 1)
@@ -86,11 +70,9 @@ void ObstacleDetection::detectAllSensors()
         if (leftMeasured == 1 || leftMeasured == 0)
         {
             //leftSensorPtr_->printDistance("Left");
+            
             // Update Sensor 3 data
             rightMeasured = rightSensorPtr_->activateSensor(iterations);
-            //rightDistanceX = rightSensorPtr_->objXDist_;
-            //rightDistanceY = rightSensorPtr_->objYDist_;
-            //rightMeasuredDistance = rightSensorPtr_->distance_;
             
             // Output obstacle grid reference
             if (rightMeasured == 1)
@@ -117,13 +99,8 @@ void ObstacleDetection::detectAllSensors()
     else
     {
     }
-    
-    //*frontSensorPtr_->printDistance("Front: ");
-    //*leftSensorPtr_->printDistance("Left:  ");
-    //*rightSensorPtr_->printDistance("Right: ");
 }
 
-// Detects with only left sensor
 uint8_t ObstacleDetection::detectLeftSensor()
 {
     auto measured = leftSensorPtr_->activateSensor(iterations);
@@ -131,7 +108,6 @@ uint8_t ObstacleDetection::detectLeftSensor()
     return measured;
 }
 
-// Detects with only right sensor
 uint8_t ObstacleDetection::detectRightSensor()
 {
     auto measured = rightSensorPtr_->activateSensor(iterations);
@@ -139,7 +115,6 @@ uint8_t ObstacleDetection::detectRightSensor()
     return measured;
 }
 
-// Detects with only front sensor
 uint8_t ObstacleDetection::detectFrontSensor()
 {
     auto measured = frontSensorPtr_->activateSensor(iterations);

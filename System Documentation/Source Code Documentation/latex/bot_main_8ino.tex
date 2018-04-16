@@ -1,0 +1,367 @@
+\hypertarget{bot_main_8ino}{}\section{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.ino File Reference}
+\label{bot_main_8ino}\index{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.\+ino@{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.\+ino}}
+{\ttfamily \#include \char`\"{}Obstacle\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Obstacle\+Detection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}~270$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}~0$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}~90$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}{B\+A\+C\+K\+W\+A\+RD}}~180$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}}~45$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}}~315$\ast$(PI/180);
+\item 
+\#define \mbox{\hyperlink{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}}~225$\ast$(PI/180);
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bot_main_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{bot_main_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\item 
+void \mbox{\hyperlink{bot_main_8ino_a8e570cfb3e7e7e8306ab7c755345c5b8}{test\+Blue\+Tooth\+Grid}} ()
+\begin{DoxyCompactList}\small\item\em fake function -\/ to be deleted -\/ just there to see if nav.\+grid\+\_\+ array can be accessed from here \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{bot_main_8ino_a26ae4f60d3d4ebfa68763710b6f20e7c}{avs\+Heading\+\_\+}} = 0$\ast$(PI/180)
+\item 
+float \mbox{\hyperlink{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}{avs\+X\+\_\+}} = 0
+\item 
+float \mbox{\hyperlink{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}{avs\+Y\+\_\+}} = 0
+\item 
+\mbox{\hyperlink{class_navigator}{Navigator}} \mbox{\hyperlink{bot_main_8ino_a4d757d2a3d2bcf4b98f6f4a72d7df7de}{nav}}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}{front\+Trigger\+Pin}} = 17
+\begin{DoxyCompactList}\small\item\em Front sensor arduino trigger pin number. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a878ae4b68ec48fc902c4aa953ad565b4}{front\+Echo\+Pin}} = \mbox{\hyperlink{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}{front\+Trigger\+Pin}}
+\begin{DoxyCompactList}\small\item\em Front sensor arduino echo pin number. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_abdd898a2dfa2f64e2821af36c6ed3724}{front\+X\+Offset}} = 0
+\begin{DoxyCompactList}\small\item\em Front sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}{front\+Y\+Offset}} = 10
+\begin{DoxyCompactList}\small\item\em Front sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_ad681cfe410d5d764c513368773b9de93}{frontsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}
+\begin{DoxyCompactList}\small\item\em Front sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}} = 15
+\begin{DoxyCompactList}\small\item\em Left sensor arduino trigger pin number. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}{left\+Echo\+Pin}} = \mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}}
+\begin{DoxyCompactList}\small\item\em Left sensor arduino echo pin number. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}{left\+X\+Offset}} = -\/5
+\begin{DoxyCompactList}\small\item\em Left sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}{left\+Y\+Offset}} = 2
+\begin{DoxyCompactList}\small\item\em Left sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}{leftsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}
+\begin{DoxyCompactList}\small\item\em Left sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}} = 19
+\begin{DoxyCompactList}\small\item\em Right sensor arduino trigger pin number. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}{right\+Echo\+Pin}} = \mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}}
+\begin{DoxyCompactList}\small\item\em Right sensor arduino echo pin number. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}{right\+X\+Offset}} = 5
+\begin{DoxyCompactList}\small\item\em Right sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}{right\+Y\+Offset}} = 2
+\begin{DoxyCompactList}\small\item\em Right sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}{rightsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}
+\begin{DoxyCompactList}\small\item\em Right sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff57879491e2}{dht\+Pin}} = 14
+\begin{DoxyCompactList}\small\item\em D\+H\+T22 Sensor arduino pin number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} \mbox{\hyperlink{bot_main_8ino_a355879266d10af4a6e9126a47bc09113}{front\+Sensor}} (\mbox{\hyperlink{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}{front\+Trigger\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a878ae4b68ec48fc902c4aa953ad565b4}{front\+Echo\+Pin}}, \mbox{\hyperlink{bot_main_8ino_abdd898a2dfa2f64e2821af36c6ed3724}{front\+X\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}{front\+Y\+Offset}}, \mbox{\hyperlink{bot_main_8ino_ad681cfe410d5d764c513368773b9de93}{frontsensor\+Angle}})
+\begin{DoxyCompactList}\small\item\em Front sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at front of A\+VS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} \mbox{\hyperlink{bot_main_8ino_af137d1119f05ab98ae8e50559b9d6bfe}{left\+Sensor}} (\mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}{left\+Echo\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}{left\+X\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}{left\+Y\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}{leftsensor\+Angle}})
+\begin{DoxyCompactList}\small\item\em Left sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at left of A\+VS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} \mbox{\hyperlink{bot_main_8ino_a4b08258caa24173f4153413d596aea69}{right\+Sensor}} (\mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}{right\+Echo\+Pin}}, \mbox{\hyperlink{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}{right\+X\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}{right\+Y\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}{rightsensor\+Angle}})
+\begin{DoxyCompactList}\small\item\em Right sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at right of A\+VS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}\label{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!B\+A\+C\+K\+W\+A\+RD@{B\+A\+C\+K\+W\+A\+RD}}
+\index{B\+A\+C\+K\+W\+A\+RD@{B\+A\+C\+K\+W\+A\+RD}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{B\+A\+C\+K\+W\+A\+RD}{BACKWARD}}
+{\footnotesize\ttfamily \#define B\+A\+C\+K\+W\+A\+RD~180$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}\label{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}}
+\index{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}{DIAG\_BACK\_LEFT}}
+{\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT~225$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}\label{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}}
+\index{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}{DIAG\_FOR\_LEFT}}
+{\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT~315$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}\label{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}}
+\index{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}{DIAG\_FOR\_RIGHT}}
+{\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT~45$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}\label{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}}
+\index{F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{F\+O\+R\+W\+A\+RD}{FORWARD}}
+{\footnotesize\ttfamily \#define F\+O\+R\+W\+A\+RD~0$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_a437ef08681e7210d6678427030446a54}\label{bot_main_8ino_a437ef08681e7210d6678427030446a54}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!L\+E\+FT@{L\+E\+FT}}
+\index{L\+E\+FT@{L\+E\+FT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{L\+E\+FT}{LEFT}}
+{\footnotesize\ttfamily \#define L\+E\+FT~270$\ast$(PI/180);}
+
+\mbox{\Hypertarget{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}\label{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!R\+I\+G\+HT@{R\+I\+G\+HT}}
+\index{R\+I\+G\+HT@{R\+I\+G\+HT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{R\+I\+G\+HT}{RIGHT}}
+{\footnotesize\ttfamily \#define R\+I\+G\+HT~90$\ast$(PI/180);}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{bot_main_8ino_afe461d27b9c48d5921c00d521181f12f}\label{bot_main_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!loop@{loop}}
+\index{loop@{loop}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bot_main_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{bot_main_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!setup@{setup}}
+\index{setup@{setup}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{bot_main_8ino_a8e570cfb3e7e7e8306ab7c755345c5b8}\label{bot_main_8ino_a8e570cfb3e7e7e8306ab7c755345c5b8}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!test\+Blue\+Tooth\+Grid@{test\+Blue\+Tooth\+Grid}}
+\index{test\+Blue\+Tooth\+Grid@{test\+Blue\+Tooth\+Grid}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{test\+Blue\+Tooth\+Grid()}{testBlueToothGrid()}}
+{\footnotesize\ttfamily void test\+Blue\+Tooth\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+fake function -\/ to be deleted -\/ just there to see if nav.\+grid\+\_\+ array can be accessed from here 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{bot_main_8ino_a26ae4f60d3d4ebfa68763710b6f20e7c}\label{bot_main_8ino_a26ae4f60d3d4ebfa68763710b6f20e7c}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+Heading\+\_\+@{avs\+Heading\+\_\+}}
+\index{avs\+Heading\+\_\+@{avs\+Heading\+\_\+}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{avs\+Heading\+\_\+}{avsHeading\_}}
+{\footnotesize\ttfamily float avs\+Heading\+\_\+ = 0$\ast$(PI/180)}
+
+$\ast$$\ast$$\ast$$\ast$$\ast$ \mbox{\hyperlink{bot_main_8ino}{bot\+Main.\+ino}} -\/ Main .ino file for arduino (for now, someone else may have a better one) $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+NS\+: $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ 1. Ensure all libraries are installed by navigating Sketch $>$ Include Library $>$ Manage Libraries $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ and searching for the following libraries\+: (i) D\+HT $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ (ii) Adafuit Unified Sensor $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ (iii) Adafruit A\+M2315 $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ 2. \mbox{\Hypertarget{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}\label{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+X\+\_\+@{avs\+X\+\_\+}}
+\index{avs\+X\+\_\+@{avs\+X\+\_\+}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{avs\+X\+\_\+}{avsX\_}}
+{\footnotesize\ttfamily float avs\+X\+\_\+ = 0}
+
+\mbox{\Hypertarget{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}\label{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+Y\+\_\+@{avs\+Y\+\_\+}}
+\index{avs\+Y\+\_\+@{avs\+Y\+\_\+}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{avs\+Y\+\_\+}{avsY\_}}
+{\footnotesize\ttfamily float avs\+Y\+\_\+ = 0}
+
+\mbox{\Hypertarget{bot_main_8ino_a89e40ffdf0114ea60292ff57879491e2}\label{bot_main_8ino_a89e40ffdf0114ea60292ff57879491e2}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!dht\+Pin@{dht\+Pin}}
+\index{dht\+Pin@{dht\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{dht\+Pin}{dhtPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t dht\+Pin = 14}
+
+
+
+D\+H\+T22 Sensor arduino pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_a878ae4b68ec48fc902c4aa953ad565b4}\label{bot_main_8ino_a878ae4b68ec48fc902c4aa953ad565b4}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+Echo\+Pin@{front\+Echo\+Pin}}
+\index{front\+Echo\+Pin@{front\+Echo\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{front\+Echo\+Pin}{frontEchoPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t front\+Echo\+Pin = \mbox{\hyperlink{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}{front\+Trigger\+Pin}}}
+
+
+
+Front sensor arduino echo pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_a355879266d10af4a6e9126a47bc09113}\label{bot_main_8ino_a355879266d10af4a6e9126a47bc09113}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+Sensor@{front\+Sensor}}
+\index{front\+Sensor@{front\+Sensor}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{front\+Sensor}{frontSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} ods \& front\+Sensor}
+
+
+
+Front sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at front of A\+VS. 
+
+Obstacle detection system object initialisation -\/ used to activate \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects as required and pass on information to the navigation system \mbox{\Hypertarget{bot_main_8ino_ad681cfe410d5d764c513368773b9de93}\label{bot_main_8ino_ad681cfe410d5d764c513368773b9de93}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!frontsensor\+Angle@{frontsensor\+Angle}}
+\index{frontsensor\+Angle@{frontsensor\+Angle}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{frontsensor\+Angle}{frontsensorAngle}}
+{\footnotesize\ttfamily const float frontsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}}
+
+
+
+Front sensor angle relative to forward of chassis. 
+
+\mbox{\Hypertarget{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}\label{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+Trigger\+Pin@{front\+Trigger\+Pin}}
+\index{front\+Trigger\+Pin@{front\+Trigger\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{front\+Trigger\+Pin}{frontTriggerPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t front\+Trigger\+Pin = 17}
+
+
+
+Front sensor arduino trigger pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_abdd898a2dfa2f64e2821af36c6ed3724}\label{bot_main_8ino_abdd898a2dfa2f64e2821af36c6ed3724}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+X\+Offset@{front\+X\+Offset}}
+\index{front\+X\+Offset@{front\+X\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{front\+X\+Offset}{frontXOffset}}
+{\footnotesize\ttfamily const float front\+X\+Offset = 0}
+
+
+
+Front sensor x offset on chassis from pozyx location. 
+
+\mbox{\Hypertarget{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}\label{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+Y\+Offset@{front\+Y\+Offset}}
+\index{front\+Y\+Offset@{front\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{front\+Y\+Offset}{frontYOffset}}
+{\footnotesize\ttfamily const float front\+Y\+Offset = 10}
+
+
+
+Front sensor y offset on chassis from pozyx location. 
+
+\mbox{\Hypertarget{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}\label{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+Echo\+Pin@{left\+Echo\+Pin}}
+\index{left\+Echo\+Pin@{left\+Echo\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{left\+Echo\+Pin}{leftEchoPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t left\+Echo\+Pin = \mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}}}
+
+
+
+Left sensor arduino echo pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_af137d1119f05ab98ae8e50559b9d6bfe}\label{bot_main_8ino_af137d1119f05ab98ae8e50559b9d6bfe}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+Sensor@{left\+Sensor}}
+\index{left\+Sensor@{left\+Sensor}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{left\+Sensor}{leftSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} left\+Sensor(\mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}{left\+Echo\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}{left\+X\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}{left\+Y\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}{leftsensor\+Angle}})}
+
+
+
+Left sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at left of A\+VS. 
+
+\mbox{\Hypertarget{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}\label{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!leftsensor\+Angle@{leftsensor\+Angle}}
+\index{leftsensor\+Angle@{leftsensor\+Angle}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{leftsensor\+Angle}{leftsensorAngle}}
+{\footnotesize\ttfamily const float leftsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}}
+
+
+
+Left sensor angle relative to forward of chassis. 
+
+\mbox{\Hypertarget{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}\label{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+Trigger\+Pin@{left\+Trigger\+Pin}}
+\index{left\+Trigger\+Pin@{left\+Trigger\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{left\+Trigger\+Pin}{leftTriggerPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t left\+Trigger\+Pin = 15}
+
+
+
+Left sensor arduino trigger pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}\label{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+X\+Offset@{left\+X\+Offset}}
+\index{left\+X\+Offset@{left\+X\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{left\+X\+Offset}{leftXOffset}}
+{\footnotesize\ttfamily const float left\+X\+Offset = -\/5}
+
+
+
+Left sensor x offset on chassis from pozyx location. 
+
+\mbox{\Hypertarget{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}\label{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+Y\+Offset@{left\+Y\+Offset}}
+\index{left\+Y\+Offset@{left\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{left\+Y\+Offset}{leftYOffset}}
+{\footnotesize\ttfamily const float left\+Y\+Offset = 2}
+
+
+
+Left sensor y offset on chassis from pozyx location. 
+
+\mbox{\Hypertarget{bot_main_8ino_a4d757d2a3d2bcf4b98f6f4a72d7df7de}\label{bot_main_8ino_a4d757d2a3d2bcf4b98f6f4a72d7df7de}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!nav@{nav}}
+\index{nav@{nav}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{nav}{nav}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_navigator}{Navigator}} nav}
+
+\mbox{\Hypertarget{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}\label{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Echo\+Pin@{right\+Echo\+Pin}}
+\index{right\+Echo\+Pin@{right\+Echo\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{right\+Echo\+Pin}{rightEchoPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t right\+Echo\+Pin = \mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}}}
+
+
+
+Right sensor arduino echo pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_a4b08258caa24173f4153413d596aea69}\label{bot_main_8ino_a4b08258caa24173f4153413d596aea69}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Sensor@{right\+Sensor}}
+\index{right\+Sensor@{right\+Sensor}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{right\+Sensor}{rightSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} right\+Sensor(\mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}}, \mbox{\hyperlink{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}{right\+Echo\+Pin}}, \mbox{\hyperlink{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}{right\+X\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}{right\+Y\+Offset}}, \mbox{\hyperlink{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}{rightsensor\+Angle}})}
+
+
+
+Right sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at right of A\+VS. 
+
+\mbox{\Hypertarget{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}\label{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!rightsensor\+Angle@{rightsensor\+Angle}}
+\index{rightsensor\+Angle@{rightsensor\+Angle}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{rightsensor\+Angle}{rightsensorAngle}}
+{\footnotesize\ttfamily const float rightsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}}
+
+
+
+Right sensor angle relative to forward of chassis. 
+
+\mbox{\Hypertarget{bot_main_8ino_a906054d9d48970211789ac841d331898}\label{bot_main_8ino_a906054d9d48970211789ac841d331898}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Trigger\+Pin@{right\+Trigger\+Pin}}
+\index{right\+Trigger\+Pin@{right\+Trigger\+Pin}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{right\+Trigger\+Pin}{rightTriggerPin}}
+{\footnotesize\ttfamily const uint8\+\_\+t right\+Trigger\+Pin = 19}
+
+
+
+Right sensor arduino trigger pin number. 
+
+\mbox{\Hypertarget{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}\label{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+X\+Offset@{right\+X\+Offset}}
+\index{right\+X\+Offset@{right\+X\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{right\+X\+Offset}{rightXOffset}}
+{\footnotesize\ttfamily const float right\+X\+Offset = 5}
+
+
+
+Right sensor x offset on chassis from pozyx location. 
+
+\mbox{\Hypertarget{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}\label{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Y\+Offset@{right\+Y\+Offset}}
+\index{right\+Y\+Offset@{right\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{right\+Y\+Offset}{rightYOffset}}
+{\footnotesize\ttfamily const float right\+Y\+Offset = 2}
+
+
+
+Right sensor y offset on chassis from pozyx location. 
+

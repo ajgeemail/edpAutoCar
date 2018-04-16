@@ -19,7 +19,7 @@ class ObstacleSensor
         //! Pin definitions
         uint8_t triggerPin_, echoPin_;
 
-        //! Stores calculated speed of sound in cm/ms
+        //! Stores calculated speed of sound in cm/ms - defaults to speed at 20 degrees Celcius
         static float soundcm_;
 
         //! Maximum distance of sensor (i.e. 400cm)
