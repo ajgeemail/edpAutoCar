@@ -102,8 +102,8 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
         objY_ = objYDist_ + yPos_;
 
         // Convert x and y obstacle coordinate to grid reference
-        gridX_ = (objX_ + bias_*unitVect_[0])/50;
-        gridY_ = (objY_ + bias_*unitVect_[1])/50;
+        gridX_ = (objX_ + bias_*unitVect_[0])/50 + 1;
+        gridY_ = (objY_ + bias_*unitVect_[1])/50 + 1;
         
         return 1;
     }

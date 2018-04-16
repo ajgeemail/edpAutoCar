@@ -10,12 +10,12 @@ void Navigator::createMap()
 {
 	  // the additional two units to each dimensions is to create an obstacle boundary 
 	  // wall around the grid
-  	for(int i = 0; i < WIDTH + 2; i++)
+  	for(int i = 0; i < HEIGHT + 2; i++)
   	{
-    		for(int j = 0; j < HEIGHT + 2; j++)
+    		for(int j = 0; j < WIDTH + 2; j++)
     		{   
       			grid_[i][j][ELEMENT_XPOS] = j;                     	 
-      			grid_[i][j][ELEMENT_YPOS] = HEIGHT - i + 1;   	     // converts array coord to cartesian y-coord
+      			grid_[i][j][ELEMENT_YPOS] = convertToArray(i);   	     // converts array coord to cartesian y-coord
       			grid_[i][j][ELEMENT_VALUE] = 0;                      // 0 is the value for unassigned value
     		}
   	}
@@ -43,7 +43,7 @@ void Navigator::testMap()
   	createMap();
   	printMap();
   	Serial.println("\nTESTING - creategrid_:");
-  	testObstacleData();
+  	//testObstacleData();
   	printMap();
   	Serial.println("===================================");
 }
@@ -51,9 +51,9 @@ void Navigator::testMap()
 void Navigator::printMap()
 {
   	Serial.println("X-COORDINATES:");
-  	for(int i = 0; i < HEIGHT; i++)
+  	for(int i = 0; i < HEIGHT + 2; i++)
   	{
-    		for(int j = 0; j < WIDTH; j++)
+    		for(int j = 0; j < WIDTH + 2; j++)
     		{
     			Serial.print(grid_[i][j][ELEMENT_XPOS]);
     			Serial.print("\t");
@@ -62,9 +62,9 @@ void Navigator::printMap()
   	}
   	
   	Serial.println("Y-COORDINATES:");
-  	for(int i = 0; i < HEIGHT; i++)
+  	for(int i = 0; i < HEIGHT + 2; i++)
   	{
-    		for(int j = 0; j < WIDTH; j++)
+    		for(int j = 0; j < WIDTH + 2; j++)
     		{
     			Serial.print(grid_[i][j][ELEMENT_YPOS]);
     			Serial.print("\t");
@@ -73,9 +73,9 @@ void Navigator::printMap()
   	}   
   	
   	Serial.println("VALUES:");
-  	for(int i = 0; i < HEIGHT; i++)
+  	for(int i = 0; i < HEIGHT + 2; i++)
   	{
-    		for(int j = 0; j < WIDTH; j++)
+    		for(int j = 0; j < WIDTH + 2; j++)
     		{
     			Serial.print(grid_[i][j][ELEMENT_VALUE]);
     			Serial.print("\t");

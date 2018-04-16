@@ -73,12 +73,11 @@ void setup()
 {
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
-    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
     nav.testMap();
     
     // Adds a number of dummy obstacle locations for OD-NM interface testing purposes
-    //ods.odsToNavTestObstacles();
-    //nav.printMap();
+    ods.odsToNavTestObstacles();
+    nav.printMap();
 }
 
 void loop() 
