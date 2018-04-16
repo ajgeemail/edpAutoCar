@@ -43,9 +43,9 @@ void ObstacleDetection::detectAllSensors()
 
     // Output obstacle grid reference
     if (frontMeasured == 1)
-    {
-        //frontSensorPtr_->printDistance("Front");        
-
+    {    
+        frontSensorPtr_->printDistance("Front"); 
+        
         // Output obstacle grid location to navigator object (points to nav in botMain)
         navPtr_->addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
     }
@@ -53,6 +53,7 @@ void ObstacleDetection::detectAllSensors()
     // Wait for sensor 1 to finish to begin sensor 2 measurements
     if (frontMeasured == 1 || frontMeasured == 0)
     {
+        frontSensorPtr_->printDistance("Front"); 
         // Update Sensor 2 data
         leftMeasured = leftSensorPtr_->activateSensor(iterations);
         //leftDistanceX = leftSensorPtr_->objXDist_;
@@ -62,7 +63,7 @@ void ObstacleDetection::detectAllSensors()
         // Output obstacle grid reference
         if (leftMeasured == 1)
         {
-            //leftSensorPtr_->printDistance("Left");
+            leftSensorPtr_->printDistance("Left");
 
             // Output obstacle grid location to navigator object (points to nav in botMain)
             navPtr_->addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
@@ -71,6 +72,7 @@ void ObstacleDetection::detectAllSensors()
         // Wait for sensor 2 to finish to begin sensor 3 measurements
         if (leftMeasured == 1 || leftMeasured == 0)
         {
+            leftSensorPtr_->printDistance("Left");
             // Update Sensor 3 data
             rightMeasured = rightSensorPtr_->activateSensor(iterations);
             //rightDistanceX = rightSensorPtr_->objXDist_;
@@ -80,7 +82,7 @@ void ObstacleDetection::detectAllSensors()
             // Output obstacle grid reference
             if (rightMeasured == 1)
             {
-                //rightSensorPtr_->printDistance("Right");
+                rightSensorPtr_->printDistance("Right");
 
                 // Output obstacle grid location to navigator object (points to nav in botMain)
                 navPtr_->addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);

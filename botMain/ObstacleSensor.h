@@ -62,7 +62,7 @@ class ObstacleSensor
     
     public :
         // Default constructor - not used
-        ObstacleSensor();
+        //ObstacleSensor();
 
         // Constructor reads in pin details as well as relative to car location and direction details
         ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle);
@@ -93,7 +93,7 @@ class ObstacleSensor
             yaw_ = heading;
         }
 
-        
+        void setXOffset(float offsetX){offsetX_ = offsetX;}
 
         
 };

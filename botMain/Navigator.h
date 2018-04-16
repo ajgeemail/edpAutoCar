@@ -9,7 +9,7 @@ extern const int HEIGHT, WIDTH, DATA, ELEMENT_XPOS, ELEMENT_YPOS, ELEMENT_VALUE;
 class Navigator
 {
     public:
-        int grid_[HEIGHT][WIDTH][DATA];
+        int grid_[HEIGHT + 2][WIDTH + 2][DATA];
 
     private: 
         /**

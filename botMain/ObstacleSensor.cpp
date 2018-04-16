@@ -20,7 +20,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     sensorAngle_(sensorAngle),
     sonar_(triggerPin_, echoPin_, maxDistance_)
 {
-
+    Serial.println("Obstacle Sensor Constructor");
 }
 
 /* static */ void ObstacleSensor::calculateSoundCm(uint8_t dhtPin)
