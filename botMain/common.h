@@ -1,6 +1,9 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+//! \brief Contains variables common to multiple classes allowing easy sharing of this
+//! information rather than passing the variables or doubling up on them.
+
 static const int HEIGHT = 10;
 static const int WIDTH = 10; 
 static const int DATA = 3;

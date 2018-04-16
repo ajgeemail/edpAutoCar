@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system.  
+ <a href="class_obstacle_detection.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,9 +121,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a37811b168a642890429f6752118341cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_obstacle_detection.html">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system.</p>
-<p>INPUTS: Requires information detailing <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects</p>
-<p>OUTPUTS TO: Grid reference to navigation system </p>
+<div class="textblock"><p><a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system. </p>
+<p>A single <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object is used per AVS unit, and it contains all of the details of the specific respective <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects. The <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object has at its disposal a number of <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> activation patterns based on the needs of the particular environment and AVS configuration. INPUTS: Requires information detailing <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects OUTPUTS TO: Grid reference to navigation system </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1ef460cae951b0ddaa04088645109f47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ef460cae951b0ddaa04088645109f47">&#9670;&nbsp;</a></span>ObstacleDetection() <span class="overload">[1/2]</span></h2>
@@ -178,12 +180,12 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor which takes in three <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object pointers and navigator object pointer used to activate in different sequences as required </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructor which takes in three <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object pointers and navigator object pointer used to activate in different sequences as required </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*frontSensorPtr</td><td>Pointer to front sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*leftSensororPtr</td><td>Pointer to left sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*rightSensorPtr</td><td>Pointer to right sensor Obstacle Sensor Object </td></tr>
-    <tr><td class="paramname">*navPtr</td><td>Pointer to <a class="el" href="class_navigator.html">Navigator</a> object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
+    <tr><td class="paramname">*navPtr</td><td>Pointer to <a class="el" href="class_navigator.html" title="TO EDIT: Add a brief description here that will show up on the classes page. ">Navigator</a> object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
   </table>
   </dd>
 </dl>

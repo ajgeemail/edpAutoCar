@@ -1,5 +1,10 @@
 \hypertarget{bot_main_8ino}{}\section{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.ino File Reference}
 \label{bot_main_8ino}\index{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.\+ino@{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.\+ino}}
+
+
+Top level file for the A\+VS which integrates all sub-\/systems on the arduino.  
+
+
 {\ttfamily \#include \char`\"{}Obstacle\+Sensor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Obstacle\+Detection.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
@@ -7,19 +12,21 @@
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}~270$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Left direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}~0$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Forward direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}~90$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Right direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}{B\+A\+C\+K\+W\+A\+RD}}~180$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Backward direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}}~45$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Forward right diagonal direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}}~315$\ast$(PI/180);
-\item 
+\begin{DoxyCompactList}\small\item\em Forward diagonal left direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}}~225$\ast$(PI/180);
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Backward diagonal left direction relative to front of A\+VS in radians. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bot_main_8ino_a2556f3b6bde97cfd17b3df68e3fca5fd}{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT}}~135$\ast$(PI/180);
+\begin{DoxyCompactList}\small\item\em Backward diagonal right direction relative to front of A\+VS in radians. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,7 +40,7 @@ void \mbox{\hyperlink{bot_main_8ino_a8e570cfb3e7e7e8306ab7c755345c5b8}{test\+Blu
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{bot_main_8ino_a26ae4f60d3d4ebfa68763710b6f20e7c}{avs\+Heading\+\_\+}} = 0$\ast$(PI/180)
-\item 
+\begin{DoxyCompactList}\small\item\em Heading -\/ to come from pozyx locatio system. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}{avs\+X\+\_\+}} = 0
 \item 
 float \mbox{\hyperlink{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}{avs\+Y\+\_\+}} = 0
@@ -80,6 +87,11 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff5787949
 \begin{DoxyCompactList}\small\item\em Right sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object initialisation -\/ used to detect obstacles at right of A\+VS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Top level file for the A\+VS which integrates all sub-\/systems on the arduino. 
+
+The bot\+Main file will contain the initial setup and loop functions along with all sub-\/system object initialisations including parameter setting. Ideally all of the sub-\/systems shall implement separate classes to improve modularity and readability of this top file. Requires specific libraries be downloaded using the Include Library function explained as per I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+NS below. 
+
 \subsection{Macro Definition Documentation}
 \mbox{\Hypertarget{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}\label{bot_main_8ino_adf445abfe1b77fa63f89e315ccc2f7f2}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!B\+A\+C\+K\+W\+A\+RD@{B\+A\+C\+K\+W\+A\+RD}}
@@ -87,11 +99,29 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff5787949
 \subsubsection{\texorpdfstring{B\+A\+C\+K\+W\+A\+RD}{BACKWARD}}
 {\footnotesize\ttfamily \#define B\+A\+C\+K\+W\+A\+RD~180$\ast$(PI/180);}
 
+
+
+Backward direction relative to front of A\+VS in radians. 
+
 \mbox{\Hypertarget{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}\label{bot_main_8ino_ae4e94bd8dbc179e392c03bd987d6b05b}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}}
 \index{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}{DIAG\_BACK\_LEFT}}
 {\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT~225$\ast$(PI/180);}
+
+
+
+Backward diagonal left direction relative to front of A\+VS in radians. 
+
+\mbox{\Hypertarget{bot_main_8ino_a2556f3b6bde97cfd17b3df68e3fca5fd}\label{bot_main_8ino_a2556f3b6bde97cfd17b3df68e3fca5fd}} 
+\index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT}}
+\index{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
+\subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT}{DIAG\_BACK\_RIGHT}}
+{\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+R\+I\+G\+HT~135$\ast$(PI/180);}
+
+
+
+Backward diagonal right direction relative to front of A\+VS in radians. 
 
 \mbox{\Hypertarget{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}\label{bot_main_8ino_a7cfa9cd93a3a325dcce552ff4372733a}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}}
@@ -99,11 +129,19 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff5787949
 \subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}{DIAG\_FOR\_LEFT}}
 {\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT~315$\ast$(PI/180);}
 
+
+
+Forward diagonal left direction relative to front of A\+VS in radians. 
+
 \mbox{\Hypertarget{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}\label{bot_main_8ino_af0d4dc28dbd73c9eaadb8316bd959191}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}}
 \index{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT@{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}{DIAG\_FOR\_RIGHT}}
 {\footnotesize\ttfamily \#define D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT~45$\ast$(PI/180);}
+
+
+
+Forward right diagonal direction relative to front of A\+VS in radians. 
 
 \mbox{\Hypertarget{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}\label{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!F\+O\+R\+W\+A\+RD@{F\+O\+R\+W\+A\+RD}}
@@ -111,17 +149,29 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff5787949
 \subsubsection{\texorpdfstring{F\+O\+R\+W\+A\+RD}{FORWARD}}
 {\footnotesize\ttfamily \#define F\+O\+R\+W\+A\+RD~0$\ast$(PI/180);}
 
+
+
+Forward direction relative to front of A\+VS in radians. 
+
 \mbox{\Hypertarget{bot_main_8ino_a437ef08681e7210d6678427030446a54}\label{bot_main_8ino_a437ef08681e7210d6678427030446a54}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!L\+E\+FT@{L\+E\+FT}}
 \index{L\+E\+FT@{L\+E\+FT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{L\+E\+FT}{LEFT}}
 {\footnotesize\ttfamily \#define L\+E\+FT~270$\ast$(PI/180);}
 
+
+
+Left direction relative to front of A\+VS in radians. 
+
 \mbox{\Hypertarget{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}\label{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!R\+I\+G\+HT@{R\+I\+G\+HT}}
 \index{R\+I\+G\+HT@{R\+I\+G\+HT}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{R\+I\+G\+HT}{RIGHT}}
 {\footnotesize\ttfamily \#define R\+I\+G\+HT~90$\ast$(PI/180);}
+
+
+
+Right direction relative to front of A\+VS in radians. 
 
 
 
@@ -157,7 +207,11 @@ fake function -\/ to be deleted -\/ just there to see if nav.\+grid\+\_\+ array 
 \subsubsection{\texorpdfstring{avs\+Heading\+\_\+}{avsHeading\_}}
 {\footnotesize\ttfamily float avs\+Heading\+\_\+ = 0$\ast$(PI/180)}
 
-$\ast$$\ast$$\ast$$\ast$$\ast$ \mbox{\hyperlink{bot_main_8ino}{bot\+Main.\+ino}} -\/ Main .ino file for arduino (for now, someone else may have a better one) $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ I\+N\+S\+T\+R\+U\+C\+T\+I\+O\+NS\+: $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ 1. Ensure all libraries are installed by navigating Sketch $>$ Include Library $>$ Manage Libraries $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ and searching for the following libraries\+: (i) D\+HT $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ (ii) Adafuit Unified Sensor $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ (iii) Adafruit A\+M2315 $\ast$$\ast$$\ast$$\ast$$\ast$ // $\ast$$\ast$$\ast$$\ast$$\ast$ 2. \mbox{\Hypertarget{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}\label{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}} 
+
+
+Heading -\/ to come from pozyx locatio system. 
+
+\mbox{\Hypertarget{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}\label{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+X\+\_\+@{avs\+X\+\_\+}}
 \index{avs\+X\+\_\+@{avs\+X\+\_\+}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{avs\+X\+\_\+}{avsX\_}}

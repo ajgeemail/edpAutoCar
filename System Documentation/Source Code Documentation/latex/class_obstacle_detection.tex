@@ -2,6 +2,11 @@
 \label{class_obstacle_detection}\index{Obstacle\+Detection@{Obstacle\+Detection}}
 
 
+\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system.  
+
+
+
+
 {\ttfamily \#include $<$Obstacle\+Detection.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -43,11 +48,9 @@ static const uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_a37811b168a6
 
 
 \subsection{Detailed Description}
-\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system.
+\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system. 
 
-I\+N\+P\+U\+TS\+: Requires information detailing \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects
-
-O\+U\+T\+P\+U\+TS TO\+: Grid reference to navigation system 
+A single \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object is used per A\+VS unit, and it contains all of the details of the specific respective \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects. The \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object has at its disposal a number of \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} activation patterns based on the needs of the particular environment and A\+VS configuration. I\+N\+P\+U\+TS\+: Requires information detailing \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects O\+U\+T\+P\+U\+TS TO\+: Grid reference to navigation system 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_obstacle_detection_a1ef460cae951b0ddaa04088645109f47}\label{class_obstacle_detection_a1ef460cae951b0ddaa04088645109f47}} 

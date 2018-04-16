@@ -1,13 +1,17 @@
 #ifndef OBSTACLEDETECTION_H
 #define OBSTACLEDETECTION_H
 
-//! ObstacleDetection object controls the activation patterns of all 
+//! \brief ObstacleDetection object controls the activation patterns of all 
 //! ObstacleSensor objects and outputs detected obstacle grid references
 //! to the navigation system.
 //!
+//! A single ObstacleDetection object is used per AVS unit, and it contains
+//! all of the details of the specific respective ObstacleSensor objects.
+//! The ObstacleDetection object has at its disposal a number of ObstacleSensor
+//! activation patterns based on the needs of the particular environment and AVS
+//! configuration.
 //! INPUTS: 
 //! Requires information detailing ObstacleSensor objects
-//!
 //! OUTPUTS TO:
 //! Grid reference to navigation system
 

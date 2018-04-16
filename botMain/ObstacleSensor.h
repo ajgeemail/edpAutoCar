@@ -1,13 +1,19 @@
 #ifndef OBSTACLESENSOR_H
 #define OBSTACLESENSOR_H
 
-//! ObstacleSensor object contains all angles and distances/locations of a particular sensor
+//! \brief ObstacleSensor object contains all angles and distances/locations of a particular sensor
 //! allowing for distance calculations from the pozyx locator to be conducted.
+//!
+//! The ObstacleSensor object represents a single sensor on the AVS and as such
+//! multiple ObstacleSensor objects will exist in the botMain and ObstacleDetection
+//! modules. The ObstacleSensor class controls all of the sensor calculations
+//! to determine the distance to an obstacle and its grid reference. Once grid
+//! reference is determined the ObstacleDetection object will confirm its
+//! accuracy and legality.
 //! INPUTS: 
 //! Still require pozyx heading angle (interface between sensor and pozyx)
 //! Humidity and temperature details from DHT-22 for improved accuracy
 //! Interfaces with HC-SR04 sensors via NewPing class
-//!
 //! OUTPUTS TO:
 //! Objects used by ObstacleDetection class to output grid references to nav.
 

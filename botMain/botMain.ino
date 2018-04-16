@@ -1,6 +1,13 @@
-/**@file */
+//! \file botMain.ino
+//! \brief Top level file for the AVS which integrates all sub-systems on the arduino. 
+//!
+//! The botMain file will contain the initial setup and loop functions along with all sub-system
+//! object initialisations including parameter setting. Ideally all of the sub-systems shall
+//! implement separate classes to improve modularity and readability of this top file. Requires
+//! specific libraries be downloaded using the Include Library function explained as per INSTRUCTIONS
+//! below.
+
 // ****************************************************************************************************************** //
-// ***** botMain.ino - Main .ino file for arduino (for now, someone else may have a better one)                 ***** //
 // ***** INSTRUCTIONS:                                                                                          ***** //
 // ***** 1. Ensure all libraries are installed by navigating Sketch > Include Library > Manage Libraries        ***** //
 // *****    and searching for the following libraries:  (i)     DHT                                             ***** //
@@ -14,7 +21,8 @@
 #include "common.h"
 
 // **************** AVS SYSTEM WIDE VARIABLES *******************************************************
-float avsHeading_ = 0*(PI/180);  // This will need to be updated with pozyx data
+//! Heading - to come from pozyx locatio system
+float avsHeading_ = 0*(PI/180); // This will need to be updated with pozyx data
 float avsX_ = 0;                // This will need to be updated with pozyx data
 float avsY_ = 0;                // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
@@ -28,13 +36,22 @@ Navigator nav;
 
 // **************** ODS SPECIFIC VARIABLES **********************************************************
 // Direction variables in radians (relative to AVS heading)
+//! Left direction relative to front of AVS in radians
 #define LEFT 270*(PI/180);
+//! Forward direction relative to front of AVS in radians
 #define FORWARD 0*(PI/180);
+//! Right direction relative to front of AVS in radians
 #define RIGHT 90*(PI/180);
+//! Backward direction relative to front of AVS in radians
 #define BACKWARD 180*(PI/180);
+//! Forward right diagonal direction relative to front of AVS in radians
 #define DIAG_FOR_RIGHT 45*(PI/180);
+//! Forward diagonal left direction relative to front of AVS in radians
 #define DIAG_FOR_LEFT 315*(PI/180);
+//! Backward diagonal left direction relative to front of AVS in radians
 #define DIAG_BACK_LEFT 225*(PI/180);
+//! Backward diagonal right direction relative to front of AVS in radians
+#define DIAG_BACK_RIGHT 135*(PI/180);
 
 // ***** Setup Sensor 1 variables *****
 //! Front sensor arduino trigger pin number

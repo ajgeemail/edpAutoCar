@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_4b807a08d3279f7ef673e376992b1bce.html">OneDrive - UNSW</a></li><li class="navelem"><a class="el" href="dir_3ca1bf2d4e5413f931da2736f213aae7.html">Alex</a></li><li class="navelem"><a class="el" href="dir_7905c990bfaf31cfc7a476a483fcc340.html">ADFA</a></li><li class="navelem"><a class="el" href="dir_8b58a0948067af1c37c7a1eae7c98f31.html">2018</a></li><li class="navelem"><a class="el" href="dir_bb301eeb54aca9b5c284489cc03da412.html">Semester 1</a></li><li class="navelem"><a class="el" href="dir_a5482de29ae4f72ddd262a15cae78b5f.html">Engineering Design Practise</a></li><li class="navelem"><a class="el" href="dir_452baff796df8ac1b60e0e4b42a34503.html">git_edpAutoCar</a></li><li class="navelem"><a class="el" href="dir_7b490016e4287851114b9f2fa32f20f1.html">botMain</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a8ddd6c230b0837c2cf1182662ccdc87.html">botMain</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,6 +73,9 @@ $(function() {
 <div class="title">botMain.ino File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Top level file for the AVS which integrates all sub-systems on the arduino.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
@@ -80,19 +83,29 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a437ef08681e7210d6678427030446a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a437ef08681e7210d6678427030446a54">LEFT</a>&#160;&#160;&#160;270*(PI/180);</td></tr>
+<tr class="memdesc:a437ef08681e7210d6678427030446a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left direction relative to front of AVS in radians.  <a href="#a437ef08681e7210d6678427030446a54">More...</a><br /></td></tr>
 <tr class="separator:a437ef08681e7210d6678427030446a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ddfdda7a062d10cff4a72b76b44aeb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a6ddfdda7a062d10cff4a72b76b44aeb8">FORWARD</a>&#160;&#160;&#160;0*(PI/180);</td></tr>
+<tr class="memdesc:a6ddfdda7a062d10cff4a72b76b44aeb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward direction relative to front of AVS in radians.  <a href="#a6ddfdda7a062d10cff4a72b76b44aeb8">More...</a><br /></td></tr>
 <tr class="separator:a6ddfdda7a062d10cff4a72b76b44aeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80fb826a684cf3f0d306b22aa100ddac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>&#160;&#160;&#160;90*(PI/180);</td></tr>
+<tr class="memdesc:a80fb826a684cf3f0d306b22aa100ddac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right direction relative to front of AVS in radians.  <a href="#a80fb826a684cf3f0d306b22aa100ddac">More...</a><br /></td></tr>
 <tr class="separator:a80fb826a684cf3f0d306b22aa100ddac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf445abfe1b77fa63f89e315ccc2f7f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#adf445abfe1b77fa63f89e315ccc2f7f2">BACKWARD</a>&#160;&#160;&#160;180*(PI/180);</td></tr>
+<tr class="memdesc:adf445abfe1b77fa63f89e315ccc2f7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward direction relative to front of AVS in radians.  <a href="#adf445abfe1b77fa63f89e315ccc2f7f2">More...</a><br /></td></tr>
 <tr class="separator:adf445abfe1b77fa63f89e315ccc2f7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d4dc28dbd73c9eaadb8316bd959191"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af0d4dc28dbd73c9eaadb8316bd959191">DIAG_FOR_RIGHT</a>&#160;&#160;&#160;45*(PI/180);</td></tr>
+<tr class="memdesc:af0d4dc28dbd73c9eaadb8316bd959191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward right diagonal direction relative to front of AVS in radians.  <a href="#af0d4dc28dbd73c9eaadb8316bd959191">More...</a><br /></td></tr>
 <tr class="separator:af0d4dc28dbd73c9eaadb8316bd959191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cfa9cd93a3a325dcce552ff4372733a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7cfa9cd93a3a325dcce552ff4372733a">DIAG_FOR_LEFT</a>&#160;&#160;&#160;315*(PI/180);</td></tr>
+<tr class="memdesc:a7cfa9cd93a3a325dcce552ff4372733a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward diagonal left direction relative to front of AVS in radians.  <a href="#a7cfa9cd93a3a325dcce552ff4372733a">More...</a><br /></td></tr>
 <tr class="separator:a7cfa9cd93a3a325dcce552ff4372733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ae4e94bd8dbc179e392c03bd987d6b05b">DIAG_BACK_LEFT</a>&#160;&#160;&#160;225*(PI/180);</td></tr>
+<tr class="memdesc:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward diagonal left direction relative to front of AVS in radians.  <a href="#ae4e94bd8dbc179e392c03bd987d6b05b">More...</a><br /></td></tr>
 <tr class="separator:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a2556f3b6bde97cfd17b3df68e3fca5fd">DIAG_BACK_RIGHT</a>&#160;&#160;&#160;135*(PI/180);</td></tr>
+<tr class="memdesc:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward diagonal right direction relative to front of AVS in radians.  <a href="#a2556f3b6bde97cfd17b3df68e3fca5fd">More...</a><br /></td></tr>
+<tr class="separator:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -107,6 +120,7 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a26ae4f60d3d4ebfa68763710b6f20e7c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a26ae4f60d3d4ebfa68763710b6f20e7c">avsHeading_</a> = 0*(PI/180)</td></tr>
+<tr class="memdesc:a26ae4f60d3d4ebfa68763710b6f20e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heading - to come from pozyx locatio system.  <a href="#a26ae4f60d3d4ebfa68763710b6f20e7c">More...</a><br /></td></tr>
 <tr class="separator:a26ae4f60d3d4ebfa68763710b6f20e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b5ddac5fd4781d96ab1f7afb628e63"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a36b5ddac5fd4781d96ab1f7afb628e63">avsX_</a> = 0</td></tr>
 <tr class="separator:a36b5ddac5fd4781d96ab1f7afb628e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,16 +177,19 @@ Variables</h2></td></tr>
 <tr class="memdesc:a89e40ffdf0114ea60292ff57879491e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHT22 Sensor arduino pin number.  <a href="#a89e40ffdf0114ea60292ff57879491e2">More...</a><br /></td></tr>
 <tr class="separator:a89e40ffdf0114ea60292ff57879491e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a355879266d10af4a6e9126a47bc09113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a355879266d10af4a6e9126a47bc09113">frontSensor</a> (<a class="el" href="bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a">frontTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a878ae4b68ec48fc902c4aa953ad565b4">frontEchoPin</a>, <a class="el" href="bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724">frontXOffset</a>, <a class="el" href="bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a">frontYOffset</a>, <a class="el" href="bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93">frontsensorAngle</a>)</td></tr>
-<tr class="memdesc:a355879266d10af4a6e9126a47bc09113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS.  <a href="#a355879266d10af4a6e9126a47bc09113">More...</a><br /></td></tr>
+<tr class="memdesc:a355879266d10af4a6e9126a47bc09113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS.  <a href="#a355879266d10af4a6e9126a47bc09113">More...</a><br /></td></tr>
 <tr class="separator:a355879266d10af4a6e9126a47bc09113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af137d1119f05ab98ae8e50559b9d6bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af137d1119f05ab98ae8e50559b9d6bfe">leftSensor</a> (<a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a203479aa2174a6eedd63da361e6e302c">leftEchoPin</a>, <a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a>, <a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a>, <a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a>)</td></tr>
-<tr class="memdesc:af137d1119f05ab98ae8e50559b9d6bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS.  <a href="#af137d1119f05ab98ae8e50559b9d6bfe">More...</a><br /></td></tr>
+<tr class="memdesc:af137d1119f05ab98ae8e50559b9d6bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS.  <a href="#af137d1119f05ab98ae8e50559b9d6bfe">More...</a><br /></td></tr>
 <tr class="separator:af137d1119f05ab98ae8e50559b9d6bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b08258caa24173f4153413d596aea69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4b08258caa24173f4153413d596aea69">rightSensor</a> (<a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a513a215c9894c01e37f389b072c5cec4">rightEchoPin</a>, <a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a>, <a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a>, <a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a>)</td></tr>
-<tr class="memdesc:a4b08258caa24173f4153413d596aea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS.  <a href="#a4b08258caa24173f4153413d596aea69">More...</a><br /></td></tr>
+<tr class="memdesc:a4b08258caa24173f4153413d596aea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS.  <a href="#a4b08258caa24173f4153413d596aea69">More...</a><br /></td></tr>
 <tr class="separator:a4b08258caa24173f4153413d596aea69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Top level file for the AVS which integrates all sub-systems on the arduino. </p>
+<p>The botMain file will contain the initial setup and loop functions along with all sub-system object initialisations including parameter setting. Ideally all of the sub-systems shall implement separate classes to improve modularity and readability of this top file. Requires specific libraries be downloaded using the Include Library function explained as per INSTRUCTIONS below. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="adf445abfe1b77fa63f89e315ccc2f7f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf445abfe1b77fa63f89e315ccc2f7f2">&#9670;&nbsp;</a></span>BACKWARD</h2>
 
@@ -184,6 +201,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Backward direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -199,6 +218,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Backward diagonal left direction relative to front of AVS in radians. </p>
+
+</div>
+</div>
+<a id="a2556f3b6bde97cfd17b3df68e3fca5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2556f3b6bde97cfd17b3df68e3fca5fd">&#9670;&nbsp;</a></span>DIAG_BACK_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIAG_BACK_RIGHT&#160;&#160;&#160;135*(PI/180);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Backward diagonal right direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
 <a id="a7cfa9cd93a3a325dcce552ff4372733a"></a>
@@ -212,6 +249,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Forward diagonal left direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -227,6 +266,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Forward right diagonal direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
 <a id="a6ddfdda7a062d10cff4a72b76b44aeb8"></a>
@@ -240,6 +281,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Forward direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -255,6 +298,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Left direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
 <a id="a80fb826a684cf3f0d306b22aa100ddac"></a>
@@ -268,6 +313,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Right direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -337,7 +384,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>***** <a class="el" href="bot_main_8ino.html">botMain.ino</a> - Main .ino file for arduino (for now, someone else may have a better one) ***** // ***** INSTRUCTIONS: ***** // ***** 1. Ensure all libraries are installed by navigating Sketch &gt; Include Library &gt; Manage Libraries ***** // ***** and searching for the following libraries: (i) DHT ***** // ***** (ii) Adafuit Unified Sensor ***** // ***** (iii) Adafruit AM2315 ***** // ***** 2. </p>
+
+<p>Heading - to come from pozyx locatio system. </p>
 
 </div>
 </div>
@@ -413,8 +461,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Front sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS. </p>
-<p>Obstacle detection system object initialisation - used to activate <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects as required and pass on information to the navigation system </p>
+<p>Front sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS. </p>
+<p>Obstacle detection system object initialisation - used to activate <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects as required and pass on information to the navigation system </p>
 
 </div>
 </div>
@@ -510,7 +558,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Left sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS. </p>
+<p>Left sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS. </p>
 
 </div>
 </div>
@@ -620,7 +668,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Right sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS. </p>
+<p>Right sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS. </p>
 
 </div>
 </div>

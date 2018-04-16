@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted.  
+ <a href="class_obstacle_sensor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -173,8 +176,8 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:a5b34f3938826987d0b1623bb95e4220e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via <a class="el" href="class_new_ping.html">NewPing</a> class</p>
-<p>OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html">ObstacleDetection</a> class to output grid references to nav. </p>
+<div class="textblock"><p><a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. </p>
+<p>The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object represents a single sensor on the AVS and as such multiple <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects will exist in the botMain and <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> modules. The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object will confirm its accuracy and legality. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via <a class="el" href="class_new_ping.html">NewPing</a> class OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> class to output grid references to nav. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1268ce55070472bf5ca463a919d1dd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1268ce55070472bf5ca463a919d1dd5">&#9670;&nbsp;</a></span>ObstacleSensor() <span class="overload">[1/2]</span></h2>

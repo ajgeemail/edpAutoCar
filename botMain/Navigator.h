@@ -4,8 +4,13 @@
 #include <Arduino.h>
 #include "common.h"
 
+// Shared variables from common.h
 extern const int HEIGHT, WIDTH, DATA, ELEMENT_XPOS, ELEMENT_YPOS, ELEMENT_VALUE;
 
+//! \brief TO EDIT: Add a brief description here that will show up on the classes page
+//!
+//! TO EDIT: Detailed description now starts in new paragraph like this. Probably keeps going
+//! like this.
 class Navigator
 {
     public:
@@ -33,7 +38,7 @@ class Navigator
         
 
     public:
-        // Default constructor
+        //! Default constructor
         Navigator();
     
         /**
