@@ -3,13 +3,49 @@
 // Number of iterations in calculating average distance
 /* static */ const uint8_t ObstacleDetection::iterations = 5;
 
-ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr) :
-    frontSensorPtr_(frontSensorPtr),
-    leftSensorPtr_(leftSensorPtr),
-    rightSensorPtr_(rightSensorPtr),
+ObstacleDetection::ObstacleDetection(Navigator *navPtr) :
     navPtr_(navPtr)
 {
+    setupSensors1();
+}
+
+void ObstacleDetection::setupSensors1()
+{
+    // Direction variables in radians (relative to AVS heading)
+    const float LEFT = 270*(PI/180);
+    const float FORWARD = 0*(PI/180);
+    const float RIGHT = 90*(PI/180);
+    const float BACKWARD = 180*(PI/180);
+    const float DIAG_FOR_RIGHT = 45*(PI/180);
+    const float DIAG_FOR_LEFT = 315*(PI/180);
+    const float DIAG_BACK_LEFT = 225*(PI/180);
+    const float DIAG_BACK_RIGHT = 135*(PI/180);
     
+    // ***** Setup Sensor 1 variables *****
+    const uint8_t frontTriggerPin = 17;
+    const uint8_t frontEchoPin = frontTriggerPin;
+    const float frontXOffset = 0; // cm
+    const float frontYOffset = 10; // cm
+    const float frontsensorAngle = FORWARD;
+    
+    // ***** Setup Sensor 2 variables *****
+    const uint8_t leftTriggerPin = 15;
+    const uint8_t leftEchoPin = leftTriggerPin;
+    const float leftXOffset = -5; // cm
+    const float leftYOffset = 2; // cm
+    const float leftsensorAngle = LEFT;
+    
+    // ***** Setup Sensor 3 variables *****
+    const uint8_t rightTriggerPin = 19;
+    const uint8_t rightEchoPin = rightTriggerPin;
+    const float rightXOffset = 5; // cm
+    const float rightYOffset = 2; // cm
+    const float rightsensorAngle = RIGHT;    
+    
+    // ***** Create sensor objects with relevant info *****
+    ObstacleDetection::frontSensorPtr_ = new ObstacleSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOffset, frontsensorAngle);
+    ObstacleDetection::leftSensorPtr_ = new ObstacleSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftsensorAngle);
+    ObstacleDetection::rightSensorPtr_ = new ObstacleSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
 }
 
 // Completes measurements from all sensors *** IN THE FUTURE MIGHT WRITE FUNCTIONS TO USE DIFFERENT COMBINATIONS OF THE SENSORS AS NEEDED ***

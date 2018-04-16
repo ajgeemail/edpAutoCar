@@ -49,19 +49,19 @@ class ObstacleDetection
         //! Fire front sensor only
         //! @return 0 or 1 for legal obstacle distance detected
         uint8_t detectFrontSensor();
+
+        //! Initalises for the three ObstacleSensor objects with all required data including pin numbers, sensor
+        //! angles and offsets
+        void setupSensors1();
         
     public: 
         //! Default constructor - not used currently
         ObstacleDetection();
 
-        //! Constructor which takes in three ObstacleSensor object pointers and navigator object pointer used to 
-        //! activate in different sequences as required
-        //! @param *frontSensorPtr  Pointer to front sensor Obstacle Sensor Object
-        //! @param *leftSensororPtr  Pointer to left sensor Obstacle Sensor Object
-        //! @param *rightSensorPtr  Pointer to right sensor Obstacle Sensor Object
+        //! Constructor sets up Navigator object
         //! @param *navPtr          Pointer to Navigator object in order to call addObstacle function and pass obstalce
         //! details to navigation system
-        ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr);
+        ObstacleDetection(Navigator *navPtr);
 
         //! Standard detection function which activates all sensors and converts any
         //! obstacles to grid references. Will be in loop function so constantly 
