@@ -19,6 +19,7 @@
 #include "ObstacleSensor.h"
 #include "ObstacleDetection.h"
 #include "common.h"
+#include "Locator.h"
 
 // **************** AVS SYSTEM WIDE VARIABLES *******************************************************
 //! Heading - to come from pozyx locatio system
@@ -106,21 +107,44 @@ ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOf
 ObstacleDetection ods(&frontSensor, &leftSensor, &rightSensor, &nav);
 // *********************** END ODS SPECIFIC VARIABLES **************************************************
 
+// *********************** LOCATION SYSTEM SPECIFIC VARIABLES ******************************************
+Locator loc;
+int x_loc;      // mm (0-5000)
+int y_loc;      // mm (0-5000)
+int heading;    // degrees (magnetic north)
+// *********************** END LOCATION SYSTEM SPECIFIC VARIABLES **************************************
+
 void setup() 
 {
-    Serial.begin(9600);
-    ObstacleSensor::calculateSoundCm(dhtPin);
-    nav.testMap();
+    Serial.begin(115200);
+    // **** Location System ****
+    x_loc = loc.x_loc;
+    y_loc = loc.y_loc;
+    heading = loc.heading;
+    Serial.print("x_loc");
+    Serial.println(x_loc);
     
+    // **** Obstacle Detection System ****
+    ObstacleSensor::calculateSoundCm(dhtPin);    
     // Adds a number of dummy obstacle locations for OD-NM interface testing purposes
     ods.odsToNavTestObstacles();
+
+    // **** Navigation System ****
+    nav.testMap();
     nav.printMap();
 }
 
 void loop() 
 {
-    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
-    ods.detectAllSensors();
+    // **** Location System ****
+    //x_loc = loc.x_loc;
+    //y_loc = loc.y_loc;
+    //heading = loc.heading;
+    //Serial.println(x_loc);
+
+    // **** Obstacle Detection System ****
+    //ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
+    //ods.detectAllSensors();
     //testBlueToothGrid();
 }
 
