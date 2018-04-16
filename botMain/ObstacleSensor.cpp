@@ -3,7 +3,7 @@
 #include "DHT.h"
 
 /*static */ float ObstacleSensor::soundcm_ = 0.0343f;
-/*static */ float ObstacleSensor::yaw_;
+/*static */ float ObstacleSensor::heading_;
 /*static */ float ObstacleSensor::xPos_;
 /*static */ float ObstacleSensor::yPos_;
 
@@ -77,10 +77,10 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
     }
     else 
     {
-        // Currently yaw defined as angle bot's front is facing, relative to y direction of grid
+        // Currently heading defined as angle bot's front is facing, relative to y direction of grid
         // Calculate the x and y components of measured distance based on angle of sensor
-        float xDistComp = distance_*sin(sensorAngle_ + yaw_);
-        float yDistComp = distance_*cos(sensorAngle_ + yaw_);
+        float xDistComp = distance_*sin(sensorAngle_ + heading_);
+        float yDistComp = distance_*cos(sensorAngle_ + heading_);
 
         unitVect_[0] = xDistComp/distance_;
         unitVect_[1] = yDistComp/distance_;
@@ -89,9 +89,9 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
         float offsetDist = sqrt(offsetX_*offsetX_ + offsetY_*offsetY_);
         float offsetAngle = atan2(offsetX_, offsetY_);
 
-        // Calculate x and y offset components including yaw changes
-        float xOffsetComp = offsetDist*sin(offsetAngle + yaw_);
-        float yOffsetComp = offsetDist*cos(offsetAngle + yaw_);
+        // Calculate x and y offset components including heading changes
+        float xOffsetComp = offsetDist*sin(offsetAngle + heading_);
+        float yOffsetComp = offsetDist*cos(offsetAngle + heading_);
 
         // Calculate x and y components of distance from pozyx sensor
         objXDist_ = xDistComp + xOffsetComp;

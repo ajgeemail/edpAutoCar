@@ -50,6 +50,9 @@ void ObstacleDetection::detectAllSensors()
         if(frontSensorPtr_->gridX_ > 0 && frontSensorPtr_->gridX_ < WIDTH + 2 && frontSensorPtr_->gridY_ > 0 && frontSensorPtr_->gridY_ < HEIGHT + 2)
             navPtr_->addObstacle(frontSensorPtr_->gridX_, frontSensorPtr_->gridY_);
     }
+    else
+    {
+    }
 
     // Wait for sensor 1 to finish to begin sensor 2 measurements
     if (frontMeasured == 1 || frontMeasured == 0)
@@ -68,7 +71,15 @@ void ObstacleDetection::detectAllSensors()
 
             // Output obstacle grid location to navigator object (points to nav in botMain)
             if(leftSensorPtr_->gridX_ > 0 && leftSensorPtr_->gridX_ < WIDTH + 2 && leftSensorPtr_->gridY_ > 0 && leftSensorPtr_->gridY_ < HEIGHT + 2)
+            {
                 navPtr_->addObstacle(leftSensorPtr_->gridX_, leftSensorPtr_->gridY_);
+            }
+            else
+            {
+            }
+        }
+        else
+        {
         }
         
         // Wait for sensor 2 to finish to begin sensor 3 measurements
@@ -88,9 +99,23 @@ void ObstacleDetection::detectAllSensors()
 
                 // Output obstacle grid location to navigator object (points to nav in botMain)
                 if(rightSensorPtr_->gridX_ > 0 && rightSensorPtr_->gridX_ < WIDTH + 2 && rightSensorPtr_->gridY_ > 0 && rightSensorPtr_->gridY_ < HEIGHT + 2)
+                {
                     navPtr_->addObstacle(rightSensorPtr_->gridX_, rightSensorPtr_->gridY_);
+                }
+                else
+                {
+                }
+            }
+            else
+            {
             }
         }
+        else
+        {
+        }
+    }
+    else
+    {
     }
     
     //*frontSensorPtr_->printDistance("Front: ");
@@ -101,7 +126,7 @@ void ObstacleDetection::detectAllSensors()
 // Detects with only left sensor
 uint8_t ObstacleDetection::detectLeftSensor()
 {
-    uint8_t measured = leftSensorPtr_->activateSensor(iterations);
+    auto measured = leftSensorPtr_->activateSensor(iterations);
     leftSensorPtr_->printDistance("Left:  ");
     return measured;
 }
@@ -109,7 +134,7 @@ uint8_t ObstacleDetection::detectLeftSensor()
 // Detects with only right sensor
 uint8_t ObstacleDetection::detectRightSensor()
 {
-    uint8_t measured = rightSensorPtr_->activateSensor(iterations);
+    auto measured = rightSensorPtr_->activateSensor(iterations);
     rightSensorPtr_->printDistance("Right: ");
     return measured;
 }
@@ -117,7 +142,7 @@ uint8_t ObstacleDetection::detectRightSensor()
 // Detects with only front sensor
 uint8_t ObstacleDetection::detectFrontSensor()
 {
-    uint8_t measured = frontSensorPtr_->activateSensor(iterations);
+    auto measured = frontSensorPtr_->activateSensor(iterations);
     frontSensorPtr_->printDistance("Front: ");
     return measured;
 }
