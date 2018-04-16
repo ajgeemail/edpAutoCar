@@ -3,7 +3,7 @@
 #include "DHT.h"
 
 /*static */ float ObstacleSensor::soundcm_ = 0.0343f;
-/*static */ float ObstacleSensor::yaw_;
+/*static */ float ObstacleSensor::heading_;
 /*static */ float ObstacleSensor::xPos_;
 /*static */ float ObstacleSensor::yPos_;
 
@@ -20,7 +20,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     sensorAngle_(sensorAngle),
     sonar_(triggerPin_, echoPin_, maxDistance_)
 {
-
+    Serial.println("Obstacle Sensor Constructor");
 }
 
 /* static */ void ObstacleSensor::calculateSoundCm(uint8_t dhtPin)
@@ -41,6 +41,12 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     // Convert to cm/ms from m/s
     ObstacleSensor::soundcm_ = soundsp / 10000.0f;
 
+    // Print speed of sound details
+    printSound(temp, hum);
+}
+
+/* static */ void ObstacleSensor::printSound(float temp, float hum)
+{
     // Prints the speed of sound calculations
     Serial.println("***** SOUND CALCULATIONS *****");
     Serial.print("Temperature: ");
@@ -48,7 +54,7 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.print(" Humidity: ");
     Serial.print(hum);
     Serial.print(" Speed of sound (cm/ms): ");
-    Serial.println(soundcm_, 6);
+    Serial.println(ObstacleSensor::soundcm_, 6);
 }
 
 uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
@@ -71,10 +77,10 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
     }
     else 
     {
-        // Currently yaw defined as angle bot's front is facing, relative to y direction of grid
+        // Currently heading defined as angle bot's front is facing, relative to y direction of grid
         // Calculate the x and y components of measured distance based on angle of sensor
-        float xDistComp = distance_*sin(sensorAngle_ + yaw_);
-        float yDistComp = distance_*cos(sensorAngle_ + yaw_);
+        float xDistComp = distance_*sin(sensorAngle_ + heading_);
+        float yDistComp = distance_*cos(sensorAngle_ + heading_);
 
         unitVect_[0] = xDistComp/distance_;
         unitVect_[1] = yDistComp/distance_;
@@ -83,9 +89,9 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
         float offsetDist = sqrt(offsetX_*offsetX_ + offsetY_*offsetY_);
         float offsetAngle = atan2(offsetX_, offsetY_);
 
-        // Calculate x and y offset components including yaw changes
-        float xOffsetComp = offsetDist*sin(offsetAngle + yaw_);
-        float yOffsetComp = offsetDist*cos(offsetAngle + yaw_);
+        // Calculate x and y offset components including heading changes
+        float xOffsetComp = offsetDist*sin(offsetAngle + heading_);
+        float yOffsetComp = offsetDist*cos(offsetAngle + heading_);
 
         // Calculate x and y components of distance from pozyx sensor
         objXDist_ = xDistComp + xOffsetComp;
@@ -96,8 +102,8 @@ uint8_t ObstacleSensor::activateSensor(uint8_t iterations)
         objY_ = objYDist_ + yPos_;
 
         // Convert x and y obstacle coordinate to grid reference
-        gridX_ = (objX_ + bias_*unitVect_[0])/50;
-        gridY_ = (objY_ + bias_*unitVect_[1])/50;
+        gridX_ = (objX_ + bias_*unitVect_[0])/50 + 1;
+        gridY_ = (objY_ + bias_*unitVect_[1])/50 + 1;
         
         return 1;
     }

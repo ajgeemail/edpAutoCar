@@ -1,0 +1,511 @@
+\begin{theindex}
+
+  \item {\+\_\+echo\+Bit}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+echo\+Input}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+max\+Echo\+Time}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+max\+\_\+time}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+ms\+\_\+cnt}
+    \subitem {New\+Ping.\+cpp}, \hyperpage{35}
+  \item {\+\_\+ms\+\_\+cnt\+\_\+reset}
+    \subitem {New\+Ping.\+cpp}, \hyperpage{35}
+  \item {\+\_\+trigger\+Bit}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+trigger\+Mode}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {\+\_\+trigger\+Output}
+    \subitem {New\+Ping}, \hyperpage{13}
+
+  \indexspace
+
+  \item {activate\+Sensor}
+    \subitem {Obstacle\+Sensor}, \hyperpage{19}
+  \item {add\+Obstacle}
+    \subitem {Navigator}, \hyperpage{6}
+  \item {avs\+Heading\+\_\+}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+  \item {avs\+X\+\_\+}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+  \item {avs\+Y\+\_\+}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+
+  \indexspace
+
+  \item {B\+A\+C\+K\+W\+A\+RD}
+    \subitem {bot\+Main.\+ino}, \hyperpage{26}
+  \item {bias\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{21}
+  \item {bot\+Main.\+ino}
+    \subitem {avs\+Heading\+\_\+}, \hyperpage{28}
+    \subitem {avs\+X\+\_\+}, \hyperpage{28}
+    \subitem {avs\+Y\+\_\+}, \hyperpage{28}
+    \subitem {B\+A\+C\+K\+W\+A\+RD}, \hyperpage{26}
+    \subitem {D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}, 
+		\hyperpage{27}
+    \subitem {D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}, 
+		\hyperpage{27}
+    \subitem {D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}, 
+		\hyperpage{27}
+    \subitem {dht\+Pin}, \hyperpage{28}
+    \subitem {F\+O\+R\+W\+A\+RD}, \hyperpage{27}
+    \subitem {front\+Echo\+Pin}, \hyperpage{29}
+    \subitem {front\+Sensor}, \hyperpage{29}
+    \subitem {front\+Trigger\+Pin}, \hyperpage{29}
+    \subitem {front\+X\+Offset}, \hyperpage{29}
+    \subitem {front\+Y\+Offset}, \hyperpage{29}
+    \subitem {frontsensor\+Angle}, \hyperpage{29}
+    \subitem {L\+E\+FT}, \hyperpage{27}
+    \subitem {left\+Echo\+Pin}, \hyperpage{30}
+    \subitem {left\+Sensor}, \hyperpage{30}
+    \subitem {left\+Trigger\+Pin}, \hyperpage{30}
+    \subitem {left\+X\+Offset}, \hyperpage{30}
+    \subitem {left\+Y\+Offset}, \hyperpage{30}
+    \subitem {leftsensor\+Angle}, \hyperpage{30}
+    \subitem {loop}, \hyperpage{27}
+    \subitem {nav}, \hyperpage{31}
+    \subitem {R\+I\+G\+HT}, \hyperpage{27}
+    \subitem {right\+Echo\+Pin}, \hyperpage{31}
+    \subitem {right\+Sensor}, \hyperpage{31}
+    \subitem {right\+Trigger\+Pin}, \hyperpage{31}
+    \subitem {right\+X\+Offset}, \hyperpage{31}
+    \subitem {right\+Y\+Offset}, \hyperpage{32}
+    \subitem {rightsensor\+Angle}, \hyperpage{31}
+    \subitem {setup}, \hyperpage{28}
+    \subitem {test\+Blue\+Tooth\+Grid}, \hyperpage{28}
+
+  \indexspace
+
+  \item {calculate\+Sound\+Cm}
+    \subitem {Obstacle\+Sensor}, \hyperpage{20}
+  \item {check\+\_\+timer}
+    \subitem {New\+Ping}, \hyperpage{9}
+  \item {common.\+h}
+    \subitem {D\+A\+TA}, \hyperpage{32}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE}, \hyperpage{32}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+X\+P\+OS}, \hyperpage{32}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+Y\+P\+OS}, \hyperpage{32}
+    \subitem {H\+E\+I\+G\+HT}, \hyperpage{33}
+    \subitem {W\+I\+D\+TH}, \hyperpage{33}
+  \item {convert\+\_\+cm}
+    \subitem {New\+Ping}, \hyperpage{9}
+  \item {convert\+\_\+in}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {convert\+To\+Array}
+    \subitem {Navigator}, \hyperpage{7}
+  \item {create\+Map}
+    \subitem {Navigator}, \hyperpage{7}
+
+  \indexspace
+
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Navigator.\+cpp}, 
+		\hyperpage{33}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Navigator.\+h}, 
+		\hyperpage{33}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+New\+Ping.\+cpp}, 
+		\hyperpage{34}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+New\+Ping.\+h}, 
+		\hyperpage{36}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Obstacle\+Detection.\+cpp}, 
+		\hyperpage{39}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Obstacle\+Detection.\+h}, 
+		\hyperpage{39}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Obstacle\+Sensor.\+cpp}, 
+		\hyperpage{39}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\+Obstacle\+Sensor.\+h}, 
+		\hyperpage{39}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/bot\+Main.\+ino}, 
+		\hyperpage{25}
+  \item {D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/common.\+h}, 
+		\hyperpage{32}
+  \item {D\+A\+TA}
+    \subitem {common.\+h}, \hyperpage{32}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+  \item {D\+I\+A\+G\+\_\+\+B\+A\+C\+K\+\_\+\+L\+E\+FT}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+L\+E\+FT}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {D\+I\+A\+G\+\_\+\+F\+O\+R\+\_\+\+R\+I\+G\+HT}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {D\+O\+\_\+\+B\+I\+T\+W\+I\+SE}
+    \subitem {New\+Ping.\+h}, \hyperpage{36}
+  \item {detect\+All\+Sensors}
+    \subitem {Obstacle\+Detection}, \hyperpage{15}
+  \item {detect\+Front\+Sensor}
+    \subitem {Obstacle\+Detection}, \hyperpage{15}
+  \item {detect\+Left\+Sensor}
+    \subitem {Obstacle\+Detection}, \hyperpage{15}
+  \item {detect\+Right\+Sensor}
+    \subitem {Obstacle\+Detection}, \hyperpage{15}
+  \item {dht\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+  \item {distance\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{21}
+  \item {duration\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{21}
+
+  \indexspace
+
+  \item {E\+C\+H\+O\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ}
+    \subitem {New\+Ping.\+h}, \hyperpage{36}
+  \item {E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE}
+    \subitem {common.\+h}, \hyperpage{32}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+  \item {E\+L\+E\+M\+E\+N\+T\+\_\+\+X\+P\+OS}
+    \subitem {common.\+h}, \hyperpage{32}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+  \item {E\+L\+E\+M\+E\+N\+T\+\_\+\+Y\+P\+OS}
+    \subitem {common.\+h}, \hyperpage{32}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+  \item {echo\+Pin\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{21}
+
+  \indexspace
+
+  \item {F\+O\+R\+W\+A\+RD}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {front\+Echo\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+  \item {front\+Sensor}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+  \item {front\+Sensor\+Ptr\+\_\+}
+    \subitem {Obstacle\+Detection}, \hyperpage{16}
+  \item {front\+Trigger\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+  \item {front\+X\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+  \item {front\+Y\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+  \item {frontsensor\+Angle}
+    \subitem {bot\+Main.\+ino}, \hyperpage{29}
+
+  \indexspace
+
+  \item {grid\+\_\+}
+    \subitem {Navigator}, \hyperpage{8}
+  \item {grid\+X\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+  \item {grid\+Y\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+
+  \indexspace
+
+  \item {H\+E\+I\+G\+HT}
+    \subitem {common.\+h}, \hyperpage{33}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+  \item {heading\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+
+  \indexspace
+
+  \item {I\+SR}
+    \subitem {New\+Ping.\+cpp}, \hyperpage{35}
+  \item {int\+Func}
+    \subitem {New\+Ping.\+cpp}, \hyperpage{35}
+  \item {int\+Func2}
+    \subitem {New\+Ping.\+cpp}, \hyperpage{35}
+  \item {iterations}
+    \subitem {Obstacle\+Detection}, \hyperpage{16}
+
+  \indexspace
+
+  \item {L\+E\+FT}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {left\+Echo\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {left\+Sensor}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {left\+Sensor\+Ptr\+\_\+}
+    \subitem {Obstacle\+Detection}, \hyperpage{16}
+  \item {left\+Trigger\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {left\+X\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {left\+Y\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {leftsensor\+Angle}
+    \subitem {bot\+Main.\+ino}, \hyperpage{30}
+  \item {loop}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+
+  \indexspace
+
+  \item {M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+E\+L\+AY}
+    \subitem {New\+Ping.\+h}, \hyperpage{36}
+  \item {M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+I\+S\+T\+A\+N\+CE}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+  \item {max\+Distance\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+
+  \indexspace
+
+  \item {N\+O\+\_\+\+E\+C\+HO}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+  \item {nav}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+  \item {nav\+Ptr\+\_\+}
+    \subitem {Obstacle\+Detection}, \hyperpage{16}
+  \item {Navigator}, \hyperpage{5}
+    \subitem {add\+Obstacle}, \hyperpage{6}
+    \subitem {convert\+To\+Array}, \hyperpage{7}
+    \subitem {create\+Map}, \hyperpage{7}
+    \subitem {grid\+\_\+}, \hyperpage{8}
+    \subitem {Navigator}, \hyperpage{5}
+    \subitem {print\+Map}, \hyperpage{7}
+    \subitem {test\+Map}, \hyperpage{7}
+    \subitem {test\+Obstacle\+Data}, \hyperpage{7}
+  \item {Navigator.\+h}
+    \subitem {D\+A\+TA}, \hyperpage{34}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE}, \hyperpage{34}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+X\+P\+OS}, \hyperpage{34}
+    \subitem {E\+L\+E\+M\+E\+N\+T\+\_\+\+Y\+P\+OS}, \hyperpage{34}
+    \subitem {H\+E\+I\+G\+HT}, \hyperpage{34}
+    \subitem {W\+I\+D\+TH}, \hyperpage{34}
+  \item {New\+Ping}, \hyperpage{8}
+    \subitem {\+\_\+echo\+Bit}, \hyperpage{12}
+    \subitem {\+\_\+echo\+Input}, \hyperpage{12}
+    \subitem {\+\_\+max\+Echo\+Time}, \hyperpage{12}
+    \subitem {\+\_\+max\+\_\+time}, \hyperpage{12}
+    \subitem {\+\_\+trigger\+Bit}, \hyperpage{12}
+    \subitem {\+\_\+trigger\+Mode}, \hyperpage{12}
+    \subitem {\+\_\+trigger\+Output}, \hyperpage{13}
+    \subitem {check\+\_\+timer}, \hyperpage{9}
+    \subitem {convert\+\_\+cm}, \hyperpage{9}
+    \subitem {convert\+\_\+in}, \hyperpage{10}
+    \subitem {New\+Ping}, \hyperpage{9}
+    \subitem {ping}, \hyperpage{10}
+    \subitem {ping\+\_\+cm}, \hyperpage{10}
+    \subitem {ping\+\_\+in}, \hyperpage{10}
+    \subitem {ping\+\_\+median}, \hyperpage{10}
+    \subitem {ping\+\_\+result}, \hyperpage{13}
+    \subitem {ping\+\_\+timer}, \hyperpage{10}
+    \subitem {ping\+\_\+trigger}, \hyperpage{10}
+    \subitem {ping\+\_\+trigger\+\_\+timer}, \hyperpage{11}
+    \subitem {ping\+\_\+wait\+\_\+timer}, \hyperpage{11}
+    \subitem {set\+\_\+max\+\_\+distance}, \hyperpage{11}
+    \subitem {timer\+\_\+ms}, \hyperpage{11}
+    \subitem {timer\+\_\+ms\+\_\+cntdwn}, \hyperpage{11}
+    \subitem {timer\+\_\+setup}, \hyperpage{11}
+    \subitem {timer\+\_\+stop}, \hyperpage{11}
+    \subitem {timer\+\_\+us}, \hyperpage{12}
+  \item {New\+Ping.\+cpp}
+    \subitem {\+\_\+ms\+\_\+cnt}, \hyperpage{35}
+    \subitem {\+\_\+ms\+\_\+cnt\+\_\+reset}, \hyperpage{35}
+    \subitem {I\+SR}, \hyperpage{35}
+    \subitem {int\+Func}, \hyperpage{35}
+    \subitem {int\+Func2}, \hyperpage{35}
+  \item {New\+Ping.\+h}
+    \subitem {D\+O\+\_\+\+B\+I\+T\+W\+I\+SE}, \hyperpage{36}
+    \subitem {E\+C\+H\+O\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ}, 
+		\hyperpage{36}
+    \subitem {M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+E\+L\+AY}, 
+		\hyperpage{36}
+    \subitem {M\+A\+X\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+D\+I\+S\+T\+A\+N\+CE}, 
+		\hyperpage{37}
+    \subitem {N\+O\+\_\+\+E\+C\+HO}, \hyperpage{37}
+    \subitem {New\+Ping\+Convert}, \hyperpage{37}
+    \subitem {O\+N\+E\+\_\+\+P\+I\+N\+\_\+\+E\+N\+A\+B\+L\+ED}, 
+		\hyperpage{37}
+    \subitem {P\+I\+N\+G\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+D\+E\+L\+AY}, 
+		\hyperpage{37}
+    \subitem {P\+I\+N\+G\+\_\+\+O\+V\+E\+R\+H\+E\+AD}, \hyperpage{37}
+    \subitem {P\+I\+N\+G\+\_\+\+T\+I\+M\+E\+R\+\_\+\+O\+V\+E\+R\+H\+E\+AD}, 
+		\hyperpage{38}
+    \subitem {R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+E\+N\+A\+B\+L\+ED}, 
+		\hyperpage{38}
+    \subitem {T\+I\+M\+E\+R\+\_\+\+E\+N\+A\+B\+L\+ED}, \hyperpage{38}
+    \subitem {U\+R\+M37\+\_\+\+E\+N\+A\+B\+L\+ED}, \hyperpage{38}
+    \subitem {U\+S\+\_\+\+R\+O\+U\+N\+D\+T\+R\+I\+P\+\_\+\+CM}, 
+		\hyperpage{38}
+    \subitem {U\+S\+\_\+\+R\+O\+U\+N\+D\+T\+R\+I\+P\+\_\+\+IN}, 
+		\hyperpage{39}
+  \item {New\+Ping\+Convert}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+
+  \indexspace
+
+  \item {O\+N\+E\+\_\+\+P\+I\+N\+\_\+\+E\+N\+A\+B\+L\+ED}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+  \item {obj\+Grid\+Ref\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+  \item {obj\+X\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{22}
+  \item {obj\+X\+Dist\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {obj\+Y\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {obj\+Y\+Dist\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {Obstacle\+Detection}, \hyperpage{13}
+    \subitem {detect\+All\+Sensors}, \hyperpage{15}
+    \subitem {detect\+Front\+Sensor}, \hyperpage{15}
+    \subitem {detect\+Left\+Sensor}, \hyperpage{15}
+    \subitem {detect\+Right\+Sensor}, \hyperpage{15}
+    \subitem {front\+Sensor\+Ptr\+\_\+}, \hyperpage{16}
+    \subitem {iterations}, \hyperpage{16}
+    \subitem {left\+Sensor\+Ptr\+\_\+}, \hyperpage{16}
+    \subitem {nav\+Ptr\+\_\+}, \hyperpage{16}
+    \subitem {Obstacle\+Detection}, \hyperpage{14}
+    \subitem {ods\+To\+Nav\+Test\+Obstacles}, \hyperpage{16}
+    \subitem {right\+Sensor\+Ptr\+\_\+}, \hyperpage{17}
+  \item {Obstacle\+Sensor}, \hyperpage{17}
+    \subitem {activate\+Sensor}, \hyperpage{19}
+    \subitem {bias\+\_\+}, \hyperpage{21}
+    \subitem {calculate\+Sound\+Cm}, \hyperpage{20}
+    \subitem {distance\+\_\+}, \hyperpage{21}
+    \subitem {duration\+\_\+}, \hyperpage{21}
+    \subitem {echo\+Pin\+\_\+}, \hyperpage{21}
+    \subitem {grid\+X\+\_\+}, \hyperpage{22}
+    \subitem {grid\+Y\+\_\+}, \hyperpage{22}
+    \subitem {heading\+\_\+}, \hyperpage{22}
+    \subitem {max\+Distance\+\_\+}, \hyperpage{22}
+    \subitem {obj\+Grid\+Ref\+\_\+}, \hyperpage{22}
+    \subitem {obj\+X\+\_\+}, \hyperpage{22}
+    \subitem {obj\+X\+Dist\+\_\+}, \hyperpage{23}
+    \subitem {obj\+Y\+\_\+}, \hyperpage{23}
+    \subitem {obj\+Y\+Dist\+\_\+}, \hyperpage{23}
+    \subitem {Obstacle\+Sensor}, \hyperpage{19}
+    \subitem {offset\+X\+\_\+}, \hyperpage{23}
+    \subitem {offset\+Y\+\_\+}, \hyperpage{23}
+    \subitem {print\+Distance}, \hyperpage{20}
+    \subitem {print\+Sound}, \hyperpage{20}
+    \subitem {sensor\+Angle\+\_\+}, \hyperpage{23}
+    \subitem {sensor\+Grid\+Angle\+\_\+}, \hyperpage{23}
+    \subitem {sonar\+\_\+}, \hyperpage{24}
+    \subitem {soundcm\+\_\+}, \hyperpage{24}
+    \subitem {trigger\+Pin\+\_\+}, \hyperpage{24}
+    \subitem {unit\+Vect\+\_\+}, \hyperpage{24}
+    \subitem {update\+Ods\+Data}, \hyperpage{21}
+    \subitem {x\+Pos\+\_\+}, \hyperpage{24}
+    \subitem {y\+Pos\+\_\+}, \hyperpage{24}
+  \item {ods\+To\+Nav\+Test\+Obstacles}
+    \subitem {Obstacle\+Detection}, \hyperpage{16}
+  \item {offset\+X\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {offset\+Y\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+
+  \indexspace
+
+  \item {P\+I\+N\+G\+\_\+\+M\+E\+D\+I\+A\+N\+\_\+\+D\+E\+L\+AY}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+  \item {P\+I\+N\+G\+\_\+\+O\+V\+E\+R\+H\+E\+AD}
+    \subitem {New\+Ping.\+h}, \hyperpage{37}
+  \item {P\+I\+N\+G\+\_\+\+T\+I\+M\+E\+R\+\_\+\+O\+V\+E\+R\+H\+E\+AD}
+    \subitem {New\+Ping.\+h}, \hyperpage{38}
+  \item {ping}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+cm}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+in}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+median}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+result}
+    \subitem {New\+Ping}, \hyperpage{13}
+  \item {ping\+\_\+timer}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+trigger}
+    \subitem {New\+Ping}, \hyperpage{10}
+  \item {ping\+\_\+trigger\+\_\+timer}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {ping\+\_\+wait\+\_\+timer}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {print\+Distance}
+    \subitem {Obstacle\+Sensor}, \hyperpage{20}
+  \item {print\+Map}
+    \subitem {Navigator}, \hyperpage{7}
+  \item {print\+Sound}
+    \subitem {Obstacle\+Sensor}, \hyperpage{20}
+
+  \indexspace
+
+  \item {R\+I\+G\+HT}
+    \subitem {bot\+Main.\+ino}, \hyperpage{27}
+  \item {R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+E\+N\+A\+B\+L\+ED}
+    \subitem {New\+Ping.\+h}, \hyperpage{38}
+  \item {right\+Echo\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+  \item {right\+Sensor}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+  \item {right\+Sensor\+Ptr\+\_\+}
+    \subitem {Obstacle\+Detection}, \hyperpage{17}
+  \item {right\+Trigger\+Pin}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+  \item {right\+X\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+  \item {right\+Y\+Offset}
+    \subitem {bot\+Main.\+ino}, \hyperpage{32}
+  \item {rightsensor\+Angle}
+    \subitem {bot\+Main.\+ino}, \hyperpage{31}
+
+  \indexspace
+
+  \item {sensor\+Angle\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {sensor\+Grid\+Angle\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{23}
+  \item {set\+\_\+max\+\_\+distance}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {setup}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+  \item {sonar\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+  \item {soundcm\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+
+  \indexspace
+
+  \item {T\+I\+M\+E\+R\+\_\+\+E\+N\+A\+B\+L\+ED}
+    \subitem {New\+Ping.\+h}, \hyperpage{38}
+  \item {test\+Blue\+Tooth\+Grid}
+    \subitem {bot\+Main.\+ino}, \hyperpage{28}
+  \item {test\+Map}
+    \subitem {Navigator}, \hyperpage{7}
+  \item {test\+Obstacle\+Data}
+    \subitem {Navigator}, \hyperpage{7}
+  \item {timer\+\_\+ms}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {timer\+\_\+ms\+\_\+cntdwn}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {timer\+\_\+setup}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {timer\+\_\+stop}
+    \subitem {New\+Ping}, \hyperpage{11}
+  \item {timer\+\_\+us}
+    \subitem {New\+Ping}, \hyperpage{12}
+  \item {trigger\+Pin\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+
+  \indexspace
+
+  \item {U\+R\+M37\+\_\+\+E\+N\+A\+B\+L\+ED}
+    \subitem {New\+Ping.\+h}, \hyperpage{38}
+  \item {U\+S\+\_\+\+R\+O\+U\+N\+D\+T\+R\+I\+P\+\_\+\+CM}
+    \subitem {New\+Ping.\+h}, \hyperpage{38}
+  \item {U\+S\+\_\+\+R\+O\+U\+N\+D\+T\+R\+I\+P\+\_\+\+IN}
+    \subitem {New\+Ping.\+h}, \hyperpage{39}
+  \item {unit\+Vect\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+  \item {update\+Ods\+Data}
+    \subitem {Obstacle\+Sensor}, \hyperpage{21}
+
+  \indexspace
+
+  \item {W\+I\+D\+TH}
+    \subitem {common.\+h}, \hyperpage{33}
+    \subitem {Navigator.\+h}, \hyperpage{34}
+
+  \indexspace
+
+  \item {x\+Pos\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+
+  \indexspace
+
+  \item {y\+Pos\+\_\+}
+    \subitem {Obstacle\+Sensor}, \hyperpage{24}
+
+\end{theindex}
