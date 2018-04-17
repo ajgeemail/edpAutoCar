@@ -7,13 +7,6 @@
 ////////////////// PARAMETERS //////////////////
 ////////////////////////////////////////////////
 
-const int num_to_avg = 5;                                         //number of position readings to average out for the output of position data
-const uint8_t num_anchors = 4;                                    // the number of anchors
-uint16_t anchors[num_anchors] = {0x6827, 0x6821, 0x687c, 0x6851}; // the network id of the anchors
-int32_t anchors_x[num_anchors] = {0, 4900, 0, 4900};              // anchor x-coorindates in mm
-int32_t anchors_y[num_anchors] = {0, 0, 3900, 3900};              // anchor y-coordinates in mm
-int32_t heights[num_anchors] = {750, 1700, 1700, 750};            // anchor z-coordinates in mm
-
 uint8_t algorithm = POZYX_POS_ALG_UWB_ONLY;                       // positioning algorithm to use. try POZYX_POS_ALG_TRACKING for fast moving objects.
 uint8_t dimension = POZYX_2D;                                     // positioning dimension ie 2D, 2_5D and 3D
 int32_t height = 0;                                               // The z position of pozyx in mm
@@ -30,6 +23,12 @@ Locator::Locator()
 
 void Locator::setAnchorsManual()
 {
+    const uint8_t num_anchors = 4;                                    // the number of anchors
+    uint16_t anchors[num_anchors] = {0x6827, 0x6821, 0x687c, 0x6851}; // the network id of the anchors
+    int32_t anchors_x[num_anchors] = {0, 4900, 0, 4900};              // anchor x-coorindates in mm
+    int32_t anchors_y[num_anchors] = {0, 0, 3900, 3900};              // anchor y-coordinates in mm
+    int32_t heights[num_anchors] = {750, 1700, 1700, 750};            // anchor z-coordinates in mm
+    
     for(int i = 0; i < num_anchors; i++){
         device_coordinates_t anchor;
         anchor.network_id = anchors[i];
@@ -70,6 +69,7 @@ void Locator::pozyxSetup()
 
 void Locator::getCoordinates ()
 {
+    const int num_to_avg = 5;                                         //number of position readings to average out for the output of position data
     coordinates_t position;
     int status;
     int out_x;

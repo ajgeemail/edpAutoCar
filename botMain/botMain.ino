@@ -118,6 +118,8 @@ void setup()
 {
     Serial.begin(115200);
     // **** Location System ****
+    loc.getHeading();
+    loc.getCoordinates();
     x_loc = loc.x_loc;
     y_loc = loc.y_loc;
     heading = loc.heading;
@@ -137,20 +139,14 @@ void setup()
 void loop() 
 {
     // **** Location System ****
-    //x_loc = loc.x_loc;
-    //y_loc = loc.y_loc;
-    //heading = loc.heading;
-    //Serial.println(x_loc);
+    loc.getHeading();
+    loc.getCoordinates();
+    x_loc = loc.x_loc;
+    y_loc = loc.y_loc;
+    heading = loc.heading;
+    Serial.println(x_loc);
 
     // **** Obstacle Detection System ****
-    //ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
-    //ods.detectAllSensors();
-    //testBlueToothGrid();
-}
-
-//! fake function - to be deleted - just there to see if nav.grid_ array can be accessed from here
-void testBlueToothGrid()
-{
-    //test basic access
-    int test = nav.grid_[0][0][0];
+    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
+    ods.detectAllSensors();
 }
