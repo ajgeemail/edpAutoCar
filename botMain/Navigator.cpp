@@ -111,11 +111,11 @@ void Navigator::addObstacle(int xPos, int yPos)
 {
     int yPosArr = convertToArray(yPos); 
     grid_[yPosArr][xPos][ELEMENT_VALUE] = 255;
-
+    /*
     Serial.print("Obstacle added [x][y] = [");
     Serial.print(xPos);
     Serial.print("][");
     Serial.print(yPos);
     Serial.println("]");
-
+    */
 }

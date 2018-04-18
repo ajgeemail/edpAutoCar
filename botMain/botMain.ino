@@ -23,7 +23,7 @@
 // **************** AVS SYSTEM WIDE VARIABLES *******************************************************
 //! Heading - to come from pozyx locatio system
 float avsHeading_ = 0*(PI/180); // This will need to be updated with pozyx data
-float avsX_ = 0;                // This will need to be updated with pozyx data
+float avsX_ = 25;                // This will need to be updated with pozyx data
 float avsY_ = 0;                // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
@@ -61,7 +61,7 @@ const uint8_t frontEchoPin = frontTriggerPin;
 //! Front sensor x offset on chassis from pozyx location
 const float frontXOffset = 0; // cm
 //! Front sensor y offset on chassis from pozyx location
-const float frontYOffset = 10; // cm
+const float frontYOffset = 0; // cm
 //! Front sensor angle relative to forward of chassis
 const float frontsensorAngle = FORWARD;
 
@@ -71,11 +71,11 @@ const uint8_t leftTriggerPin = 15;
 //! Left sensor arduino echo pin number
 const uint8_t leftEchoPin = leftTriggerPin;
 //! Left sensor x offset on chassis from pozyx location
-const float leftXOffset = -5; // cm
+const float leftXOffset = 0; // cm
 //! Left sensor y offset on chassis from pozyx location
-const float leftYOffset = 2; // cm
+const float leftYOffset = 0; // cm
 //! Left sensor angle relative to forward of chassis
-const float leftsensorAngle = LEFT;
+const float leftsensorAngle = FORWARD;
 
 // ***** Setup Sensor 3 variables *****
 //! Right sensor arduino trigger pin number
@@ -83,11 +83,11 @@ const uint8_t rightTriggerPin = 19;
 //! Right sensor arduino echo pin number
 const uint8_t rightEchoPin = rightTriggerPin;
 //! Right sensor x offset on chassis from pozyx location
-const float rightXOffset = 5; // cm
+const float rightXOffset = 0; // cm
 //! Right sensor y offset on chassis from pozyx location
-const float rightYOffset = 2; // cm
+const float rightYOffset = 0; // cm
 //! Right sensor angle relative to forward of chassis
-const float rightsensorAngle = RIGHT;
+const float rightsensorAngle = FORWARD;
 
 //! DHT22 Sensor arduino pin number
 const uint8_t dhtPin = 14;
@@ -110,17 +110,20 @@ void setup()
 {
     Serial.begin(9600);
     ObstacleSensor::calculateSoundCm(dhtPin);
-    nav.testMap();
+    //nav.testMap();
     
     // Adds a number of dummy obstacle locations for OD-NM interface testing purposes
-    ods.odsToNavTestObstacles();
-    nav.printMap();
+    //ods.odsToNavTestObstacles();
+    //nav.printMap();
 }
 
 void loop() 
 {
     ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
     ods.detectAllSensors();
+    frontSensor.printDistance("Front");
+    leftSensor.printDistance("Left");
+    rightSensor.printDistance("Right");
     //testBlueToothGrid();
 }
 
