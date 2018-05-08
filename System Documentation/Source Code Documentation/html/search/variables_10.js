@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triggerpin_5f',['triggerPin_',['../class_obstacle_sensor.html#ab26ff0855f2f0a009de72b36324d3abb',1,'ObstacleSensor']]]
+  ['width',['WIDTH',['../common_8h.html#a9649ab8139c4c2ea5c93625b30d92a05',1,'common.h']]]
 ];

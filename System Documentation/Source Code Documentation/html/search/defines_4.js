@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left',['LEFT',['../bot_main_8ino.html#a437ef08681e7210d6678427030446a54',1,'botMain.ino']]]
+  ['right',['RIGHT',['../bot_main_8ino.html#a80fb826a684cf3f0d306b22aa100ddac',1,'botMain.ino']]]
 ];

@@ -7,7 +7,6 @@ Top level file for the A\+VS which integrates all sub-\/systems on the arduino.
 
 {\ttfamily \#include \char`\"{}Obstacle\+Sensor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Obstacle\+Detection.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,11 +40,11 @@ void \mbox{\hyperlink{bot_main_8ino_a8e570cfb3e7e7e8306ab7c755345c5b8}{test\+Blu
 \item 
 float \mbox{\hyperlink{bot_main_8ino_a26ae4f60d3d4ebfa68763710b6f20e7c}{avs\+Heading\+\_\+}} = 0$\ast$(PI/180)
 \begin{DoxyCompactList}\small\item\em Heading -\/ to come from pozyx locatio system. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}{avs\+X\+\_\+}} = 0
+float \mbox{\hyperlink{bot_main_8ino_a36b5ddac5fd4781d96ab1f7afb628e63}{avs\+X\+\_\+}} = 25
 \item 
 float \mbox{\hyperlink{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}{avs\+Y\+\_\+}} = 0
 \item 
-\mbox{\hyperlink{class_navigator}{Navigator}} \mbox{\hyperlink{bot_main_8ino_a4d757d2a3d2bcf4b98f6f4a72d7df7de}{nav}}
+Navigator \mbox{\hyperlink{bot_main_8ino_a4d757d2a3d2bcf4b98f6f4a72d7df7de}{nav}}
 \item 
 const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a33df7a8dbfd90327fda79c01f944f56a}{front\+Trigger\+Pin}} = 17
 \begin{DoxyCompactList}\small\item\em Front sensor arduino trigger pin number. \end{DoxyCompactList}\item 
@@ -53,7 +52,7 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a878ae4b68ec48fc902c4aa953ad56
 \begin{DoxyCompactList}\small\item\em Front sensor arduino echo pin number. \end{DoxyCompactList}\item 
 const float \mbox{\hyperlink{bot_main_8ino_abdd898a2dfa2f64e2821af36c6ed3724}{front\+X\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Front sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}{front\+Y\+Offset}} = 10
+const float \mbox{\hyperlink{bot_main_8ino_a4919465d0182f44aa7acaa39ece1e17a}{front\+Y\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Front sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
 const float \mbox{\hyperlink{bot_main_8ino_ad681cfe410d5d764c513368773b9de93}{frontsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}
 \begin{DoxyCompactList}\small\item\em Front sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
@@ -61,21 +60,21 @@ const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79
 \begin{DoxyCompactList}\small\item\em Left sensor arduino trigger pin number. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a203479aa2174a6eedd63da361e6e302c}{left\+Echo\+Pin}} = \mbox{\hyperlink{bot_main_8ino_a297d5238270dc0d92e1a65b016a79f2e}{left\+Trigger\+Pin}}
 \begin{DoxyCompactList}\small\item\em Left sensor arduino echo pin number. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}{left\+X\+Offset}} = -\/5
+const float \mbox{\hyperlink{bot_main_8ino_a2d121af61e2977de12f5bfbbe8559dca}{left\+X\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Left sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}{left\+Y\+Offset}} = 2
+const float \mbox{\hyperlink{bot_main_8ino_a7be9826e4f54e376321bcdea4177a8ed}{left\+Y\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Left sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}{leftsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}
+const float \mbox{\hyperlink{bot_main_8ino_a8be5324bad65fa0bad41e0c70066a958}{leftsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}
 \begin{DoxyCompactList}\small\item\em Left sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}} = 19
 \begin{DoxyCompactList}\small\item\em Right sensor arduino trigger pin number. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}{right\+Echo\+Pin}} = \mbox{\hyperlink{bot_main_8ino_a906054d9d48970211789ac841d331898}{right\+Trigger\+Pin}}
 \begin{DoxyCompactList}\small\item\em Right sensor arduino echo pin number. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}{right\+X\+Offset}} = 5
+const float \mbox{\hyperlink{bot_main_8ino_ac932cddb5bc68094c96d0034c92faef9}{right\+X\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Right sensor x offset on chassis from pozyx location. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}{right\+Y\+Offset}} = 2
+const float \mbox{\hyperlink{bot_main_8ino_a07903b96b48e8e456debd9cc43c7af05}{right\+Y\+Offset}} = 0
 \begin{DoxyCompactList}\small\item\em Right sensor y offset on chassis from pozyx location. \end{DoxyCompactList}\item 
-const float \mbox{\hyperlink{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}{rightsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}
+const float \mbox{\hyperlink{bot_main_8ino_a83724535498f068d5b44150a2bc4fcf8}{rightsensor\+Angle}} = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}
 \begin{DoxyCompactList}\small\item\em Right sensor angle relative to forward of chassis. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff57879491e2}{dht\+Pin}} = 14
 \begin{DoxyCompactList}\small\item\em D\+H\+T22 Sensor arduino pin number. \end{DoxyCompactList}\item 
@@ -215,7 +214,7 @@ Heading -\/ to come from pozyx locatio system.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+X\+\_\+@{avs\+X\+\_\+}}
 \index{avs\+X\+\_\+@{avs\+X\+\_\+}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{avs\+X\+\_\+}{avsX\_}}
-{\footnotesize\ttfamily float avs\+X\+\_\+ = 0}
+{\footnotesize\ttfamily float avs\+X\+\_\+ = 25}
 
 \mbox{\Hypertarget{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}\label{bot_main_8ino_aa4d40143b7595abf8807c96ac5fd82e2}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!avs\+Y\+\_\+@{avs\+Y\+\_\+}}
@@ -287,7 +286,7 @@ Front sensor x offset on chassis from pozyx location.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!front\+Y\+Offset@{front\+Y\+Offset}}
 \index{front\+Y\+Offset@{front\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{front\+Y\+Offset}{frontYOffset}}
-{\footnotesize\ttfamily const float front\+Y\+Offset = 10}
+{\footnotesize\ttfamily const float front\+Y\+Offset = 0}
 
 
 
@@ -317,7 +316,7 @@ Left sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object in
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!leftsensor\+Angle@{leftsensor\+Angle}}
 \index{leftsensor\+Angle@{leftsensor\+Angle}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{leftsensor\+Angle}{leftsensorAngle}}
-{\footnotesize\ttfamily const float leftsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a437ef08681e7210d6678427030446a54}{L\+E\+FT}}}
+{\footnotesize\ttfamily const float leftsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}}
 
 
 
@@ -337,7 +336,7 @@ Left sensor arduino trigger pin number.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+X\+Offset@{left\+X\+Offset}}
 \index{left\+X\+Offset@{left\+X\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{left\+X\+Offset}{leftXOffset}}
-{\footnotesize\ttfamily const float left\+X\+Offset = -\/5}
+{\footnotesize\ttfamily const float left\+X\+Offset = 0}
 
 
 
@@ -347,7 +346,7 @@ Left sensor x offset on chassis from pozyx location.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!left\+Y\+Offset@{left\+Y\+Offset}}
 \index{left\+Y\+Offset@{left\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{left\+Y\+Offset}{leftYOffset}}
-{\footnotesize\ttfamily const float left\+Y\+Offset = 2}
+{\footnotesize\ttfamily const float left\+Y\+Offset = 0}
 
 
 
@@ -357,7 +356,7 @@ Left sensor y offset on chassis from pozyx location.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!nav@{nav}}
 \index{nav@{nav}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{nav}{nav}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_navigator}{Navigator}} nav}
+{\footnotesize\ttfamily Navigator nav}
 
 \mbox{\Hypertarget{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}\label{bot_main_8ino_a513a215c9894c01e37f389b072c5cec4}} 
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Echo\+Pin@{right\+Echo\+Pin}}
@@ -383,7 +382,7 @@ Right sensor \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object i
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!rightsensor\+Angle@{rightsensor\+Angle}}
 \index{rightsensor\+Angle@{rightsensor\+Angle}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{rightsensor\+Angle}{rightsensorAngle}}
-{\footnotesize\ttfamily const float rightsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a80fb826a684cf3f0d306b22aa100ddac}{R\+I\+G\+HT}}}
+{\footnotesize\ttfamily const float rightsensor\+Angle = \mbox{\hyperlink{bot_main_8ino_a6ddfdda7a062d10cff4a72b76b44aeb8}{F\+O\+R\+W\+A\+RD}}}
 
 
 
@@ -403,7 +402,7 @@ Right sensor arduino trigger pin number.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+X\+Offset@{right\+X\+Offset}}
 \index{right\+X\+Offset@{right\+X\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{right\+X\+Offset}{rightXOffset}}
-{\footnotesize\ttfamily const float right\+X\+Offset = 5}
+{\footnotesize\ttfamily const float right\+X\+Offset = 0}
 
 
 
@@ -413,7 +412,7 @@ Right sensor x offset on chassis from pozyx location.
 \index{bot\+Main.\+ino@{bot\+Main.\+ino}!right\+Y\+Offset@{right\+Y\+Offset}}
 \index{right\+Y\+Offset@{right\+Y\+Offset}!bot\+Main.\+ino@{bot\+Main.\+ino}}
 \subsubsection{\texorpdfstring{right\+Y\+Offset}{rightYOffset}}
-{\footnotesize\ttfamily const float right\+Y\+Offset = 2}
+{\footnotesize\ttfamily const float right\+Y\+Offset = 0}
 
 
 

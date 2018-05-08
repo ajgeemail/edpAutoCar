@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['echopin_5f',['echoPin_',['../class_obstacle_sensor.html#aecbf317dc02d1c5f1147d5d0b5044dce',1,'ObstacleSensor']]],
-  ['element_5fvalue',['ELEMENT_VALUE',['../common_8h.html#a73bbd106d2b0511a67685cdabf5f7abc',1,'ELEMENT_VALUE():&#160;common.h'],['../_navigator_8h.html#a73bbd106d2b0511a67685cdabf5f7abc',1,'ELEMENT_VALUE():&#160;common.h']]],
-  ['element_5fxpos',['ELEMENT_XPOS',['../common_8h.html#abb177123f66eb54c669bebc80fc8becf',1,'ELEMENT_XPOS():&#160;common.h'],['../_navigator_8h.html#abb177123f66eb54c669bebc80fc8becf',1,'ELEMENT_XPOS():&#160;common.h']]],
-  ['element_5fypos',['ELEMENT_YPOS',['../common_8h.html#a7a051553330fad81652677bed8d04cfc',1,'ELEMENT_YPOS():&#160;common.h'],['../_navigator_8h.html#a7a051553330fad81652677bed8d04cfc',1,'ELEMENT_YPOS():&#160;common.h']]]
+  ['frontechopin',['frontEchoPin',['../bot_main_8ino.html#a878ae4b68ec48fc902c4aa953ad565b4',1,'botMain.ino']]],
+  ['frontsensor',['frontSensor',['../bot_main_8ino.html#a355879266d10af4a6e9126a47bc09113',1,'botMain.ino']]],
+  ['frontsensorangle',['frontsensorAngle',['../bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93',1,'botMain.ino']]],
+  ['frontsensorptr_5f',['frontSensorPtr_',['../class_obstacle_detection.html#ab6e8507df02f3b6d9282d0253ac338f3',1,'ObstacleDetection']]],
+  ['fronttriggerpin',['frontTriggerPin',['../bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a',1,'botMain.ino']]],
+  ['frontxoffset',['frontXOffset',['../bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724',1,'botMain.ino']]],
+  ['frontyoffset',['frontYOffset',['../bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a',1,'botMain.ino']]]
 ];

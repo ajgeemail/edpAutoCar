@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['max_5fsensor_5fdelay',['MAX_SENSOR_DELAY',['../_new_ping_8h.html#a016c1fb76dcd811ed0b10fddad7e8860',1,'NewPing.h']]],
-  ['max_5fsensor_5fdistance',['MAX_SENSOR_DISTANCE',['../_new_ping_8h.html#a066008eaba26c8638c448b56bc6e1ea4',1,'NewPing.h']]],
-  ['maxdistance_5f',['maxDistance_',['../class_obstacle_sensor.html#af980bd4eda58b827f559b0264295c338',1,'ObstacleSensor']]]
+  ['nav',['nav',['../bot_main_8ino.html#a4d757d2a3d2bcf4b98f6f4a72d7df7de',1,'botMain.ino']]],
+  ['navptr_5f',['navPtr_',['../class_obstacle_detection.html#aa68ee81b360a24f6977480aab44f5650',1,'ObstacleDetection']]]
 ];

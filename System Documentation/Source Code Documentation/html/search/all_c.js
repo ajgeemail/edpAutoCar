@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['nav',['nav',['../bot_main_8ino.html#a4d757d2a3d2bcf4b98f6f4a72d7df7de',1,'botMain.ino']]],
-  ['navigator',['Navigator',['../class_navigator.html',1,'Navigator'],['../class_navigator.html#a59230ab4698882f754d5ce275a1a4030',1,'Navigator::Navigator()']]],
-  ['navigator_2ecpp',['Navigator.cpp',['../_navigator_8cpp.html',1,'']]],
-  ['navigator_2eh',['Navigator.h',['../_navigator_8h.html',1,'']]],
-  ['navptr_5f',['navPtr_',['../class_obstacle_detection.html#aa68ee81b360a24f6977480aab44f5650',1,'ObstacleDetection']]],
-  ['newping',['NewPing',['../class_new_ping.html',1,'NewPing'],['../class_new_ping.html#ad517c7800c66b0a9f3c175d881776aff',1,'NewPing::NewPing()']]],
-  ['newping_2ecpp',['NewPing.cpp',['../_new_ping_8cpp.html',1,'']]],
-  ['newping_2eh',['NewPing.h',['../_new_ping_8h.html',1,'']]],
-  ['newpingconvert',['NewPingConvert',['../_new_ping_8h.html#a209729d49db3891714fd91b46eee8f37',1,'NewPing.h']]],
-  ['no_5fecho',['NO_ECHO',['../_new_ping_8h.html#a30970a858be8016e6d5cc2dd68b5a324',1,'NewPing.h']]]
+  ['objgridref_5f',['objGridRef_',['../class_obstacle_sensor.html#a8a5ed0513f7190c94f6362dc8e3f422d',1,'ObstacleSensor']]],
+  ['objx_5f',['objX_',['../class_obstacle_sensor.html#a7ef55ced2aa190347a8a4fda017eec5c',1,'ObstacleSensor']]],
+  ['objxdist_5f',['objXDist_',['../class_obstacle_sensor.html#a975d36873f7d0f9f2ddc2af247b56fc8',1,'ObstacleSensor']]],
+  ['objy_5f',['objY_',['../class_obstacle_sensor.html#a8df25c3d11ae7b8e652bc8bb56fd6f64',1,'ObstacleSensor']]],
+  ['objydist_5f',['objYDist_',['../class_obstacle_sensor.html#aeb1d3439a144640d73b07486dbfca10d',1,'ObstacleSensor']]],
+  ['obstacledetection',['ObstacleDetection',['../class_obstacle_detection.html',1,'ObstacleDetection'],['../class_obstacle_detection.html#a1ef460cae951b0ddaa04088645109f47',1,'ObstacleDetection::ObstacleDetection()'],['../class_obstacle_detection.html#ab70842be18c993b94612f17b653f3674',1,'ObstacleDetection::ObstacleDetection(ObstacleSensor *frontSensorPtr, ObstacleSensor *leftSensorPtr, ObstacleSensor *rightSensorPtr, Navigator *navPtr)']]],
+  ['obstacledetection_2ecpp',['ObstacleDetection.cpp',['../_obstacle_detection_8cpp.html',1,'']]],
+  ['obstacledetection_2eh',['ObstacleDetection.h',['../_obstacle_detection_8h.html',1,'']]],
+  ['obstaclesensor',['ObstacleSensor',['../class_obstacle_sensor.html',1,'ObstacleSensor'],['../class_obstacle_sensor.html#ad1268ce55070472bf5ca463a919d1dd5',1,'ObstacleSensor::ObstacleSensor()'],['../class_obstacle_sensor.html#ab4d5163bae4a841311d37df28be7872b',1,'ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle)']]],
+  ['obstaclesensor_2ecpp',['ObstacleSensor.cpp',['../_obstacle_sensor_8cpp.html',1,'']]],
+  ['obstaclesensor_2eh',['ObstacleSensor.h',['../_obstacle_sensor_8h.html',1,'']]],
+  ['odstonavtestobstacles',['odsToNavTestObstacles',['../class_obstacle_detection.html#a4977cf4929ce5b8ec1b42353df9bd2b7',1,'ObstacleDetection']]],
+  ['offsetx_5f',['offsetX_',['../class_obstacle_sensor.html#ad660e8750c49e39615247660afbf35f4',1,'ObstacleSensor']]],
+  ['offsety_5f',['offsetY_',['../class_obstacle_sensor.html#a491bcf65a2db112bc56b5c3af0c0fce7',1,'ObstacleSensor']]]
 ];

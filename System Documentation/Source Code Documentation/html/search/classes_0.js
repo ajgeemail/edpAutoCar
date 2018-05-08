@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['navigator',['Navigator',['../class_navigator.html',1,'']]],
-  ['newping',['NewPing',['../class_new_ping.html',1,'']]]
+  ['obstacledetection',['ObstacleDetection',['../class_obstacle_detection.html',1,'']]],
+  ['obstaclesensor',['ObstacleSensor',['../class_obstacle_sensor.html',1,'']]]
 ];

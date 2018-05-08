@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['navigator',['Navigator',['../class_navigator.html#a59230ab4698882f754d5ce275a1a4030',1,'Navigator']]],
-  ['newping',['NewPing',['../class_new_ping.html#ad517c7800c66b0a9f3c175d881776aff',1,'NewPing']]]
+  ['printdistance',['printDistance',['../class_obstacle_sensor.html#ad7b512504389e1925d3777f7395ef3ae',1,'ObstacleSensor']]],
+  ['printsound',['printSound',['../class_obstacle_sensor.html#a66ce921e669bb83fa8f23ad2bc2733ee',1,'ObstacleSensor']]]
 ];

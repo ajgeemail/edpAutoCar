@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['grid_5f',['grid_',['../class_navigator.html#ad295138915accad1b15031a977f59b3e',1,'Navigator']]],
-  ['gridx_5f',['gridX_',['../class_obstacle_sensor.html#a860064c48fae2c973d7e9b59868faff6',1,'ObstacleSensor']]],
-  ['gridy_5f',['gridY_',['../class_obstacle_sensor.html#a31c6b57b181045cf59227db2720da6f4',1,'ObstacleSensor']]]
+  ['heading_5f',['heading_',['../class_obstacle_sensor.html#add4a6ffaf43bcdd08e1a8c0c3956605d',1,'ObstacleSensor']]],
+  ['height',['HEIGHT',['../common_8h.html#af728b7647e0b8c49832983a31f9a2e9b',1,'common.h']]]
 ];

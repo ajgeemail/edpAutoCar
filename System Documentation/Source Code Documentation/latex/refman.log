@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.10.2)  16 APR 2018 22:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.10.2)  30 APR 2018 16:04
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -1030,28 +1030,7 @@ Package caption Info: longtable package is loaded.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
-)) (refman.aux
-
-LaTeX Warning: Label `_new_ping_8h_abf806517ed5c333ebae5f6f04fb16079' multiply 
-defined.
-
-
-LaTeX Warning: Label `_new_ping_8h_a98683564d6fcb3e53d44f23b65c1d1a5' multiply 
-defined.
-
-
-LaTeX Warning: Label `_new_ping_8h_a9a9c088882af508319d20d1fd6bdbd38' multiply 
-defined.
-
-
-LaTeX Warning: Label `_new_ping_8h_aa359d3a512c3764b2dc7cffc97b25072' multiply 
-defined.
-
-
-LaTeX Warning: Label `_new_ping_8h_a3cb22b304cd9ca028a12508dfb20b3c6' multiply 
-defined.
-
-)
+)) (refman.aux)
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
@@ -1069,7 +1048,8 @@ LaTeX Font Info:    ... okay on input line 117.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 117.
@@ -1210,76 +1190,50 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 9.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 9.
 
-[1
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [1
 
 ]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 51.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 51.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+Underfull \hbox (badness 1132) in paragraph at lines 59--59
+ [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
+018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
+ []
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 66.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 67.
- [2] [3]
-Underfull \hbox (badness 1132) in paragraph at lines 101--101
+(Font)              scaled to size 6.29996pt on input line 66.
+[2]
+Underfull \hbox (badness 1132) in paragraph at lines 98--98
  [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
 018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
  []
 
-[4]
-Underfull \hbox (badness 1132) in paragraph at lines 138--138
- [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
-018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
- []
-
-
-Underfull \hbox (badness 1132) in paragraph at lines 146--146
+[3]
+Underfull \hbox (badness 1132) in paragraph at lines 106--106
  [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
 018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 147--147
- [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
-018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
- []
-
-[5]
-Underfull \hbox (badness 1132) in paragraph at lines 155--155
+Underfull \hbox (badness 1132) in paragraph at lines 107--107
  [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
 018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 163--163
- [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
-018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
- []
-
-[6]
-Underfull \hbox (badness 1132) in paragraph at lines 185--185
+Underfull \hbox (badness 1132) in paragraph at lines 108--108
  [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
 018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 186--186
- [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
-018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
- []
-
-
-Underfull \hbox (badness 1132) in paragraph at lines 187--187
- [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
-018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
- []
-
-
-Underfull \hbox (badness 1132) in paragraph at lines 188--188
+Underfull \hbox (badness 1132) in paragraph at lines 109--109
  [][] [][][]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2
 018/[]Semester 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[] 
  []
@@ -1288,9 +1242,7 @@ Underfull \hbox (badness 1132) in paragraph at lines 188--188
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
- [7] [8
-
-]
+ [4]
 Package hyperref Info: Option `pageanchor' set `true' on input line 138.
 
 Chapter 1.
@@ -1311,6 +1263,7 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 12.9599pt on input line 1.
 ) [1
 
+
 ] [2
 
 ]
@@ -1319,252 +1272,148 @@ Chapter 2.
 
 ]
 Chapter 3.
-(class_navigator.tex
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 7.
+(class_obstacle_detection.tex
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 10.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1phv.fd"
+(Font)              scaled to size 6.29996pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 15.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1phv.fd"
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 10.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 38.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 47.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 48.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 48.
-[5] [6]
-Underfull \hbox (badness 10000) detected at line 73
-[][][]
- []
-
-[7]
-Underfull \hbox (badness 2990) in paragraph at lines 122--123
-[]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
-ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 123--123
-[]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
-ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
- []
-
-) (class_new_ping.tex [8] [9] [10] [11] [12]
-Underfull \hbox (badness 2990) in paragraph at lines 246--247
-[]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
-ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 247--247
-[]\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
-ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
- []
-
-) (class_obstacle_detection.tex
+(Font)              scaled to size 8.99994pt on input line 15.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 11.
+(Font)              scaled to size 8.09995pt on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 11.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 11.
+(Font)              scaled to size 8.09995pt on input line 16.
 
-Underfull \hbox (badness 2809) in paragraph at lines 12--14
+Underfull \hbox (badness 2809) in paragraph at lines 17--19
 [][] \T1/phv/m/n/10 ([] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 front[]Sensor[]Ptr, 
 [] $\OMS/cmsy/m/n/10 $\T1/phv/m/n/10 left[]Sensor[]Ptr, []
  []
 
-[13]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 22.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 22.
+[5]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 7.19995pt on input line 56.
+(Font)              scaled to size 8.99994pt on input line 59.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 7.19995pt on input line 59.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/bc/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 56.
+(Font)              using `T1/pcr/m/n' instead on input line 59.
 
-[14]
-Underfull \hbox (badness 10000) detected at line 95
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 70.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 70.
+[6]
+Underfull \hbox (badness 10000) detected at line 98
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 104
+Underfull \hbox (badness 10000) detected at line 107
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 113
+Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
 
-[15]
-Underfull \hbox (badness 2990) in paragraph at lines 183--184
+[7]
+Underfull \hbox (badness 2990) in paragraph at lines 186--187
 []\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
 ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 184--184
+Underfull \hbox (badness 2990) in paragraph at lines 187--187
 []\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
 ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
  []
 
-[16]) (class_obstacle_sensor.tex [17] [18] [19]
-Underfull \hbox (badness 10000) detected at line 136
+) (class_obstacle_sensor.tex [8] [9] [10]
+Underfull \hbox (badness 10000) detected at line 141
 [][][]
  []
 
-[20] [21] [22] [23]
-Underfull \hbox (badness 2990) in paragraph at lines 402--403
+[11] [12] [13] [14] [15]
+Underfull \hbox (badness 2990) in paragraph at lines 407--408
 []\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
 ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 403--403
+Underfull \hbox (badness 2990) in paragraph at lines 408--408
 []\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
 ster 1/[]Engineering De-sign Practise/git[]_[]edp[]Auto[]Car/bot[]
  []
 
-) [24]
+) [16]
 Chapter 4.
 (bot_main_8ino.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
-[25
+[17
 
-] [26]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.16548pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[27] [28]
+] [18]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.16548pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[29] [30]
-Overfull \hbox (39.1562pt too wide) in paragraph at lines 322--323
+[19] [20]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.16548pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21] [22]
+Overfull \hbox (39.1562pt too wide) in paragraph at lines 375--376
 [] \T1/pcr/bc/n/8 right[]Sensor([], [], [], [], []) 
  []
 
-) (common_8h.tex
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.16548pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31] [32]) (_navigator_8cpp.tex) (_navigator_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.16548pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[33]) (_new_ping_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-[34]) (_new_ping_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--5
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.16548pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[35] [36]
-Overfull \hbox (23.44316pt too wide) in paragraph at lines 84--85
-|   \T1/pcr/m/sl/8 conversion[]Factor \T1/pcr/bc/n/8 ) (max(((unsigned int)echo
-[]Time + conversion[]Factor / 2) / conversion[]
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.16548pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[37pdfTeX warning (ext4): destination with the same identifier (name{_new_ping_
-8h_abf806517ed5c333ebae5f6f04fb16079}) has been already used, duplicate ignored
-
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.131 \subsubsection
-                    {\texorpdfstring{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+E\+N\+A\+...
-]) (_obstacle_detection_8cpp.tex [38pdfTeX warning (ext4): destination with the
- same identifier (name{_new_ping_8h_a98683564d6fcb3e53d44f23b65c1d1a5}) has bee
-n already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 ...rtarget{_obstacle_detection_8cpp}{}\section
-                                                  {D\+:/\+One\+Drive -\/ U\+...
-pdfTeX warning (ext4): destination with the same identifier (name{_new_ping_8h_
-a9a9c088882af508319d20d1fd6bdbd38}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 ...rtarget{_obstacle_detection_8cpp}{}\section
-                                                  {D\+:/\+One\+Drive -\/ U\+...
-pdfTeX warning (ext4): destination with the same identifier (name{_new_ping_8h_
-aa359d3a512c3764b2dc7cffc97b25072}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 ...rtarget{_obstacle_detection_8cpp}{}\section
-                                                  {D\+:/\+One\+Drive -\/ U\+...
-]) (_obstacle_detection_8h.tex
+[23]) (common_8h.tex [24]) (_obstacle_detection_8cpp.tex)
+(_obstacle_detection_8h.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-) (_obstacle_sensor_8cpp.tex) (_obstacle_sensor_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.16548pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39pdfTeX warning (ext4): destination with the same identifier (name{_new_ping_
-8h_a3cb22b304cd9ca028a12508dfb20b3c6}) has been already used, duplicate ignored
+[25]) (_obstacle_sensor_8cpp.tex) (_obstacle_sensor_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.164 \backmatter
-                 ] [40
-
-] (refman.ind
+) [26] (refman.ind
 Underfull \hbox (badness 795) in paragraph at lines 103--105
 []\T1/phv/m/n/10 D[]:/[]One[]Drive - U[]N[]S[]W/[]Alex/[]A[]D[]F[]A/2018/[]Seme
 ster 1/[]
@@ -1608,7 +1457,8 @@ Underfull \hbox (badness 3514) in paragraph at lines 109--111
 \T1/phv/m/n/10 Engineering De-sign Practise/git[]_[]edp[]Auto[]
  []
 
-[41
+[27
+
 
 
 ]
@@ -1677,47 +1527,68 @@ Underfull \hbox (badness 3514) in paragraph at lines 121--123
 \T1/phv/m/n/10 Engineering De-sign Practise/git[]_[]edp[]Auto[]
  []
 
-[42] [43] [44] [45
+[28] [29] [30] [31
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
  (refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 14BB872C5ACC11F3C9CE77119B52F7D7;41070.
+(rerunfilecheck)             Checksum: 336149EE4946DCD559E98BA6EB13F678;23402.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 15604 strings out of 493314
- 232267 string characters out of 3138841
- 341289 words of memory out of 3000000
- 18440 multiletter control sequences out of 15000+200000
+ 15277 strings out of 493314
+ 222590 string characters out of 3138841
+ 333771 words of memory out of 3000000
+ 18293 multiletter control sequences out of 15000+200000
  67356 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,2765b,632s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/
-uhvro8a.pfb>
-Output written on refman.pdf (55 pages, 473068 bytes).
+ 53i,16n,92p,2509b,565s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{page.38} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{page.37} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.39} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.36} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.34} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.33} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.32} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{page.35} has been referenced but does not exist, re
+placed by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/urw/helvetic/uhvb8ac.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uh
+vro8a.pfb>
+Output written on refman.pdf (37 pages, 358100 bytes).
 PDF statistics:
- 2080 PDF objects out of 2487 (max. 8388607)
- 432 named destinations out of 1000 (max. 500000)
- 1513 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1415 PDF objects out of 1440 (max. 8388607)
+ 264 named destinations out of 1000 (max. 500000)
+ 881 words of extra memory for PDF output out of 10000 (max. 10000000)
 

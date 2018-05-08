@@ -56,8 +56,8 @@ int \mbox{\hyperlink{class_obstacle_sensor_a860064c48fae2c973d7e9b59868faff6}{gr
 \begin{DoxyCompactList}\small\item\em Grid reference of obstacle detected converted from coordinates above. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_obstacle_sensor_a31c6b57b181045cf59227db2720da6f4}{grid\+Y\+\_\+}}
 \item 
-\mbox{\hyperlink{class_new_ping}{New\+Ping}} \mbox{\hyperlink{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}{sonar\+\_\+}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_new_ping}{New\+Ping}} object causes H\+C-\/\+S\+R04 sensor pulses and enable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+New\+Ping \mbox{\hyperlink{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}{sonar\+\_\+}}
+\begin{DoxyCompactList}\small\item\em New\+Ping object causes H\+C-\/\+S\+R04 sensor pulses and enable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -92,7 +92,7 @@ static float \mbox{\hyperlink{class_obstacle_sensor_a5b34f3938826987d0b1623bb95e
 \subsection{Detailed Description}
 \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. 
 
-The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object represents a single sensor on the A\+VS and as such multiple \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects will exist in the bot\+Main and \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} modules. The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object will confirm its accuracy and legality. I\+N\+P\+U\+TS\+: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from D\+H\+T-\/22 for improved accuracy Interfaces with H\+C-\/\+S\+R04 sensors via \mbox{\hyperlink{class_new_ping}{New\+Ping}} class O\+U\+T\+P\+U\+TS TO\+: Objects used by \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} class to output grid references to nav. 
+The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object represents a single sensor on the A\+VS and as such multiple \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects will exist in the bot\+Main and \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} modules. The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object will confirm its accuracy and legality. I\+N\+P\+U\+TS\+: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from D\+H\+T-\/22 for improved accuracy Interfaces with H\+C-\/\+S\+R04 sensors via New\+Ping class O\+U\+T\+P\+U\+TS TO\+: Objects used by \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} class to output grid references to nav. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_obstacle_sensor_ad1268ce55070472bf5ca463a919d1dd5}\label{class_obstacle_sensor_ad1268ce55070472bf5ca463a919d1dd5}} 
@@ -344,11 +344,11 @@ Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!sonar\+\_\+@{sonar\+\_\+}}
 \index{sonar\+\_\+@{sonar\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{sonar\+\_\+}{sonar\_}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_new_ping}{New\+Ping}} Obstacle\+Sensor\+::sonar\+\_\+}
+{\footnotesize\ttfamily New\+Ping Obstacle\+Sensor\+::sonar\+\_\+}
 
 
 
-\mbox{\hyperlink{class_new_ping}{New\+Ping}} object causes H\+C-\/\+S\+R04 sensor pulses and enable. 
+New\+Ping object causes H\+C-\/\+S\+R04 sensor pulses and enable. 
 
 \mbox{\Hypertarget{class_obstacle_sensor_ae6d0b250f37a34d04103d43e4e4e0082}\label{class_obstacle_sensor_ae6d0b250f37a34d04103d43e4e4e0082}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!soundcm\+\_\+@{soundcm\+\_\+}}

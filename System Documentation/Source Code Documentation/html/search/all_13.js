@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width',['WIDTH',['../common_8h.html#a9649ab8139c4c2ea5c93625b30d92a05',1,'WIDTH():&#160;common.h'],['../_navigator_8h.html#a9649ab8139c4c2ea5c93625b30d92a05',1,'WIDTH():&#160;Navigator.h']]]
+  ['xpos_5f',['xPos_',['../class_obstacle_sensor.html#a108284bfc4bc3ded9aa47973a9d3a442',1,'ObstacleSensor']]]
 ];

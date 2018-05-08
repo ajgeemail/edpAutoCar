@@ -82,7 +82,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ef460cae951b0ddaa04088645109f47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a1ef460cae951b0ddaa04088645109f47">ObstacleDetection</a> ()</td></tr>
 <tr class="memdesc:a1ef460cae951b0ddaa04088645109f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor - not used currently.  <a href="#a1ef460cae951b0ddaa04088645109f47">More...</a><br /></td></tr>
 <tr class="separator:a1ef460cae951b0ddaa04088645109f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70842be18c993b94612f17b653f3674"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#ab70842be18c993b94612f17b653f3674">ObstacleDetection</a> (<a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *frontSensorPtr, <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *leftSensorPtr, <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *rightSensorPtr, <a class="el" href="class_navigator.html">Navigator</a> *navPtr)</td></tr>
+<tr class="memitem:ab70842be18c993b94612f17b653f3674"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#ab70842be18c993b94612f17b653f3674">ObstacleDetection</a> (<a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *frontSensorPtr, <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *leftSensorPtr, <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *rightSensorPtr, Navigator *navPtr)</td></tr>
 <tr class="separator:ab70842be18c993b94612f17b653f3674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8d20425157946ba8e562d9696fef86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#afe8d20425157946ba8e562d9696fef86">detectAllSensors</a> ()</td></tr>
 <tr class="separator:afe8d20425157946ba8e562d9696fef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,7 +110,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a25b7aed86ead63e6f71154855cc2d42c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a25b7aed86ead63e6f71154855cc2d42c">rightSensorPtr_</a></td></tr>
 <tr class="memdesc:a25b7aed86ead63e6f71154855cc2d42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to right sensor.  <a href="#a25b7aed86ead63e6f71154855cc2d42c">More...</a><br /></td></tr>
 <tr class="separator:a25b7aed86ead63e6f71154855cc2d42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68ee81b360a24f6977480aab44f5650"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_navigator.html">Navigator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#aa68ee81b360a24f6977480aab44f5650">navPtr_</a></td></tr>
+<tr class="memitem:aa68ee81b360a24f6977480aab44f5650"><td class="memItemLeft" align="right" valign="top">Navigator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#aa68ee81b360a24f6977480aab44f5650">navPtr_</a></td></tr>
 <tr class="memdesc:aa68ee81b360a24f6977480aab44f5650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the navigation system object.  <a href="#aa68ee81b360a24f6977480aab44f5650">More...</a><br /></td></tr>
 <tr class="separator:aa68ee81b360a24f6977480aab44f5650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -170,7 +170,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_navigator.html">Navigator</a> *&#160;</td>
+          <td class="paramtype">Navigator *&#160;</td>
           <td class="paramname"><em>navPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -185,7 +185,7 @@ Static Private Attributes</h2></td></tr>
     <tr><td class="paramname">*frontSensorPtr</td><td>Pointer to front sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*leftSensororPtr</td><td>Pointer to left sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*rightSensorPtr</td><td>Pointer to right sensor Obstacle Sensor Object </td></tr>
-    <tr><td class="paramname">*navPtr</td><td>Pointer to <a class="el" href="class_navigator.html" title="TO EDIT: Add a brief description here that will show up on the classes page. ">Navigator</a> object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
+    <tr><td class="paramname">*navPtr</td><td>Pointer to Navigator object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
   </table>
   </dd>
 </dl>
@@ -391,7 +391,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_navigator.html">Navigator</a>* ObstacleDetection::navPtr_</td>
+          <td class="memname">Navigator* ObstacleDetection::navPtr_</td>
         </tr>
       </table>
   </td>

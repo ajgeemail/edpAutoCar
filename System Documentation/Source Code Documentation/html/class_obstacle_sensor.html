@@ -133,8 +133,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a860064c48fae2c973d7e9b59868faff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31c6b57b181045cf59227db2720da6f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a31c6b57b181045cf59227db2720da6f4">gridY_</a></td></tr>
 <tr class="separator:a31c6b57b181045cf59227db2720da6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a761a011e9009edaaee103d9bafceba14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_new_ping.html">NewPing</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14">sonar_</a></td></tr>
-<tr class="memdesc:a761a011e9009edaaee103d9bafceba14"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_new_ping.html">NewPing</a> object causes HC-SR04 sensor pulses and enable.  <a href="#a761a011e9009edaaee103d9bafceba14">More...</a><br /></td></tr>
+<tr class="memitem:a761a011e9009edaaee103d9bafceba14"><td class="memItemLeft" align="right" valign="top">NewPing&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14">sonar_</a></td></tr>
+<tr class="memdesc:a761a011e9009edaaee103d9bafceba14"><td class="mdescLeft">&#160;</td><td class="mdescRight">NewPing object causes HC-SR04 sensor pulses and enable.  <a href="#a761a011e9009edaaee103d9bafceba14">More...</a><br /></td></tr>
 <tr class="separator:a761a011e9009edaaee103d9bafceba14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -177,7 +177,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. </p>
-<p>The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object represents a single sensor on the AVS and as such multiple <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects will exist in the botMain and <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> modules. The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object will confirm its accuracy and legality. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via <a class="el" href="class_new_ping.html">NewPing</a> class OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> class to output grid references to nav. </p>
+<p>The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object represents a single sensor on the AVS and as such multiple <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects will exist in the botMain and <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> modules. The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object will confirm its accuracy and legality. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via NewPing class OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> class to output grid references to nav. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1268ce55070472bf5ca463a919d1dd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1268ce55070472bf5ca463a919d1dd5">&#9670;&nbsp;</a></span>ObstacleSensor() <span class="overload">[1/2]</span></h2>
@@ -745,12 +745,12 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_new_ping.html">NewPing</a> ObstacleSensor::sonar_</td>
+          <td class="memname">NewPing ObstacleSensor::sonar_</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_new_ping.html">NewPing</a> object causes HC-SR04 sensor pulses and enable. </p>
+<p>NewPing object causes HC-SR04 sensor pulses and enable. </p>
 
 </div>
 </div>

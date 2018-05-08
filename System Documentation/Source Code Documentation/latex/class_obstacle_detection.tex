@@ -14,7 +14,7 @@
 \item 
 \mbox{\hyperlink{class_obstacle_detection_a1ef460cae951b0ddaa04088645109f47}{Obstacle\+Detection}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor -\/ not used currently. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_obstacle_detection_ab70842be18c993b94612f17b653f3674}{Obstacle\+Detection}} (\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$front\+Sensor\+Ptr, \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$left\+Sensor\+Ptr, \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$right\+Sensor\+Ptr, \mbox{\hyperlink{class_navigator}{Navigator}} $\ast$nav\+Ptr)
+\mbox{\hyperlink{class_obstacle_detection_ab70842be18c993b94612f17b653f3674}{Obstacle\+Detection}} (\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$front\+Sensor\+Ptr, \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$left\+Sensor\+Ptr, \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$right\+Sensor\+Ptr, Navigator $\ast$nav\+Ptr)
 \item 
 void \mbox{\hyperlink{class_obstacle_detection_afe8d20425157946ba8e562d9696fef86}{detect\+All\+Sensors}} ()
 \item 
@@ -38,7 +38,7 @@ uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_aa7974520bcbaa2d10254fb49
 \begin{DoxyCompactList}\small\item\em Pointer to left sensor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$ \mbox{\hyperlink{class_obstacle_detection_a25b7aed86ead63e6f71154855cc2d42c}{right\+Sensor\+Ptr\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Pointer to right sensor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_navigator}{Navigator}} $\ast$ \mbox{\hyperlink{class_obstacle_detection_aa68ee81b360a24f6977480aab44f5650}{nav\+Ptr\+\_\+}}
+Navigator $\ast$ \mbox{\hyperlink{class_obstacle_detection_aa68ee81b360a24f6977480aab44f5650}{nav\+Ptr\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Pointer to the navigation system object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -67,7 +67,7 @@ Default constructor -\/ not used currently.
 \index{Obstacle\+Detection@{Obstacle\+Detection}!Obstacle\+Detection@{Obstacle\+Detection}}
 \index{Obstacle\+Detection@{Obstacle\+Detection}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{Obstacle\+Detection()}{ObstacleDetection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Obstacle\+Detection\+::\+Obstacle\+Detection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{front\+Sensor\+Ptr,  }\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{left\+Sensor\+Ptr,  }\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{right\+Sensor\+Ptr,  }\item[{\mbox{\hyperlink{class_navigator}{Navigator}} $\ast$}]{nav\+Ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Obstacle\+Detection\+::\+Obstacle\+Detection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{front\+Sensor\+Ptr,  }\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{left\+Sensor\+Ptr,  }\item[{\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} $\ast$}]{right\+Sensor\+Ptr,  }\item[{Navigator $\ast$}]{nav\+Ptr }\end{DoxyParamCaption})}
 
 Constructor which takes in three \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object pointers and navigator object pointer used to activate in different sequences as required 
 \begin{DoxyParams}{Parameters}
@@ -77,7 +77,7 @@ Constructor which takes in three \mbox{\hyperlink{class_obstacle_sensor}{Obstacl
 \hline
 {\em $\ast$right\+Sensor\+Ptr} & Pointer to right sensor Obstacle Sensor Object \\
 \hline
-{\em $\ast$nav\+Ptr} & Pointer to \mbox{\hyperlink{class_navigator}{Navigator}} object in order to call add\+Obstacle function and pass obstalce details to navigation system \\
+{\em $\ast$nav\+Ptr} & Pointer to Navigator object in order to call add\+Obstacle function and pass obstalce details to navigation system \\
 \hline
 \end{DoxyParams}
 
@@ -163,7 +163,7 @@ Pointer to left sensor.
 \index{Obstacle\+Detection@{Obstacle\+Detection}!nav\+Ptr\+\_\+@{nav\+Ptr\+\_\+}}
 \index{nav\+Ptr\+\_\+@{nav\+Ptr\+\_\+}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{nav\+Ptr\+\_\+}{navPtr\_}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_navigator}{Navigator}}$\ast$ Obstacle\+Detection\+::nav\+Ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily Navigator$\ast$ Obstacle\+Detection\+::nav\+Ptr\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

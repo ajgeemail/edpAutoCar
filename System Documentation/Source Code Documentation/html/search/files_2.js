@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['navigator_2ecpp',['Navigator.cpp',['../_navigator_8cpp.html',1,'']]],
-  ['navigator_2eh',['Navigator.h',['../_navigator_8h.html',1,'']]],
-  ['newping_2ecpp',['NewPing.cpp',['../_new_ping_8cpp.html',1,'']]],
-  ['newping_2eh',['NewPing.h',['../_new_ping_8h.html',1,'']]]
+  ['obstacledetection_2ecpp',['ObstacleDetection.cpp',['../_obstacle_detection_8cpp.html',1,'']]],
+  ['obstacledetection_2eh',['ObstacleDetection.h',['../_obstacle_detection_8h.html',1,'']]],
+  ['obstaclesensor_2ecpp',['ObstacleSensor.cpp',['../_obstacle_sensor_8cpp.html',1,'']]],
+  ['obstaclesensor_2eh',['ObstacleSensor.h',['../_obstacle_sensor_8h.html',1,'']]]
 ];
