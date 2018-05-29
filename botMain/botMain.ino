@@ -119,7 +119,7 @@ void setup()
 
 void loop() 
 {
-    ObstacleSensor::updateOdsData(x_loc, y_loc, avsHeading_);
+    ObstacleSensor::updateOdsData(x_loc, y_loc, heading);
     ods.detectAllSensors();
     frontSensor.printDistance("Front");
     leftSensor.printDistance("Left");
