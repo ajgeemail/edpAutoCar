@@ -4,8 +4,8 @@
 
 /*static */ float ObstacleSensor::soundcm_ = 0.0343f;
 /*static */ float ObstacleSensor::heading_;
-/*static */ float ObstacleSensor::xPos_;
-/*static */ float ObstacleSensor::yPos_;
+/*static */ int ObstacleSensor::xPos_;
+/*static */ int ObstacleSensor::yPos_;
 
 // Max error + bias must be less than 35cm to remain in correct grid reference 
 // since this is the size of the obstacle. Hence error of 16cm and projection
@@ -23,10 +23,10 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
     Serial.println("Obstacle Sensor Constructor");
 }
 
-/* static */ void ObstacleSensor::calculateSoundCm(uint8_t dhtPin)
+/* static */ void ObstacleSensor::calculateSoundCm(uint8_t lm35Pin)
 {
     // Initialise DHT
-    DHT dht(dhtPin, DHT22);
+    DHT dht(lm35Pin, DHT22);
     dht.begin();
 
     // Delay to allow DHT22 time to stabilise
@@ -40,6 +40,14 @@ ObstacleSensor::ObstacleSensor(uint8_t triggerPin, uint8_t echoPin, float offset
 
     // Convert to cm/ms from m/s
     ObstacleSensor::soundcm_ = soundsp / 10000.0f;
+
+//    analogReference(INTERNAL);
+//    int raw = analogRead(lm35Pin);
+//    float temp = raw / 9.31;
+//    float hum = 0;
+//
+//    // Calculate the Speed of Sound in m/s
+//    float soundsp = 331.4f + (0.606f * temp);
 
     // Print speed of sound details
     printSound(temp, hum);

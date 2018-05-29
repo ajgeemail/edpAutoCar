@@ -21,10 +21,10 @@
 #include "common.h"
 
 // **************** AVS SYSTEM WIDE VARIABLES *******************************************************
-//! Heading - to come from pozyx locatio system
-float avsHeading_ = 0*(PI/180); // This will need to be updated with pozyx data
-float avsX_ = 25;                // This will need to be updated with pozyx data
-float avsY_ = 0;                // This will need to be updated with pozyx data
+//! Heading - to come from pozyx location system
+int heading = 0*(PI/180);       // This will need to be updated with pozyx data
+int x_loc = 250;                // This will need to be updated with pozyx data
+int y_loc = 500;                // This will need to be updated with pozyx data
 // **************** END AVS SYSTEM WIDE VARIABLES ***************************************************
 
 // *********************** NM SPECIFIC VARIABLES *******************************************************
@@ -119,7 +119,7 @@ void setup()
 
 void loop() 
 {
-    ObstacleSensor::updateOdsData(avsX_, avsY_, avsHeading_);
+    ObstacleSensor::updateOdsData(x_loc, y_loc, avsHeading_);
     ods.detectAllSensors();
     frontSensor.printDistance("Front");
     leftSensor.printDistance("Left");

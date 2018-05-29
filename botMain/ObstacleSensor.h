@@ -41,10 +41,10 @@ class ObstacleSensor
         static float heading_;
 
         //! AVS pozyx x position
-        static float xPos_;
+        static int xPos_;
 
         //! AVS pozyx y position
-        static float yPos_;
+        static int yPos_;
     
     public :
         //! Locations and directions on vehicle relative to Posyx sensor or center or some other reference
@@ -114,10 +114,10 @@ class ObstacleSensor
         //! @param x        Current X location of pozyx
         //! @param y        Current Y location of pozyx
         //! @param heading  Current heading of pozyx
-        static void updateOdsData(float x, float y, float heading)
+        static void updateOdsData(int x, int y, int heading)
         {
-            xPos_ = x;
-            yPos_ = y;
+            xPos_ = x/10; // cm
+            yPos_ = y/10; // cm
             heading_ = heading;
         }        
 };
