@@ -209,26 +209,26 @@ int Navigator::nextDirection(int xPos, int yPos, int xPosEnd, int yPosEnd, int h
     int northValue = grid_[yPosArr - 1][xPos][2];
     int southValue = grid_[yPosArr + 1][xPos][2];
 
-    // Prioritises direction of favourable movement (i.e. forward --> right --> left --> reverse)
+    // Prioritises direction of favourable movement (i.e. forward --> right/left turn --> reverse)
     if(heading >= 315 || heading < 45) // north facing
     {
         northValue--;
-        southValue++;    
+        southValue = southValue + 3;    
     }
     else if(45 <= heading && heading < 135)
     {
         eastValue--;
-        westValue++;    
+        westValue = westValue + 3;    
     }
     else if(135 <= heading && heading < 225)
     {    
         southValue--;
-        northValue++;   
+        northValue = northValue + 3;   
     }
     else if(225 <= heading && heading < 315)
     {    
         westValue--;
-        eastValue++;    
+        eastValue = eastValue + 3;    
     }
     
     if(yPosArr != yPosEndArr || xPos != xPosEnd)

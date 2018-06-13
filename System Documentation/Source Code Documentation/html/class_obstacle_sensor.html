@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted.  
+ <a href="class_obstacle_sensor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -81,21 +84,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1268ce55070472bf5ca463a919d1dd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ad1268ce55070472bf5ca463a919d1dd5">ObstacleSensor</a> ()</td></tr>
 <tr class="memdesc:ad1268ce55070472bf5ca463a919d1dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor - not used.  <a href="#ad1268ce55070472bf5ca463a919d1dd5">More...</a><br /></td></tr>
 <tr class="separator:ad1268ce55070472bf5ca463a919d1dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d5163bae4a841311d37df28be7872b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ab4d5163bae4a841311d37df28be7872b">ObstacleSensor</a> (uint8_t triggerPin, uint8_t echoPin, float offsetX, float offsetY, float sensorAngle)</td></tr>
-<tr class="separator:ab4d5163bae4a841311d37df28be7872b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae451cef8461f01b1672fcf4dd18eb6de"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ae451cef8461f01b1672fcf4dd18eb6de">activateSensor</a> (uint8_t iterations)</td></tr>
-<tr class="separator:ae451cef8461f01b1672fcf4dd18eb6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286a6027b6e9097ead4d2d1da7881c4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a286a6027b6e9097ead4d2d1da7881c4e">ObstacleSensor</a> (int triggerPin, int echoPin, float offsetX, float offsetY, float sensorAngle)</td></tr>
+<tr class="separator:a286a6027b6e9097ead4d2d1da7881c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0fa6b563d7bd3604256682311ee029d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ab0fa6b563d7bd3604256682311ee029d">activateSensor</a> (int iterations)</td></tr>
+<tr class="separator:ab0fa6b563d7bd3604256682311ee029d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7b512504389e1925d3777f7395ef3ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ad7b512504389e1925d3777f7395ef3ae">printDistance</a> (String sensorName)</td></tr>
 <tr class="separator:ad7b512504389e1925d3777f7395ef3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a309eb490fce98867856521dd270f6e97"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a309eb490fce98867856521dd270f6e97">calculateSoundCm</a> (uint8_t <a class="el" href="bot_main_8ino.html#a89e40ffdf0114ea60292ff57879491e2">dhtPin</a>)</td></tr>
-<tr class="separator:a309eb490fce98867856521dd270f6e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7255d7273231178876c5144b2269eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#acd7255d7273231178876c5144b2269eb">calculateSoundCm</a> (int dhtPin)</td></tr>
+<tr class="separator:acd7255d7273231178876c5144b2269eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ce921e669bb83fa8f23ad2bc2733ee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a66ce921e669bb83fa8f23ad2bc2733ee">printSound</a> (float temp, float hum)</td></tr>
 <tr class="separator:a66ce921e669bb83fa8f23ad2bc2733ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15dc53a9c498c7d959178ae903cf7a40"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a15dc53a9c498c7d959178ae903cf7a40">updateOdsData</a> (float x, float y, float heading)</td></tr>
-<tr class="separator:a15dc53a9c498c7d959178ae903cf7a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7da634cf955d1890c5340336f88e28"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a7d7da634cf955d1890c5340336f88e28">updateOdsData</a> (int x, int y, int <a class="el" href="bot_main_8ino.html#aa0a9c2882aad6535e52a6d429f1d42da">heading</a>)</td></tr>
+<tr class="separator:a7d7da634cf955d1890c5340336f88e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -106,12 +109,17 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a491bcf65a2db112bc56b5c3af0c0fce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a348cf9783f793442c56f1b34e3515dbb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a348cf9783f793442c56f1b34e3515dbb">sensorAngle_</a></td></tr>
 <tr class="separator:a348cf9783f793442c56f1b34e3515dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13b7eab4b79c41cb51058c0351d1ae6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ac13b7eab4b79c41cb51058c0351d1ae6">xDistComp_</a></td></tr>
+<tr class="memdesc:ac13b7eab4b79c41cb51058c0351d1ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">X and Y Components of distance from sensor.  <a href="#ac13b7eab4b79c41cb51058c0351d1ae6">More...</a><br /></td></tr>
+<tr class="separator:ac13b7eab4b79c41cb51058c0351d1ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05dad8b177a43a804153f1240656e4c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a05dad8b177a43a804153f1240656e4c0">yDistComp_</a></td></tr>
+<tr class="separator:a05dad8b177a43a804153f1240656e4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063ee604be2c3b6ed8034cafedda0c3d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a063ee604be2c3b6ed8034cafedda0c3d">sensorGridAngle_</a></td></tr>
-<tr class="memdesc:a063ee604be2c3b6ed8034cafedda0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle of sensor relative to the grid (i.e. sensorAngle_ + heading_)  <a href="#a063ee604be2c3b6ed8034cafedda0c3d">More...</a><br /></td></tr>
+<tr class="memdesc:a063ee604be2c3b6ed8034cafedda0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle of sensor relative to the grid (i.e. sensorAngle_ + heading_))  <a href="#a063ee604be2c3b6ed8034cafedda0c3d">More...</a><br /></td></tr>
 <tr class="separator:a063ee604be2c3b6ed8034cafedda0c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae132590d90f75c4d8cfe26a98a315908"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ae132590d90f75c4d8cfe26a98a315908">unitVect_</a> [2]</td></tr>
-<tr class="memdesc:ae132590d90f75c4d8cfe26a98a315908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit vector of vector from sensor to detected obstacle (i.e xComp + yComp)  <a href="#ae132590d90f75c4d8cfe26a98a315908">More...</a><br /></td></tr>
-<tr class="separator:ae132590d90f75c4d8cfe26a98a315908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03d3a917fc37e816f35949f1185fbc7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ab03d3a917fc37e816f35949f1185fbc7">unitVect_</a> [2]</td></tr>
+<tr class="memdesc:ab03d3a917fc37e816f35949f1185fbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit vector of vector from sensor to detected obstacle (i.e xComp + yComp)  <a href="#ab03d3a917fc37e816f35949f1185fbc7">More...</a><br /></td></tr>
+<tr class="separator:ab03d3a917fc37e816f35949f1185fbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac38c343c22e4f8afbde0b04b928f07cc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ac38c343c22e4f8afbde0b04b928f07cc">distance_</a></td></tr>
 <tr class="memdesc:ac38c343c22e4f8afbde0b04b928f07cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance from sensor to object detected.  <a href="#ac38c343c22e4f8afbde0b04b928f07cc">More...</a><br /></td></tr>
 <tr class="separator:ac38c343c22e4f8afbde0b04b928f07cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,23 +138,29 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a860064c48fae2c973d7e9b59868faff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31c6b57b181045cf59227db2720da6f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a31c6b57b181045cf59227db2720da6f4">gridY_</a></td></tr>
 <tr class="separator:a31c6b57b181045cf59227db2720da6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a761a011e9009edaaee103d9bafceba14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_new_ping.html">NewPing</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14">sonar_</a></td></tr>
-<tr class="memdesc:a761a011e9009edaaee103d9bafceba14"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_new_ping.html">NewPing</a> object causes HC-SR04 sensor pulses and enable.  <a href="#a761a011e9009edaaee103d9bafceba14">More...</a><br /></td></tr>
+<tr class="memitem:a761a011e9009edaaee103d9bafceba14"><td class="memItemLeft" align="right" valign="top">NewPing&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14">sonar_</a></td></tr>
+<tr class="memdesc:a761a011e9009edaaee103d9bafceba14"><td class="mdescLeft">&#160;</td><td class="mdescRight">NewPing object causes HC-SR04 sensor pulses and enable.  <a href="#a761a011e9009edaaee103d9bafceba14">More...</a><br /></td></tr>
 <tr class="separator:a761a011e9009edaaee103d9bafceba14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a7d083be5c0be76782c37d8d41fc636e5"><td class="memItemLeft" align="right" valign="top">static int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a7d083be5c0be76782c37d8d41fc636e5">bias_</a> = 17</td></tr>
-<tr class="memdesc:a7d083be5c0be76782c37d8d41fc636e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bias for grid reference conversion.  <a href="#a7d083be5c0be76782c37d8d41fc636e5">More...</a><br /></td></tr>
-<tr class="separator:a7d083be5c0be76782c37d8d41fc636e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4a515b967900605f9f4716112a8dad"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#aae4a515b967900605f9f4716112a8dad">xPos_</a></td></tr>
+<tr class="memdesc:aae4a515b967900605f9f4716112a8dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVS pozyx x position.  <a href="#aae4a515b967900605f9f4716112a8dad">More...</a><br /></td></tr>
+<tr class="separator:aae4a515b967900605f9f4716112a8dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18f61b87409e97fc63ef29c99f30b31"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#aa18f61b87409e97fc63ef29c99f30b31">yPos_</a></td></tr>
+<tr class="memdesc:aa18f61b87409e97fc63ef29c99f30b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVS pozyx y position.  <a href="#aa18f61b87409e97fc63ef29c99f30b31">More...</a><br /></td></tr>
+<tr class="separator:aa18f61b87409e97fc63ef29c99f30b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47c1a66f4d8eb28e239f3ae1c34f873"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ad47c1a66f4d8eb28e239f3ae1c34f873">bias_</a> = 170</td></tr>
+<tr class="memdesc:ad47c1a66f4d8eb28e239f3ae1c34f873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bias for grid reference conversion.  <a href="#ad47c1a66f4d8eb28e239f3ae1c34f873">More...</a><br /></td></tr>
+<tr class="separator:ad47c1a66f4d8eb28e239f3ae1c34f873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab26ff0855f2f0a009de72b36324d3abb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ab26ff0855f2f0a009de72b36324d3abb">triggerPin_</a></td></tr>
-<tr class="memdesc:ab26ff0855f2f0a009de72b36324d3abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin definitions.  <a href="#ab26ff0855f2f0a009de72b36324d3abb">More...</a><br /></td></tr>
-<tr class="separator:ab26ff0855f2f0a009de72b36324d3abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecbf317dc02d1c5f1147d5d0b5044dce"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#aecbf317dc02d1c5f1147d5d0b5044dce">echoPin_</a></td></tr>
-<tr class="separator:aecbf317dc02d1c5f1147d5d0b5044dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bda5595b38379dd74e1c4c7204ad0af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a8bda5595b38379dd74e1c4c7204ad0af">triggerPin_</a></td></tr>
+<tr class="memdesc:a8bda5595b38379dd74e1c4c7204ad0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin definitions.  <a href="#a8bda5595b38379dd74e1c4c7204ad0af">More...</a><br /></td></tr>
+<tr class="separator:a8bda5595b38379dd74e1c4c7204ad0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6d2e5d6aa6e7a8feb801b64310df12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#ace6d2e5d6aa6e7a8feb801b64310df12">echoPin_</a></td></tr>
+<tr class="separator:ace6d2e5d6aa6e7a8feb801b64310df12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af980bd4eda58b827f559b0264295c338"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#af980bd4eda58b827f559b0264295c338">maxDistance_</a> = 400</td></tr>
 <tr class="memdesc:af980bd4eda58b827f559b0264295c338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum distance of sensor (i.e. 400cm)  <a href="#af980bd4eda58b827f559b0264295c338">More...</a><br /></td></tr>
 <tr class="separator:af980bd4eda58b827f559b0264295c338"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,16 +179,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:add4a6ffaf43bcdd08e1a8c0c3956605d"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#add4a6ffaf43bcdd08e1a8c0c3956605d">heading_</a></td></tr>
 <tr class="memdesc:add4a6ffaf43bcdd08e1a8c0c3956605d"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVS pozyx heading data.  <a href="#add4a6ffaf43bcdd08e1a8c0c3956605d">More...</a><br /></td></tr>
 <tr class="separator:add4a6ffaf43bcdd08e1a8c0c3956605d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108284bfc4bc3ded9aa47973a9d3a442"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a108284bfc4bc3ded9aa47973a9d3a442">xPos_</a></td></tr>
-<tr class="memdesc:a108284bfc4bc3ded9aa47973a9d3a442"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVS pozyx x position.  <a href="#a108284bfc4bc3ded9aa47973a9d3a442">More...</a><br /></td></tr>
-<tr class="separator:a108284bfc4bc3ded9aa47973a9d3a442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b34f3938826987d0b1623bb95e4220e"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_sensor.html#a5b34f3938826987d0b1623bb95e4220e">yPos_</a></td></tr>
-<tr class="memdesc:a5b34f3938826987d0b1623bb95e4220e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVS pozyx y position.  <a href="#a5b34f3938826987d0b1623bb95e4220e">More...</a><br /></td></tr>
-<tr class="separator:a5b34f3938826987d0b1623bb95e4220e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via <a class="el" href="class_new_ping.html">NewPing</a> class</p>
-<p>OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html">ObstacleDetection</a> class to output grid references to nav. </p>
+<div class="textblock"><p><a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. </p>
+<p>The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object represents a single sensor on the AVS and as such multiple <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects will exist in the botMain and <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> modules. The <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object will confirm its accuracy and legality. INPUTS: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from DHT-22 for improved accuracy Interfaces with HC-SR04 sensors via NewPing class OUTPUTS TO: Objects used by <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> class to output grid references to nav. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1268ce55070472bf5ca463a919d1dd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1268ce55070472bf5ca463a919d1dd5">&#9670;&nbsp;</a></span>ObstacleSensor() <span class="overload">[1/2]</span></h2>
@@ -195,8 +203,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab4d5163bae4a841311d37df28be7872b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d5163bae4a841311d37df28be7872b">&#9670;&nbsp;</a></span>ObstacleSensor() <span class="overload">[2/2]</span></h2>
+<a id="a286a6027b6e9097ead4d2d1da7881c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286a6027b6e9097ead4d2d1da7881c4e">&#9670;&nbsp;</a></span>ObstacleSensor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,13 +212,13 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">ObstacleSensor::ObstacleSensor </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>triggerPin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>echoPin</em>, </td>
         </tr>
         <tr>
@@ -252,16 +260,16 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae451cef8461f01b1672fcf4dd18eb6de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae451cef8461f01b1672fcf4dd18eb6de">&#9670;&nbsp;</a></span>activateSensor()</h2>
+<a id="ab0fa6b563d7bd3604256682311ee029d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0fa6b563d7bd3604256682311ee029d">&#9670;&nbsp;</a></span>activateSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleSensor::activateSensor </td>
+          <td class="memname">int ObstacleSensor::activateSensor </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>iterations</em></td><td>)</td>
           <td></td>
         </tr>
@@ -277,8 +285,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a309eb490fce98867856521dd270f6e97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a309eb490fce98867856521dd270f6e97">&#9670;&nbsp;</a></span>calculateSoundCm()</h2>
+<a id="acd7255d7273231178876c5144b2269eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7255d7273231178876c5144b2269eb">&#9670;&nbsp;</a></span>calculateSoundCm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +297,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ObstacleSensor::calculateSoundCm </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>dhtPin</em></td><td>)</td>
           <td></td>
         </tr>
@@ -376,8 +384,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a15dc53a9c498c7d959178ae903cf7a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15dc53a9c498c7d959178ae903cf7a40">&#9670;&nbsp;</a></span>updateOdsData()</h2>
+<a id="a7d7da634cf955d1890c5340336f88e28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7da634cf955d1890c5340336f88e28">&#9670;&nbsp;</a></span>updateOdsData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,19 +396,19 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">static void ObstacleSensor::updateOdsData </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>heading</em>&#160;</td>
         </tr>
         <tr>
@@ -427,8 +435,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7d083be5c0be76782c37d8d41fc636e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d083be5c0be76782c37d8d41fc636e5">&#9670;&nbsp;</a></span>bias_</h2>
+<a id="ad47c1a66f4d8eb28e239f3ae1c34f873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47c1a66f4d8eb28e239f3ae1c34f873">&#9670;&nbsp;</a></span>bias_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +445,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int8_t ObstacleSensor::bias_ = 17</td>
+          <td class="memname">int ObstacleSensor::bias_ = 170</td>
         </tr>
       </table>
   </td>
@@ -491,8 +499,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aecbf317dc02d1c5f1147d5d0b5044dce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecbf317dc02d1c5f1147d5d0b5044dce">&#9670;&nbsp;</a></span>echoPin_</h2>
+<a id="ace6d2e5d6aa6e7a8feb801b64310df12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6d2e5d6aa6e7a8feb801b64310df12">&#9670;&nbsp;</a></span>echoPin_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -501,7 +509,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleSensor::echoPin_</td>
+          <td class="memname">int ObstacleSensor::echoPin_</td>
         </tr>
       </table>
   </td>
@@ -731,7 +739,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Angle of sensor relative to the grid (i.e. sensorAngle_ + heading_) </p>
+<p>Angle of sensor relative to the grid (i.e. sensorAngle_ + heading_)) </p>
 
 </div>
 </div>
@@ -742,12 +750,12 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_new_ping.html">NewPing</a> ObstacleSensor::sonar_</td>
+          <td class="memname">NewPing ObstacleSensor::sonar_</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_new_ping.html">NewPing</a> object causes HC-SR04 sensor pulses and enable. </p>
+<p>NewPing object causes HC-SR04 sensor pulses and enable. </p>
 
 </div>
 </div>
@@ -775,8 +783,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab26ff0855f2f0a009de72b36324d3abb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab26ff0855f2f0a009de72b36324d3abb">&#9670;&nbsp;</a></span>triggerPin_</h2>
+<a id="a8bda5595b38379dd74e1c4c7204ad0af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bda5595b38379dd74e1c4c7204ad0af">&#9670;&nbsp;</a></span>triggerPin_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -785,7 +793,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleSensor::triggerPin_</td>
+          <td class="memname">int ObstacleSensor::triggerPin_</td>
         </tr>
       </table>
   </td>
@@ -799,14 +807,14 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae132590d90f75c4d8cfe26a98a315908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae132590d90f75c4d8cfe26a98a315908">&#9670;&nbsp;</a></span>unitVect_</h2>
+<a id="ab03d3a917fc37e816f35949f1185fbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03d3a917fc37e816f35949f1185fbc7">&#9670;&nbsp;</a></span>unitVect_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int8_t ObstacleSensor::unitVect_[2]</td>
+          <td class="memname">int ObstacleSensor::unitVect_[2]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -815,8 +823,24 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a108284bfc4bc3ded9aa47973a9d3a442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a108284bfc4bc3ded9aa47973a9d3a442">&#9670;&nbsp;</a></span>xPos_</h2>
+<a id="ac13b7eab4b79c41cb51058c0351d1ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13b7eab4b79c41cb51058c0351d1ae6">&#9670;&nbsp;</a></span>xDistComp_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ObstacleSensor::xDistComp_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>X and Y Components of distance from sensor. </p>
+
+</div>
+</div>
+<a id="aae4a515b967900605f9f4716112a8dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4a515b967900605f9f4716112a8dad">&#9670;&nbsp;</a></span>xPos_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -825,12 +849,12 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ObstacleSensor::xPos_</td>
+          <td class="memname">int ObstacleSensor::xPos_</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -839,8 +863,22 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5b34f3938826987d0b1623bb95e4220e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b34f3938826987d0b1623bb95e4220e">&#9670;&nbsp;</a></span>yPos_</h2>
+<a id="a05dad8b177a43a804153f1240656e4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05dad8b177a43a804153f1240656e4c0">&#9670;&nbsp;</a></span>yDistComp_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ObstacleSensor::yDistComp_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa18f61b87409e97fc63ef29c99f30b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa18f61b87409e97fc63ef29c99f30b31">&#9670;&nbsp;</a></span>yPos_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -849,12 +887,12 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float ObstacleSensor::yPos_</td>
+          <td class="memname">int ObstacleSensor::yPos_</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -864,8 +902,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/OneDrive - UNSW/Alex/ADFA/2018/Semester 1/Engineering Design Practise/git_edpAutoCar/botMain/<a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a></li>
-<li>D:/OneDrive - UNSW/Alex/ADFA/2018/Semester 1/Engineering Design Practise/git_edpAutoCar/botMain/<a class="el" href="_obstacle_sensor_8cpp.html">ObstacleSensor.cpp</a></li>
+<li><a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a></li>
+<li><a class="el" href="_obstacle_sensor_8cpp.html">ObstacleSensor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

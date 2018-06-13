@@ -2,6 +2,11 @@
 \label{class_obstacle_detection}\index{Obstacle\+Detection@{Obstacle\+Detection}}
 
 
+\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system.  
+
+
+
+
 {\ttfamily \#include $<$Obstacle\+Detection.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -18,11 +23,11 @@ void \mbox{\hyperlink{class_obstacle_detection_a4977cf4929ce5b8ec1b42353df9bd2b7
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_adbb2c4295e35c5c4c2b63aed42588bd0}{detect\+Left\+Sensor}} ()
+int \mbox{\hyperlink{class_obstacle_detection_ab79f1c269cb0c4e033a3485309f870e4}{detect\+Left\+Sensor}} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_a135adf6077c8af44e33e6814ad7ee9f0}{detect\+Right\+Sensor}} ()
+int \mbox{\hyperlink{class_obstacle_detection_ab9d63d29923dfd52061f456afc403e45}{detect\+Right\+Sensor}} ()
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_aa7974520bcbaa2d10254fb498347b8c3}{detect\+Front\+Sensor}} ()
+int \mbox{\hyperlink{class_obstacle_detection_a617610d3df5438e409bb810a53e61772}{detect\+Front\+Sensor}} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -38,16 +43,14 @@ uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_aa7974520bcbaa2d10254fb49
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint8\+\_\+t \mbox{\hyperlink{class_obstacle_detection_a37811b168a642890429f6752118341cc}{iterations}} = 5
+static const int \mbox{\hyperlink{class_obstacle_detection_a7d7c77085fa9795bad6de9813046ca12}{iterations}} = 5
 \begin{DoxyCompactList}\small\item\em Number of times the sensors are activated to average distance of detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system.
+\mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object controls the activation patterns of all \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects and outputs detected obstacle grid references to the navigation system. 
 
-I\+N\+P\+U\+TS\+: Requires information detailing \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects
-
-O\+U\+T\+P\+U\+TS TO\+: Grid reference to navigation system 
+A single \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object is used per A\+VS unit, and it contains all of the details of the specific respective \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects. The \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object has at its disposal a number of \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} activation patterns based on the needs of the particular environment and A\+VS configuration. I\+N\+P\+U\+TS\+: Requires information detailing \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects O\+U\+T\+P\+U\+TS TO\+: Grid reference to navigation system 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_obstacle_detection_a1ef460cae951b0ddaa04088645109f47}\label{class_obstacle_detection_a1ef460cae951b0ddaa04088645109f47}} 
@@ -86,29 +89,29 @@ Constructor which takes in three \mbox{\hyperlink{class_obstacle_sensor}{Obstacl
 \subsubsection{\texorpdfstring{detect\+All\+Sensors()}{detectAllSensors()}}
 {\footnotesize\ttfamily void Obstacle\+Detection\+::detect\+All\+Sensors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Standard detection function which activates all sensors and converts any obstacles to grid references. Will be in loop function so constantly firing. \mbox{\Hypertarget{class_obstacle_detection_aa7974520bcbaa2d10254fb498347b8c3}\label{class_obstacle_detection_aa7974520bcbaa2d10254fb498347b8c3}} 
+Standard detection function which activates all sensors and converts any obstacles to grid references. Will be in loop function so constantly firing. \mbox{\Hypertarget{class_obstacle_detection_a617610d3df5438e409bb810a53e61772}\label{class_obstacle_detection_a617610d3df5438e409bb810a53e61772}} 
 \index{Obstacle\+Detection@{Obstacle\+Detection}!detect\+Front\+Sensor@{detect\+Front\+Sensor}}
 \index{detect\+Front\+Sensor@{detect\+Front\+Sensor}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{detect\+Front\+Sensor()}{detectFrontSensor()}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Detection\+::detect\+Front\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Detection\+::detect\+Front\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Fire front sensor only \begin{DoxyReturn}{Returns}
 0 or 1 for legal obstacle distance detected 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_obstacle_detection_adbb2c4295e35c5c4c2b63aed42588bd0}\label{class_obstacle_detection_adbb2c4295e35c5c4c2b63aed42588bd0}} 
+\mbox{\Hypertarget{class_obstacle_detection_ab79f1c269cb0c4e033a3485309f870e4}\label{class_obstacle_detection_ab79f1c269cb0c4e033a3485309f870e4}} 
 \index{Obstacle\+Detection@{Obstacle\+Detection}!detect\+Left\+Sensor@{detect\+Left\+Sensor}}
 \index{detect\+Left\+Sensor@{detect\+Left\+Sensor}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{detect\+Left\+Sensor()}{detectLeftSensor()}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Detection\+::detect\+Left\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Detection\+::detect\+Left\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Fire left sensor only \begin{DoxyReturn}{Returns}
 0 or 1 for legal obstacle distance detected 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_obstacle_detection_a135adf6077c8af44e33e6814ad7ee9f0}\label{class_obstacle_detection_a135adf6077c8af44e33e6814ad7ee9f0}} 
+\mbox{\Hypertarget{class_obstacle_detection_ab9d63d29923dfd52061f456afc403e45}\label{class_obstacle_detection_ab9d63d29923dfd52061f456afc403e45}} 
 \index{Obstacle\+Detection@{Obstacle\+Detection}!detect\+Right\+Sensor@{detect\+Right\+Sensor}}
 \index{detect\+Right\+Sensor@{detect\+Right\+Sensor}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{detect\+Right\+Sensor()}{detectRightSensor()}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Detection\+::detect\+Right\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Detection\+::detect\+Right\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Fire right sensor only \begin{DoxyReturn}{Returns}
 0 or 1 for legal obstacle distance detected 
@@ -136,11 +139,11 @@ Filled with dummy obstacles to be outputted to navigation system for testing of 
 
 Pointer to front sensor. 
 
-\mbox{\Hypertarget{class_obstacle_detection_a37811b168a642890429f6752118341cc}\label{class_obstacle_detection_a37811b168a642890429f6752118341cc}} 
+\mbox{\Hypertarget{class_obstacle_detection_a7d7c77085fa9795bad6de9813046ca12}\label{class_obstacle_detection_a7d7c77085fa9795bad6de9813046ca12}} 
 \index{Obstacle\+Detection@{Obstacle\+Detection}!iterations@{iterations}}
 \index{iterations@{iterations}!Obstacle\+Detection@{Obstacle\+Detection}}
 \subsubsection{\texorpdfstring{iterations}{iterations}}
-{\footnotesize\ttfamily const uint8\+\_\+t Obstacle\+Detection\+::iterations = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily const int Obstacle\+Detection\+::iterations = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
@@ -180,5 +183,5 @@ Pointer to right sensor.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_obstacle_detection_8h}{Obstacle\+Detection.\+h}}\item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_obstacle_detection_8cpp}{Obstacle\+Detection.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_obstacle_detection_8h}{Obstacle\+Detection.\+h}}\item 
+\mbox{\hyperlink{_obstacle_detection_8cpp}{Obstacle\+Detection.\+cpp}}\end{DoxyCompactItemize}

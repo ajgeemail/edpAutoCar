@@ -29,8 +29,7 @@
 SoftwareSerial BT(19, 18); // Creates virtual serial on pins on (RX) | (TX) --> bluetooth pins
 
 // **************** LOC SPECIFIC VARIABLES *******************************************************
-const int basicAvgAmt = 50; //varying this changes the number of pozyx readings averaged
-
+const int basicAvgAmt = 50;                                                     //varying this changes the number of pozyx readings averaged
 const int   num_to_avg             = 5;                                         // Number of position readings to average out for the output of position data
 const int   num_anchors            = 4;                                         // Number of anchors
 uint16_t    anchors[num_anchors] = {0x687c, 0x6821, 0x6827, 0x6851};            // the network id of the anchors
@@ -38,20 +37,20 @@ int32_t     anchors_x[num_anchors] = {0, 0, 4998, 4985};                        
 int32_t     anchors_y[num_anchors] = {0, 5005, 4985, 0};                        // anchor y-coordinates in mm
 int32_t     heights[num_anchors] = {810, 1720, 765, 1715};                      // anchor z-coordinates in mm
 
+int algorithm = POZYX_POS_ALG_UWB_ONLY;                                         // Positioning algorithm to use. try POZYX_POS_ALG_TRACKING for fast moving objects.
+int dimension = POZYX_2D;                                                       // Positioning dimension ie 2D, 2_5D and 3D
+int32_t height    = 0;                                                          // z position of pozyx in mm
 
-int algorithm = POZYX_POS_ALG_UWB_ONLY;                                       // Positioning algorithm to use. try POZYX_POS_ALG_TRACKING for fast moving objects.
-int dimension = POZYX_2D;                                                     // Positioning dimension ie 2D, 2_5D and 3D
-int32_t height    = 0;                                                            // z position of pozyx in mm
+int x_loc = 1750;                                                               //The measured x location in mm from coordinate (0,0)
+int y_loc = 3250;                                                               //The measured y location in mm from coordinate (0,0)
+int heading = 90;                                                               //The magnetic heading in degrees
+int headingOffset = 0;                                                          // heading offset to facilitate grid north NEW31/05
 
-int x_loc = 1750;                                                 //The measured x location in mm from coordinate (0,0)
-int y_loc = 3250;                                                 //The measured y location in mm from coordinate (0,0)
-int heading = 90;                                               //The magnetic heading in degrees
-int headingOffset = 0;                                            // heading offset to facilitate grid north NEW31/05
+int x_loc_prev = 0;                                                             //Previous x loc for Goughy
+int y_loc_prev = 0;                                                             //Previous y loc for Goughy
 
-int x_loc_prev = 0;                                            //Previous x loc for Goughy
-int y_loc_prev = 0;                                            //Previous y loc for Goughy
-
-String result = ";911;";                                              //TX bluetooth string, starts with semicolon
+// *********************** BT SPECIFIC VARIABLES *******************************************************
+String result = ";911;";                                                        //TX bluetooth string, starts with semicolon
 // *********************** NM SPECIFIC VARIABLES *******************************************************
 
 int  xPosStart     = 2;                                                           // Starting cartesian x-coordinate in grid units
@@ -127,9 +126,6 @@ ObstacleSensor frontSensor(frontTriggerPin, frontEchoPin, frontXOffset, frontYOf
 ObstacleSensor leftSensor(leftTriggerPin, leftEchoPin, leftXOffset, leftYOffset, leftsensorAngle);
 //! Right sensor ObstacleSensor object initialisation - used to detect obstacles at right of AVS
 ObstacleSensor rightSensor(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
-//ObstacleSensor rightSensor1(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
-//ObstacleSensor rightSensor2(rightTriggerPin, rightEchoPin, rightXOffset, rightYOffset, rightsensorAngle);
-
 
 //! Obstacle detection system object initialisation - used to activate ObstacleSensor objects
 //! as required and pass on information to the navigation system
@@ -150,7 +146,7 @@ int cgk_turn_delay = 1000;        //cgk time required to wait for a turn to comp
                                   //cgk hard left to hard right turn                      1000
 int cgk_brake_time = 100;         //cgk time to apply a reverse direction dc motor
                                   //cgk move to act like a brake                          100
-int cgk_motor_speed = 210;        //cgk PWM dc motor speed 0-255                          210
+int cgk_motor_speed = 254;        //cgk PWM dc motor speed 0-255                          210
 int cgk_fwd_one = 470;            //cgk distance to move forward 500mm                    500
 int cgk_back_one = 500;           //cgk distance to move backward 500mm                   550
 int cgk_first_angle_divider = 2;  //cgk divide difference in heading and course 
@@ -158,6 +154,10 @@ int cgk_first_angle_divider = 2;  //cgk divide difference in heading and course
                                   //cgk part of fwd movement                              2                    
 // **************** END SPECIFIC VARIABLES **************************************************
 
+//! Initial setup function begins the various serial monitors, sets up pozyx anchors and 
+//! heading values, passes location and heading information to obstacle sensor objects
+//! and if in operational mode produces a 10 second delay once complete to allow time to
+//! reposition the AVS after initial heading has been captured.
 void setup() 
 {
     pinMode( 19, INPUT_PULLUP ); // fix Serial1
@@ -213,10 +213,16 @@ void setup()
     }
 }
 
+//! Main loop function which runs while the AVS is working. Utilises all subsystem functions
+//! to inform and command the AVS to complete its task.
 void loop() 
 {
     // *** LOC LOOP *** //
     getCoordinatesV2(100);
+    
+    // *** 1st BT LOOP *** //
+    sendBTData(); // Gets all data for GUI and sends over bluetooth
+    
     getHeading();
     if(test_mode == 1)
     {
@@ -280,43 +286,7 @@ void loop()
 
     
     if(x_loc_grid == xPosTarget && y_loc_grid == yPosTarget)
-    {
-        moveForward();
         returnToStart = true;
-    }
-    /*
-    {
-        Serial.print("I'm in the target location at ["); Serial.print(x_loc_grid); Serial.print("]["); Serial.print(y_loc_grid); Serial.print("]");
-        int noSides = nav.sidesClear(x_loc, y_loc, heading);
-        while(noSides != 1 && noSides != 2)
-        {
-            Serial.print("Movement: Returning reverse");
-            moveBackward();
-            noSides = nav.sidesClear(x_loc, y_loc, heading); 
-        }
-
-        if(noSides == 2)
-        {
-            Serial.print("\tMovement: Returning left turn");
-            turnLeft();
-            Serial.print("\tMovement: Returning reverse");
-            moveBackward();
-            Serial.print("\tMovement: Returning right turn");
-            turnLeft();
-            returnToStart = true;
-        }
-        else if(noSides == 1)
-        {
-            Serial.print("\tMovement: Returning right turn");
-            turnRight();
-            Serial.print("\tMovement: Returning reverse");
-            moveBackward();
-            Serial.print("\tMovement: Returning right turn");
-            turnRight();
-            returnToStart = true;
-        }
-    }
-        */
     else
     {   
         int command = nav.nextMove(x_loc, y_loc, xPosTarget, yPosTarget, heading);
@@ -370,11 +340,11 @@ void loop()
         }   
     }  
 
-      // *** BT LOOP *** //
+      // *** 2nd BT LOOP *** //
       sendBTData(); // Gets all data for GUI and sends over bluetooth
 }
 
-// Function to manually set the anchor coordinates as supplied by pozyx website
+//! Function to manually set the anchor coordinates as supplied by pozyx website
 void setAnchorsManual()
 {
       for(int i = 0; i < num_anchors; i++)
@@ -393,8 +363,9 @@ void setAnchorsManual()
       }
 }
 
-// Get position information
-void getCoordinates (int avgNum){
+//! Get position information
+void getCoordinates (int avgNum)
+{
     coordinates_t position;
   int status;
   int32_t out_x;
@@ -420,8 +391,9 @@ void getCoordinates (int avgNum){
   y_loc = out_y/avgNum;
 }
 
-// NEW get coordinates
-void getCoordinatesV2(int avgNum){
+//! Get position information more accurately by filtering outliers
+void getCoordinatesV2(int avgNum)
+{
   coordinates_t position;
   int status;
   //int finalOutX;
@@ -512,22 +484,26 @@ for (int k = 0; k<num2remove; k++){
 
 }
 
-// initializes the heading by creating an offset so that the heading at init is 0deg  NEW 31/05
-void headingInit(){
+//! Initializes the heading by creating an offset so that the heading at init is 0deg  NEW 31/05
+void headingInit()
+{
   euler_angles_t euler_angles;
   int status;
   status = Pozyx.getEulerAngles_deg(&euler_angles, NULL);
-  if(status == POZYX_SUCCESS){
+  if(status == POZYX_SUCCESS)
+  {
     headingOffset = euler_angles.heading;
   }
 }
 
-// Get heading info updates global heading variable with what appears to be magnetic heading
-void getHeading(){
+//! Get heading info updates global heading variable with what appears to be magnetic heading
+void getHeading()
+{
   euler_angles_t euler_angles;
   int status;
   status = Pozyx.getEulerAngles_deg(&euler_angles, NULL);
-  if(status == POZYX_SUCCESS){
+  if(status == POZYX_SUCCESS)
+  {
     heading = euler_angles.heading - headingOffset;
   }
   // this corrects if the offset has taken the value below 0deg
@@ -536,7 +512,7 @@ void getHeading(){
   }
 }
 
-// get all data from Mazing and Pozyx and concat into string for BT send (HOFFY)
+//! Get all data from Mazing and Pozyx and concat into string for BT send (HOFFY)
 void sendBTData()
 {
   // Get grid data
@@ -555,8 +531,8 @@ void sendBTData()
   y_loc_prev = y_loc;
   result += temp;
   BT.println(result); // tx string
-  delay(100); //delay in us
-  BT.flush();
+  delay(100); //delay in ms
+  //BT.flush();
   result = ";911;";
 }
 
@@ -567,7 +543,10 @@ void sendBTData()
 //cgk probably need a method to switch from magnetic to grid co-ordinates, 
 //cgk but can test as is with mag north gid squares
 
-void turnLeft(){
+//! Turns the AVS in left direction of current heading and moves to left of starting
+//! grid square. 
+void turnLeft()
+{
   getHeading();
   myMotor->setSpeed(cgk_motor_speed);
   int current_heading = heading;              //cgk record current heading
@@ -663,6 +642,9 @@ void turnLeft(){
         }
     }
 
+    // *** 2nd BT LOOP *** //
+    sendBTData(); // Gets all data for GUI and sends over bluetooth
+      
    //cgk now drive forward and hard left to reach centre of target square, ie left one
    
    servo1.write(map(cgk_straight, 0, 255, 0, 180));          //cgk centre
@@ -718,7 +700,10 @@ void turnLeft(){
 //cgk probably need a method to switch from magnetic to grid co-ordinates, 
 //cgk but can test as is with mag north gid squares
 
-void turnRight(){
+//! Turns the AVS in right direction of current heading and moves to right of starting
+//! grid square. 
+void turnRight()
+{
   getHeading();
   myMotor->setSpeed(cgk_motor_speed);
   int current_heading = heading;              //cgk record current heading
@@ -813,6 +798,9 @@ void turnRight(){
      }
     }
 
+   // *** 2nd BT LOOP *** //
+   sendBTData(); // Gets all data for GUI and sends over bluetooth
+      
    //cgk now drive forward and hard right to reach centre of target square, ie the right one
    
    servo1.write(map(cgk_straight, 0, 255, 0, 180));          //cgk centre
@@ -863,8 +851,8 @@ void turnRight(){
 
 
 //--------------------------------------cgk---------------------------------------------------
-//cgk turns hard right, then goes backwards, then hard left, then goes forwards.
 
+//! cgk Adjusts AVS left - turns hard right, then goes backwards, then hard left, then goes forwards.
 void cgk_left(){
   myMotor->setSpeed(cgk_motor_speed);
  
@@ -889,8 +877,8 @@ void cgk_left(){
 //--------------------------------------cgk----------------------------------------------------
 
 //--------------------------------------cgk---------------------------------------------------
-//cgk turns hard left, then goes backwards, then hard right, then goes forwards.
 
+//! cgk Adjusts AVS right - turns hard left, then goes backwards, then hard right, then goes forwards.
 void cgk_right(){
   myMotor->setSpeed(cgk_motor_speed);
  
@@ -916,12 +904,13 @@ void cgk_right(){
 
 
 //---------------------------------------cgk---------------------------------------------------
-//cgk move the car forward 500mm.
-//cgk the plan is to take the current position to determine how far forward to move, and at 
-//cgk what perpendicular offset, so that the final heading and position is centred in the 
-//cgk forward gird square. It aims to finish on the correct heading too.
+//! cgk move the car forward 500mm.
+//! cgk the plan is to take the current position to determine how far forward to move, and at 
+//! cgk what perpendicular offset, so that the final heading and position is centred in the 
+//! cgk forward gird square. It aims to finish on the correct heading too.
 
-void moveForward(){
+void moveForward()
+{
   myMotor->setSpeed(cgk_motor_speed);
   //cgk this old code is for pozyx integration for x and y positioning
   //cgk i will just use heading info, this assumes the car remains centred
@@ -1120,10 +1109,10 @@ else if(test_mode == 2)
 //---------------------------------------cgk---------------------------------------------------
 
 //---------------------------------------cgk---------------------------------------------------
-//cgk move the car backward 500mm.
-//cgk the plan is to take the current position to determine how far backward to move, and at 
-//cgk what perpendicular offset, so that the final heading and position is centred in the 
-//cgk backward gird square. It aims to finish on the correct heading too.
+//! cgk move the car backward 500mm.
+//! cgk the plan is to take the current position to determine how far backward to move, and at 
+//! cgk what perpendicular offset, so that the final heading and position is centred in the 
+//! cgk backward gird square. It aims to finish on the correct heading too.
 
 void moveBackward(){
   myMotor->setSpeed(cgk_motor_speed);
@@ -1323,6 +1312,8 @@ void moveBackward(){
 //---------------------------------------cgk---------------------------------------------------
 
 //=================================== BT PRINTS ===============================================
+//! Print map function equivalent to that used in the navigator class but used in test_mode 2 
+//! when serial monitor occurs through the bluetooth port.
 void btPrintMap()
 {
     if(test_mode == 2)
@@ -1340,6 +1331,8 @@ void btPrintMap()
     }
 }
 
+//! Print sensor distances equivalent to that used in the obstacle sensor class but used in
+//! test_mode 2 when serial monitor occurs through the bluetooth port.
 void btPrintSensorDistances(String sensorName, ObstacleSensor* sensor)
 {
         if(test_mode == 2)

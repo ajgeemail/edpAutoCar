@@ -13,6 +13,9 @@ const int ELEMENT_VALUE  = 2;                        // Grid square's weighting 
 const int OBSTACLE_COUNT = 3;                        // Grid square's weighting value
 
 // ****************** MODES *****************************************************************
+//! test_mode changes the type of test output provided to user. USB serial monitor, BT
+//! serial monitor and operational mode (i.e. no test data and 10 sec delay enforced after
+//! initial setup complete.
 const int test_mode = 2;    // Serial and BT prints:  1 = Test prints through serial
                             //                        2 = Test prints through BT
                             //                        0 = Operational mode     

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['sensorangle_5f',['sensorAngle_',['../class_obstacle_sensor.html#a348cf9783f793442c56f1b34e3515dbb',1,'ObstacleSensor']]],
-  ['sensorgridangle_5f',['sensorGridAngle_',['../class_obstacle_sensor.html#a063ee604be2c3b6ed8034cafedda0c3d',1,'ObstacleSensor']]],
-  ['sonar_5f',['sonar_',['../class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14',1,'ObstacleSensor']]],
-  ['soundcm_5f',['soundcm_',['../class_obstacle_sensor.html#ae6d0b250f37a34d04103d43e4e4e0082',1,'ObstacleSensor']]]
+  ['temppin',['tempPin',['../bot_main_8ino.html#a5aede016b3edcf8d5054eabe18c4ebd5',1,'botMain.ino']]],
+  ['test_5fmode',['test_mode',['../common_8h.html#a183f2c4602f4da76ecf3d51a4807331f',1,'common.h']]],
+  ['triggerpin_5f',['triggerPin_',['../class_obstacle_sensor.html#a8bda5595b38379dd74e1c4c7204ad0af',1,'ObstacleSensor']]]
 ];

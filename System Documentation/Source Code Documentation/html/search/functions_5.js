@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['navigator',['Navigator',['../class_navigator.html#a59230ab4698882f754d5ce275a1a4030',1,'Navigator']]],
-  ['newping',['NewPing',['../class_new_ping.html#ad517c7800c66b0a9f3c175d881776aff',1,'NewPing']]]
+  ['headinginit',['headingInit',['../bot_main_8ino.html#a69409a63f3546ae3a73b1dd0b8231c6f',1,'botMain.ino']]]
 ];

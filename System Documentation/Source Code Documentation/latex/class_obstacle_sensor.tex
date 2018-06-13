@@ -2,6 +2,11 @@
 \label{class_obstacle_sensor}\index{Obstacle\+Sensor@{Obstacle\+Sensor}}
 
 
+\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted.  
+
+
+
+
 {\ttfamily \#include $<$Obstacle\+Sensor.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -9,20 +14,20 @@
 \item 
 \mbox{\hyperlink{class_obstacle_sensor_ad1268ce55070472bf5ca463a919d1dd5}{Obstacle\+Sensor}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor -\/ not used. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_obstacle_sensor_ab4d5163bae4a841311d37df28be7872b}{Obstacle\+Sensor}} (uint8\+\_\+t trigger\+Pin, uint8\+\_\+t echo\+Pin, float offsetX, float offsetY, float sensor\+Angle)
+\mbox{\hyperlink{class_obstacle_sensor_a286a6027b6e9097ead4d2d1da7881c4e}{Obstacle\+Sensor}} (int trigger\+Pin, int echo\+Pin, float offsetX, float offsetY, float sensor\+Angle)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_sensor_ae451cef8461f01b1672fcf4dd18eb6de}{activate\+Sensor}} (uint8\+\_\+t iterations)
+int \mbox{\hyperlink{class_obstacle_sensor_ab0fa6b563d7bd3604256682311ee029d}{activate\+Sensor}} (int iterations)
 \item 
 void \mbox{\hyperlink{class_obstacle_sensor_ad7b512504389e1925d3777f7395ef3ae}{print\+Distance}} (String sensor\+Name)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_obstacle_sensor_a309eb490fce98867856521dd270f6e97}{calculate\+Sound\+Cm}} (uint8\+\_\+t \mbox{\hyperlink{bot_main_8ino_a89e40ffdf0114ea60292ff57879491e2}{dht\+Pin}})
+static void \mbox{\hyperlink{class_obstacle_sensor_acd7255d7273231178876c5144b2269eb}{calculate\+Sound\+Cm}} (int dht\+Pin)
 \item 
 static void \mbox{\hyperlink{class_obstacle_sensor_a66ce921e669bb83fa8f23ad2bc2733ee}{print\+Sound}} (float temp, float hum)
 \item 
-static void \mbox{\hyperlink{class_obstacle_sensor_a15dc53a9c498c7d959178ae903cf7a40}{update\+Ods\+Data}} (float x, float y, float heading)
+static void \mbox{\hyperlink{class_obstacle_sensor_a7d7da634cf955d1890c5340336f88e28}{update\+Ods\+Data}} (int x, int y, int \mbox{\hyperlink{bot_main_8ino_aa0a9c2882aad6535e52a6d429f1d42da}{heading}})
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -33,9 +38,13 @@ float \mbox{\hyperlink{class_obstacle_sensor_a491bcf65a2db112bc56b5c3af0c0fce7}{
 \item 
 float \mbox{\hyperlink{class_obstacle_sensor_a348cf9783f793442c56f1b34e3515dbb}{sensor\+Angle\+\_\+}}
 \item 
+float \mbox{\hyperlink{class_obstacle_sensor_ac13b7eab4b79c41cb51058c0351d1ae6}{x\+Dist\+Comp\+\_\+}}
+\begin{DoxyCompactList}\small\item\em X and Y Components of distance from sensor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_obstacle_sensor_a05dad8b177a43a804153f1240656e4c0}{y\+Dist\+Comp\+\_\+}}
+\item 
 float \mbox{\hyperlink{class_obstacle_sensor_a063ee604be2c3b6ed8034cafedda0c3d}{sensor\+Grid\+Angle\+\_\+}}
-\begin{DoxyCompactList}\small\item\em Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+) \end{DoxyCompactList}\item 
-int8\+\_\+t \mbox{\hyperlink{class_obstacle_sensor_ae132590d90f75c4d8cfe26a98a315908}{unit\+Vect\+\_\+}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+)) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_obstacle_sensor_ab03d3a917fc37e816f35949f1185fbc7}{unit\+Vect\+\_\+}} \mbox{[}2\mbox{]}
 \begin{DoxyCompactList}\small\item\em Unit vector of vector from sensor to detected obstacle (i.\+e x\+Comp + y\+Comp) \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_obstacle_sensor_ac38c343c22e4f8afbde0b04b928f07cc}{distance\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Distance from sensor to object detected. \end{DoxyCompactList}\item 
@@ -51,19 +60,23 @@ int \mbox{\hyperlink{class_obstacle_sensor_a860064c48fae2c973d7e9b59868faff6}{gr
 \begin{DoxyCompactList}\small\item\em Grid reference of obstacle detected converted from coordinates above. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_obstacle_sensor_a31c6b57b181045cf59227db2720da6f4}{grid\+Y\+\_\+}}
 \item 
-\mbox{\hyperlink{class_new_ping}{New\+Ping}} \mbox{\hyperlink{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}{sonar\+\_\+}}
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_new_ping}{New\+Ping}} object causes H\+C-\/\+S\+R04 sensor pulses and enable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+New\+Ping \mbox{\hyperlink{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}{sonar\+\_\+}}
+\begin{DoxyCompactList}\small\item\em New\+Ping object causes H\+C-\/\+S\+R04 sensor pulses and enable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int8\+\_\+t \mbox{\hyperlink{class_obstacle_sensor_a7d083be5c0be76782c37d8d41fc636e5}{bias\+\_\+}} = 17
+static int \mbox{\hyperlink{class_obstacle_sensor_aae4a515b967900605f9f4716112a8dad}{x\+Pos\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A\+VS pozyx x position. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_obstacle_sensor_aa18f61b87409e97fc63ef29c99f30b31}{y\+Pos\+\_\+}}
+\begin{DoxyCompactList}\small\item\em A\+VS pozyx y position. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_obstacle_sensor_ad47c1a66f4d8eb28e239f3ae1c34f873}{bias\+\_\+}} = 170
 \begin{DoxyCompactList}\small\item\em Bias for grid reference conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_sensor_ab26ff0855f2f0a009de72b36324d3abb}{trigger\+Pin\+\_\+}}
+int \mbox{\hyperlink{class_obstacle_sensor_a8bda5595b38379dd74e1c4c7204ad0af}{trigger\+Pin\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Pin definitions. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{class_obstacle_sensor_aecbf317dc02d1c5f1147d5d0b5044dce}{echo\+Pin\+\_\+}}
+int \mbox{\hyperlink{class_obstacle_sensor_ace6d2e5d6aa6e7a8feb801b64310df12}{echo\+Pin\+\_\+}}
 \item 
 const unsigned int \mbox{\hyperlink{class_obstacle_sensor_af980bd4eda58b827f559b0264295c338}{max\+Distance\+\_\+}} = 400
 \begin{DoxyCompactList}\small\item\em Maximum distance of sensor (i.\+e. 400cm) \end{DoxyCompactList}\item 
@@ -77,17 +90,13 @@ float \mbox{\hyperlink{class_obstacle_sensor_a8a5ed0513f7190c94f6362dc8e3f422d}{
 static float \mbox{\hyperlink{class_obstacle_sensor_ae6d0b250f37a34d04103d43e4e4e0082}{soundcm\+\_\+}} = 0.\+0343f
 \begin{DoxyCompactList}\small\item\em Stores calculated speed of sound in cm/ms -\/ defaults to speed at 20 degrees Celcius. \end{DoxyCompactList}\item 
 static float \mbox{\hyperlink{class_obstacle_sensor_add4a6ffaf43bcdd08e1a8c0c3956605d}{heading\+\_\+}}
-\begin{DoxyCompactList}\small\item\em A\+VS pozyx heading data. \end{DoxyCompactList}\item 
-static float \mbox{\hyperlink{class_obstacle_sensor_a108284bfc4bc3ded9aa47973a9d3a442}{x\+Pos\+\_\+}}
-\begin{DoxyCompactList}\small\item\em A\+VS pozyx x position. \end{DoxyCompactList}\item 
-static float \mbox{\hyperlink{class_obstacle_sensor_a5b34f3938826987d0b1623bb95e4220e}{y\+Pos\+\_\+}}
-\begin{DoxyCompactList}\small\item\em A\+VS pozyx y position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A\+VS pozyx heading data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. I\+N\+P\+U\+TS\+: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from D\+H\+T-\/22 for improved accuracy Interfaces with H\+C-\/\+S\+R04 sensors via \mbox{\hyperlink{class_new_ping}{New\+Ping}} class
+\mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object contains all angles and distances/locations of a particular sensor allowing for distance calculations from the pozyx locator to be conducted. 
 
-O\+U\+T\+P\+U\+TS TO\+: Objects used by \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} class to output grid references to nav. 
+The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} object represents a single sensor on the A\+VS and as such multiple \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} objects will exist in the bot\+Main and \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} modules. The \mbox{\hyperlink{class_obstacle_sensor}{Obstacle\+Sensor}} class controls all of the sensor calculations to determine the distance to an obstacle and its grid reference. Once grid reference is determined the \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} object will confirm its accuracy and legality. I\+N\+P\+U\+TS\+: Still require pozyx heading angle (interface between sensor and pozyx) Humidity and temperature details from D\+H\+T-\/22 for improved accuracy Interfaces with H\+C-\/\+S\+R04 sensors via New\+Ping class O\+U\+T\+P\+U\+TS TO\+: Objects used by \mbox{\hyperlink{class_obstacle_detection}{Obstacle\+Detection}} class to output grid references to nav. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_obstacle_sensor_ad1268ce55070472bf5ca463a919d1dd5}\label{class_obstacle_sensor_ad1268ce55070472bf5ca463a919d1dd5}} 
@@ -100,11 +109,11 @@ O\+U\+T\+P\+U\+TS TO\+: Objects used by \mbox{\hyperlink{class_obstacle_detectio
 
 Default constructor -\/ not used. 
 
-\mbox{\Hypertarget{class_obstacle_sensor_ab4d5163bae4a841311d37df28be7872b}\label{class_obstacle_sensor_ab4d5163bae4a841311d37df28be7872b}} 
+\mbox{\Hypertarget{class_obstacle_sensor_a286a6027b6e9097ead4d2d1da7881c4e}\label{class_obstacle_sensor_a286a6027b6e9097ead4d2d1da7881c4e}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{Obstacle\+Sensor()}{ObstacleSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Obstacle\+Sensor\+::\+Obstacle\+Sensor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{trigger\+Pin,  }\item[{uint8\+\_\+t}]{echo\+Pin,  }\item[{float}]{offsetX,  }\item[{float}]{offsetY,  }\item[{float}]{sensor\+Angle }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Obstacle\+Sensor\+::\+Obstacle\+Sensor (\begin{DoxyParamCaption}\item[{int}]{trigger\+Pin,  }\item[{int}]{echo\+Pin,  }\item[{float}]{offsetX,  }\item[{float}]{offsetY,  }\item[{float}]{sensor\+Angle }\end{DoxyParamCaption})}
 
 Constructor reads in pin details as well as relative to car location and direction details 
 \begin{DoxyParams}{Parameters}
@@ -122,11 +131,11 @@ Constructor reads in pin details as well as relative to car location and directi
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_obstacle_sensor_ae451cef8461f01b1672fcf4dd18eb6de}\label{class_obstacle_sensor_ae451cef8461f01b1672fcf4dd18eb6de}} 
+\mbox{\Hypertarget{class_obstacle_sensor_ab0fa6b563d7bd3604256682311ee029d}\label{class_obstacle_sensor_ab0fa6b563d7bd3604256682311ee029d}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!activate\+Sensor@{activate\+Sensor}}
 \index{activate\+Sensor@{activate\+Sensor}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{activate\+Sensor()}{activateSensor()}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Sensor\+::activate\+Sensor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{iterations }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::activate\+Sensor (\begin{DoxyParamCaption}\item[{int}]{iterations }\end{DoxyParamCaption})}
 
 Calculates x and y components to obstacle found by this sensor averaged iterations times by taking into account the heading of the vehicle, the offset of the sensor relative to the pozyx tag, the angle of the sensor relative to the vehicle and the distance the sensor calculates relative to itself. Returns 0 if no obstacle detected, 1 if obstacle detected 
 \begin{DoxyParams}{Parameters}
@@ -136,11 +145,11 @@ Calculates x and y components to obstacle found by this sensor averaged iteratio
 \begin{DoxyReturn}{Returns}
 0 or 1 for legal obstacle distance detected 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_obstacle_sensor_a309eb490fce98867856521dd270f6e97}\label{class_obstacle_sensor_a309eb490fce98867856521dd270f6e97}} 
+\mbox{\Hypertarget{class_obstacle_sensor_acd7255d7273231178876c5144b2269eb}\label{class_obstacle_sensor_acd7255d7273231178876c5144b2269eb}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!calculate\+Sound\+Cm@{calculate\+Sound\+Cm}}
 \index{calculate\+Sound\+Cm@{calculate\+Sound\+Cm}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{calculate\+Sound\+Cm()}{calculateSoundCm()}}
-{\footnotesize\ttfamily void Obstacle\+Sensor\+::calculate\+Sound\+Cm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dht\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void Obstacle\+Sensor\+::calculate\+Sound\+Cm (\begin{DoxyParamCaption}\item[{int}]{dht\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Calculates the speed of sound based on humidity and temperature found by D\+H\+T22 sensor with paramater dht\+Pin which is the arduino pin assigned to be the data input of the dht. Will be used in setup function so only accessed once at the start. This could be changed if conditions are expected to vary throughout use time. 
 \begin{DoxyParams}{Parameters}
@@ -171,11 +180,11 @@ Prints on serial monitor the detected sensor distance, and converted x and y com
 {\em hum} & Calcualted humidity \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_obstacle_sensor_a15dc53a9c498c7d959178ae903cf7a40}\label{class_obstacle_sensor_a15dc53a9c498c7d959178ae903cf7a40}} 
+\mbox{\Hypertarget{class_obstacle_sensor_a7d7da634cf955d1890c5340336f88e28}\label{class_obstacle_sensor_a7d7da634cf955d1890c5340336f88e28}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!update\+Ods\+Data@{update\+Ods\+Data}}
 \index{update\+Ods\+Data@{update\+Ods\+Data}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{update\+Ods\+Data()}{updateOdsData()}}
-{\footnotesize\ttfamily static void Obstacle\+Sensor\+::update\+Ods\+Data (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{heading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static void Obstacle\+Sensor\+::update\+Ods\+Data (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{heading }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 Updates all sensor data. Will be in loop function so constnatly firing 
 \begin{DoxyParams}{Parameters}
@@ -189,11 +198,11 @@ Updates all sensor data. Will be in loop function so constnatly firing
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_obstacle_sensor_a7d083be5c0be76782c37d8d41fc636e5}\label{class_obstacle_sensor_a7d083be5c0be76782c37d8d41fc636e5}} 
+\mbox{\Hypertarget{class_obstacle_sensor_ad47c1a66f4d8eb28e239f3ae1c34f873}\label{class_obstacle_sensor_ad47c1a66f4d8eb28e239f3ae1c34f873}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!bias\+\_\+@{bias\+\_\+}}
 \index{bias\+\_\+@{bias\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{bias\+\_\+}{bias\_}}
-{\footnotesize\ttfamily int8\+\_\+t Obstacle\+Sensor\+::bias\+\_\+ = 17\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::bias\+\_\+ = 170\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -219,11 +228,11 @@ Distance from sensor to object detected.
 
 Stores First H\+C-\/\+S\+R04 pulse duration value. 
 
-\mbox{\Hypertarget{class_obstacle_sensor_aecbf317dc02d1c5f1147d5d0b5044dce}\label{class_obstacle_sensor_aecbf317dc02d1c5f1147d5d0b5044dce}} 
+\mbox{\Hypertarget{class_obstacle_sensor_ace6d2e5d6aa6e7a8feb801b64310df12}\label{class_obstacle_sensor_ace6d2e5d6aa6e7a8feb801b64310df12}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!echo\+Pin\+\_\+@{echo\+Pin\+\_\+}}
 \index{echo\+Pin\+\_\+@{echo\+Pin\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{echo\+Pin\+\_\+}{echoPin\_}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Sensor\+::echo\+Pin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::echo\+Pin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_obstacle_sensor_a860064c48fae2c973d7e9b59868faff6}\label{class_obstacle_sensor_a860064c48fae2c973d7e9b59868faff6}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!grid\+X\+\_\+@{grid\+X\+\_\+}}
@@ -333,17 +342,17 @@ Locations and directions on vehicle relative to Posyx sensor or center or some o
 
 
 
-Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+) 
+Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+)) 
 
 \mbox{\Hypertarget{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}\label{class_obstacle_sensor_a761a011e9009edaaee103d9bafceba14}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!sonar\+\_\+@{sonar\+\_\+}}
 \index{sonar\+\_\+@{sonar\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{sonar\+\_\+}{sonar\_}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_new_ping}{New\+Ping}} Obstacle\+Sensor\+::sonar\+\_\+}
+{\footnotesize\ttfamily New\+Ping Obstacle\+Sensor\+::sonar\+\_\+}
 
 
 
-\mbox{\hyperlink{class_new_ping}{New\+Ping}} object causes H\+C-\/\+S\+R04 sensor pulses and enable. 
+New\+Ping object causes H\+C-\/\+S\+R04 sensor pulses and enable. 
 
 \mbox{\Hypertarget{class_obstacle_sensor_ae6d0b250f37a34d04103d43e4e4e0082}\label{class_obstacle_sensor_ae6d0b250f37a34d04103d43e4e4e0082}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!soundcm\+\_\+@{soundcm\+\_\+}}
@@ -355,41 +364,57 @@ Angle of sensor relative to the grid (i.\+e. sensor\+Angle\+\_\+ + heading\+\_\+
 
 Stores calculated speed of sound in cm/ms -\/ defaults to speed at 20 degrees Celcius. 
 
-\mbox{\Hypertarget{class_obstacle_sensor_ab26ff0855f2f0a009de72b36324d3abb}\label{class_obstacle_sensor_ab26ff0855f2f0a009de72b36324d3abb}} 
+\mbox{\Hypertarget{class_obstacle_sensor_a8bda5595b38379dd74e1c4c7204ad0af}\label{class_obstacle_sensor_a8bda5595b38379dd74e1c4c7204ad0af}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!trigger\+Pin\+\_\+@{trigger\+Pin\+\_\+}}
 \index{trigger\+Pin\+\_\+@{trigger\+Pin\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{trigger\+Pin\+\_\+}{triggerPin\_}}
-{\footnotesize\ttfamily uint8\+\_\+t Obstacle\+Sensor\+::trigger\+Pin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::trigger\+Pin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Pin definitions. 
 
-\mbox{\Hypertarget{class_obstacle_sensor_ae132590d90f75c4d8cfe26a98a315908}\label{class_obstacle_sensor_ae132590d90f75c4d8cfe26a98a315908}} 
+\mbox{\Hypertarget{class_obstacle_sensor_ab03d3a917fc37e816f35949f1185fbc7}\label{class_obstacle_sensor_ab03d3a917fc37e816f35949f1185fbc7}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!unit\+Vect\+\_\+@{unit\+Vect\+\_\+}}
 \index{unit\+Vect\+\_\+@{unit\+Vect\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{unit\+Vect\+\_\+}{unitVect\_}}
-{\footnotesize\ttfamily int8\+\_\+t Obstacle\+Sensor\+::unit\+Vect\+\_\+\mbox{[}2\mbox{]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::unit\+Vect\+\_\+\mbox{[}2\mbox{]}}
 
 
 
 Unit vector of vector from sensor to detected obstacle (i.\+e x\+Comp + y\+Comp) 
 
-\mbox{\Hypertarget{class_obstacle_sensor_a108284bfc4bc3ded9aa47973a9d3a442}\label{class_obstacle_sensor_a108284bfc4bc3ded9aa47973a9d3a442}} 
+\mbox{\Hypertarget{class_obstacle_sensor_ac13b7eab4b79c41cb51058c0351d1ae6}\label{class_obstacle_sensor_ac13b7eab4b79c41cb51058c0351d1ae6}} 
+\index{Obstacle\+Sensor@{Obstacle\+Sensor}!x\+Dist\+Comp\+\_\+@{x\+Dist\+Comp\+\_\+}}
+\index{x\+Dist\+Comp\+\_\+@{x\+Dist\+Comp\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
+\subsubsection{\texorpdfstring{x\+Dist\+Comp\+\_\+}{xDistComp\_}}
+{\footnotesize\ttfamily float Obstacle\+Sensor\+::x\+Dist\+Comp\+\_\+}
+
+
+
+X and Y Components of distance from sensor. 
+
+\mbox{\Hypertarget{class_obstacle_sensor_aae4a515b967900605f9f4716112a8dad}\label{class_obstacle_sensor_aae4a515b967900605f9f4716112a8dad}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!x\+Pos\+\_\+@{x\+Pos\+\_\+}}
 \index{x\+Pos\+\_\+@{x\+Pos\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{x\+Pos\+\_\+}{xPos\_}}
-{\footnotesize\ttfamily float Obstacle\+Sensor\+::x\+Pos\+\_\+\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::x\+Pos\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 A\+VS pozyx x position. 
 
-\mbox{\Hypertarget{class_obstacle_sensor_a5b34f3938826987d0b1623bb95e4220e}\label{class_obstacle_sensor_a5b34f3938826987d0b1623bb95e4220e}} 
+\mbox{\Hypertarget{class_obstacle_sensor_a05dad8b177a43a804153f1240656e4c0}\label{class_obstacle_sensor_a05dad8b177a43a804153f1240656e4c0}} 
+\index{Obstacle\+Sensor@{Obstacle\+Sensor}!y\+Dist\+Comp\+\_\+@{y\+Dist\+Comp\+\_\+}}
+\index{y\+Dist\+Comp\+\_\+@{y\+Dist\+Comp\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
+\subsubsection{\texorpdfstring{y\+Dist\+Comp\+\_\+}{yDistComp\_}}
+{\footnotesize\ttfamily float Obstacle\+Sensor\+::y\+Dist\+Comp\+\_\+}
+
+\mbox{\Hypertarget{class_obstacle_sensor_aa18f61b87409e97fc63ef29c99f30b31}\label{class_obstacle_sensor_aa18f61b87409e97fc63ef29c99f30b31}} 
 \index{Obstacle\+Sensor@{Obstacle\+Sensor}!y\+Pos\+\_\+@{y\+Pos\+\_\+}}
 \index{y\+Pos\+\_\+@{y\+Pos\+\_\+}!Obstacle\+Sensor@{Obstacle\+Sensor}}
 \subsubsection{\texorpdfstring{y\+Pos\+\_\+}{yPos\_}}
-{\footnotesize\ttfamily float Obstacle\+Sensor\+::y\+Pos\+\_\+\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily int Obstacle\+Sensor\+::y\+Pos\+\_\+\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -399,5 +424,5 @@ A\+VS pozyx y position.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_obstacle_sensor_8h}{Obstacle\+Sensor.\+h}}\item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_obstacle_sensor_8cpp}{Obstacle\+Sensor.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_obstacle_sensor_8h}{Obstacle\+Sensor.\+h}}\item 
+\mbox{\hyperlink{_obstacle_sensor_8cpp}{Obstacle\+Sensor.\+cpp}}\end{DoxyCompactItemize}

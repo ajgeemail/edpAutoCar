@@ -2,20 +2,47 @@
 \label{class_navigator}\index{Navigator@{Navigator}}
 
 
+\mbox{\hyperlink{class_navigator}{Navigator}} object controls all aspects of navigation command and decision making.  
+
+
+
+
 {\ttfamily \#include $<$Navigator.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_navigator_a59230ab4698882f754d5ce275a1a4030}{Navigator}} ()
+\mbox{\hyperlink{class_navigator_a5399182d9269dbfb04c2714c6b2dc755}{Navigator}} (int x\+Pos\+Begin, int y\+Pos\+Begin, int x\+Pos\+End, int y\+Pos\+End)
+\item 
+void \mbox{\hyperlink{class_navigator_a8e5fe25410be1caacb0178e72cea97d5}{prioritise\+Map}} (int x\+Pos, int y\+Pos)
+\item 
+void \mbox{\hyperlink{class_navigator_a5c53232cd85ce551986bd668625de005}{reprioritise\+Map}} (int x\+Pos, int y\+Pos)
 \item 
 void \mbox{\hyperlink{class_navigator_af5a35f0ae71309c1b276257709b24390}{add\+Obstacle}} (int x\+Pos, int y\+Pos)
+\item 
+void \mbox{\hyperlink{class_navigator_a65783f6fb9884159a5365a5083f11a2e}{no\+Obstacle}} (int x\+Pos, int y\+Pos)
+\item 
+int \mbox{\hyperlink{class_navigator_afd635da3acecec77272cbbeccfc29b35}{next\+Direction}} (int x\+Pos, int y\+Pos, int \mbox{\hyperlink{bot_main_8ino_a9ff06ce163dbdadcbad347cd3f4fd6b1}{x\+Pos\+Target}}, int \mbox{\hyperlink{bot_main_8ino_a4c0ad4a6d9cc090aaf844632d913b377}{y\+Pos\+Target}}, int \mbox{\hyperlink{bot_main_8ino_aa0a9c2882aad6535e52a6d429f1d42da}{heading}})
+\item 
+int \mbox{\hyperlink{class_navigator_adc3bf5b4eaefc643922e612a77a07ff1}{next\+Move}} (int x\+Pos, int y\+Pos, int \mbox{\hyperlink{bot_main_8ino_a9ff06ce163dbdadcbad347cd3f4fd6b1}{x\+Pos\+Target}}, int \mbox{\hyperlink{bot_main_8ino_a4c0ad4a6d9cc090aaf844632d913b377}{y\+Pos\+Target}}, int \mbox{\hyperlink{bot_main_8ino_aa0a9c2882aad6535e52a6d429f1d42da}{heading}})
+\item 
+int \mbox{\hyperlink{class_navigator_a1d670758a59db4df8ea64110ae2979d1}{sides\+Clear}} (int x\+Pos, int y\+Pos, int \mbox{\hyperlink{bot_main_8ino_aa0a9c2882aad6535e52a6d429f1d42da}{heading}})
 \item 
 void \mbox{\hyperlink{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}{test\+Map}} ()
 \item 
 void \mbox{\hyperlink{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}{print\+Map}} ()
 \item 
 void \mbox{\hyperlink{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}{test\+Obstacle\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_navigator_ad24af0142a398b88f193941fcc776ddc}{test\+Milli\+To\+Grid}} (int i)
+\item 
+void \mbox{\hyperlink{class_navigator_a8df511cb7ce67515d86201f017525be4}{test\+Move}} ()
+\item 
+void \mbox{\hyperlink{class_navigator_a256336446ba7204c4b56cbfea2b9004f}{print\+Move\+Data}} (int id, int direction, int \mbox{\hyperlink{bot_main_8ino_aa0a9c2882aad6535e52a6d429f1d42da}{heading}}, int command)
+\item 
+void \mbox{\hyperlink{class_navigator_a2f5716e193c26854f0216cb7348fbfd5}{print\+Return\+Move\+Data}} ()
+\item 
+int \mbox{\hyperlink{class_navigator_a2e9d96fbec09518d6ef692457381213f}{milli\+To\+Grid}} (int milli\+Coord)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -31,13 +58,31 @@ int \mbox{\hyperlink{class_navigator_a7a745d33cfa5cdfc551c87f3f23dc28e}{convert\
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_navigator}{Navigator}} object controls all aspects of navigation command and decision making. 
+
+\mbox{\hyperlink{class_navigator}{Navigator}} takes information regarding location, heading and obstacle locations to populate a live map utilising a flood fill algorithm to prioritise movements. It then decides on a movement based on these priorities and commands the motor control sub-\/system to make the appropriate movement. It also outputs the map via bluetooth to the G\+UI including obstacles which are stored as a large number within this map. 
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_navigator_a59230ab4698882f754d5ce275a1a4030}\label{class_navigator_a59230ab4698882f754d5ce275a1a4030}} 
+\mbox{\Hypertarget{class_navigator_a5399182d9269dbfb04c2714c6b2dc755}\label{class_navigator_a5399182d9269dbfb04c2714c6b2dc755}} 
 \index{Navigator@{Navigator}!Navigator@{Navigator}}
 \index{Navigator@{Navigator}!Navigator@{Navigator}}
 \subsubsection{\texorpdfstring{Navigator()}{Navigator()}}
-{\footnotesize\ttfamily Navigator\+::\+Navigator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Navigator\+::\+Navigator (\begin{DoxyParamCaption}\item[{int}]{x\+Pos\+Begin,  }\item[{int}]{y\+Pos\+Begin,  }\item[{int}]{x\+Pos\+End,  }\item[{int}]{y\+Pos\+End }\end{DoxyParamCaption})}
 
+Default constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos\+Begin} & Cartesian x-\/coordinate of the start grid square \\
+\hline
+{\em y\+Pos\+Begin} & Cartesian y-\/coordinate of the start grid square \\
+\hline
+{\em x\+Pos\+Target} & Cartesian x-\/coordinate of the target grid square \\
+\hline
+{\em y\+Pos\+Target} & Cartesian y-\/coordinate of the target grid square \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -88,19 +133,193 @@ Creates a map that with a given length, height and a boundary wall of obstacles 
 {\em length} & Length of the grid to be traversed \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a2e9d96fbec09518d6ef692457381213f}\label{class_navigator_a2e9d96fbec09518d6ef692457381213f}} 
+\index{Navigator@{Navigator}!milli\+To\+Grid@{milli\+To\+Grid}}
+\index{milli\+To\+Grid@{milli\+To\+Grid}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{milli\+To\+Grid()}{milliToGrid()}}
+{\footnotesize\ttfamily int Navigator\+::milli\+To\+Grid (\begin{DoxyParamCaption}\item[{int}]{milli\+Coord }\end{DoxyParamCaption})}
+
+Converts millimetre coordinate to grid coordinate
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Millimetre coordinate ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grid coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navigator_afd635da3acecec77272cbbeccfc29b35}\label{class_navigator_afd635da3acecec77272cbbeccfc29b35}} 
+\index{Navigator@{Navigator}!next\+Direction@{next\+Direction}}
+\index{next\+Direction@{next\+Direction}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{next\+Direction()}{nextDirection()}}
+{\footnotesize\ttfamily int Navigator\+::next\+Direction (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos,  }\item[{int}]{x\+Pos\+Target,  }\item[{int}]{y\+Pos\+Target,  }\item[{int}]{heading }\end{DoxyParamCaption})}
+
+Determines direction of movement with respect to the current grid square and neighbouring values
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & Current horizontal position \\
+\hline
+{\em y\+Pos} & Current vertical position \\
+\hline
+{\em x\+Pos\+Target} & Target horizontal position \\
+\hline
+{\em y\+Pos\+Target} & Target vertical position \\
+\hline
+{\em heading} & Current heading\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer uniquely mapped to cardinal direction required to advance to target location 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navigator_adc3bf5b4eaefc643922e612a77a07ff1}\label{class_navigator_adc3bf5b4eaefc643922e612a77a07ff1}} 
+\index{Navigator@{Navigator}!next\+Move@{next\+Move}}
+\index{next\+Move@{next\+Move}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{next\+Move()}{nextMove()}}
+{\footnotesize\ttfamily int Navigator\+::next\+Move (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos,  }\item[{int}]{x\+Pos\+Target,  }\item[{int}]{y\+Pos\+Target,  }\item[{int}]{heading }\end{DoxyParamCaption})}
+
+Determines move required to move to a grid square determined by \mbox{\hyperlink{class_navigator_afd635da3acecec77272cbbeccfc29b35}{next\+Direction()}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & Current horizontal position \\
+\hline
+{\em y\+Pos} & Current vertical position \\
+\hline
+{\em x\+Pos\+Target} & Target horizontal position \\
+\hline
+{\em y\+Pos\+Target} & Target vertical position \\
+\hline
+{\em heading} & Current heading\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer uniquely mapped to motor controller move function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navigator_a65783f6fb9884159a5365a5083f11a2e}\label{class_navigator_a65783f6fb9884159a5365a5083f11a2e}} 
+\index{Navigator@{Navigator}!no\+Obstacle@{no\+Obstacle}}
+\index{no\+Obstacle@{no\+Obstacle}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{no\+Obstacle()}{noObstacle()}}
+{\footnotesize\ttfamily void Navigator\+::no\+Obstacle (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos }\end{DoxyParamCaption})}
+
+Removes an obstacle from the map and gives it an element value of 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & Cartesian x-\/coordinate of the obstacle grid square \\
+\hline
+{\em y\+Pos} & Cartesian y-\/coordinate of the obstacle grid square \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}\label{class_navigator_a2565ae0fea67cfec45a553ef0d7e06a4}} 
 \index{Navigator@{Navigator}!print\+Map@{print\+Map}}
 \index{print\+Map@{print\+Map}!Navigator@{Navigator}}
 \subsubsection{\texorpdfstring{print\+Map()}{printMap()}}
 {\footnotesize\ttfamily void Navigator\+::print\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Prints the grid with the associated priority value for each grid square \mbox{\Hypertarget{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}\label{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}} 
+Prints the grid with the associated priority value for each grid square \mbox{\Hypertarget{class_navigator_a256336446ba7204c4b56cbfea2b9004f}\label{class_navigator_a256336446ba7204c4b56cbfea2b9004f}} 
+\index{Navigator@{Navigator}!print\+Move\+Data@{print\+Move\+Data}}
+\index{print\+Move\+Data@{print\+Move\+Data}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{print\+Move\+Data()}{printMoveData()}}
+{\footnotesize\ttfamily void Navigator\+::print\+Move\+Data (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{direction,  }\item[{int}]{heading,  }\item[{int}]{command }\end{DoxyParamCaption})}
+
+Prints movement related data for each move including its number, direction, resultant heading and command
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & move number \\
+\hline
+{\em direction} & movement direction \\
+\hline
+{\em heading} & resultant heading after movement \\
+\hline
+{\em command} & movement command to be sent to motor controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a2f5716e193c26854f0216cb7348fbfd5}\label{class_navigator_a2f5716e193c26854f0216cb7348fbfd5}} 
+\index{Navigator@{Navigator}!print\+Return\+Move\+Data@{print\+Return\+Move\+Data}}
+\index{print\+Return\+Move\+Data@{print\+Return\+Move\+Data}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{print\+Return\+Move\+Data()}{printReturnMoveData()}}
+{\footnotesize\ttfamily void Navigator\+::print\+Return\+Move\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints movement commands for a required return pathway \mbox{\Hypertarget{class_navigator_a8e5fe25410be1caacb0178e72cea97d5}\label{class_navigator_a8e5fe25410be1caacb0178e72cea97d5}} 
+\index{Navigator@{Navigator}!prioritise\+Map@{prioritise\+Map}}
+\index{prioritise\+Map@{prioritise\+Map}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{prioritise\+Map()}{prioritiseMap()}}
+{\footnotesize\ttfamily void Navigator\+::prioritise\+Map (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos }\end{DoxyParamCaption})}
+
+Prioritises each grid square using the flood-\/fill algorithm
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos\+Target} & Cartesian x-\/coordinate of the target grid square \\
+\hline
+{\em y\+Pos\+Target} & Cartesian y-\/coordinate of the target grid square \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a5c53232cd85ce551986bd668625de005}\label{class_navigator_a5c53232cd85ce551986bd668625de005}} 
+\index{Navigator@{Navigator}!reprioritise\+Map@{reprioritise\+Map}}
+\index{reprioritise\+Map@{reprioritise\+Map}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{reprioritise\+Map()}{reprioritiseMap()}}
+{\footnotesize\ttfamily void Navigator\+::reprioritise\+Map (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos }\end{DoxyParamCaption})}
+
+Clears current grid and reprioritises each grid square using the flood-\/fill algorithm
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos\+Target} & Cartesian x-\/coordinate of the target grid square \\
+\hline
+{\em y\+Pos\+Target} & Cartesian y-\/coordinate of the target grid square \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a1d670758a59db4df8ea64110ae2979d1}\label{class_navigator_a1d670758a59db4df8ea64110ae2979d1}} 
+\index{Navigator@{Navigator}!sides\+Clear@{sides\+Clear}}
+\index{sides\+Clear@{sides\+Clear}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{sides\+Clear()}{sidesClear()}}
+{\footnotesize\ttfamily int Navigator\+::sides\+Clear (\begin{DoxyParamCaption}\item[{int}]{x\+Pos,  }\item[{int}]{y\+Pos,  }\item[{int}]{heading }\end{DoxyParamCaption})}
+
+Determines if the grid squares of the position
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & Current horizontal position \\
+\hline
+{\em y\+Pos} & Current vertical position \\
+\hline
+{\em heading} & Current heading\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer uniquely mapped to a clear side 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}\label{class_navigator_afe98283ec2d1bf0125c63eb077cc1d61}} 
 \index{Navigator@{Navigator}!test\+Map@{test\+Map}}
 \index{test\+Map@{test\+Map}!Navigator@{Navigator}}
 \subsubsection{\texorpdfstring{test\+Map()}{testMap()}}
 {\footnotesize\ttfamily void Navigator\+::test\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Tests the \mbox{\hyperlink{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}{create\+Map()}} function with a length of 10 and height of 10. Tests the prioritise\+Map() function with a target location at 9, 9 \mbox{\Hypertarget{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}\label{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}} 
+Tests the \mbox{\hyperlink{class_navigator_a8b0cb171e3e3b16b206278fb23f624bc}{create\+Map()}} function with a length of 10 and height of 10. Tests the \mbox{\hyperlink{class_navigator_a8e5fe25410be1caacb0178e72cea97d5}{prioritise\+Map()}} function with a target location at 9, 9 \mbox{\Hypertarget{class_navigator_ad24af0142a398b88f193941fcc776ddc}\label{class_navigator_ad24af0142a398b88f193941fcc776ddc}} 
+\index{Navigator@{Navigator}!test\+Milli\+To\+Grid@{test\+Milli\+To\+Grid}}
+\index{test\+Milli\+To\+Grid@{test\+Milli\+To\+Grid}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{test\+Milli\+To\+Grid()}{testMilliToGrid()}}
+{\footnotesize\ttfamily void Navigator\+::test\+Milli\+To\+Grid (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Tests and prints
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Number of iterations to test the conversion of a millimetre location \mbox{[}0, 5000\mbox{]} to grid location \mbox{[}0, 10\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_navigator_a8df511cb7ce67515d86201f017525be4}\label{class_navigator_a8df511cb7ce67515d86201f017525be4}} 
+\index{Navigator@{Navigator}!test\+Move@{test\+Move}}
+\index{test\+Move@{test\+Move}!Navigator@{Navigator}}
+\subsubsection{\texorpdfstring{test\+Move()}{testMove()}}
+{\footnotesize\ttfamily void Navigator\+::test\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tests moves functions \mbox{\Hypertarget{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}\label{class_navigator_ae31be1ae0d17e7fc78aa7c6a4553fca2}} 
 \index{Navigator@{Navigator}!test\+Obstacle\+Data@{test\+Obstacle\+Data}}
 \index{test\+Obstacle\+Data@{test\+Obstacle\+Data}!Navigator@{Navigator}}
 \subsubsection{\texorpdfstring{test\+Obstacle\+Data()}{testObstacleData()}}
@@ -119,5 +338,5 @@ Adds obstacles from hardcoded obstacle position data
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_navigator_8h}{Navigator.\+h}}\item 
-D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/\mbox{\hyperlink{_navigator_8cpp}{Navigator.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_navigator_8h}{Navigator.\+h}}\item 
+\mbox{\hyperlink{_navigator_8cpp}{Navigator.\+cpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EDP AVS: D:/OneDrive - UNSW/Alex/ADFA/2018/Semester 1/Engineering Design Practise/git_edpAutoCar/botMain/botMain.ino File Reference</title>
+<title>EDP AVS: botMain.ino File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_275089585c7fc1b5fd5d7d42c69cb1da.html">D:</a></li><li class="navelem"><a class="el" href="dir_4b807a08d3279f7ef673e376992b1bce.html">OneDrive - UNSW</a></li><li class="navelem"><a class="el" href="dir_3ca1bf2d4e5413f931da2736f213aae7.html">Alex</a></li><li class="navelem"><a class="el" href="dir_7905c990bfaf31cfc7a476a483fcc340.html">ADFA</a></li><li class="navelem"><a class="el" href="dir_8b58a0948067af1c37c7a1eae7c98f31.html">2018</a></li><li class="navelem"><a class="el" href="dir_bb301eeb54aca9b5c284489cc03da412.html">Semester 1</a></li><li class="navelem"><a class="el" href="dir_a5482de29ae4f72ddd262a15cae78b5f.html">Engineering Design Practise</a></li><li class="navelem"><a class="el" href="dir_452baff796df8ac1b60e0e4b42a34503.html">git_edpAutoCar</a></li><li class="navelem"><a class="el" href="dir_7b490016e4287851114b9f2fa32f20f1.html">botMain</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_ff6cdc4bbbbdac025871462b747d9d87.html">master botMain2 - pls dont break</a></li><li class="navelem"><a class="el" href="dir_72eea565b0fe2a1779504a9acab439df.html">botMain</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,117 +73,239 @@ $(function() {
 <div class="title">botMain.ino File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Top level file for the AVS which integrates all sub-systems on the arduino.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_obstacle_sensor_8h_source.html">ObstacleSensor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
+<code>#include &lt;Pozyx.h&gt;</code><br />
+<code>#include &lt;Pozyx_definitions.h&gt;</code><br />
+<code>#include &lt;Servo.h&gt;</code><br />
+<code>#include &lt;Adafruit_MotorShield.h&gt;</code><br />
+<code>#include &lt;SoftwareSerial.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a437ef08681e7210d6678427030446a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a437ef08681e7210d6678427030446a54">LEFT</a>&#160;&#160;&#160;270*(PI/180);</td></tr>
-<tr class="separator:a437ef08681e7210d6678427030446a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddfdda7a062d10cff4a72b76b44aeb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a6ddfdda7a062d10cff4a72b76b44aeb8">FORWARD</a>&#160;&#160;&#160;0*(PI/180);</td></tr>
-<tr class="separator:a6ddfdda7a062d10cff4a72b76b44aeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80fb826a684cf3f0d306b22aa100ddac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>&#160;&#160;&#160;90*(PI/180);</td></tr>
-<tr class="separator:a80fb826a684cf3f0d306b22aa100ddac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf445abfe1b77fa63f89e315ccc2f7f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#adf445abfe1b77fa63f89e315ccc2f7f2">BACKWARD</a>&#160;&#160;&#160;180*(PI/180);</td></tr>
-<tr class="separator:adf445abfe1b77fa63f89e315ccc2f7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748e2ff253570331d3cd8f51ccc17f03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a748e2ff253570331d3cd8f51ccc17f03">LEFT_DIR</a>&#160;&#160;&#160;270*(PI/180);</td></tr>
+<tr class="memdesc:a748e2ff253570331d3cd8f51ccc17f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left direction relative to front of AVS in radians.  <a href="#a748e2ff253570331d3cd8f51ccc17f03">More...</a><br /></td></tr>
+<tr class="separator:a748e2ff253570331d3cd8f51ccc17f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3e7729ac5d0aab2fec8a9cc664e576"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#afb3e7729ac5d0aab2fec8a9cc664e576">FORWARD_DIR</a>&#160;&#160;&#160;0*(PI/180);</td></tr>
+<tr class="memdesc:afb3e7729ac5d0aab2fec8a9cc664e576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward direction relative to front of AVS in radians.  <a href="#afb3e7729ac5d0aab2fec8a9cc664e576">More...</a><br /></td></tr>
+<tr class="separator:afb3e7729ac5d0aab2fec8a9cc664e576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280580881770229c533faab28f235a05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a280580881770229c533faab28f235a05">RIGHT_DIR</a>&#160;&#160;&#160;90*(PI/180);</td></tr>
+<tr class="memdesc:a280580881770229c533faab28f235a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right direction relative to front of AVS in radians.  <a href="#a280580881770229c533faab28f235a05">More...</a><br /></td></tr>
+<tr class="separator:a280580881770229c533faab28f235a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55f8c08a83dc71a5c0c9dbb75fe099f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af55f8c08a83dc71a5c0c9dbb75fe099f">BACKWARD_DIR</a>&#160;&#160;&#160;180*(PI/180);</td></tr>
+<tr class="memdesc:af55f8c08a83dc71a5c0c9dbb75fe099f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward direction relative to front of AVS in radians.  <a href="#af55f8c08a83dc71a5c0c9dbb75fe099f">More...</a><br /></td></tr>
+<tr class="separator:af55f8c08a83dc71a5c0c9dbb75fe099f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0d4dc28dbd73c9eaadb8316bd959191"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af0d4dc28dbd73c9eaadb8316bd959191">DIAG_FOR_RIGHT</a>&#160;&#160;&#160;45*(PI/180);</td></tr>
+<tr class="memdesc:af0d4dc28dbd73c9eaadb8316bd959191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward right diagonal direction relative to front of AVS in radians.  <a href="#af0d4dc28dbd73c9eaadb8316bd959191">More...</a><br /></td></tr>
 <tr class="separator:af0d4dc28dbd73c9eaadb8316bd959191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cfa9cd93a3a325dcce552ff4372733a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7cfa9cd93a3a325dcce552ff4372733a">DIAG_FOR_LEFT</a>&#160;&#160;&#160;315*(PI/180);</td></tr>
+<tr class="memdesc:a7cfa9cd93a3a325dcce552ff4372733a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward diagonal left direction relative to front of AVS in radians.  <a href="#a7cfa9cd93a3a325dcce552ff4372733a">More...</a><br /></td></tr>
 <tr class="separator:a7cfa9cd93a3a325dcce552ff4372733a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ae4e94bd8dbc179e392c03bd987d6b05b">DIAG_BACK_LEFT</a>&#160;&#160;&#160;225*(PI/180);</td></tr>
+<tr class="memdesc:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward diagonal left direction relative to front of AVS in radians.  <a href="#ae4e94bd8dbc179e392c03bd987d6b05b">More...</a><br /></td></tr>
 <tr class="separator:ae4e94bd8dbc179e392c03bd987d6b05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a2556f3b6bde97cfd17b3df68e3fca5fd">DIAG_BACK_RIGHT</a>&#160;&#160;&#160;135*(PI/180);</td></tr>
+<tr class="memdesc:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward diagonal right direction relative to front of AVS in radians.  <a href="#a2556f3b6bde97cfd17b3df68e3fca5fd">More...</a><br /></td></tr>
+<tr class="separator:a2556f3b6bde97cfd17b3df68e3fca5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ace551ed442614cda896e7802f3b22163"><td class="memItemLeft" align="right" valign="top">SoftwareSerial&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ace551ed442614cda896e7802f3b22163">BT</a> (19, 18)</td></tr>
+<tr class="separator:ace551ed442614cda896e7802f3b22163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e570cfb3e7e7e8306ab7c755345c5b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a8e570cfb3e7e7e8306ab7c755345c5b8">testBlueToothGrid</a> ()</td></tr>
-<tr class="memdesc:a8e570cfb3e7e7e8306ab7c755345c5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">fake function - to be deleted - just there to see if nav.grid_ array can be accessed from here  <a href="#a8e570cfb3e7e7e8306ab7c755345c5b8">More...</a><br /></td></tr>
-<tr class="separator:a8e570cfb3e7e7e8306ab7c755345c5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad401219e4b701bed928f7caafd7108f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad401219e4b701bed928f7caafd7108f2">setAnchorsManual</a> ()</td></tr>
+<tr class="memdesc:ad401219e4b701bed928f7caafd7108f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to manually set the anchor coordinates as supplied by pozyx website.  <a href="#ad401219e4b701bed928f7caafd7108f2">More...</a><br /></td></tr>
+<tr class="separator:ad401219e4b701bed928f7caafd7108f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a52ea394eae088c805441c570ab15bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a0a52ea394eae088c805441c570ab15bb">getCoordinates</a> (int avgNum)</td></tr>
+<tr class="memdesc:a0a52ea394eae088c805441c570ab15bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get position information.  <a href="#a0a52ea394eae088c805441c570ab15bb">More...</a><br /></td></tr>
+<tr class="separator:a0a52ea394eae088c805441c570ab15bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71fd924d62ee6af82d3d5cd64004505b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a71fd924d62ee6af82d3d5cd64004505b">getCoordinatesV2</a> (int avgNum)</td></tr>
+<tr class="memdesc:a71fd924d62ee6af82d3d5cd64004505b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get position information more accurately by filtering outliers.  <a href="#a71fd924d62ee6af82d3d5cd64004505b">More...</a><br /></td></tr>
+<tr class="separator:a71fd924d62ee6af82d3d5cd64004505b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69409a63f3546ae3a73b1dd0b8231c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a69409a63f3546ae3a73b1dd0b8231c6f">headingInit</a> ()</td></tr>
+<tr class="memdesc:a69409a63f3546ae3a73b1dd0b8231c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the heading by creating an offset so that the heading at init is 0deg NEW 31/05.  <a href="#a69409a63f3546ae3a73b1dd0b8231c6f">More...</a><br /></td></tr>
+<tr class="separator:a69409a63f3546ae3a73b1dd0b8231c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5609bff11340150a4f8ae053b35f2d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5609bff11340150a4f8ae053b35f2d83">getHeading</a> ()</td></tr>
+<tr class="memdesc:a5609bff11340150a4f8ae053b35f2d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get heading info updates global heading variable with what appears to be magnetic heading.  <a href="#a5609bff11340150a4f8ae053b35f2d83">More...</a><br /></td></tr>
+<tr class="separator:a5609bff11340150a4f8ae053b35f2d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7adb3a38b0de84b613e166666630d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a9c7adb3a38b0de84b613e166666630d6">sendBTData</a> ()</td></tr>
+<tr class="memdesc:a9c7adb3a38b0de84b613e166666630d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all data from Mazing and Pozyx and concat into string for BT send (HOFFY)  <a href="#a9c7adb3a38b0de84b613e166666630d6">More...</a><br /></td></tr>
+<tr class="separator:a9c7adb3a38b0de84b613e166666630d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf487f84c38e060c84f3cb829e70f2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#adaf487f84c38e060c84f3cb829e70f2b">turnLeft</a> ()</td></tr>
+<tr class="separator:adaf487f84c38e060c84f3cb829e70f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf4fa5da14085c3a9a170f9de29d2755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#acf4fa5da14085c3a9a170f9de29d2755">turnRight</a> ()</td></tr>
+<tr class="separator:acf4fa5da14085c3a9a170f9de29d2755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa715717e784a7e14ea274f10f05717c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#aa715717e784a7e14ea274f10f05717c0">cgk_left</a> ()</td></tr>
+<tr class="memdesc:aa715717e784a7e14ea274f10f05717c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">cgk Adjusts AVS left - turns hard right, then goes backwards, then hard left, then goes forwards.  <a href="#aa715717e784a7e14ea274f10f05717c0">More...</a><br /></td></tr>
+<tr class="separator:aa715717e784a7e14ea274f10f05717c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad995d8479412ad51f45bebe8e1c8c96e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad995d8479412ad51f45bebe8e1c8c96e">cgk_right</a> ()</td></tr>
+<tr class="memdesc:ad995d8479412ad51f45bebe8e1c8c96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">cgk Adjusts AVS right - turns hard left, then goes backwards, then hard right, then goes forwards.  <a href="#ad995d8479412ad51f45bebe8e1c8c96e">More...</a><br /></td></tr>
+<tr class="separator:ad995d8479412ad51f45bebe8e1c8c96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618d986e214be5b102686274ac420be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a618d986e214be5b102686274ac420be0">moveForward</a> ()</td></tr>
+<tr class="separator:a618d986e214be5b102686274ac420be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39321c04c34c4c2e46ed14803bdddd39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a39321c04c34c4c2e46ed14803bdddd39">moveBackward</a> ()</td></tr>
+<tr class="separator:a39321c04c34c4c2e46ed14803bdddd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9e137a49398f1d502cfbeaa4f25f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#afe9e137a49398f1d502cfbeaa4f25f45">btPrintMap</a> ()</td></tr>
+<tr class="separator:afe9e137a49398f1d502cfbeaa4f25f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06c138d870f51c3482c99ed475f9d58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#aa06c138d870f51c3482c99ed475f9d58">btPrintSensorDistances</a> (String sensorName, <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *sensor)</td></tr>
+<tr class="separator:aa06c138d870f51c3482c99ed475f9d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a26ae4f60d3d4ebfa68763710b6f20e7c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a26ae4f60d3d4ebfa68763710b6f20e7c">avsHeading_</a> = 0*(PI/180)</td></tr>
-<tr class="separator:a26ae4f60d3d4ebfa68763710b6f20e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36b5ddac5fd4781d96ab1f7afb628e63"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a36b5ddac5fd4781d96ab1f7afb628e63">avsX_</a> = 0</td></tr>
-<tr class="separator:a36b5ddac5fd4781d96ab1f7afb628e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d40143b7595abf8807c96ac5fd82e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#aa4d40143b7595abf8807c96ac5fd82e2">avsY_</a> = 0</td></tr>
-<tr class="separator:aa4d40143b7595abf8807c96ac5fd82e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d757d2a3d2bcf4b98f6f4a72d7df7de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_navigator.html">Navigator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4d757d2a3d2bcf4b98f6f4a72d7df7de">nav</a></td></tr>
-<tr class="separator:a4d757d2a3d2bcf4b98f6f4a72d7df7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33df7a8dbfd90327fda79c01f944f56a"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a">frontTriggerPin</a> = 17</td></tr>
-<tr class="memdesc:a33df7a8dbfd90327fda79c01f944f56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor arduino trigger pin number.  <a href="#a33df7a8dbfd90327fda79c01f944f56a">More...</a><br /></td></tr>
-<tr class="separator:a33df7a8dbfd90327fda79c01f944f56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a878ae4b68ec48fc902c4aa953ad565b4"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a878ae4b68ec48fc902c4aa953ad565b4">frontEchoPin</a> = <a class="el" href="bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a">frontTriggerPin</a></td></tr>
-<tr class="memdesc:a878ae4b68ec48fc902c4aa953ad565b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor arduino echo pin number.  <a href="#a878ae4b68ec48fc902c4aa953ad565b4">More...</a><br /></td></tr>
-<tr class="separator:a878ae4b68ec48fc902c4aa953ad565b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f0abc26cd1e11941fb44168ea055b1a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5f0abc26cd1e11941fb44168ea055b1a">basicAvgAmt</a> = 50</td></tr>
+<tr class="separator:a5f0abc26cd1e11941fb44168ea055b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7877b55ae0baf9e8b9250195dd3f81"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a1a7877b55ae0baf9e8b9250195dd3f81">num_to_avg</a> = 5</td></tr>
+<tr class="separator:a1a7877b55ae0baf9e8b9250195dd3f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45be5355306144528cdfb308bd00859"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a> = 4</td></tr>
+<tr class="separator:af45be5355306144528cdfb308bd00859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40781b19eab312bdfa08034230bb64d1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a40781b19eab312bdfa08034230bb64d1">anchors</a> [<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0x687c, 0x6821, 0x6827, 0x6851}</td></tr>
+<tr class="separator:a40781b19eab312bdfa08034230bb64d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6db46a34ef60ff16acd025bfcaed344"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ae6db46a34ef60ff16acd025bfcaed344">anchors_x</a> [<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0, 0, 4998, 4985}</td></tr>
+<tr class="separator:ae6db46a34ef60ff16acd025bfcaed344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc43d1150756410770334dba55d59783"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#acc43d1150756410770334dba55d59783">anchors_y</a> [<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0, 5005, 4985, 0}</td></tr>
+<tr class="separator:acc43d1150756410770334dba55d59783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb54a28aa3c60428997dade71949435"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a9bb54a28aa3c60428997dade71949435">heights</a> [<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {810, 1720, 765, 1715}</td></tr>
+<tr class="separator:a9bb54a28aa3c60428997dade71949435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d3a0b679d3adc3b4b513f8e26e7f4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a92d3a0b679d3adc3b4b513f8e26e7f4c">algorithm</a> = POZYX_POS_ALG_UWB_ONLY</td></tr>
+<tr class="separator:a92d3a0b679d3adc3b4b513f8e26e7f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8a8235879363159315091a1daed72f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a1a8a8235879363159315091a1daed72f">dimension</a> = POZYX_2D</td></tr>
+<tr class="separator:a1a8a8235879363159315091a1daed72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8006e753a3e76ff637a4e092bbed71"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5d8006e753a3e76ff637a4e092bbed71">height</a> = 0</td></tr>
+<tr class="separator:a5d8006e753a3e76ff637a4e092bbed71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3947cda218cfaa85dfef513d39c73c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a9d3947cda218cfaa85dfef513d39c73c">x_loc</a> = 1750</td></tr>
+<tr class="separator:a9d3947cda218cfaa85dfef513d39c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b3154e514a981f07054456331a2e708"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a3b3154e514a981f07054456331a2e708">y_loc</a> = 3250</td></tr>
+<tr class="separator:a3b3154e514a981f07054456331a2e708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a9c2882aad6535e52a6d429f1d42da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#aa0a9c2882aad6535e52a6d429f1d42da">heading</a> = 90</td></tr>
+<tr class="separator:aa0a9c2882aad6535e52a6d429f1d42da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868b73d778ddc36f8b77659dbc4aaa3c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a868b73d778ddc36f8b77659dbc4aaa3c">headingOffset</a> = 0</td></tr>
+<tr class="separator:a868b73d778ddc36f8b77659dbc4aaa3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e6eb62b1453be293f043e996637130"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ac5e6eb62b1453be293f043e996637130">x_loc_prev</a> = 0</td></tr>
+<tr class="separator:ac5e6eb62b1453be293f043e996637130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd6110c1f427db4b1b4b5a5b03b5242"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a6cd6110c1f427db4b1b4b5a5b03b5242">y_loc_prev</a> = 0</td></tr>
+<tr class="separator:a6cd6110c1f427db4b1b4b5a5b03b5242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3e4dd136fe976f4d00476ead564457"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ade3e4dd136fe976f4d00476ead564457">result</a> = &quot;;911;&quot;</td></tr>
+<tr class="separator:ade3e4dd136fe976f4d00476ead564457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7faed3f920e2a86bd4d0462a8d907ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad7faed3f920e2a86bd4d0462a8d907ea">xPosStart</a> = 2</td></tr>
+<tr class="separator:ad7faed3f920e2a86bd4d0462a8d907ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fa20776245d8cff73524333913a417"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a22fa20776245d8cff73524333913a417">yPosStart</a> = 9</td></tr>
+<tr class="separator:a22fa20776245d8cff73524333913a417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff06ce163dbdadcbad347cd3f4fd6b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a9ff06ce163dbdadcbad347cd3f4fd6b1">xPosTarget</a> = 7</td></tr>
+<tr class="separator:a9ff06ce163dbdadcbad347cd3f4fd6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0ad4a6d9cc090aaf844632d913b377"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4c0ad4a6d9cc090aaf844632d913b377">yPosTarget</a> = 2</td></tr>
+<tr class="separator:a4c0ad4a6d9cc090aaf844632d913b377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7b030f0912b0b67f4595263a878078"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a2d7b030f0912b0b67f4595263a878078">returnToStart</a> = false</td></tr>
+<tr class="separator:a2d7b030f0912b0b67f4595263a878078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40b8d55e3cb08134da6fa492346bcd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_navigator.html">Navigator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#aa40b8d55e3cb08134da6fa492346bcd2">nav</a> (<a class="el" href="bot_main_8ino.html#ad7faed3f920e2a86bd4d0462a8d907ea">xPosStart</a>, <a class="el" href="bot_main_8ino.html#a22fa20776245d8cff73524333913a417">yPosStart</a>, <a class="el" href="bot_main_8ino.html#a9ff06ce163dbdadcbad347cd3f4fd6b1">xPosTarget</a>, <a class="el" href="bot_main_8ino.html#a4c0ad4a6d9cc090aaf844632d913b377">yPosTarget</a>)</td></tr>
+<tr class="separator:aa40b8d55e3cb08134da6fa492346bcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae091a21fa97656ee7bd8c5f79c45b752"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ae091a21fa97656ee7bd8c5f79c45b752">frontTriggerPin</a> = 35</td></tr>
+<tr class="memdesc:ae091a21fa97656ee7bd8c5f79c45b752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor arduino trigger pin number.  <a href="#ae091a21fa97656ee7bd8c5f79c45b752">More...</a><br /></td></tr>
+<tr class="separator:ae091a21fa97656ee7bd8c5f79c45b752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b14c45d0e2dfeef70f98b914ca277f5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a0b14c45d0e2dfeef70f98b914ca277f5">frontEchoPin</a> = 37</td></tr>
+<tr class="memdesc:a0b14c45d0e2dfeef70f98b914ca277f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor arduino echo pin number.  <a href="#a0b14c45d0e2dfeef70f98b914ca277f5">More...</a><br /></td></tr>
+<tr class="separator:a0b14c45d0e2dfeef70f98b914ca277f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdd898a2dfa2f64e2821af36c6ed3724"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724">frontXOffset</a> = 0</td></tr>
 <tr class="memdesc:abdd898a2dfa2f64e2821af36c6ed3724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor x offset on chassis from pozyx location.  <a href="#abdd898a2dfa2f64e2821af36c6ed3724">More...</a><br /></td></tr>
 <tr class="separator:abdd898a2dfa2f64e2821af36c6ed3724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4919465d0182f44aa7acaa39ece1e17a"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a">frontYOffset</a> = 10</td></tr>
+<tr class="memitem:a4919465d0182f44aa7acaa39ece1e17a"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a">frontYOffset</a> = 130</td></tr>
 <tr class="memdesc:a4919465d0182f44aa7acaa39ece1e17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor y offset on chassis from pozyx location.  <a href="#a4919465d0182f44aa7acaa39ece1e17a">More...</a><br /></td></tr>
 <tr class="separator:a4919465d0182f44aa7acaa39ece1e17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad681cfe410d5d764c513368773b9de93"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93">frontsensorAngle</a> = <a class="el" href="bot_main_8ino.html#a6ddfdda7a062d10cff4a72b76b44aeb8">FORWARD</a></td></tr>
+<tr class="memitem:ad681cfe410d5d764c513368773b9de93"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93">frontsensorAngle</a> = <a class="el" href="bot_main_8ino.html#afb3e7729ac5d0aab2fec8a9cc664e576">FORWARD_DIR</a></td></tr>
 <tr class="memdesc:ad681cfe410d5d764c513368773b9de93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor angle relative to forward of chassis.  <a href="#ad681cfe410d5d764c513368773b9de93">More...</a><br /></td></tr>
 <tr class="separator:ad681cfe410d5d764c513368773b9de93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a297d5238270dc0d92e1a65b016a79f2e"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a> = 15</td></tr>
-<tr class="memdesc:a297d5238270dc0d92e1a65b016a79f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor arduino trigger pin number.  <a href="#a297d5238270dc0d92e1a65b016a79f2e">More...</a><br /></td></tr>
-<tr class="separator:a297d5238270dc0d92e1a65b016a79f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a203479aa2174a6eedd63da361e6e302c"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a203479aa2174a6eedd63da361e6e302c">leftEchoPin</a> = <a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a></td></tr>
-<tr class="memdesc:a203479aa2174a6eedd63da361e6e302c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor arduino echo pin number.  <a href="#a203479aa2174a6eedd63da361e6e302c">More...</a><br /></td></tr>
-<tr class="separator:a203479aa2174a6eedd63da361e6e302c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d121af61e2977de12f5bfbbe8559dca"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a> = -5</td></tr>
+<tr class="memitem:abf577279d52f4a773937cb36cc199c0b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#abf577279d52f4a773937cb36cc199c0b">leftTriggerPin</a> = 31</td></tr>
+<tr class="memdesc:abf577279d52f4a773937cb36cc199c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor arduino trigger pin number.  <a href="#abf577279d52f4a773937cb36cc199c0b">More...</a><br /></td></tr>
+<tr class="separator:abf577279d52f4a773937cb36cc199c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1b4a0b41d14f603ba696fad472c50d9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad1b4a0b41d14f603ba696fad472c50d9">leftEchoPin</a> = 33</td></tr>
+<tr class="memdesc:ad1b4a0b41d14f603ba696fad472c50d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor arduino echo pin number.  <a href="#ad1b4a0b41d14f603ba696fad472c50d9">More...</a><br /></td></tr>
+<tr class="separator:ad1b4a0b41d14f603ba696fad472c50d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d121af61e2977de12f5bfbbe8559dca"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a> = 80</td></tr>
 <tr class="memdesc:a2d121af61e2977de12f5bfbbe8559dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor x offset on chassis from pozyx location.  <a href="#a2d121af61e2977de12f5bfbbe8559dca">More...</a><br /></td></tr>
 <tr class="separator:a2d121af61e2977de12f5bfbbe8559dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be9826e4f54e376321bcdea4177a8ed"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a> = 2</td></tr>
+<tr class="memitem:a7be9826e4f54e376321bcdea4177a8ed"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a> = 130</td></tr>
 <tr class="memdesc:a7be9826e4f54e376321bcdea4177a8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor y offset on chassis from pozyx location.  <a href="#a7be9826e4f54e376321bcdea4177a8ed">More...</a><br /></td></tr>
 <tr class="separator:a7be9826e4f54e376321bcdea4177a8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8be5324bad65fa0bad41e0c70066a958"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a> = <a class="el" href="bot_main_8ino.html#a437ef08681e7210d6678427030446a54">LEFT</a></td></tr>
+<tr class="memitem:a8be5324bad65fa0bad41e0c70066a958"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a> = <a class="el" href="bot_main_8ino.html#a748e2ff253570331d3cd8f51ccc17f03">LEFT_DIR</a></td></tr>
 <tr class="memdesc:a8be5324bad65fa0bad41e0c70066a958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor angle relative to forward of chassis.  <a href="#a8be5324bad65fa0bad41e0c70066a958">More...</a><br /></td></tr>
 <tr class="separator:a8be5324bad65fa0bad41e0c70066a958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906054d9d48970211789ac841d331898"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a> = 19</td></tr>
-<tr class="memdesc:a906054d9d48970211789ac841d331898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor arduino trigger pin number.  <a href="#a906054d9d48970211789ac841d331898">More...</a><br /></td></tr>
-<tr class="separator:a906054d9d48970211789ac841d331898"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a513a215c9894c01e37f389b072c5cec4"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a513a215c9894c01e37f389b072c5cec4">rightEchoPin</a> = <a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a></td></tr>
-<tr class="memdesc:a513a215c9894c01e37f389b072c5cec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor arduino echo pin number.  <a href="#a513a215c9894c01e37f389b072c5cec4">More...</a><br /></td></tr>
-<tr class="separator:a513a215c9894c01e37f389b072c5cec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac932cddb5bc68094c96d0034c92faef9"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a> = 5</td></tr>
+<tr class="memitem:ad7785c889e9d6290073148f74ce9de5e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ad7785c889e9d6290073148f74ce9de5e">rightTriggerPin</a> = 39</td></tr>
+<tr class="memdesc:ad7785c889e9d6290073148f74ce9de5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor arduino trigger pin number.  <a href="#ad7785c889e9d6290073148f74ce9de5e">More...</a><br /></td></tr>
+<tr class="separator:ad7785c889e9d6290073148f74ce9de5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a922d02edb9759eb944c27cebb4a448cb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a922d02edb9759eb944c27cebb4a448cb">rightEchoPin</a> = 41</td></tr>
+<tr class="memdesc:a922d02edb9759eb944c27cebb4a448cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor arduino echo pin number.  <a href="#a922d02edb9759eb944c27cebb4a448cb">More...</a><br /></td></tr>
+<tr class="separator:a922d02edb9759eb944c27cebb4a448cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac932cddb5bc68094c96d0034c92faef9"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a> = 80</td></tr>
 <tr class="memdesc:ac932cddb5bc68094c96d0034c92faef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor x offset on chassis from pozyx location.  <a href="#ac932cddb5bc68094c96d0034c92faef9">More...</a><br /></td></tr>
 <tr class="separator:ac932cddb5bc68094c96d0034c92faef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07903b96b48e8e456debd9cc43c7af05"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a> = 2</td></tr>
+<tr class="memitem:a07903b96b48e8e456debd9cc43c7af05"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a> = 130</td></tr>
 <tr class="memdesc:a07903b96b48e8e456debd9cc43c7af05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor y offset on chassis from pozyx location.  <a href="#a07903b96b48e8e456debd9cc43c7af05">More...</a><br /></td></tr>
 <tr class="separator:a07903b96b48e8e456debd9cc43c7af05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83724535498f068d5b44150a2bc4fcf8"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a> = <a class="el" href="bot_main_8ino.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a></td></tr>
+<tr class="memitem:a83724535498f068d5b44150a2bc4fcf8"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a> = <a class="el" href="bot_main_8ino.html#a280580881770229c533faab28f235a05">RIGHT_DIR</a></td></tr>
 <tr class="memdesc:a83724535498f068d5b44150a2bc4fcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor angle relative to forward of chassis.  <a href="#a83724535498f068d5b44150a2bc4fcf8">More...</a><br /></td></tr>
 <tr class="separator:a83724535498f068d5b44150a2bc4fcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e40ffdf0114ea60292ff57879491e2"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a89e40ffdf0114ea60292ff57879491e2">dhtPin</a> = 14</td></tr>
-<tr class="memdesc:a89e40ffdf0114ea60292ff57879491e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHT22 Sensor arduino pin number.  <a href="#a89e40ffdf0114ea60292ff57879491e2">More...</a><br /></td></tr>
-<tr class="separator:a89e40ffdf0114ea60292ff57879491e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a355879266d10af4a6e9126a47bc09113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a355879266d10af4a6e9126a47bc09113">frontSensor</a> (<a class="el" href="bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a">frontTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a878ae4b68ec48fc902c4aa953ad565b4">frontEchoPin</a>, <a class="el" href="bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724">frontXOffset</a>, <a class="el" href="bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a">frontYOffset</a>, <a class="el" href="bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93">frontsensorAngle</a>)</td></tr>
-<tr class="memdesc:a355879266d10af4a6e9126a47bc09113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS.  <a href="#a355879266d10af4a6e9126a47bc09113">More...</a><br /></td></tr>
+<tr class="memitem:a5aede016b3edcf8d5054eabe18c4ebd5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5aede016b3edcf8d5054eabe18c4ebd5">tempPin</a> = A0</td></tr>
+<tr class="memdesc:a5aede016b3edcf8d5054eabe18c4ebd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature Sensor arduino pin number.  <a href="#a5aede016b3edcf8d5054eabe18c4ebd5">More...</a><br /></td></tr>
+<tr class="separator:a5aede016b3edcf8d5054eabe18c4ebd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355879266d10af4a6e9126a47bc09113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a355879266d10af4a6e9126a47bc09113">frontSensor</a> (<a class="el" href="bot_main_8ino.html#ae091a21fa97656ee7bd8c5f79c45b752">frontTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a0b14c45d0e2dfeef70f98b914ca277f5">frontEchoPin</a>, <a class="el" href="bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724">frontXOffset</a>, <a class="el" href="bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a">frontYOffset</a>, <a class="el" href="bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93">frontsensorAngle</a>)</td></tr>
+<tr class="memdesc:a355879266d10af4a6e9126a47bc09113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Front sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS.  <a href="#a355879266d10af4a6e9126a47bc09113">More...</a><br /></td></tr>
 <tr class="separator:a355879266d10af4a6e9126a47bc09113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af137d1119f05ab98ae8e50559b9d6bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af137d1119f05ab98ae8e50559b9d6bfe">leftSensor</a> (<a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a203479aa2174a6eedd63da361e6e302c">leftEchoPin</a>, <a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a>, <a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a>, <a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a>)</td></tr>
-<tr class="memdesc:af137d1119f05ab98ae8e50559b9d6bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS.  <a href="#af137d1119f05ab98ae8e50559b9d6bfe">More...</a><br /></td></tr>
+<tr class="memitem:af137d1119f05ab98ae8e50559b9d6bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#af137d1119f05ab98ae8e50559b9d6bfe">leftSensor</a> (<a class="el" href="bot_main_8ino.html#abf577279d52f4a773937cb36cc199c0b">leftTriggerPin</a>, <a class="el" href="bot_main_8ino.html#ad1b4a0b41d14f603ba696fad472c50d9">leftEchoPin</a>, <a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a>, <a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a>, <a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a>)</td></tr>
+<tr class="memdesc:af137d1119f05ab98ae8e50559b9d6bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Left sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS.  <a href="#af137d1119f05ab98ae8e50559b9d6bfe">More...</a><br /></td></tr>
 <tr class="separator:af137d1119f05ab98ae8e50559b9d6bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b08258caa24173f4153413d596aea69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4b08258caa24173f4153413d596aea69">rightSensor</a> (<a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a513a215c9894c01e37f389b072c5cec4">rightEchoPin</a>, <a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a>, <a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a>, <a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a>)</td></tr>
-<tr class="memdesc:a4b08258caa24173f4153413d596aea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS.  <a href="#a4b08258caa24173f4153413d596aea69">More...</a><br /></td></tr>
+<tr class="memitem:a4b08258caa24173f4153413d596aea69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a4b08258caa24173f4153413d596aea69">rightSensor</a> (<a class="el" href="bot_main_8ino.html#ad7785c889e9d6290073148f74ce9de5e">rightTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a922d02edb9759eb944c27cebb4a448cb">rightEchoPin</a>, <a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a>, <a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a>, <a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a>)</td></tr>
+<tr class="memdesc:a4b08258caa24173f4153413d596aea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS.  <a href="#a4b08258caa24173f4153413d596aea69">More...</a><br /></td></tr>
 <tr class="separator:a4b08258caa24173f4153413d596aea69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8151031cf9a913ec4a28a5f56ed7c0"><td class="memItemLeft" align="right" valign="top">Adafruit_MotorShield&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7e8151031cf9a913ec4a28a5f56ed7c0">AFMS</a> = Adafruit_MotorShield()</td></tr>
+<tr class="separator:a7e8151031cf9a913ec4a28a5f56ed7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7e284865b6a4f560b4b312c14b9401"><td class="memItemLeft" align="right" valign="top">Adafruit_DCMotor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7c7e284865b6a4f560b4b312c14b9401">myMotor</a> = AFMS.getMotor(1)</td></tr>
+<tr class="separator:a7c7e284865b6a4f560b4b312c14b9401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d2bea44c6318454db0e2639a4efe95"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#ac5d2bea44c6318454db0e2639a4efe95">servo1</a></td></tr>
+<tr class="separator:ac5d2bea44c6318454db0e2639a4efe95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb179d9202804dccaa9f18aa453df29"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5bb179d9202804dccaa9f18aa453df29">cgk_straight</a> = 110</td></tr>
+<tr class="separator:a5bb179d9202804dccaa9f18aa453df29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a561c3c1ac229de5ea299ea71e1b1a797"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a561c3c1ac229de5ea299ea71e1b1a797">cgk_back_little</a> = 370</td></tr>
+<tr class="separator:a561c3c1ac229de5ea299ea71e1b1a797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5319965a94b5c8e64061d2999f513ec6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a5319965a94b5c8e64061d2999f513ec6">cgk_fwd_little</a> = 330</td></tr>
+<tr class="separator:a5319965a94b5c8e64061d2999f513ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a75c74d8b88fb34b3753881d8a18de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a24a75c74d8b88fb34b3753881d8a18de">cgk_fwd_end_turn</a> = 350</td></tr>
+<tr class="separator:a24a75c74d8b88fb34b3753881d8a18de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e81c768ee699008e7e551d8ebb140f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a3e81c768ee699008e7e551d8ebb140f2">cgk_turn_delay</a> = 1000</td></tr>
+<tr class="separator:a3e81c768ee699008e7e551d8ebb140f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec3cca0a6256b97b26506e7c3d2f793"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a7ec3cca0a6256b97b26506e7c3d2f793">cgk_brake_time</a> = 100</td></tr>
+<tr class="separator:a7ec3cca0a6256b97b26506e7c3d2f793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73b8bce90bbda89fe2c9cace8ebd7467"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a73b8bce90bbda89fe2c9cace8ebd7467">cgk_motor_speed</a> = 254</td></tr>
+<tr class="separator:a73b8bce90bbda89fe2c9cace8ebd7467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49bdb35c116d5940c7ee0698d8508043"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a49bdb35c116d5940c7ee0698d8508043">cgk_fwd_one</a> = 470</td></tr>
+<tr class="separator:a49bdb35c116d5940c7ee0698d8508043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91243a6041a1ec2fce66d4c8cfd2a139"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#a91243a6041a1ec2fce66d4c8cfd2a139">cgk_back_one</a> = 500</td></tr>
+<tr class="separator:a91243a6041a1ec2fce66d4c8cfd2a139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb1471feb53affb97626965870071b54"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bot_main_8ino.html#acb1471feb53affb97626965870071b54">cgk_first_angle_divider</a> = 2</td></tr>
+<tr class="separator:acb1471feb53affb97626965870071b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="adf445abfe1b77fa63f89e315ccc2f7f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf445abfe1b77fa63f89e315ccc2f7f2">&#9670;&nbsp;</a></span>BACKWARD</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Top level file for the AVS which integrates all sub-systems on the arduino. </p>
+<p>The botMain file will contain the initial setup and loop functions along with all sub-system object initialisations including parameter setting. Ideally all of the sub-systems shall implement separate classes to improve modularity and readability of this top file. Requires specific libraries be downloaded using the Include Library function explained as per INSTRUCTIONS below. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af55f8c08a83dc71a5c0c9dbb75fe099f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55f8c08a83dc71a5c0c9dbb75fe099f">&#9670;&nbsp;</a></span>BACKWARD_DIR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BACKWARD&#160;&#160;&#160;180*(PI/180);</td>
+          <td class="memname">#define BACKWARD_DIR&#160;&#160;&#160;180*(PI/180);</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Backward direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -199,6 +321,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Backward diagonal left direction relative to front of AVS in radians. </p>
+
+</div>
+</div>
+<a id="a2556f3b6bde97cfd17b3df68e3fca5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2556f3b6bde97cfd17b3df68e3fca5fd">&#9670;&nbsp;</a></span>DIAG_BACK_RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIAG_BACK_RIGHT&#160;&#160;&#160;135*(PI/180);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Backward diagonal right direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
 <a id="a7cfa9cd93a3a325dcce552ff4372733a"></a>
@@ -212,6 +352,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Forward diagonal left direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
@@ -227,51 +369,250 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Forward right diagonal direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
-<a id="a6ddfdda7a062d10cff4a72b76b44aeb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ddfdda7a062d10cff4a72b76b44aeb8">&#9670;&nbsp;</a></span>FORWARD</h2>
+<a id="afb3e7729ac5d0aab2fec8a9cc664e576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3e7729ac5d0aab2fec8a9cc664e576">&#9670;&nbsp;</a></span>FORWARD_DIR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define FORWARD&#160;&#160;&#160;0*(PI/180);</td>
+          <td class="memname">#define FORWARD_DIR&#160;&#160;&#160;0*(PI/180);</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Forward direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
-<a id="a437ef08681e7210d6678427030446a54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a437ef08681e7210d6678427030446a54">&#9670;&nbsp;</a></span>LEFT</h2>
+<a id="a748e2ff253570331d3cd8f51ccc17f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748e2ff253570331d3cd8f51ccc17f03">&#9670;&nbsp;</a></span>LEFT_DIR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LEFT&#160;&#160;&#160;270*(PI/180);</td>
+          <td class="memname">#define LEFT_DIR&#160;&#160;&#160;270*(PI/180);</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Left direction relative to front of AVS in radians. </p>
+
 </div>
 </div>
-<a id="a80fb826a684cf3f0d306b22aa100ddac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80fb826a684cf3f0d306b22aa100ddac">&#9670;&nbsp;</a></span>RIGHT</h2>
+<a id="a280580881770229c533faab28f235a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280580881770229c533faab28f235a05">&#9670;&nbsp;</a></span>RIGHT_DIR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define RIGHT&#160;&#160;&#160;90*(PI/180);</td>
+          <td class="memname">#define RIGHT_DIR&#160;&#160;&#160;90*(PI/180);</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Right direction relative to front of AVS in radians. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ace551ed442614cda896e7802f3b22163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace551ed442614cda896e7802f3b22163">&#9670;&nbsp;</a></span>BT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SoftwareSerial BT </td>
+          <td>(</td>
+          <td class="paramtype">19&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">18&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe9e137a49398f1d502cfbeaa4f25f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9e137a49398f1d502cfbeaa4f25f45">&#9670;&nbsp;</a></span>btPrintMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void btPrintMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print map function equivalent to that used in the navigator class but used in test_mode 2 when serial monitor occurs through the bluetooth port. </p>
+
+</div>
+</div>
+<a id="aa06c138d870f51c3482c99ed475f9d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06c138d870f51c3482c99ed475f9d58">&#9670;&nbsp;</a></span>btPrintSensorDistances()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void btPrintSensorDistances </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>sensorName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> *&#160;</td>
+          <td class="paramname"><em>sensor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print sensor distances equivalent to that used in the obstacle sensor class but used in test_mode 2 when serial monitor occurs through the bluetooth port. </p>
+
+</div>
+</div>
+<a id="aa715717e784a7e14ea274f10f05717c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa715717e784a7e14ea274f10f05717c0">&#9670;&nbsp;</a></span>cgk_left()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cgk_left </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cgk Adjusts AVS left - turns hard right, then goes backwards, then hard left, then goes forwards. </p>
+
+</div>
+</div>
+<a id="ad995d8479412ad51f45bebe8e1c8c96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad995d8479412ad51f45bebe8e1c8c96e">&#9670;&nbsp;</a></span>cgk_right()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cgk_right </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cgk Adjusts AVS right - turns hard left, then goes backwards, then hard right, then goes forwards. </p>
+
+</div>
+</div>
+<a id="a0a52ea394eae088c805441c570ab15bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a52ea394eae088c805441c570ab15bb">&#9670;&nbsp;</a></span>getCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>avgNum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get position information. </p>
+
+</div>
+</div>
+<a id="a71fd924d62ee6af82d3d5cd64004505b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71fd924d62ee6af82d3d5cd64004505b">&#9670;&nbsp;</a></span>getCoordinatesV2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getCoordinatesV2 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>avgNum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get position information more accurately by filtering outliers. </p>
+
+</div>
+</div>
+<a id="a5609bff11340150a4f8ae053b35f2d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5609bff11340150a4f8ae053b35f2d83">&#9670;&nbsp;</a></span>getHeading()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getHeading </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get heading info updates global heading variable with what appears to be magnetic heading. </p>
+
+</div>
+</div>
+<a id="a69409a63f3546ae3a73b1dd0b8231c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69409a63f3546ae3a73b1dd0b8231c6f">&#9670;&nbsp;</a></span>headingInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void headingInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the heading by creating an offset so that the heading at init is 0deg NEW 31/05. </p>
+
+</div>
+</div>
 <a id="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&nbsp;</a></span>loop()</h2>
 
@@ -286,6 +627,81 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Main loop function which runs while the AVS is working. Utilises all subsystem functions to inform and command the AVS to complete its task. </p>
+
+</div>
+</div>
+<a id="a39321c04c34c4c2e46ed14803bdddd39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39321c04c34c4c2e46ed14803bdddd39">&#9670;&nbsp;</a></span>moveBackward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveBackward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cgk move the car backward 500mm. cgk the plan is to take the current position to determine how far backward to move, and at cgk what perpendicular offset, so that the final heading and position is centred in the cgk backward gird square. It aims to finish on the correct heading too. </p>
+
+</div>
+</div>
+<a id="a618d986e214be5b102686274ac420be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a618d986e214be5b102686274ac420be0">&#9670;&nbsp;</a></span>moveForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveForward </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>cgk move the car forward 500mm. cgk the plan is to take the current position to determine how far forward to move, and at cgk what perpendicular offset, so that the final heading and position is centred in the cgk forward gird square. It aims to finish on the correct heading too. </p>
+
+</div>
+</div>
+<a id="a9c7adb3a38b0de84b613e166666630d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c7adb3a38b0de84b613e166666630d6">&#9670;&nbsp;</a></span>sendBTData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendBTData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all data from Mazing and Pozyx and concat into string for BT send (HOFFY) </p>
+
+</div>
+</div>
+<a id="ad401219e4b701bed928f7caafd7108f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad401219e4b701bed928f7caafd7108f2">&#9670;&nbsp;</a></span>setAnchorsManual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setAnchorsManual </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to manually set the anchor coordinates as supplied by pozyx website. </p>
 
 </div>
 </div>
@@ -303,96 +719,293 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initial setup function begins the various serial monitors, sets up pozyx anchors and heading values, passes location and heading information to obstacle sensor objects and if in operational mode produces a 10 second delay once complete to allow time to reposition the AVS after initial heading has been captured. </p>
 
 </div>
 </div>
-<a id="a8e570cfb3e7e7e8306ab7c755345c5b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e570cfb3e7e7e8306ab7c755345c5b8">&#9670;&nbsp;</a></span>testBlueToothGrid()</h2>
+<a id="adaf487f84c38e060c84f3cb829e70f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf487f84c38e060c84f3cb829e70f2b">&#9670;&nbsp;</a></span>turnLeft()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testBlueToothGrid </td>
+          <td class="memname">void turnLeft </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Turns the AVS in left direction of current heading and moves to left of starting grid square. </p>
 
-<p>fake function - to be deleted - just there to see if nav.grid_ array can be accessed from here </p>
+</div>
+</div>
+<a id="acf4fa5da14085c3a9a170f9de29d2755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4fa5da14085c3a9a170f9de29d2755">&#9670;&nbsp;</a></span>turnRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void turnRight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Turns the AVS in right direction of current heading and moves to right of starting grid square. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a26ae4f60d3d4ebfa68763710b6f20e7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26ae4f60d3d4ebfa68763710b6f20e7c">&#9670;&nbsp;</a></span>avsHeading_</h2>
+<a id="a7e8151031cf9a913ec4a28a5f56ed7c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8151031cf9a913ec4a28a5f56ed7c0">&#9670;&nbsp;</a></span>AFMS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float avsHeading_ = 0*(PI/180)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>***** <a class="el" href="bot_main_8ino.html">botMain.ino</a> - Main .ino file for arduino (for now, someone else may have a better one) ***** // ***** INSTRUCTIONS: ***** // ***** 1. Ensure all libraries are installed by navigating Sketch &gt; Include Library &gt; Manage Libraries ***** // ***** and searching for the following libraries: (i) DHT ***** // ***** (ii) Adafuit Unified Sensor ***** // ***** (iii) Adafruit AM2315 ***** // ***** 2. </p>
-
-</div>
-</div>
-<a id="a36b5ddac5fd4781d96ab1f7afb628e63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36b5ddac5fd4781d96ab1f7afb628e63">&#9670;&nbsp;</a></span>avsX_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float avsX_ = 0</td>
+          <td class="memname">Adafruit_MotorShield AFMS = Adafruit_MotorShield()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa4d40143b7595abf8807c96ac5fd82e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4d40143b7595abf8807c96ac5fd82e2">&#9670;&nbsp;</a></span>avsY_</h2>
+<a id="a92d3a0b679d3adc3b4b513f8e26e7f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d3a0b679d3adc3b4b513f8e26e7f4c">&#9670;&nbsp;</a></span>algorithm</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float avsY_ = 0</td>
+          <td class="memname">int algorithm = POZYX_POS_ALG_UWB_ONLY</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a89e40ffdf0114ea60292ff57879491e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89e40ffdf0114ea60292ff57879491e2">&#9670;&nbsp;</a></span>dhtPin</h2>
+<a id="a40781b19eab312bdfa08034230bb64d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40781b19eab312bdfa08034230bb64d1">&#9670;&nbsp;</a></span>anchors</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t dhtPin = 14</td>
+          <td class="memname">uint16_t anchors[<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0x687c, 0x6821, 0x6827, 0x6851}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>DHT22 Sensor arduino pin number. </p>
-
 </div>
 </div>
-<a id="a878ae4b68ec48fc902c4aa953ad565b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a878ae4b68ec48fc902c4aa953ad565b4">&#9670;&nbsp;</a></span>frontEchoPin</h2>
+<a id="ae6db46a34ef60ff16acd025bfcaed344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6db46a34ef60ff16acd025bfcaed344">&#9670;&nbsp;</a></span>anchors_x</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t frontEchoPin = <a class="el" href="bot_main_8ino.html#a33df7a8dbfd90327fda79c01f944f56a">frontTriggerPin</a></td>
+          <td class="memname">int32_t anchors_x[<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0, 0, 4998, 4985}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc43d1150756410770334dba55d59783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc43d1150756410770334dba55d59783">&#9670;&nbsp;</a></span>anchors_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t anchors_y[<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {0, 5005, 4985, 0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f0abc26cd1e11941fb44168ea055b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0abc26cd1e11941fb44168ea055b1a">&#9670;&nbsp;</a></span>basicAvgAmt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int basicAvgAmt = 50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a561c3c1ac229de5ea299ea71e1b1a797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561c3c1ac229de5ea299ea71e1b1a797">&#9670;&nbsp;</a></span>cgk_back_little</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_back_little = 370</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91243a6041a1ec2fce66d4c8cfd2a139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91243a6041a1ec2fce66d4c8cfd2a139">&#9670;&nbsp;</a></span>cgk_back_one</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_back_one = 500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ec3cca0a6256b97b26506e7c3d2f793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec3cca0a6256b97b26506e7c3d2f793">&#9670;&nbsp;</a></span>cgk_brake_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_brake_time = 100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb1471feb53affb97626965870071b54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb1471feb53affb97626965870071b54">&#9670;&nbsp;</a></span>cgk_first_angle_divider</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_first_angle_divider = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24a75c74d8b88fb34b3753881d8a18de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a75c74d8b88fb34b3753881d8a18de">&#9670;&nbsp;</a></span>cgk_fwd_end_turn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_fwd_end_turn = 350</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5319965a94b5c8e64061d2999f513ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5319965a94b5c8e64061d2999f513ec6">&#9670;&nbsp;</a></span>cgk_fwd_little</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_fwd_little = 330</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49bdb35c116d5940c7ee0698d8508043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49bdb35c116d5940c7ee0698d8508043">&#9670;&nbsp;</a></span>cgk_fwd_one</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_fwd_one = 470</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73b8bce90bbda89fe2c9cace8ebd7467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b8bce90bbda89fe2c9cace8ebd7467">&#9670;&nbsp;</a></span>cgk_motor_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_motor_speed = 254</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bb179d9202804dccaa9f18aa453df29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb179d9202804dccaa9f18aa453df29">&#9670;&nbsp;</a></span>cgk_straight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_straight = 110</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e81c768ee699008e7e551d8ebb140f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e81c768ee699008e7e551d8ebb140f2">&#9670;&nbsp;</a></span>cgk_turn_delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cgk_turn_delay = 1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a8a8235879363159315091a1daed72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a8a8235879363159315091a1daed72f">&#9670;&nbsp;</a></span>dimension</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dimension = POZYX_2D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b14c45d0e2dfeef70f98b914ca277f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b14c45d0e2dfeef70f98b914ca277f5">&#9670;&nbsp;</a></span>frontEchoPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int frontEchoPin = 37</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -413,8 +1026,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Front sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS. </p>
-<p>Obstacle detection system object initialisation - used to activate <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects as required and pass on information to the navigation system </p>
+<p>Front sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at front of AVS. </p>
+<p>Obstacle detection system object initialisation - used to activate <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects as required and pass on information to the navigation system </p>
 
 </div>
 </div>
@@ -425,7 +1038,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float frontsensorAngle = <a class="el" href="bot_main_8ino.html#a6ddfdda7a062d10cff4a72b76b44aeb8">FORWARD</a></td>
+          <td class="memname">const float frontsensorAngle = <a class="el" href="bot_main_8ino.html#afb3e7729ac5d0aab2fec8a9cc664e576">FORWARD_DIR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -434,14 +1047,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a33df7a8dbfd90327fda79c01f944f56a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33df7a8dbfd90327fda79c01f944f56a">&#9670;&nbsp;</a></span>frontTriggerPin</h2>
+<a id="ae091a21fa97656ee7bd8c5f79c45b752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae091a21fa97656ee7bd8c5f79c45b752">&#9670;&nbsp;</a></span>frontTriggerPin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t frontTriggerPin = 17</td>
+          <td class="memname">const int frontTriggerPin = 35</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -473,7 +1086,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float frontYOffset = 10</td>
+          <td class="memname">const float frontYOffset = 130</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -482,14 +1095,70 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a203479aa2174a6eedd63da361e6e302c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a203479aa2174a6eedd63da361e6e302c">&#9670;&nbsp;</a></span>leftEchoPin</h2>
+<a id="aa0a9c2882aad6535e52a6d429f1d42da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a9c2882aad6535e52a6d429f1d42da">&#9670;&nbsp;</a></span>heading</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t leftEchoPin = <a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a></td>
+          <td class="memname">int heading = 90</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a868b73d778ddc36f8b77659dbc4aaa3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868b73d778ddc36f8b77659dbc4aaa3c">&#9670;&nbsp;</a></span>headingOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int headingOffset = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d8006e753a3e76ff637a4e092bbed71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d8006e753a3e76ff637a4e092bbed71">&#9670;&nbsp;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t height = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bb54a28aa3c60428997dade71949435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb54a28aa3c60428997dade71949435">&#9670;&nbsp;</a></span>heights</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t heights[<a class="el" href="bot_main_8ino.html#af45be5355306144528cdfb308bd00859">num_anchors</a>] = {810, 1720, 765, 1715}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1b4a0b41d14f603ba696fad472c50d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b4a0b41d14f603ba696fad472c50d9">&#9670;&nbsp;</a></span>leftEchoPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int leftEchoPin = 33</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -505,12 +1174,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> leftSensor(<a class="el" href="bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e">leftTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a203479aa2174a6eedd63da361e6e302c">leftEchoPin</a>, <a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a>, <a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a>, <a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a>)</td>
+          <td class="memname"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> leftSensor(<a class="el" href="bot_main_8ino.html#abf577279d52f4a773937cb36cc199c0b">leftTriggerPin</a>, <a class="el" href="bot_main_8ino.html#ad1b4a0b41d14f603ba696fad472c50d9">leftEchoPin</a>, <a class="el" href="bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca">leftXOffset</a>, <a class="el" href="bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed">leftYOffset</a>, <a class="el" href="bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958">leftsensorAngle</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Left sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS. </p>
+<p>Left sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at left of AVS. </p>
 
 </div>
 </div>
@@ -521,7 +1190,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float leftsensorAngle = <a class="el" href="bot_main_8ino.html#a437ef08681e7210d6678427030446a54">LEFT</a></td>
+          <td class="memname">const float leftsensorAngle = <a class="el" href="bot_main_8ino.html#a748e2ff253570331d3cd8f51ccc17f03">LEFT_DIR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -530,14 +1199,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a297d5238270dc0d92e1a65b016a79f2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a297d5238270dc0d92e1a65b016a79f2e">&#9670;&nbsp;</a></span>leftTriggerPin</h2>
+<a id="abf577279d52f4a773937cb36cc199c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf577279d52f4a773937cb36cc199c0b">&#9670;&nbsp;</a></span>leftTriggerPin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t leftTriggerPin = 15</td>
+          <td class="memname">const int leftTriggerPin = 31</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -553,7 +1222,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float leftXOffset = -5</td>
+          <td class="memname">const float leftXOffset = 80</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -569,7 +1238,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float leftYOffset = 2</td>
+          <td class="memname">const float leftYOffset = 130</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -578,28 +1247,98 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a4d757d2a3d2bcf4b98f6f4a72d7df7de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d757d2a3d2bcf4b98f6f4a72d7df7de">&#9670;&nbsp;</a></span>nav</h2>
+<a id="a7c7e284865b6a4f560b4b312c14b9401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7e284865b6a4f560b4b312c14b9401">&#9670;&nbsp;</a></span>myMotor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_navigator.html">Navigator</a> nav</td>
+          <td class="memname">Adafruit_DCMotor* myMotor = AFMS.getMotor(1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a513a215c9894c01e37f389b072c5cec4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a513a215c9894c01e37f389b072c5cec4">&#9670;&nbsp;</a></span>rightEchoPin</h2>
+<a id="aa40b8d55e3cb08134da6fa492346bcd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40b8d55e3cb08134da6fa492346bcd2">&#9670;&nbsp;</a></span>nav</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t rightEchoPin = <a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a></td>
+          <td class="memname"><a class="el" href="class_navigator.html">Navigator</a> nav(<a class="el" href="bot_main_8ino.html#ad7faed3f920e2a86bd4d0462a8d907ea">xPosStart</a>, <a class="el" href="bot_main_8ino.html#a22fa20776245d8cff73524333913a417">yPosStart</a>, <a class="el" href="bot_main_8ino.html#a9ff06ce163dbdadcbad347cd3f4fd6b1">xPosTarget</a>, <a class="el" href="bot_main_8ino.html#a4c0ad4a6d9cc090aaf844632d913b377">yPosTarget</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af45be5355306144528cdfb308bd00859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45be5355306144528cdfb308bd00859">&#9670;&nbsp;</a></span>num_anchors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int num_anchors = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a7877b55ae0baf9e8b9250195dd3f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7877b55ae0baf9e8b9250195dd3f81">&#9670;&nbsp;</a></span>num_to_avg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int num_to_avg = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade3e4dd136fe976f4d00476ead564457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3e4dd136fe976f4d00476ead564457">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String result = &quot;;911;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d7b030f0912b0b67f4595263a878078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7b030f0912b0b67f4595263a878078">&#9670;&nbsp;</a></span>returnToStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool returnToStart = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a922d02edb9759eb944c27cebb4a448cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922d02edb9759eb944c27cebb4a448cb">&#9670;&nbsp;</a></span>rightEchoPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int rightEchoPin = 41</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -615,12 +1354,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> rightSensor(<a class="el" href="bot_main_8ino.html#a906054d9d48970211789ac841d331898">rightTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a513a215c9894c01e37f389b072c5cec4">rightEchoPin</a>, <a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a>, <a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a>, <a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a>)</td>
+          <td class="memname"><a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> rightSensor(<a class="el" href="bot_main_8ino.html#ad7785c889e9d6290073148f74ce9de5e">rightTriggerPin</a>, <a class="el" href="bot_main_8ino.html#a922d02edb9759eb944c27cebb4a448cb">rightEchoPin</a>, <a class="el" href="bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9">rightXOffset</a>, <a class="el" href="bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05">rightYOffset</a>, <a class="el" href="bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8">rightsensorAngle</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Right sensor <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS. </p>
+<p>Right sensor <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object initialisation - used to detect obstacles at right of AVS. </p>
 
 </div>
 </div>
@@ -631,7 +1370,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float rightsensorAngle = <a class="el" href="bot_main_8ino.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a></td>
+          <td class="memname">const float rightsensorAngle = <a class="el" href="bot_main_8ino.html#a280580881770229c533faab28f235a05">RIGHT_DIR</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -640,14 +1379,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a906054d9d48970211789ac841d331898"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a906054d9d48970211789ac841d331898">&#9670;&nbsp;</a></span>rightTriggerPin</h2>
+<a id="ad7785c889e9d6290073148f74ce9de5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7785c889e9d6290073148f74ce9de5e">&#9670;&nbsp;</a></span>rightTriggerPin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t rightTriggerPin = 19</td>
+          <td class="memname">const int rightTriggerPin = 39</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -663,7 +1402,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float rightXOffset = 5</td>
+          <td class="memname">const float rightXOffset = 80</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -679,12 +1418,154 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const float rightYOffset = 2</td>
+          <td class="memname">const float rightYOffset = 130</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Right sensor y offset on chassis from pozyx location. </p>
+
+</div>
+</div>
+<a id="ac5d2bea44c6318454db0e2639a4efe95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d2bea44c6318454db0e2639a4efe95">&#9670;&nbsp;</a></span>servo1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Servo servo1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5aede016b3edcf8d5054eabe18c4ebd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aede016b3edcf8d5054eabe18c4ebd5">&#9670;&nbsp;</a></span>tempPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int tempPin = A0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Temperature Sensor arduino pin number. </p>
+
+</div>
+</div>
+<a id="a9d3947cda218cfaa85dfef513d39c73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3947cda218cfaa85dfef513d39c73c">&#9670;&nbsp;</a></span>x_loc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int x_loc = 1750</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5e6eb62b1453be293f043e996637130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e6eb62b1453be293f043e996637130">&#9670;&nbsp;</a></span>x_loc_prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int x_loc_prev = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7faed3f920e2a86bd4d0462a8d907ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7faed3f920e2a86bd4d0462a8d907ea">&#9670;&nbsp;</a></span>xPosStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int xPosStart = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ff06ce163dbdadcbad347cd3f4fd6b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff06ce163dbdadcbad347cd3f4fd6b1">&#9670;&nbsp;</a></span>xPosTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int xPosTarget = 7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b3154e514a981f07054456331a2e708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3154e514a981f07054456331a2e708">&#9670;&nbsp;</a></span>y_loc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int y_loc = 3250</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6cd6110c1f427db4b1b4b5a5b03b5242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd6110c1f427db4b1b4b5a5b03b5242">&#9670;&nbsp;</a></span>y_loc_prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int y_loc_prev = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22fa20776245d8cff73524333913a417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fa20776245d8cff73524333913a417">&#9670;&nbsp;</a></span>yPosStart</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int yPosStart = 9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c0ad4a6d9cc090aaf844632d913b377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0ad4a6d9cc090aaf844632d913b377">&#9670;&nbsp;</a></span>yPosTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int yPosTarget = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system.  
+ <a href="class_obstacle_detection.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -89,12 +92,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:adbb2c4295e35c5c4c2b63aed42588bd0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#adbb2c4295e35c5c4c2b63aed42588bd0">detectLeftSensor</a> ()</td></tr>
-<tr class="separator:adbb2c4295e35c5c4c2b63aed42588bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a135adf6077c8af44e33e6814ad7ee9f0"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a135adf6077c8af44e33e6814ad7ee9f0">detectRightSensor</a> ()</td></tr>
-<tr class="separator:a135adf6077c8af44e33e6814ad7ee9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7974520bcbaa2d10254fb498347b8c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#aa7974520bcbaa2d10254fb498347b8c3">detectFrontSensor</a> ()</td></tr>
-<tr class="separator:aa7974520bcbaa2d10254fb498347b8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79f1c269cb0c4e033a3485309f870e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#ab79f1c269cb0c4e033a3485309f870e4">detectLeftSensor</a> ()</td></tr>
+<tr class="separator:ab79f1c269cb0c4e033a3485309f870e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d63d29923dfd52061f456afc403e45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#ab9d63d29923dfd52061f456afc403e45">detectRightSensor</a> ()</td></tr>
+<tr class="separator:ab9d63d29923dfd52061f456afc403e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617610d3df5438e409bb810a53e61772"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a617610d3df5438e409bb810a53e61772">detectFrontSensor</a> ()</td></tr>
+<tr class="separator:a617610d3df5438e409bb810a53e61772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -113,14 +116,13 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a37811b168a642890429f6752118341cc"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a37811b168a642890429f6752118341cc">iterations</a> = 5</td></tr>
-<tr class="memdesc:a37811b168a642890429f6752118341cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of times the sensors are activated to average distance of detection.  <a href="#a37811b168a642890429f6752118341cc">More...</a><br /></td></tr>
-<tr class="separator:a37811b168a642890429f6752118341cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7c77085fa9795bad6de9813046ca12"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_detection.html#a7d7c77085fa9795bad6de9813046ca12">iterations</a> = 5</td></tr>
+<tr class="memdesc:a7d7c77085fa9795bad6de9813046ca12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of times the sensors are activated to average distance of detection.  <a href="#a7d7c77085fa9795bad6de9813046ca12">More...</a><br /></td></tr>
+<tr class="separator:a7d7c77085fa9795bad6de9813046ca12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_obstacle_detection.html">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system.</p>
-<p>INPUTS: Requires information detailing <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> objects</p>
-<p>OUTPUTS TO: Grid reference to navigation system </p>
+<div class="textblock"><p><a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object controls the activation patterns of all <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects and outputs detected obstacle grid references to the navigation system. </p>
+<p>A single <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object is used per AVS unit, and it contains all of the details of the specific respective <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects. The <a class="el" href="class_obstacle_detection.html" title="ObstacleDetection object controls the activation patterns of all ObstacleSensor objects and outputs d...">ObstacleDetection</a> object has at its disposal a number of <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> activation patterns based on the needs of the particular environment and AVS configuration. INPUTS: Requires information detailing <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> objects OUTPUTS TO: Grid reference to navigation system </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1ef460cae951b0ddaa04088645109f47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1ef460cae951b0ddaa04088645109f47">&#9670;&nbsp;</a></span>ObstacleDetection() <span class="overload">[1/2]</span></h2>
@@ -178,12 +180,12 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor which takes in three <a class="el" href="class_obstacle_sensor.html">ObstacleSensor</a> object pointers and navigator object pointer used to activate in different sequences as required </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructor which takes in three <a class="el" href="class_obstacle_sensor.html" title="ObstacleSensor object contains all angles and distances/locations of a particular sensor allowing for...">ObstacleSensor</a> object pointers and navigator object pointer used to activate in different sequences as required </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*frontSensorPtr</td><td>Pointer to front sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*leftSensororPtr</td><td>Pointer to left sensor Obstacle Sensor Object </td></tr>
     <tr><td class="paramname">*rightSensorPtr</td><td>Pointer to right sensor Obstacle Sensor Object </td></tr>
-    <tr><td class="paramname">*navPtr</td><td>Pointer to <a class="el" href="class_navigator.html">Navigator</a> object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
+    <tr><td class="paramname">*navPtr</td><td>Pointer to <a class="el" href="class_navigator.html" title="Navigator object controls all aspects of navigation command and decision making. ">Navigator</a> object in order to call addObstacle function and pass obstalce details to navigation system </td></tr>
   </table>
   </dd>
 </dl>
@@ -209,8 +211,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa7974520bcbaa2d10254fb498347b8c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7974520bcbaa2d10254fb498347b8c3">&#9670;&nbsp;</a></span>detectFrontSensor()</h2>
+<a id="a617610d3df5438e409bb810a53e61772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617610d3df5438e409bb810a53e61772">&#9670;&nbsp;</a></span>detectFrontSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +221,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleDetection::detectFrontSensor </td>
+          <td class="memname">int ObstacleDetection::detectFrontSensor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -235,8 +237,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adbb2c4295e35c5c4c2b63aed42588bd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbb2c4295e35c5c4c2b63aed42588bd0">&#9670;&nbsp;</a></span>detectLeftSensor()</h2>
+<a id="ab79f1c269cb0c4e033a3485309f870e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79f1c269cb0c4e033a3485309f870e4">&#9670;&nbsp;</a></span>detectLeftSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +247,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleDetection::detectLeftSensor </td>
+          <td class="memname">int ObstacleDetection::detectLeftSensor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -261,8 +263,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a135adf6077c8af44e33e6814ad7ee9f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a135adf6077c8af44e33e6814ad7ee9f0">&#9670;&nbsp;</a></span>detectRightSensor()</h2>
+<a id="ab9d63d29923dfd52061f456afc403e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d63d29923dfd52061f456afc403e45">&#9670;&nbsp;</a></span>detectRightSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +273,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t ObstacleDetection::detectRightSensor </td>
+          <td class="memname">int ObstacleDetection::detectRightSensor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -331,8 +333,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a37811b168a642890429f6752118341cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37811b168a642890429f6752118341cc">&#9670;&nbsp;</a></span>iterations</h2>
+<a id="a7d7c77085fa9795bad6de9813046ca12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d7c77085fa9795bad6de9813046ca12">&#9670;&nbsp;</a></span>iterations</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +343,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t ObstacleDetection::iterations = 5</td>
+          <td class="memname">const int ObstacleDetection::iterations = 5</td>
         </tr>
       </table>
   </td>
@@ -428,8 +430,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/OneDrive - UNSW/Alex/ADFA/2018/Semester 1/Engineering Design Practise/git_edpAutoCar/botMain/<a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a></li>
-<li>D:/OneDrive - UNSW/Alex/ADFA/2018/Semester 1/Engineering Design Practise/git_edpAutoCar/botMain/<a class="el" href="_obstacle_detection_8cpp.html">ObstacleDetection.cpp</a></li>
+<li><a class="el" href="_obstacle_detection_8h_source.html">ObstacleDetection.h</a></li>
+<li><a class="el" href="_obstacle_detection_8cpp.html">ObstacleDetection.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['left',['LEFT',['../bot_main_8ino.html#a437ef08681e7210d6678427030446a54',1,'botMain.ino']]],
-  ['leftechopin',['leftEchoPin',['../bot_main_8ino.html#a203479aa2174a6eedd63da361e6e302c',1,'botMain.ino']]],
-  ['leftsensor',['leftSensor',['../bot_main_8ino.html#af137d1119f05ab98ae8e50559b9d6bfe',1,'botMain.ino']]],
-  ['leftsensorangle',['leftsensorAngle',['../bot_main_8ino.html#a8be5324bad65fa0bad41e0c70066a958',1,'botMain.ino']]],
-  ['leftsensorptr_5f',['leftSensorPtr_',['../class_obstacle_detection.html#a97a24fb4fe1b9d54c2a2bd377426f339',1,'ObstacleDetection']]],
-  ['lefttriggerpin',['leftTriggerPin',['../bot_main_8ino.html#a297d5238270dc0d92e1a65b016a79f2e',1,'botMain.ino']]],
-  ['leftxoffset',['leftXOffset',['../bot_main_8ino.html#a2d121af61e2977de12f5bfbbe8559dca',1,'botMain.ino']]],
-  ['leftyoffset',['leftYOffset',['../bot_main_8ino.html#a7be9826e4f54e376321bcdea4177a8ed',1,'botMain.ino']]],
-  ['loop',['loop',['../bot_main_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'botMain.ino']]]
+  ['maxdistance_5f',['maxDistance_',['../class_obstacle_sensor.html#af980bd4eda58b827f559b0264295c338',1,'ObstacleSensor']]],
+  ['millitogrid',['milliToGrid',['../class_navigator.html#a2e9d96fbec09518d6ef692457381213f',1,'Navigator']]],
+  ['movebackward',['moveBackward',['../bot_main_8ino.html#a39321c04c34c4c2e46ed14803bdddd39',1,'botMain.ino']]],
+  ['moveforward',['moveForward',['../bot_main_8ino.html#a618d986e214be5b102686274ac420be0',1,'botMain.ino']]],
+  ['movehistory',['moveHistory',['../_navigator_8cpp.html#a427c8f5180349784f5be810f2cd3df8b',1,'Navigator.cpp']]],
+  ['mymotor',['myMotor',['../bot_main_8ino.html#a7c7e284865b6a4f560b4b312c14b9401',1,'botMain.ino']]]
 ];

@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['echo_5ftimer_5ffreq',['ECHO_TIMER_FREQ',['../_new_ping_8h.html#aa51d2168866aae5fa0b0ad227503af3c',1,'NewPing.h']]],
-  ['echopin_5f',['echoPin_',['../class_obstacle_sensor.html#aecbf317dc02d1c5f1147d5d0b5044dce',1,'ObstacleSensor']]],
-  ['element_5fvalue',['ELEMENT_VALUE',['../common_8h.html#a73bbd106d2b0511a67685cdabf5f7abc',1,'ELEMENT_VALUE():&#160;common.h'],['../_navigator_8h.html#a73bbd106d2b0511a67685cdabf5f7abc',1,'ELEMENT_VALUE():&#160;common.h']]],
-  ['element_5fxpos',['ELEMENT_XPOS',['../common_8h.html#abb177123f66eb54c669bebc80fc8becf',1,'ELEMENT_XPOS():&#160;common.h'],['../_navigator_8h.html#abb177123f66eb54c669bebc80fc8becf',1,'ELEMENT_XPOS():&#160;common.h']]],
-  ['element_5fypos',['ELEMENT_YPOS',['../common_8h.html#a7a051553330fad81652677bed8d04cfc',1,'ELEMENT_YPOS():&#160;common.h'],['../_navigator_8h.html#a7a051553330fad81652677bed8d04cfc',1,'ELEMENT_YPOS():&#160;common.h']]]
+  ['forward_5fdir',['FORWARD_DIR',['../bot_main_8ino.html#afb3e7729ac5d0aab2fec8a9cc664e576',1,'botMain.ino']]],
+  ['frontechopin',['frontEchoPin',['../bot_main_8ino.html#a0b14c45d0e2dfeef70f98b914ca277f5',1,'botMain.ino']]],
+  ['frontsensor',['frontSensor',['../bot_main_8ino.html#a355879266d10af4a6e9126a47bc09113',1,'botMain.ino']]],
+  ['frontsensorangle',['frontsensorAngle',['../bot_main_8ino.html#ad681cfe410d5d764c513368773b9de93',1,'botMain.ino']]],
+  ['frontsensorptr_5f',['frontSensorPtr_',['../class_obstacle_detection.html#ab6e8507df02f3b6d9282d0253ac338f3',1,'ObstacleDetection']]],
+  ['fronttriggerpin',['frontTriggerPin',['../bot_main_8ino.html#ae091a21fa97656ee7bd8c5f79c45b752',1,'botMain.ino']]],
+  ['frontxoffset',['frontXOffset',['../bot_main_8ino.html#abdd898a2dfa2f64e2821af36c6ed3724',1,'botMain.ino']]],
+  ['frontyoffset',['frontYOffset',['../bot_main_8ino.html#a4919465d0182f44aa7acaa39ece1e17a',1,'botMain.ino']]]
 ];

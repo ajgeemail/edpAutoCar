@@ -1,18 +1,14 @@
 var searchData=
 [
-  ['ping',['ping',['../class_new_ping.html#ad674a1301a81b5bb18bde45854a716c3',1,'NewPing']]],
-  ['ping_5fcm',['ping_cm',['../class_new_ping.html#ac160903f4a9aebe5967204d444acd525',1,'NewPing']]],
-  ['ping_5fin',['ping_in',['../class_new_ping.html#a5ef06daa20cd318bc049b2d7b5fd4c80',1,'NewPing']]],
-  ['ping_5fmedian',['ping_median',['../class_new_ping.html#afd21db530da5856049d7f9684b448935',1,'NewPing']]],
-  ['ping_5fmedian_5fdelay',['PING_MEDIAN_DELAY',['../_new_ping_8h.html#ad5b13211068dba41dd4708611eacd046',1,'NewPing.h']]],
-  ['ping_5foverhead',['PING_OVERHEAD',['../_new_ping_8h.html#abf806517ed5c333ebae5f6f04fb16079',1,'PING_OVERHEAD():&#160;NewPing.h'],['../_new_ping_8h.html#abf806517ed5c333ebae5f6f04fb16079',1,'PING_OVERHEAD():&#160;NewPing.h']]],
-  ['ping_5fresult',['ping_result',['../class_new_ping.html#a5d78ebdbffa4f42124ff7e06860503e6',1,'NewPing']]],
-  ['ping_5ftimer',['ping_timer',['../class_new_ping.html#a5b80f92a7885f82640a0b096c2d3c85e',1,'NewPing']]],
-  ['ping_5ftimer_5foverhead',['PING_TIMER_OVERHEAD',['../_new_ping_8h.html#a98683564d6fcb3e53d44f23b65c1d1a5',1,'PING_TIMER_OVERHEAD():&#160;NewPing.h'],['../_new_ping_8h.html#a98683564d6fcb3e53d44f23b65c1d1a5',1,'PING_TIMER_OVERHEAD():&#160;NewPing.h']]],
-  ['ping_5ftrigger',['ping_trigger',['../class_new_ping.html#a60172cfe9c5e9f035424da1883868b01',1,'NewPing']]],
-  ['ping_5ftrigger_5ftimer',['ping_trigger_timer',['../class_new_ping.html#a15a189b65c8de58e4513e942e0cc30d6',1,'NewPing']]],
-  ['ping_5fwait_5ftimer',['ping_wait_timer',['../class_new_ping.html#a00188135a88d3eb4da3a8c9e3d95becd',1,'NewPing']]],
-  ['printdistance',['printDistance',['../class_obstacle_sensor.html#ad7b512504389e1925d3777f7395ef3ae',1,'ObstacleSensor']]],
-  ['printmap',['printMap',['../class_navigator.html#a2565ae0fea67cfec45a553ef0d7e06a4',1,'Navigator']]],
-  ['printsound',['printSound',['../class_obstacle_sensor.html#a66ce921e669bb83fa8f23ad2bc2733ee',1,'ObstacleSensor']]]
+  ['reprioritisemap',['reprioritiseMap',['../class_navigator.html#a5c53232cd85ce551986bd668625de005',1,'Navigator']]],
+  ['result',['result',['../bot_main_8ino.html#ade3e4dd136fe976f4d00476ead564457',1,'botMain.ino']]],
+  ['returntostart',['returnToStart',['../bot_main_8ino.html#a2d7b030f0912b0b67f4595263a878078',1,'botMain.ino']]],
+  ['right_5fdir',['RIGHT_DIR',['../bot_main_8ino.html#a280580881770229c533faab28f235a05',1,'botMain.ino']]],
+  ['rightechopin',['rightEchoPin',['../bot_main_8ino.html#a922d02edb9759eb944c27cebb4a448cb',1,'botMain.ino']]],
+  ['rightsensor',['rightSensor',['../bot_main_8ino.html#a4b08258caa24173f4153413d596aea69',1,'botMain.ino']]],
+  ['rightsensorangle',['rightsensorAngle',['../bot_main_8ino.html#a83724535498f068d5b44150a2bc4fcf8',1,'botMain.ino']]],
+  ['rightsensorptr_5f',['rightSensorPtr_',['../class_obstacle_detection.html#a25b7aed86ead63e6f71154855cc2d42c',1,'ObstacleDetection']]],
+  ['righttriggerpin',['rightTriggerPin',['../bot_main_8ino.html#ad7785c889e9d6290073148f74ce9de5e',1,'botMain.ino']]],
+  ['rightxoffset',['rightXOffset',['../bot_main_8ino.html#ac932cddb5bc68094c96d0034c92faef9',1,'botMain.ino']]],
+  ['rightyoffset',['rightYOffset',['../bot_main_8ino.html#a07903b96b48e8e456debd9cc43c7af05',1,'botMain.ino']]]
 ];

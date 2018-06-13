@@ -1,6 +1,16 @@
 #ifndef NAVIGATOR_H
 #define NAVIGATOR_H
 
+//! \brief Navigator object controls all aspects of navigation command and 
+//! decision making. 
+//!
+//! Navigator takes information regarding location, heading and obstacle
+//! locations to populate a live map utilising a flood fill algorithm to 
+//! prioritise movements. It then decides on a movement based on these 
+//! priorities and commands the motor control sub-system to make the appropriate
+//! movement. It also outputs the map via bluetooth to the GUI including
+//! obstacles which are stored as a large number within this map.
+
 #include <Arduino.h>
 #include "QueueList.h"
 #include "StackArray.h"

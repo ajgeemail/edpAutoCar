@@ -1,19 +1,23 @@
-\hypertarget{common_8h}{}\section{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/common.h File Reference}
-\label{common_8h}\index{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/common.\+h@{D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/bot\+Main/common.\+h}}
+\hypertarget{common_8h}{}\section{common.\+h File Reference}
+\label{common_8h}\index{common.\+h@{common.\+h}}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 static const int \mbox{\hyperlink{common_8h_af728b7647e0b8c49832983a31f9a2e9b}{H\+E\+I\+G\+HT}} = 10
-\item 
+\begin{DoxyCompactList}\small\item\em Contains variables common to multiple classes allowing easy sharing of this information rather than passing the variables or doubling up on them. \end{DoxyCompactList}\item 
 static const int \mbox{\hyperlink{common_8h_a9649ab8139c4c2ea5c93625b30d92a05}{W\+I\+D\+TH}} = 10
 \item 
-static const int \mbox{\hyperlink{common_8h_ace45c8c944a852d4990f5f8f87b2335e}{D\+A\+TA}} = 3
+static const int \mbox{\hyperlink{common_8h_ace45c8c944a852d4990f5f8f87b2335e}{D\+A\+TA}} = 4
 \item 
 const int \mbox{\hyperlink{common_8h_abb177123f66eb54c669bebc80fc8becf}{E\+L\+E\+M\+E\+N\+T\+\_\+\+X\+P\+OS}} = 0
 \item 
 const int \mbox{\hyperlink{common_8h_a7a051553330fad81652677bed8d04cfc}{E\+L\+E\+M\+E\+N\+T\+\_\+\+Y\+P\+OS}} = 1
 \item 
 const int \mbox{\hyperlink{common_8h_a73bbd106d2b0511a67685cdabf5f7abc}{E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE}} = 2
+\item 
+const int \mbox{\hyperlink{common_8h_a0dc1b2f55cb3594acfba189b38ee305f}{O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT}} = 3
+\item 
+const int \mbox{\hyperlink{common_8h_a183f2c4602f4da76ecf3d51a4807331f}{test\+\_\+mode}} = 2
 \end{DoxyCompactItemize}
 
 
@@ -22,7 +26,7 @@ const int \mbox{\hyperlink{common_8h_a73bbd106d2b0511a67685cdabf5f7abc}{E\+L\+E\
 \index{common.\+h@{common.\+h}!D\+A\+TA@{D\+A\+TA}}
 \index{D\+A\+TA@{D\+A\+TA}!common.\+h@{common.\+h}}
 \subsubsection{\texorpdfstring{D\+A\+TA}{DATA}}
-{\footnotesize\ttfamily const int D\+A\+TA = 3\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily const int D\+A\+TA = 4\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{common_8h_a73bbd106d2b0511a67685cdabf5f7abc}\label{common_8h_a73bbd106d2b0511a67685cdabf5f7abc}} 
 \index{common.\+h@{common.\+h}!E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE@{E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+UE}}
@@ -48,7 +52,23 @@ const int \mbox{\hyperlink{common_8h_a73bbd106d2b0511a67685cdabf5f7abc}{E\+L\+E\
 \subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
 {\footnotesize\ttfamily const int H\+E\+I\+G\+HT = 10\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{common_8h_a9649ab8139c4c2ea5c93625b30d92a05}\label{common_8h_a9649ab8139c4c2ea5c93625b30d92a05}} 
+
+
+Contains variables common to multiple classes allowing easy sharing of this information rather than passing the variables or doubling up on them. 
+
+\mbox{\Hypertarget{common_8h_a0dc1b2f55cb3594acfba189b38ee305f}\label{common_8h_a0dc1b2f55cb3594acfba189b38ee305f}} 
+\index{common.\+h@{common.\+h}!O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT@{O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT}}
+\index{O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT@{O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT}{OBSTACLE\_COUNT}}
+{\footnotesize\ttfamily const int O\+B\+S\+T\+A\+C\+L\+E\+\_\+\+C\+O\+U\+NT = 3}
+
+\mbox{\Hypertarget{common_8h_a183f2c4602f4da76ecf3d51a4807331f}\label{common_8h_a183f2c4602f4da76ecf3d51a4807331f}} 
+\index{common.\+h@{common.\+h}!test\+\_\+mode@{test\+\_\+mode}}
+\index{test\+\_\+mode@{test\+\_\+mode}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{test\+\_\+mode}{test\_mode}}
+{\footnotesize\ttfamily const int test\+\_\+mode = 2}
+
+test\+\_\+mode changes the type of test output provided to user. U\+SB serial monitor, BT serial monitor and operational mode (i.\+e. no test data and 10 sec delay enforced after initial setup complete. \mbox{\Hypertarget{common_8h_a9649ab8139c4c2ea5c93625b30d92a05}\label{common_8h_a9649ab8139c4c2ea5c93625b30d92a05}} 
 \index{common.\+h@{common.\+h}!W\+I\+D\+TH@{W\+I\+D\+TH}}
 \index{W\+I\+D\+TH@{W\+I\+D\+TH}!common.\+h@{common.\+h}}
 \subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}

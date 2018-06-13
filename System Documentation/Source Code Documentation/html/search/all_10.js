@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['sensorangle_5f',['sensorAngle_',['../class_obstacle_sensor.html#a348cf9783f793442c56f1b34e3515dbb',1,'ObstacleSensor']]],
-  ['sensorgridangle_5f',['sensorGridAngle_',['../class_obstacle_sensor.html#a063ee604be2c3b6ed8034cafedda0c3d',1,'ObstacleSensor']]],
-  ['set_5fmax_5fdistance',['set_max_distance',['../class_new_ping.html#a97700af99b7a34b067431d0607c4740e',1,'NewPing']]],
-  ['setup',['setup',['../bot_main_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'botMain.ino']]],
-  ['sonar_5f',['sonar_',['../class_obstacle_sensor.html#a761a011e9009edaaee103d9bafceba14',1,'ObstacleSensor']]],
-  ['soundcm_5f',['soundcm_',['../class_obstacle_sensor.html#ae6d0b250f37a34d04103d43e4e4e0082',1,'ObstacleSensor']]]
+  ['temppin',['tempPin',['../bot_main_8ino.html#a5aede016b3edcf8d5054eabe18c4ebd5',1,'botMain.ino']]],
+  ['test_5fmode',['test_mode',['../common_8h.html#a183f2c4602f4da76ecf3d51a4807331f',1,'common.h']]],
+  ['testmap',['testMap',['../class_navigator.html#afe98283ec2d1bf0125c63eb077cc1d61',1,'Navigator']]],
+  ['testmillitogrid',['testMilliToGrid',['../class_navigator.html#ad24af0142a398b88f193941fcc776ddc',1,'Navigator']]],
+  ['testmove',['testMove',['../class_navigator.html#a8df511cb7ce67515d86201f017525be4',1,'Navigator']]],
+  ['testobstacledata',['testObstacleData',['../class_navigator.html#ae31be1ae0d17e7fc78aa7c6a4553fca2',1,'Navigator']]],
+  ['triggerpin_5f',['triggerPin_',['../class_obstacle_sensor.html#a8bda5595b38379dd74e1c4c7204ad0af',1,'ObstacleSensor']]],
+  ['turnleft',['turnLeft',['../bot_main_8ino.html#adaf487f84c38e060c84f3cb829e70f2b',1,'botMain.ino']]],
+  ['turnright',['turnRight',['../bot_main_8ino.html#acf4fa5da14085c3a9a170f9de29d2755',1,'botMain.ino']]]
 ];

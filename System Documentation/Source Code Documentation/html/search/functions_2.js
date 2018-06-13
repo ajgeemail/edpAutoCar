@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['detectallsensors',['detectAllSensors',['../class_obstacle_detection.html#afe8d20425157946ba8e562d9696fef86',1,'ObstacleDetection']]],
-  ['detectfrontsensor',['detectFrontSensor',['../class_obstacle_detection.html#aa7974520bcbaa2d10254fb498347b8c3',1,'ObstacleDetection']]],
-  ['detectleftsensor',['detectLeftSensor',['../class_obstacle_detection.html#adbb2c4295e35c5c4c2b63aed42588bd0',1,'ObstacleDetection']]],
-  ['detectrightsensor',['detectRightSensor',['../class_obstacle_detection.html#a135adf6077c8af44e33e6814ad7ee9f0',1,'ObstacleDetection']]]
+  ['calculatesoundcm',['calculateSoundCm',['../class_obstacle_sensor.html#acd7255d7273231178876c5144b2269eb',1,'ObstacleSensor']]],
+  ['cgk_5fleft',['cgk_left',['../bot_main_8ino.html#aa715717e784a7e14ea274f10f05717c0',1,'botMain.ino']]],
+  ['cgk_5fright',['cgk_right',['../bot_main_8ino.html#ad995d8479412ad51f45bebe8e1c8c96e',1,'botMain.ino']]],
+  ['converttoarray',['convertToArray',['../class_navigator.html#a7a745d33cfa5cdfc551c87f3f23dc28e',1,'Navigator']]],
+  ['createmap',['createMap',['../class_navigator.html#a8b0cb171e3e3b16b206278fb23f624bc',1,'Navigator']]]
 ];

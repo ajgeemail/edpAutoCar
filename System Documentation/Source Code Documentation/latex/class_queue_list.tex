@@ -1,0 +1,196 @@
+\hypertarget{class_queue_list}{}\section{Queue\+List$<$ T $>$ Class Template Reference}
+\label{class_queue_list}\index{Queue\+List$<$ T $>$@{Queue\+List$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Queue\+List.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_queue_list_1_1node}{node}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_queue_list_acdba0c9151f33fab7a805e49e8a4c52e}{Queue\+List}} ()
+\item 
+\mbox{\hyperlink{class_queue_list_a6090ecbc97b1528ef41422cb922bd92e}{$\sim$\+Queue\+List}} ()
+\item 
+void \mbox{\hyperlink{class_queue_list_a47c26444335b418138450ba8bfb5ba13}{push}} (const T i)
+\item 
+T \mbox{\hyperlink{class_queue_list_abf5fba15da77e79d28cb3f593f5fd0a7}{pop}} ()
+\item 
+T \mbox{\hyperlink{class_queue_list_aef76da8fe3b8bef765ccdddb18f998b3}{peek}} () const
+\item 
+bool \mbox{\hyperlink{class_queue_list_a827e0fc95c2dfcf5fe5313b25afef3e5}{is\+Empty}} () const
+\item 
+int \mbox{\hyperlink{class_queue_list_a3e3f39c0736cd879330ec4f04e3de504}{count}} () const
+\item 
+void \mbox{\hyperlink{class_queue_list_a2497b59c53aec471ec68f9d604e693ac}{set\+Printer}} (Print \&p)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_queue_list_1_1node}{Queue\+List\+::node}} \mbox{\hyperlink{class_queue_list_a62281a4a1d5fd02f370c6dcae94559fe}{node}}
+\item 
+typedef \mbox{\hyperlink{struct_queue_list_1_1node}{node}} $\ast$ \mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_queue_list_a898426929c28b3ef4029ac5f54d6d415}{exit}} (const char $\ast$m) const
+\item 
+void \mbox{\hyperlink{class_queue_list_aaae70e1aed37aca1dfbd59334d0f73fe}{blink}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Print $\ast$ \mbox{\hyperlink{class_queue_list_a83629c4a8da7cc0c3a60e55f7b445c47}{printer}}
+\item 
+int \mbox{\hyperlink{class_queue_list_a9f11f3ab5e0f0833d1bb498eb521d4fa}{size}}
+\item 
+\mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}} \mbox{\hyperlink{class_queue_list_ac7ae88c334c9a55d3e77c8b2aa181a72}{head}}
+\item 
+\mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}} \mbox{\hyperlink{class_queue_list_ab707604463ec22d18eb44bb36d2bf273}{tail}}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_queue_list_a8f3aa75e676514f61c31eb9f657f526a}{led\+Pin}} = 13
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}\label{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}} 
+\index{Queue\+List@{Queue\+List}!link@{link}}
+\index{link@{link}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{link}{link}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef \mbox{\hyperlink{struct_queue_list_1_1node}{node}}$\ast$ \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::\mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a62281a4a1d5fd02f370c6dcae94559fe}\label{class_queue_list_a62281a4a1d5fd02f370c6dcae94559fe}} 
+\index{Queue\+List@{Queue\+List}!node@{node}}
+\index{node@{node}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef struct \mbox{\hyperlink{struct_queue_list_1_1node}{Queue\+List\+::node}}  \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::\mbox{\hyperlink{struct_queue_list_1_1node}{node}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_queue_list_acdba0c9151f33fab7a805e49e8a4c52e}\label{class_queue_list_acdba0c9151f33fab7a805e49e8a4c52e}} 
+\index{Queue\+List@{Queue\+List}!Queue\+List@{Queue\+List}}
+\index{Queue\+List@{Queue\+List}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{Queue\+List()}{QueueList()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::\mbox{\hyperlink{class_queue_list}{Queue\+List}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_queue_list_a6090ecbc97b1528ef41422cb922bd92e}\label{class_queue_list_a6090ecbc97b1528ef41422cb922bd92e}} 
+\index{Queue\+List@{Queue\+List}!````~Queue\+List@{$\sim$\+Queue\+List}}
+\index{````~Queue\+List@{$\sim$\+Queue\+List}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{$\sim$\+Queue\+List()}{~QueueList()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{class_queue_list}{Queue\+List}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_queue_list_aaae70e1aed37aca1dfbd59334d0f73fe}\label{class_queue_list_aaae70e1aed37aca1dfbd59334d0f73fe}} 
+\index{Queue\+List@{Queue\+List}!blink@{blink}}
+\index{blink@{blink}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{blink()}{blink()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::blink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a3e3f39c0736cd879330ec4f04e3de504}\label{class_queue_list_a3e3f39c0736cd879330ec4f04e3de504}} 
+\index{Queue\+List@{Queue\+List}!count@{count}}
+\index{count@{count}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_queue_list_a898426929c28b3ef4029ac5f54d6d415}\label{class_queue_list_a898426929c28b3ef4029ac5f54d6d415}} 
+\index{Queue\+List@{Queue\+List}!exit@{exit}}
+\index{exit@{exit}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{exit()}{exit()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::exit (\begin{DoxyParamCaption}\item[{const char $\ast$}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a827e0fc95c2dfcf5fe5313b25afef3e5}\label{class_queue_list_a827e0fc95c2dfcf5fe5313b25afef3e5}} 
+\index{Queue\+List@{Queue\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_queue_list_aef76da8fe3b8bef765ccdddb18f998b3}\label{class_queue_list_aef76da8fe3b8bef765ccdddb18f998b3}} 
+\index{Queue\+List@{Queue\+List}!peek@{peek}}
+\index{peek@{peek}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_queue_list_abf5fba15da77e79d28cb3f593f5fd0a7}\label{class_queue_list_abf5fba15da77e79d28cb3f593f5fd0a7}} 
+\index{Queue\+List@{Queue\+List}!pop@{pop}}
+\index{pop@{pop}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_queue_list_a47c26444335b418138450ba8bfb5ba13}\label{class_queue_list_a47c26444335b418138450ba8bfb5ba13}} 
+\index{Queue\+List@{Queue\+List}!push@{push}}
+\index{push@{push}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_queue_list_a2497b59c53aec471ec68f9d604e693ac}\label{class_queue_list_a2497b59c53aec471ec68f9d604e693ac}} 
+\index{Queue\+List@{Queue\+List}!set\+Printer@{set\+Printer}}
+\index{set\+Printer@{set\+Printer}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{set\+Printer()}{setPrinter()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::set\+Printer (\begin{DoxyParamCaption}\item[{Print \&}]{p }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_queue_list_ac7ae88c334c9a55d3e77c8b2aa181a72}\label{class_queue_list_ac7ae88c334c9a55d3e77c8b2aa181a72}} 
+\index{Queue\+List@{Queue\+List}!head@{head}}
+\index{head@{head}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}} \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::head\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a8f3aa75e676514f61c31eb9f657f526a}\label{class_queue_list_a8f3aa75e676514f61c31eb9f657f526a}} 
+\index{Queue\+List@{Queue\+List}!led\+Pin@{led\+Pin}}
+\index{led\+Pin@{led\+Pin}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{led\+Pin}{ledPin}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const int \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::led\+Pin = 13\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a83629c4a8da7cc0c3a60e55f7b445c47}\label{class_queue_list_a83629c4a8da7cc0c3a60e55f7b445c47}} 
+\index{Queue\+List@{Queue\+List}!printer@{printer}}
+\index{printer@{printer}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{printer}{printer}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+Print$\ast$ \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::printer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_a9f11f3ab5e0f0833d1bb498eb521d4fa}\label{class_queue_list_a9f11f3ab5e0f0833d1bb498eb521d4fa}} 
+\index{Queue\+List@{Queue\+List}!size@{size}}
+\index{size@{size}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_queue_list_ab707604463ec22d18eb44bb36d2bf273}\label{class_queue_list_ab707604463ec22d18eb44bb36d2bf273}} 
+\index{Queue\+List@{Queue\+List}!tail@{tail}}
+\index{tail@{tail}!Queue\+List@{Queue\+List}}
+\subsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_queue_list_a2dbbea18dafe3bc1585072a26cee8e68}{link}} \mbox{\hyperlink{class_queue_list}{Queue\+List}}$<$ T $>$\+::tail\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+One\+Drive -\/ U\+N\+S\+W/\+Alex/\+A\+D\+F\+A/2018/\+Semester 1/\+Engineering Design Practise/git\+\_\+edp\+Auto\+Car/master bot\+Main2 -\/ pls dont break/bot\+Main/\mbox{\hyperlink{_queue_list_8h}{Queue\+List.\+h}}\end{DoxyCompactItemize}
